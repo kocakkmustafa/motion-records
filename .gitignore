@@ -1,0 +1,9 @@
+# motion-records — AİLE KAYIT ZİNCİRİ
+# Kurucu kararı 2026-08-15 (M-F-634 ⑥): kayıt zinciri METİNDİR; ölçüm çıktıları değil.
+
+# Ölçüm artefaktları (21,5 MB: kareler, json çıktıları, transkriptler).
+# Kasıtla dışarıda: bu depo HAFIZAYI taşır, kanıt DOSYALARINI değil.
+# Bir artefakta atıf yapan kayıt, atfı METİNDE taşımalı — dosya kaybolur, kayıt kalır.
+artifacts/
+
+.DS_Store
