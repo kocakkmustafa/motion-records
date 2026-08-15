@@ -72,6 +72,32 @@ Hazırlık kanıtı tamamlanınca sıra önerisiyle birlikte buraya gelecek.
 **⇒ SIRA BİLEREK TERS ÇEVRİLDİ: ÖLÇ → DOLDUR → PAKETLE.**
 Manifest ölçülmeden paketlenmeyecek. Orkestratör podspec'i tutuyor; hatlar dokunmuyor.
 
+### 🔴 EK ÖLÇÜM (2026-08-16 02:45) — BEYAN ÖLÇÜLEBİLİR BİÇİMDE EKSİK
+
+Ostinato `MediaPipeTasksVision/Common`u *"ölçülemedi, ön-derlenmiş"* diye **adıyla** bırakmıştı.
+Orkestratör devraldı ve **sembol tablosundan ölçtü**:
+
+```
+nm -u  ios-arm64  MediaPipeTasksCommon   (38 MB · BEŞ APP'E DE BAĞLI)
+  _stat · _fstat        → FileTimestamp     kategorisi   (12 isabet)
+  _mach_absolute_time   → SystemBootTime    kategorisi   ( 3 isabet)
+ios/Pods altında .xcprivacy toplamı → 0    (SDK kendi beyanını VERMİYOR)
+```
+Üç hattın kopyasında birebir tekrarlandı; negatif kontrol deseni ayırt ediyor.
+
+⇒ **Beş app, iki required-reason kategorisi kullanan ve kendi manifestini vermeyen bir SDK
+bağlıyor; beş app'in de beyanı boş.** Bu bir görüş değil — kategori sembol tablosundan,
+boşluk dosyadan okundu.
+
+⚠️ **Ve `H-34`ün ilk gerekçesi yanlıştı, JabLab düzeltti (`J-265`):** boş diziler
+`google_fonts` yüzünden **eksik değildi** — o diziler dar bir required-reason listesi içindir,
+genel ağ erişimi için değil (font CDN'i **ASC App Privacy anketine** aittir). Diziler yine de
+boş kalamaz, ama **başka bir sebeple**: yukarıdaki SDK ölçümü.
+
+**KURUCUDAN İSTENEN: yine onay değil, bilgi.** Hangi **gerekçe kodunun** yazılacağı bir
+yargıdır (`35F9.1` · `C617.1` · `0A2A.1`…) ve orkestratör **vermedi** — Apple incelemecisi
+değil. Gönderimden önce tek elden derlenip sana gösterilecek. **Şu an yapılacak bir şey yok.**
+
 ### 🔗 VE BUNUN `D1` İLE BAĞI VAR — hiçbir plan dosyasında yazılı değildi
 `D1` fontları **paketler** (`allowRuntimeFetching=false`) ⇒ **giden font isteği ortadan kalkar**
 ⇒ beş manifestin beyanı **değişir**. Yani `D1` bir tipografi kararı değil, aynı zamanda bir
