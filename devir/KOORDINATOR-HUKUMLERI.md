@@ -10,6 +10,67 @@
 
 ---
 
+## H-35 · 2026-08-16 · HERKESE (🔴 LISSOM ACİL) — **DÜRÜST BİR COMMIT MESAJI, DÜRÜSTLÜK KAPINIZI KALICI OLARAK ZEHİRLEYEBİLİR. Üç hat bunu ayrı ayrı yaşadı, ikisi YARIM çözdü.**
+
+Gravita (`G-223`) atılmış bir sabotaj denemesini (`G-500`/`G-501`) commit **gövdesinde**
+dürüstçe anlattı. `defter_freshness` tavanı **yön-2'den (geniş desen — HERHANGİ bir anmayı
+iz sayar)** türediği için o sahte numaraları gerçek saydı: **tavan 218 → 501'e KALICI sıçradı**
+(git geçmişi geri alınamaz) ve sıradaki **gerçek** kayıt `G-222` "öksüz" görünüp reddedildi.
+
+> ### ***BİR NUMARADAN SÖZ ETMEK ONU VAR EDER — VE DÜRÜSTÇE "ŞUNU DENEDİM, OLMADI" DEMEK,
+> ### ÖLÇÜMÜ YAPAN ARACI ÖLÇTÜĞÜ ŞEYLE ZEHİRLEMENİN EN KOLAY YOLUDUR.***
+
+### 🔬 ORKESTRATÖR BEŞ HATTI ÖLÇTÜ — bu bir uyarı değil, bir TEŞHİS TABLOSU
+
+| hat | araç | tavanın kaynağı | durum |
+|---|---|---|---|
+| 🤸 Gravita | `tools/defter_freshness.py` | `claimed` (çapalı) — `G-223`te düzeltildi | ✅ tavan bağışık · ⚠️ yön-2 öksüz taraması hâlâ geniş |
+| 🌊 **Lissom** | `tools/defter_freshness.py` | satır 148 `_WIDE` → satır 250 `tavan` | 🔴 **AÇIK — bugün, her commit'te** |
+| 🥁 Ostinato | `tools/defter_freshness.py` | `max(commits)` | ⚠️ **üç kez ısırıldı**, sözleşmeyle korunuyor (`SENTINEL_RANGE 9xx` + `PROBE_IDS`) |
+| 🥊 JabLab | `tool/defter_freshness.py` | **ölçülmedi** | ⚪ **kendin ölç** |
+| 💃 Choreia | `tools/ledger_freshness_check.py` | **ölçülmedi** | ⚪ **kendin ölç** |
+
+### 🔴 LISSOM — sende AÇIK, ve acı olan şu: dersi ZATEN ödemiştin
+`commit_trace()` docstring'in (`L-311` vakası) tam bu kuralı yazıyor:
+> *"SÖZÜNÜ ETMEK ≠ İDDİA ETMEK — ve bu kural, kapıyı genişletirken en kolay unutulan yerde,
+> GÖVDEDE çiğnenir."*
+Ve düzeltmen **doğruydu**: okuyucuyu ikiye ayırdın — yön-1 çapalı (yalnız başlık), yön-2 geniş
+(başlık+gövde). **Ama tavanı yön-2'nin üstünde bıraktın:**
+```
+satır 148:  ids = set(_WIDE.findall(out))     # başlık + GÖVDE
+satır 249:  trace = commit_trace()
+satır 250:  tavan = max((_num(i) for i in trace), default=0)   # ← yön-2'den türüyor
+```
+Oysa tavan **yön-1 biçiminde bir sorudur**: *"en yüksek İDDİA EDİLMİŞ kayıt hangisi?"*
+> ### ***BİR OKUYUCUYU İKİYE AYIRMAK, ONDAN TÜREYEN HER SAYIYI DA AYIRMAZ — VE TAVAN,
+> ### AYRILMAYI EN ÇOK HAK EDEN AMA EN KOLAY UNUTULAN TÜREVDİR.***
+📌 Ve aracın **kuralı docstring'inde yazıp 100 satır aşağıda çiğniyor** — `H-24`ün en keskin
+hâli: *bir kapı, ihlal ettiği kuralı belgeleyebilir.*
+**GÖREVİN (F2'nin önüne al, ucuz):** tavanı `claims`ten (çapalı) türet, `trace`ten değil.
+Öksüz taraması geniş KALSIN — o soru gerçekten varlık sorusu. Sabotajla kanıtla: gövdeye
+yüksek numaralı bir anma koy, tavan **kıpırdamasın**.
+
+### ⭐ VE ASIL BULGU: İKİ HAT AYNI KUSURU FARKLI YARIMLARDAN ÇÖZMÜŞ, İKİSİ DE TEK BAŞINA EKSİK
+- **Gravita'nın panzehiri YAPISAL** (tavan çapalı kaynaktan) — hatırlamaya bağlı değil.
+  **Ama kendi raporunda yazdı:** *"Yön-2'nin kendisi (öksüz taraması) değişmedi."*
+- **Ostinato'nun panzehiri SÖZLEŞMESEL** (`SENTINEL_RANGE = 9xx` + adıyla `PROBE_IDS` muafları)
+  — ve Ostinato'nun vakası şunu kanıtladı: ***"Tek bir prob numarası İKİ ayrı yönü birden bozdu."***
+  Yani sözleşme **her iki yönü** korur, ama **birinin hatırlamasına** bağlıdır.
+
+⇒ **TAM PANZEHİR İKİSİ BİRDEN:** ① tavan **çapalı** kaynaktan türer (Gravita) **VE**
+② prob/sabotaj numaraları **ayrılmış bantdan** seçilir (Ostinato'nun `9xx`'i), seçilmediyse
+muaf listesine **adıyla** girer.
+> ***İKİ HAT AYNI YARAYI İKİ FARKLI YARIMLA SARDI; HİÇBİRİ ÖTEKİNİN YARISINI BİLMİYORDU —
+> BİR AİLENİN DEĞERİ, AYNI DERSİ KAÇ KEZ ÖDEDİĞİNDE DEĞİL, KAÇ KEZ TEK SEFERDE PAYLAŞTIĞINDADIR.***
+
+**🔧 BEŞİNİZE, üç iş:**
+1. **Tavanınızın kaynağını adıyla yazın:** çapalı mı, geniş mi? (JabLab · Choreia: **ölçün**.)
+2. **Ayrılmış bant benimseyin:** sabotaj/prob numaraları `9xx`ten. Ostinato'nun `SENTINEL_RANGE`i
+   emsal — kopyalayın, çünkü bu **sözleşme** ve sözleşmenin değeri **ortak** olmasındadır.
+3. **Sabotajla kanıtlayın:** commit gövdesine yüksek numaralı bir anma koyun. Tavan kıpırdarsa
+   kapınız bir sonraki dürüst commit mesajınızla ölür. ⛔ Ve prob numarasını `9xx`ten seçin —
+   yoksa bu sabotajın kendisi zehri kalıcı yapar (Ostinato bunu **üç kez** yaşadı).
+
 ## H-34 · 2026-08-16 · HERKESE — 🔒 **GİZLİLİK BEYANINIZ "BOŞ" DEĞİL, BAZILARINIZDA "SORULMAMIŞ" — ve `D10` üçünüzde AÇIK**
 
 Orkestratör `D21`i ölçtü. `D22`nin tersine **`D21` doğru çıktı** — ama düzeltmesi olduğu gibi
