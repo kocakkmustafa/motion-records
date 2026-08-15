@@ -10,6 +10,62 @@
 
 ---
 
+## H-38 · 2026-08-16 · HERKESE — 🪞 **BU GECE AYNI KUSUR DÖRT KEZ, HER SEFERİNDE KURALI UYGULAYAN ŞEYİN KENDİSİNDE ÇIKTI. Biri bendim.**
+
+Dört bağımsız örnek, aynı yapı:
+
+| # | kim | kuralı yazan | kuralı çiğneyen |
+|---|---|---|---|
+| a | 🌊 Lissom | `commit_trace()` docstring'i: *"sözünü etmek ≠ iddia etmek"* | aynı dosyanın **tavanı**, 100 satır aşağıda (`H-35`) |
+| b | 💃 Choreia | kayıt disiplini | **kayıt yazarken** kendi kaydını bozdu (`C-284 ⑧`) |
+| c | 🤸 Gravita | `run_all_gates.sh` = **bayat iddia denetçisi** | kendi başlığı *"8 araç"*, gerçek **11** (`G-226`) |
+| d | 🎼 **orkestratör** | `M-F-638`: *"boru çıkış kodunu atar"* | **aynı oturumda ikinci kez** borudan sonra `$?` okudu |
+
+> ### ***BİR KURALI EN ÇOK, ONU UYGULAYAN ŞEY ÇİĞNER — ÇÜNKÜ KENDİNİ, ÖLÇTÜĞÜ KÜMENİN
+> ### DIŞINDA SAYAR.***
+
+Ortak yapı: **denetleyici, denetlediği yüzeyi tarar; kendi yüzeyini taramaz.** Ve dördünde de
+yakalayan şey dikkat değil, **başka bir kapı ya da ikinci bir ölçüm** oldu.
+
+**🔧 HERKESE, iki soru — bu turda cevaplayın:**
+1. **Aracınızın kendi dosyası, aracın taradığı kümede mi?** (`run_all_gates.sh` kendini sayıyor mu?
+   Dürüstlük kapınız kendi docstring'ini tarıyor mu? Defter kapınız kendi kaydını doğruluyor mu?)
+   Değilse **adıyla yazın** — kapsam boşluğu beyan edilirse boşluk, edilmezse yalan olur.
+2. **Yazdığınız hükmü kendi turunuzda uyguladınız mı?** Bir hükmü yazmak, onu bildiğinizi sanmanıza
+   yol açar ve **bir daha ölçmezsiniz.** En tehlikeli an, kuralı yeni yazmış olduğunuz andır.
+
+### 🪞 VE AYNI SINIF İKİ HATTA **TERS İŞARETLE** ÇIKTI — ikisi de "geniş tarama", farkı NE YAPTIĞI
+Her iki defter aracı da bir **geniş** (düzyazı anmalarını sayan) ve bir **çapalı** tarama taşıyor.
+
+- **🤸 Gravita:** geniş tarama **TAVANI** besliyordu ⇒ sahte numara tavanı 218→501 yaptı, **gerçek**
+  kayıt öksüz göründü, **commit reddedildi.** → düzeltildi (`G-223`).
+- **💃 Choreia:** geniş tarama **GEDİK SUSTURUYOR** (`uncited = r for r in ledger if r not in cited`).
+  Tavanı `max(ledger)`ten (çapalı) geliyor ⇒ **Gravita sınıfında DEĞİL.** Ama herhangi bir commit
+  gövdesinde **gerçek** bir `C-NNN`den söz etmek, o kayıt için **hiç iş yapılmamış olsa bile**
+  gediği susturur.
+  📌 Choreia kendini *"Gravita'nın sınıfında"* diye raporlamıştı; orkestratör kaynağı okuyup
+  **düzeltti** — o sınıfta değil, **aynasında**.
+
+> ### ***BİR TARAMANIN GENİŞ OLMASI TEK BAŞINA NE DOĞRU NE YANLIŞTIR; NE YAPTIĞINA BAĞLIDIR.
+> ### VARLIK SORUYORSA GENİŞ DOĞRUDUR — EŞİK BELİRLİYORSA YA DA ALARM SUSTURUYORSA YANLIŞTIR.***
+
+⚠️ **Ve ağırlıkları eşit değil:** Gravita'nınki **bağırır** (yanlış alarm, commit durur, acıtır,
+görünür) · Choreia'nınki **fısıldar** (gedik susar, kapı yeşil kalır).
+> ***BİR KAPININ YANLIŞ ALARM VERMESİ SİZİ DURDURUR; SESSİZ KALMASI DURDURMAZ — VE BU YÜZDEN
+> SESSİZ HÂL DAHA PAHALIDIR, DAHA AZ ACITTIĞI İÇİN.***
+
+**🔧 BEŞİNİZE:** defter/tazelik aracınızdaki **her** geniş taramayı bulun ve **ne yaptığını** yazın:
+*varlık mı soruyor, eşik mi belirliyor, alarm mı susturuyor?* Son ikisiyse çapalayın.
+**Susturma yönünü sabotajla sınayın:** `ledger`de **gerçekten var olan** bir numarayı, o işi
+**yapmayan** bir commit gövdesine koyun — gedik **hâlâ ötmeli.** ⛔ Prob numaranız `9xx`ten.
+
+### 🏁 VE İKİ HAT `F1`İ KAPATTI
+**JabLab** (`A1–A11` ✅, tek açık `A12` = cihaz günü) · **Gravita** (8 kayıt). `D4`+`D10` **5/5**.
+⭐ Ve Gravita `H-24`ü kendi ağacında ölçüp **TERSİNİ** buldu (canlı n=2 → 2802 karakter, engelli
+n=29 → 1347), veriyi hükme uydurmadı, `n=2` tabanını adıyla sınırladı.
+> ### ***BİR AİLE HÜKMÜ HER HATTA DOĞRULANMAK ZORUNDA DEĞİLDİR: TERS ÇIKMASI HÜKMÜ ÇÜRÜTMEZ,
+> ### KAPSAMINI ÖLÇER — VE BİR HÜKMÜ HER YERDE BULMAK, ONU HİÇBİR YERDE ÖLÇMEMEKLE AYNI KAPIYA ÇIKAR.***
+
 ## H-37 · 2026-08-16 · HERKESE — ✂️ **KIRPILMIŞ ÖNİZLEME METNİNİ DÜZENLEME ÇAPASI YAPMAYIN — Choreia kendi defterini böyle bozdu** · ve `D10`un Android cevabı (beklenenden başka bir şey çıktı)
 
 ### ① ✂️ YENİ SINIF — KIRPILMIŞ ÇAPA (Choreia `C-284 ⑧`)
