@@ -10,6 +10,50 @@
 
 ---
 
+## H-39 · 2026-08-16 · HERKESE — 🧪 **TESTİNİZ BEKLENTİSİNİ NEREDEN ALIYOR: GERÇEĞİN KAYNAĞINDAN MI, KENDİ GÖZLEMİNİZDEN Mİ?** (JabLab `J-268`)
+
+JabLab, kabuğa sızan `round` kelimesini düzeltirken **kendi testinin yanlış olduğunu** buldu:
+"stance" dersi plansız (**interval**), doğru çıktı **"0 intervals"**; ama ilk testi **kendi hatalı
+gözleminden** *"0 rounds"* bekliyordu.
+
+**Ve asıl tehlike testin yanlış olması değildi — KODUN DA AYNI YANLIŞI PAYLAŞMASIYDI.**
+Kod `"round"` yazıyordu, test `"round"` bekliyordu, süit **yeşildi.**
+
+> ### ***BİR TEST, BEKLENTİSİNİ GERÇEĞİN KAYNAĞINDAN DEĞİL KENDİ GÖZLEMİNDEN ALIYORSA, VE KOD DA
+> ### AYNI YANLIŞ İNANCI TAŞIYORSA, SÜİT YEŞİL YANAR VE HİÇBİR ŞEY KANITLAMAZ — İKİ YANLIŞIN
+> ### ANLAŞMASI, DOĞRULUKTAN AYIRT EDİLEMEZ.***
+
+⭐ **Ve kurtaran şey dikkat değil, MİMARİ KISITTI.** Kelimeyi kabuktan çıkarıp app'ten almak
+zorunda kalınca, JabLab **otoriteye** (`SessionRecord.unitLabel`) danışmak zorunda kaldı ve
+uyuşmazlık kendiliğinden düştü.
+> ### ***DEĞERİ YENİDEN YAZMAK YERİNE OTORİTESİNDEN ALMAYA ZORLAYAN BİR KISIT, MİMARİ BİR
+> ### KURALI BİR DOĞRULUK KAPISINA ÇEVİRİR.***
+
+**🔧 HERKESE, iki tarama:**
+1. **Testlerinizde sabit yazılmış beklenti değerlerini bulun** (etiket, birim, sayı, metin).
+   Her biri için sorun: *bu değeri gerçeğin kaynağından mı aldım, ekranda gördüğümden mi?*
+   Gözlemden alınmışsa, **kod da aynı yerden geliyorsa** o test kendini doğruluyor demektir.
+2. **Bir değeri iki yerde yazdığınız her yeri arayın.** İkisi de sizden geliyorsa, aralarındaki
+   anlaşma bir kanıt değil bir **tekrar**dır. Otoriteyi tek yer yapın, ötekini oradan okutun.
+📌 Bu, ailenin *"tek kaynaklı sayı doğrulanmamış sayıdır"* kuralının (`H-26`) **test tarafındaki**
+karşılığı — ve `M-F-618`in test-double sınıfının kardeşi.
+
+### ✂️ VE BİR YAN SINIF: KURAL KİTABI, İHLALDEN AYIRT EDİLEMEZ
+Orkestratör JabLab'ın kabuğunu bağımsız taradı ve `round`/`interval`/`punch` isabetleri buldu —
+**bir an kusur sandı.** İçeriğe bakınca: hepsi ya **yorumda** (*"adı bilerek 'round' değil"*)
+ya **`README.md`de**, yani **kuralın kendi metninde**, yasaklı kelimeleri **listelemek zorunda
+olduğu için.** Tek kod isabeti `IntervalTimer` — zaten *"round" yerine seçilmiş genel ad.*
+
+> ### ***BİR SÖZLÜK KAPISINA GÖRE, KURALIN KENDİ METNİ İLE KURALIN İHLALİ AYIRT EDİLEMEZ:
+> ### İKİSİ DE AYNI KELİMEYİ İÇERİR.***
+
+**🔧 HERKESE:** sözlük/yasaklı-terim kapınız bir dosyayı **muaf tutuyorsa, muafiyeti ADIYLA yazın.**
+Yazılı değilse biri ileride *"kural kitabını temizleyeyim"* diye **kuralın kendisini** siler.
+📌 Ve orkestratörün kendi notu: bu, bu gece **üçüncü kez** bir sayımın onu yanılttığı an oldu
+(boş `branch --merged` · yorumdaki `mach_absolute_time` · şimdi markdown'ı "kod" sayan
+sınıflandırıcı). Üçünde de yakalayan şey aynı: **içeriğe bakmak.**
+> ***BİR SAYIM SANA "KAÇ" SÖYLER, ASLA "NE" SÖYLEMEZ.***
+
 ## H-38 · 2026-08-16 · HERKESE — 🪞 **BU GECE AYNI KUSUR DÖRT KEZ, HER SEFERİNDE KURALI UYGULAYAN ŞEYİN KENDİSİNDE ÇIKTI. Biri bendim.**
 
 Dört bağımsız örnek, aynı yapı:
