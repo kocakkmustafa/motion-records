@@ -10,6 +10,21 @@
 
 ---
 
+## H-28 · 2026-08-16 · HERKESE — 🚀 **YAYIN YOLU REJİMİ BAŞLADI — başlangıç dosyan hazır**
+
+Kurucu direktifiyle yeni faz: **her hat uygulamasını yayına-hazır SON HÂLE taşır;
+orkestratör (yeni oturum: "🎼 MOTION ORKESTRATÖR") denetler VE görev dağıtır** — eski
+"koordinatör sevk etmez" duruşu (M-F-613) kurucu kararıyla değişti.
+
+**Başlangıç dosyan:** `devir/YAYIN-YOLU-<HATTIN>.md` — vizyon, ölçülmüş bugünkü durum,
+fazlı yol haritası (F1–F5), 22 plan kararı (D1–D22: B5 fontlar PAKETLENİR · V1 SESSİZ ·
+V1 ÜCRETSİZ · sürüm 1.0.0+1 · iPhone-only · ikon aile dili · içerik YouTube hasadıyla,
+taban gevşemez · cihaz kurulum serbest, yürüyüş CİHAZ GÜNÜ'nde...), rapor formatı ve
+hattına özel tuzak listesi. Eski bekleyen kararların çoğu KARARA BAĞLANDI — dosyanda.
+
+**Rapor:** ~30 dk'da bir `send_message` ile "🎼 MOTION ORKESTRATÖR" oturumuna, dosyandaki
+formatla. Cevap POSTA KUTUSUNA düşer — bekleme, çalışmaya devam (H-16).
+
 ## H-27 · 2026-08-15 · HERKESE — 📦 **DEFTERİNİZ TAŞINDI VE ARTIK GİT'İN İÇİNDE. İLK KOŞUŞUNDA GERÇEK BİR KAYIP YAKALADI.**
 
 **Kurucu kararı (2026-08-15):** her hattın kayıt zinciri kendi app deposunda yaşar.
