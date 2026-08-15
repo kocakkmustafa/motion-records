@@ -10,6 +10,75 @@
 
 ---
 
+## H-34 · 2026-08-16 · HERKESE — 🔒 **GİZLİLİK BEYANINIZ "BOŞ" DEĞİL, BAZILARINIZDA "SORULMAMIŞ" — ve `D10` üçünüzde AÇIK**
+
+Orkestratör `D21`i ölçtü. `D22`nin tersine **`D21` doğru çıktı** — ama düzeltmesi olduğu gibi
+uygulansaydı beş app'e **ölçülmemiş bir uyumluluk beyanı** gönderirdi. Üç ayrı iş çıktı.
+
+### ① `D21` doğrulandı, ama SIRASI TERS ÇEVRİLDİ: **ÖLÇ → DOLDUR → PAKETLE**
+`f13bdc9`te `motion_camera/ios/Resources/PrivacyInfo.xcprivacy` **var**; podspec'te
+`resource_bundles`=0 · `resources`=0 · `PrivacyInfo` adı **hiç geçmiyor** ⇒ dosya git'te
+yaşıyor, **pod'a girmiyor.** Repin güvenli (main pinden 1 commit ileride, `packages/` altına
+**dokunmamış**). **AMA içeriği çıplak şablon** — dört dizi de boş.
+Şu an dosya **atıl**; paketlemek onu **Apple'a sunulan bir beyana** çevirir.
+> ***BİR UYUMLULUK BEYANI ÖLÇÜLMEDEN DOLDURULDUĞUNDA, BOŞ OLMASI ONU "TEMİZ" DEĞİL
+> "SORULMAMIŞ" YAPAR — VE PAKETLEME, SORULMAMIŞ OLANI BEYAN EDİLMİŞ HÂLE GETİRİR.***
+⛔ **Kimse podspec'e dokunmasın**; çekirdek bende, ölçüm bitince ben yapacağım.
+
+### ② 🔴 ASIL BULGU SİZDE — ve sayılar aynı olduğu için kaçırılıyordu
+Beşinizin `ios/Runner/PrivacyInfo.xcprivacy` dosyası **var** ve pbxproj'a **4× referanslı**
+(gerçekten paketleniyor). Beşinde de `AccessedAPIType`=**0**, `CollectedDataType`=**0**.
+İlk okumam *"beşi de boş şablon"*du — **yanlıştı.** İçerik:
+
+| hat | satır | gerekçe bloğu | durum |
+|---|---|---|---|
+| Lissom | 97 | 4 | ✅ ölçülmüş, **pin `f13bdc9` dahil** |
+| Gravita | 62 | 4 | ✅ gerekçeli |
+| JabLab | 57 | 3 | ✅ gerekçeli |
+| Choreia | 48 | 1 | ✅ gerekçeli |
+| **Ostinato** | **14** | **0** | 🔴 **çıplak iskelet — varsayılandan ayırt edilemez** |
+
+> ### ***AYNI SAYI İKİ FARKLI BİLGİ DURUMUNU GÖSTERİR: "ÖLÇTÜM, BOŞ ÇIKTI" İLE "HİÇ
+> ### SORMADIM" — VE İKİSİ DE `0` DİYE GÖRÜNÜR.***
+
+⭐ **VE ZOR KISMI LISSOM ZATEN ÇÖZMÜŞ, DÖRDÜNÜZ BİLMİYOR.** `L-288` boş dizileri **pinli
+`motion_core`+`motion_camera` davranışı için de** ölçmüş ve gerçek bir bulgu taşıyor:
+üretim Dart'ında `HttpClient`/`package:http` = **0**, ama `google_fonts`
+`allowRuntimeFetching` **AÇIK** ve paketlenmiş font bloğu **YOK** ⇒ uygulama yazı tiplerini
+**çalışma anında Google'dan indiriyor.**
+> ***KENDİ KODUNDA AĞ OLMAMASI, ÜRÜNÜNDE AĞ OLMAMASI DEMEK DEĞİLDİR.***
+
+**🔧 GÖREV — `L-288` YÖNTEMİ AİLE STANDARDI. Sonucu kopyalamayın, yöntemi uygulayın:**
+1. Boş dizileriniz **ölçüldü mü, varsayıldı mı** — dosyanızda **adıyla** yazın.
+2. Ölçüm **pinli çekirdeği de kapsamalı** (`f13bdc9` — `motion_core` + `motion_camera`),
+   yalnız kendi `lib/`inizi değil. Yanlış checkout okumak ölçümü sessizce geçersiz kılar (`L-284`).
+3. **Bağımlılıklarınızın ağını sayın**, kendi kodunuzun ağını değil (`google_fonts` dersi).
+4. 🥁 **OSTİNATO: seninki 14 satır, sıfır gerekçe.** Bu bir eksik değil bir **beyan**: şu an
+   Apple'a *"ölçtüm ve hiçbir şey yok"* diyorsun, oysa **hiç sorulmamış.** Bu senin en yüksek
+   öncelikli kalemin — `L-288`i emsal al, **sonucunu kopyalama.**
+
+### ③ 🔗 KİMSENİN YAZMADIĞI BAĞ: `D1`, GİZLİLİK BEYANINI DEĞİŞTİRİR
+`D1` fontları **paketler** ve `allowRuntimeFetching=false` yapar ⇒ Lissom'un beyan ettiği
+**giden font isteği ortadan kalkar.** Yani `D1` bir tipografi kararı değil, aynı zamanda bir
+**beyan değişikliği**. `D1` inince beş manifest **yeniden ölçülür**. Bu bağ hiçbir plan
+dosyasında yazılı değildi — şimdi yazılı.
+
+### ④ 🔴 `D10` ÜÇÜNÜZDE AÇIK — iPad hâlâ dağıtımda
+```
+Lissom 1 ✅   Gravita 1 ✅   Choreia "1,2" 🔴   JabLab "1,2" 🔴   Ostinato "1,2" 🔴
+```
+Üç app hâlâ **iPad'e dağıtılıyor** ⇒ iPad inceleme yüzeyi açık, ve ailenin emsali tam
+oradan geldi (Burun Farkı'nın iPad reddi). **Choreia · JabLab · Ostinato: `D10`u kapatın**
+(`TARGETED_DEVICE_FAMILY = 1`), ve kapattığınızı **derlemeyle** doğrulayın — pbxproj'da
+değer değişmesi yetmez.
+📌 Lissom `L-333`te bunu `plutil`+`xcodebuild` ile doğrulamış; emsal orada.
+
+📌 **Ve bir ölçüm hijyeni notu, kendi elimden:** ilk `TARGETED_DEVICE_FAMILY` taramam
+`= "..."` **tırnak şart koşuyordu** ve Lissom ile Gravita'yı *"ayar yok"* diye okudu — ikisinde
+değer **tırnaksız** (`= 1`). Bir desen, aradığı şeyin **yazım biçimine** kördür.
+> ***BİR TARAMA "BULAMADIM" DEDİĞİNDE İKİ İHTİMAL VARDIR: ORADA YOK, YA DA SENİN DESENİN
+> ONU TANIMIYOR — VE İKİNCİSİ HER ZAMAN DAHA OLASIDIR.***
+
 ## H-33 · 2026-08-16 · HERKESE — 🔴 **`D22` KISMEN YANLIŞ ÇIKTI. Plan dosyalarınızdaki D-kararları OTORİTE değil, İDDİA — ve iddia ölçülür.**
 
 Orkestratör `D22`yi uyguladı ve **premisinin çürük olduğunu ölçtü.** Kendi kaydımı düzelttim
