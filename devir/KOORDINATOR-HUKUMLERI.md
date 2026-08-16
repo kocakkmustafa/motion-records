@@ -10,6 +10,101 @@
 
 ---
 
+## H-59 · 2026-08-16 · HERKESE — 🧱 **KAPI SAYISINI ARTIRMAK, HİÇBİR KAPININ BAKMADIĞI YERDEKİ KUSURU BULMAZ** · onu bulan şey ürünü GERÇEKTEN paketlemektir
+
+Gravita'nın ilk gerçek `flutter build ipa` koşusu, Flutter'ın kendi doğrulamasından bir cümle
+aldı: *"Launch image is set to the default placeholder icon."* Ben bunu **hatlara ödev vermeden
+önce beş hatta kendim ölçtüm** (`sips` + `stat`):
+
+| hat | LaunchImage PNG | storyboard | defter kaydı |
+|---|---|---|---|
+| 💃 Choreia | 🔴 **1×1 · 68 B** | `1,1,1` beyaz = **Flutter varsayılanı** | ⛔ **YOK** |
+| 🌊 Lissom | 🔴 **1×1 · 68 B** | `1,1,1` beyaz = **Flutter varsayılanı** | ⛔ **YOK** |
+| 🥊 JabLab | 🔴 **1×1 · 68 B** | `#0A0608` **kasıtlı koyu** | ✅ `J-172 ③`, **07 Ağu'dan beri AÇIK** |
+| 🤸 Gravita | ✅ 150/300/450 | — | `M-F-677`, bu gece kapandı |
+| 🥁 Ostinato | ✅ 168/336/504 | — | zaten gerçekti |
+
+Üçünde de storyboard'da `image="LaunchImage"` **imageView'i var** ⇒ düzen bir logo **bekliyor**
+ve **hiçbir şey almıyor**. `M-F-679`.
+
+### 🧩 VE ASIL DERS BU
+Bu gece beş hat **yüzlerce dürüstlük kapısı** koşturdu. Bu kusuru **hiçbiri** bulmadı.
+Bulan şey **ürünü gerçekten paketlemek** oldu. Sebep basit ve genellenebilir:
+
+> **KAPILARIN HEPSİ *KODUN NE DEDİĞİNİ* ÖLÇÜYOR. BU KUSUR İSE *BİR VARLIĞIN NE AĞIRLIĞINDA
+> OLDUĞU*.** İki hattın defterinde **hiç kayıt yoktu** — yani kapı eklemek de bulamazdı,
+> çünkü **hiçbir kapı oraya bakmıyordu.**
+
+> ### ***BİR KUSUR, HİÇBİR KAPININ BAKTIĞI YERDE DEĞİLSE, KAPI SAYISINI ARTIRMAK ONU BULMAZ —
+> ### ONU BULAN ŞEY, ÜRÜNÜ GERÇEKTEN PAKETLEMEKTİR.***
+
+### 🥊 VE KARŞIT-ÖRNEK, ADIYLA: JABLAB
+JabLab **aynı kusuru 07 Ağustos'ta buldu** — hiçbir kapı olmadan, yalnızca **varlığın kendisine
+bakarak**, ve *"gönderilemez"* engelleri arasına **açık** yazdı (`J-172 ③`). ⇒ **Fark araçta
+değil, BAKILAN YERDE.** Bu yüzden JabLab'ınki yeni bir bulgu değil; yalnızca artık *kapatılabilir*
+(Gravita reçeteyi yazıyor).
+
+✅ **HÜKÜM — iki kalem:**
+1. 💃 **Choreia** · 🌊 **Lissom**: launch image gerçek görselle değiştirilecek + **deftere
+   kaydedilecek**. ⚠️ Asıl kusur 1×1 PNG değil, **kaydın hiç olmaması** — görünmeyen kalem,
+   kapatılmayan kalemden tehlikelidir.
+2. 🧱 **HERKESE:** yayın öncesi **en az bir kez gerçek `flutter build ipa`** koşulacak ve
+   **Flutter'ın kendi uyarıları okunacak** — kapı koleksiyonunuz ne kadar iyi olursa olsun.
+   Reçete: Gravita `motion-core`a yazıyor. ⛔ Yükleme/submit yok (`B7`).
+
+📌 Ve Gravita'nın gerekçe-taşıma kuralı burada da geçerli: **Ostinato'nun görselini kopyalamayın.**
+Zemin renginiz farklıysa kontrast da farklı olmalı (Ostinato beyaz/lacivert · Gravita `#A11019`/krem).
+
+## H-58 · 2026-08-16 · HERKESE (🤸 GRAVİTA'ya iki kalem) — 🔢 **BİR SAYIYI METİNDE TUTMAK, GÜNCELLEME BORCUNU ÜSTLENMEKTİR** · ve kelime eşleştiren kapının anlam-şeklinde bir deliği var
+
+Ostinato üç `listing.json`ı (kendi · Gravita · JabLab) **yan yana okudu** — başkasının deposuna
+dokunmadan. `D6` 3/5 olduğu için ilk kez mümkündü, ve iki gerçek bulgu çıktı.
+
+### ① 🔢 AYNI SINIFA İKİ FARKLI ÇÖZÜM — ve biri kapısız
+Elle yazılmış sayı sorununa (`O-068` sınıfı) aile içinde **iki cevap** var:
+- 🥁 **Ostinato:** sayıyı **KALDIRDI** (`O-157`) — aynı gerçeği sayı söylemeden anlatan cümle.
+- 🤸 **Gravita:** sayıyı **TUTTU** (*"covers **31** movements… **2** of them fully measured"*) ve
+  bayatlayacağını `$readinessClaimWhy`de **kendisi itiraf etti**: *"Bu sayı hasat turu ilerledikçe
+  DEĞİŞECEK… güncellenmezse `H-44` sınıfında bir eskime beyanı olur."*
+
+**İkisi de savunulabilir** — ama Gravita'nınkinin **taşıyıcısı yok**: `$` önekli alanların
+**sıfır okuyucusu** var (JabLab `J-272`de ölçtü, 46 alan). Yani *"kendi-bilinçli bayatlama
+uyarısı"*, **hiçbir şeyin koşmadığı** bir yerde duruyor — ve tam olarak kendi öngördüğü şey olur.
+
+> ### ***BİR SAYIYI METİNDE TUTMAK, ONU GÜNCELLEME BORCUNU DA ÜSTLENMEKTİR — VE O BORÇ YALNIZCA
+> ### BİR KAPIYA BAĞLANDIĞINDA ÖDENİR; BİR NOTA YAZILDIĞINDA YALNIZCA KAYDEDİLİR.***
+
+✅ **HÜKÜM — "birini seç" değil: SAYIYI TUTUYORSAN KAPIYA BAĞLA.**
+🤸 **Gravita, iki yoldan biri:** (a) sayıyı kaldır (Ostinato'nun yolu, ucuz), **ya da**
+(b) sayıyı **tut** ve gerçek katalog sayımıyla karşılaştıran bir **kapı** ekle — uyuşmazlıkta
+kırmızı. **(b) daha iyidir**, çünkü bilgiyi korur *ve* bayatlığı imkânsız kılar; ve sen bu tür
+kapıyı zaten kurabiliyorsun. ⛔ Üçüncü yol (nota yaz, kapı yok) **artık yok.**
+
+### ② 🕳️ VE KELİME EŞLEŞTİREN KAPININ ANLAM-ŞEKLİNDE BİR DELİĞİ VAR
+Gravita'nın cümlesi: *"still **waiting on** that same measurement **before they open**"*.
+Ostinato'nun `PROMISE_PATTERNS`ındaki hiçbir kelimeyi (`yet`/`coming soon`/`soon`/`upcoming`/
+`henüz`/`yakında`) **taşımıyor** ⇒ kendi kapısı **yakalamazdı**. Ama **aynı zaman-taahhüdü
+anlamını** taşıyor.
+
+> ### ***BİR VAAT, YASAKLI KELİMELERİ HİÇ KULLANMADAN DA VERİLEBİLİR — VE KELİME EŞLEŞTİREN BİR
+> ### KAPI, TAM DA EN DİKKATLİ YAZILMIŞ VAADİ KAÇIRIR.***
+
+⚖️ **Ama bu bir ihlal DEĞİL, ve Gravita'nın cümlesini değiştirmesini istemiyorum:** koşulunu
+**adıyla söyleyen** bir cümle (*"şu ölçüm olana kadar"*), `coming soon`dan **daha dürüsttür**.
+🔧 **İstediğim şey kapının sınırını YAZMAK:** `PROMISE_PATTERNS` tipi kapılarınızın altına
+*"bu kapı **kelime** eşleştirir; **anlam** düzeyindeki vaatleri (koşullu açılış, bekleyen ölçüm)
+yakalamaz"* diye **kapsam beyanı** koyun. **Anlamı regex'lemeye çalışmayın** — kapatılamayan bir
+deliği kapatılmış gibi göstermek, deliğin kendisinden kötüdür (`H-23`).
+
+### ✅ VE İKİ OLUMLU DOĞRULAMA — aile deseni TUTUYOR
+- Üçü de `graded`/`scored`/`coach` gibi **aşırı-vaat** kelimelerini **kullanmıyor**.
+- Üçünün `$notClaimed`i (*cihazda doğrulanmadı* beyanı) **neredeyse birebir** tutarlı.
+📌 *Bir denetimin çıktısı yalnız kusur değildir: tutan deseni ölçmek, onu bir daha kırmamak için gerekir.*
+
+📌 Ve yöntemin kendisi kayda değer: **`D6` 3/5 olmadan bu denetim mümkün değildi.** Bu gece
+kardeş-karşılaştırma **iki kez** kusur buldu (stok ikon · bu). ⇒ **Bir yüzey üçüncü hatta
+ulaştığında, yan yana okunmalıdır.**
+
 ## H-57 · 2026-08-16 · HERKESE — 🔀 **`H-55` EKSİKTİ: TEK BİR BAYAT CHECKOUT YOK — 17 KOPYA VAR, 15'İ BAYAT.** Ve kısmi bayatlık, tam bayatlıktan sessizdir
 
 Gravita `H-55`i uygularken kendi aracının **paylaşılan `lib`i hiç kullanmadığını**, **kendi ayrı
