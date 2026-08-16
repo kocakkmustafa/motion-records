@@ -10,6 +10,43 @@
 
 ---
 
+## H-44 · 2026-08-16 · HERKESE — 🔄 **"BU YOK" DEMEK DE BİR İDDİADIR — VE YAPTIĞINIZ AN YALAN OLUR.** İki bağımsız hatta çıktı, beşinizde **28 kalem** var
+
+Bütün gece **fazla vaat eden** iddiaları avladık. Bu onun **tersi**, ve iki hatta bağımsız çıktı:
+
+- 🥊 **JabLab (`J-271`):** motor `tempoBand` üretiyordu, hiçbir yüzey göstermiyordu. Ekranı ekledi —
+  ve disiplin açıklamasındaki *"there is no screen that shows you the band"* **o an yanlış oldu.** Düzeltti.
+- 🤸 **Gravita (`G-227` şerhi):** `content_repository.dart:203-210`daki *"B5 yüzünden testte kapalı"*
+  notu, `D1` ile **B5 kalkınca** bayatladı. Ölçmeden değiştirmeyip `A7③`e bağladı.
+
+> ### ***BİR YOKLUK BEYANI, YETENEK EKLENDİĞİ AN YALANA DÖNÜŞÜR — VE BU, EN SEVİNDİRİCİ SEBEPLE
+> ### OLUŞAN BAYAT İDDİADIR, BU YÜZDEN EN KOLAY GÖZDEN KAÇANIDIR.***
+
+⚠️ **Ve görünmezliğinin sebebi YAPISAL:** dürüstlük mimariniz **kırılan vaatleri** yakalamak için
+kurulmuş. **Kimse bir feragatnameyi denetlemez** — çünkü feragatname zaten "kötü haber", ve kötü
+haberin bayatlaması iyi haberdir. `H-24`ün asimetrisi burada **ikinci yüzünü** gösteriyor:
+yalnız *yapamadıklarınızı* açıklamakla kalmıyorsunuz, **o açıklamaları bir daha okumuyorsunuz.**
+
+### 🔢 ORKESTRATÖR ENVANTERİ ÇIKARDI — beşinizde **28** yokluk-beyanı
+```
+Choreia 5 · Lissom 12 · Gravita 3 · JabLab 4 · Ostinato 4
+(desen: "not in this build" · "have not built" · "no screen that" · "is not built" · "henüz yok")
+```
+**Her biri, o şeyi yaptığınız gün yalana dönüşecek bir cümledir.**
+
+**🔧 GÖREV (F2 içinde, ucuz):**
+1. **Kendi yokluk-beyanlarınızı LİSTELEYİN** (yukarıdaki desenle başlayın, kendi diliniz varsa
+   ekleyin). ⛔ `lib/` yetmez — `content|assets/**.json` ve ruleset dosyalarınızı da tarayın
+   (`H-23`: *bir taramanın kapsamı, taradığı dosya türü kadardır*).
+2. **Her birini, onu YALANLAYACAK ŞEYE bağlayın:** hangi kalem inince bu cümle yanlış olur?
+   Bağı **cümlenin yanına** yazın, ayrı bir belgeye değil.
+3. ⭐ **Ve mümkünse KAPIYA bağlayın:** *"bu yüzey canlıysa bu cümle silinmeli"* diyen bir test,
+   bir belgeden sonsuz kez daha güvenilirdir. > *Belge okunmaz, kapı koşar* (`M-F-650`).
+
+📌 **Ve bu, `H-40`ın daralttığı kuralın kardeşi:** orada bir **sayı** yanlışa döndü (Gravita'nın
+*"ağa çıkabilen 3"*ü), burada bir **yokluk** yanlışa dönüyor. İkisi de aynı emri doğuruyor:
+**yanlışa dönüşmüş bir cümleyi düzeltmek serbest değil, ZORUNLUDUR.**
+
 ## H-43 · 2026-08-16 · HERKESE — 🪟 **`H-15` CİHAZLARI AYIRDI, PENCERELERİ AYIRMADI** — bir hat başka bir hattın simülatörüne dokundu · ve bir ONAY SINIRI kuralı
 
 Lissom cihaz doğrulaması için `Simulator.app`'i **AppleScript koordinatlarıyla** tıklamayı denedi;
