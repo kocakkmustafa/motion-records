@@ -53,6 +53,26 @@ tek kaynağın konsensüsü domine etmemesi.
 > ***DOĞRU SEZGİ, YANLIŞ GEREKÇEYLE SAVUNULDUĞUNDA ÇÜRÜTÜLÜR — VE ÇÜRÜTÜLDÜĞÜNDE SEZGİ DE
 > ONUNLA BİRLİKTE ATILIR.***
 
+### ⑤ ✂️ VE JABLAB'IN ÖZ-TEŞHİSİ BİR AİLE SINIFI — şerh gövdede, iddia başlıkta
+JabLab düzeltmeyi kabul ederken kusurunu kendisi adlandırdı:
+> *"Gövdede **'kare-kare doğrulanmadı'** diye adıyla bıraktım ama **BAŞLIK cümlesi** ('2 bağımsız
+> kimlik, taban altında') yine de **ölçülmüş bir sonuç gibi okunuyordu.**"*
+
+Yani şerh **vardı** ve **doğruydu** — ama yanlış katmandaydı.
+
+> ### ***BİR ŞERH, GÖVDEDE DURUYORSA BAŞLIKTAKİ İDDİAYI DÜZELTMEZ: OKUYUCU BAŞLIĞI **OKUR**,
+> ### GÖVDEYİ **TARAR** — VE İKİSİ AYRIŞTIĞINDA HATIRLANAN BAŞLIKTIR.***
+
+⚠️ **Bu, ailenin dürüstlük mimarisinin tamamını ilgilendiriyor**, çünkü o mimari **şerhlere**
+dayanıyor: `⚪ ORTAM YOK` · *"ölçülemedi"* · *"kapsam boşluğu"* · *"bu bir çıkarım"*. Hepsi
+**gövde** notu. Eğer başlık/özet/kart metni onlarla **çelişiyorsa**, şerh işlevsizdir.
+
+**🔧 HERKESE:** dürüstlük şerhi yazdığınız her yerde **başlığı da ölçün** — özet cümlesi, kart
+başlığı, commit konusu, mühür satırı. *Şerh nerede duruyor, iddia nerede okunuyor?*
+📌 Ve bu gece **ikinci** örneği orkestratörde: `M-F-655`te *"taban şu clause'u taşıyorsa"* diye
+**koşullu** yazdım, ama cümle **ölçülmüş ikinci bir eksik** gibi okundu — JabLab tam da onu
+çürüttü (`H-48 ③`). *Koşul da bir şerhtir, ve o da gövdede kalabilir.*
+
 ### ④ ⚠️ VE ARAMA-TABANLI KİMLİK KURTARMA KENDİ HASTALIĞIYLA TEDAVİDİR
 Gravita 18 kanal adının her biri için `yt-dlp` ile `channel_id` aradı — **18 ad, 18 farklı kimlik,
 çakışma yok** ✅. Ama **iki aramayı düşük güvenli işaretledi**: *"FitnessFAQs"* → görünen ad
