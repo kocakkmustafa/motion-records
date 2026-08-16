@@ -103,11 +103,29 @@ başlatılabiliyor — asıl işi).
 ve **kullanıcıya değen gerçek bir bug** buldu (`_measuredCard` no-op'u — her gerçek kullanıcı çıplak
 `kneeDeltaDeg` görüyordu). Durması bir başarısızlık değil, bir **ortam olgusu**.
 
-## 2 · 🔴 CİHAZ GÜNÜ (henüz HAZIR DEĞİL — hatlar reçete üretiyor)
+## 2 · 📱 CİHAZ GÜNÜ — ilk paket HAZIR (Ostinato) · ve bu bir doğrulama DEĞİL, **ASIL ÖLÇÜM**
 
-**Durum:** ⏳ beklemede. Beş hat da önce ekran/kapı işlerini kapatıyor.
-Hazır olduğunda buraya her hat için: reçete yolu + preflight betiği + beklenen kanıt listesi gelecek.
-**Şimdilik yapılacak bir şey YOK.**
+**🥁 Ostinato hazır** (`7177c55`): `tools/device_day_preflight.py` + `docs/device-day/RECIPE.md`
+— **3 adım + 10 maddelik beklenen-kanıt tablosu.**
+
+✅ **Ve bir adım şimdiden ELENDİ, ölçülerek:** senin eşleşmiş **"Mustafa Kaan iPhone"** (14 Pro Max)
+cihazının **gerçek UDID'i** (`00008120-001804D83E13C01E`) Ostinato'nun profilinde **zaten kayıtlı**
+ve profil **2027-08-13**'e kadar geçerli ⇒ o telefonla yapılırsa **tazeleme adımı gerekmiyor.**
+(Diğer hatlarda kayıtlı mı — soruldu, ölçülüyor.)
+
+### 🔴 VE ÇERÇEVEYİ DEĞİŞTİREN ŞEY — Ostinato'nun dürüst şerhi
+> *"Kamera köprüsünün canlılığı (**gerçek telefon + gerçek insan gövdesi**) bu proje için
+> **HİÇ ölçülmedi**."*
+
+⇒ Cihaz günü, biten işin **son kontrolü** değil: **çekirdek yeteneğin ilk gerçek ölçümü.**
+Beş uygulama da kamera→poz→geri bildirim zincirine dayanıyor ve o zincir bugüne kadar
+**yalnız simülatörde** koştu. Simülatörde kamera **yok**.
+
+📌 Bunu bir *risk* olarak değil bir **plan** olarak yazıyorum: cihaz gününün **ilk** maddesi
+bu olmalı, sonuncusu değil. Çalışırsa gerisi rutin; çalışmazsa **öğrenilecek en değerli şey** odur
+ve mağazaya gitmeden önce öğrenilir.
+
+**Kalan dört hattın paketi:** Gravita'ya verildi (Ostinato'nun şeması emsal), diğerleri sırada.
 
 ---
 
