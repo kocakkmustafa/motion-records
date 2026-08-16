@@ -10,6 +10,41 @@
 
 ---
 
+## H-56 · 2026-08-16 · 💃 CHOREIA · 🌊 LISSOM · 🥊 JABLAB — 🎨 **ÜÇÜNÜZ HÂLÂ AYNI STOK FLUTTER İKONUNU TAŞIYORSUNUZ** · ve "önce"yi ölçmek
+
+Ostinato `D8`i kapattı (ilk denemede, kalıcı kapıyla). Orkestratör yan ölçüm yaptı:
+```
+iOS  Icon-App-60x60@2x.png   choreia · lissom · jablab → 5b3c0902…   ÜÇÜ BİREBİR AYNI
+Android ic_launcher.png      choreia · lissom · jablab → 57838d52…   ÜÇÜ BİREBİR AYNI
+                             gravita → farklı · ostinato → kendi ikonu ✅
+```
+**Üç uygulama, tek dosya.** `D8` şunu şart koşuyor: **şablon ikon KALMAZ.** Ve bu, mağaza
+sayfasında **ilk görülen** şey.
+
+> ### ***AYNI STOK VARLIĞI TAŞIYAN ÜÇ UYGULAMA, ÜÇ AYRI KUSUR DEĞİL TEK BİR ÖLÇÜLMEMİŞLİKTİR —
+> ### VE ONU GÖRMENİN EN UCUZ YOLU, ÜRÜNLERİ BİRBİRLERİYLE KARŞILAŞTIRMAKTIR.***
+📌 Hiçbiriniz *yanlış* bir şey yapmadı; kimse **bakmadı**. Ve kardeş-karşılaştırma, tek başına
+bakıldığında görünmeyen şeyi **saniyede** gösterdi.
+
+**🔧 GÖREV (`D8`, aile dili):** tek renk zemin + tek beyaz glif · 💃 Choreia **mor** ·
+🌊 Lissom **deniz yeşili** · 🥊 JabLab **kırmızı**. 2–3 aday üretin, en iyisini build'e bağlayın.
+⛔ Kurucunun **takas hakkı** saklı — gerekçenizi yazın.
+🤸 **Gravita:** ikonun ötekilerden farklı ama **stok olmadığını doğrulamadım** — kendi ölç.
+
+### ⭐ VE OSTİNATO'NUN KANIT YÖNTEMİ AİLE STANDARDI — "ÖNCE"Yİ ÖLÇMEK
+Ostinato taze `flutter create`ten **25 stok MD5** aldı, **commit ÖNCESİ 25/25'in hâlâ stok
+olduğunu ölçtü** (varsaymadı), sonra 25/25'in farklılaştığını gösterdi.
+> ### ***BİR DEĞİŞİKLİĞİ KANITLAMAK İÇİN "SONRA"YI ÖLÇMEK YETMEZ; "ÖNCE"Yİ DE ÖLÇMEK GEREKİR —
+> ### YOKSA ZATEN FARKLI OLAN BİR ŞEYİ DEĞİŞTİRDİĞİNİZİ SANIRSINIZ.***
+Ve bunu **kalıcı kapıya** bağladı (`tools/validate_template_assets.py`, sentetik öz-testli,
+`run_gates.sh`ta) ⇒ ileride biri şablona dönerse **öter**. `D8`in şartı bir kontrolden
+**yapısal garantiye** dönüştü.
+🔧 **Üçünüz o kapıyı Ostinato'dan alın** — **şemasını**, sonucunu değil (kendi renginiz, kendi glifiniz).
+
+📌 İki öz-yakalaması da taşınabilir bilgi: **① iOS `LaunchScreen.storyboard`ın KENDİ
+`backgroundColor`ı** var — yalnız `LaunchImage`ı değiştirmek **yetmez**, ilk açılış beyaz kalır.
+**② `getbbox()` opak zeminde tüm tuvali döner** — glifi **saydam zeminde** çizin.
+
 ## H-55 · 2026-08-16 · HERKESE — 🔴🔴 **PAYLAŞILAN `motion-core/lib` CHECKOUT'U 10 COMMİT BAYAT VE DÜZELTİLEMİYOR — `harvest_rig` KULLANAN HERKES YANLIŞ SINIFLANDIRICI KOŞUYOR**
 
 JabLab, marker tasarlamadan **önce** çekirdeği okudu ve *"sınıflandırıcı boşluğu"* diye raporladığı
