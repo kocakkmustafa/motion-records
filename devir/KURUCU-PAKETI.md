@@ -81,6 +81,17 @@ mesajla taşıyor. **Çalışıyor ama ölçeklenmiyor.**
 iCloud ayarına dokunmadı — ve bu doğruydu: paylaşılan bir bağlama noktasını tek taraflı
 "düzeltmek", **beş oturumun yarım işini** yok edebilirdi.
 
+### 🔄 GÜNCELLEME (11:40) — **KALICI DEĞİL, ARALIKLI.** Ve bu, aciliyeti değiştiriyor
+💃 Choreia'nın ağacı **kendiliğinden açıldı**; bloke olduğu beş kalemi tamamladı, gates 25/25,
+push'landı. ⇒ Tıkanıklık **kalıcı bir kilit değil, aralıklı bir pencere.**
+
+📌 **Bu iyi haber ama sorunu çözmüyor:** aralıklı bir ortamda **büyük ve sürekli iş** riskli hâle
+geliyor — pencere kapanınca yarıda kalıyor ve **iki kez** yapılıyor. Hatlara *"küçük parçalara
+böl, her doğrulanabilir adımda commit"* talimatı verildi. Bu **çalışıyor**, ama bir **çare değil,
+uyum**.
+
+⇒ Aciliyet: 🔴 *"her şey durdu"* **değil** · 🟠 *"işin maliyeti sessizce artıyor"* **evet**.
+
 ### 📌 VE BUNUN YAYINA ETKİSİ — şimdilik SINIRLI
 Bugünkü ana çıktılar (ikonlar · gizlilik kapısı · cihaz günü paketleri · defter kayıtları)
 **push edilmiş durumda** — kayıp yok. Engellenen şey **yeni iş**, geçmiş iş değil.
@@ -272,6 +283,38 @@ başlıklarıyla, 19 gerçek ders sayısı; *hiçbir satır uydurulmadı*). 🤸
 > (4 kimlik ölçüldü, `Apple Distribution` dâhil), yani hesap kurulu görünüyor.
 > ⚠️ **Ama ölçülmedi**, ve *"muhtemelen çalışır"* bu ailede kabul edilen bir cümle değil.
 >
+> ### 🔴 12:00 — **YUKARIDAKİ "0/5" ÖLÇÜMÜM YANLIŞTI. GERÇEK DURUM ÇOK DAHA İYİ.**
+> Profilleri **tek** dizinde aradım (`~/Library/MobileDevice/…`); macOS onları **iki** yerde
+> tutuyor ve asıl olanı **`~/Library/Developer/Xcode/UserData/Provisioning Profiles`** (15 profil).
+> 🤸 Gravita'nın ön-uçuş betiği **ikisine de** bakıyordu ve beni düzeltti. Yeniden ölçüm:
+>
+> | app | profil | kayıtlı cihaz |
+> |---|---|---|
+> | 💃 Choreia | ✅ geliştirme (13 Ağu) | **4** |
+> | 🤸 Gravita | ✅ geliştirme (13 Ağu) + Store (16 Ağu) | **4** |
+> | 🌊 Lissom | ✅ geliştirme (14 Ağu) | **4** |
+> | 🥁 Ostinato | ✅ geliştirme (13 Ağu) + Store (16 Ağu) | **4** |
+> | 🥊 JabLab | 🔴 **gerçekten yok** | — |
+>
+> ⇒ **4/5 hazır ve SENİN TELEFONUN o dört cihazın içinde.** Yalnız JabLab'ın profili yok, ve
+> `-allowProvisioningUpdates` onu ilk derlemede üretecek.
+> 📌 🥊 **JabLab'ın kendi raporu DOĞRUYDU**; yanlış olan onu *"hiçbiri hiç imzalanmamış"* diye
+> **genellememdi**. Tek dizine bakıp beşi hakkında hüküm kurdum.
+>
+> ### 🪤 VE ÖLÇÜM SIRASINDA GERÇEK BİR KUSUR ÇIKTI — yanlış alarm üreten bir ön-uçuş betiği
+> Yayın provası turu (16 Ağu ~03:40) Gravita ve Ostinato için birer **App Store dağıtım profili**
+> üretti; bu profillerin `ProvisionedDevices` listesi **tasarım gereği boş**. Ön-uçuş betikleri
+> *"en yeni profili seç"* kuralıyla çalıştığı için artık **o boş profili** seçip
+> *"cihazın kayıtlı değil"* diye **yanlış alarm** veriyorlar — **gerçek durum baştan beri temiz.**
+> ✅ Gravita düzeltmeyi yazdı ve **önce/sonra bizzat koşturarak** doğruladı (eski kod ⛔, yeni kod
+> ✅). 🥁 Ostinato'nun betiği **aynı mantığı taşıyor ve aynı koşul onda da CANLI** — ölçüldü,
+> varsayım değil; ona iletildi.
+> 📌 **Senin için anlamı:** cihaz gününde bir betik *"cihaz kayıtlı değil"* derse, **önce
+> düzeltilmiş sürüm mü koşuyor** diye bakılacak. Bu, yakalanmasaydı senin oturumunda
+> **var olmayan bir sorunu** kovalardık.
+
+---
+
 > ### ✅ 10:05 GÜNCELLEME — **ALARM ÖLÇÜLDÜ VE DÜŞTÜ. YAPMAN GEREKEN BİR ŞEY YOK.**
 > Yukarıdaki uyarıyı **ben yükseltmiştim**; ASC API'siyle (salt-okunur) sonuna kadar ölçtüm ve
 > **indiriyorum**:
