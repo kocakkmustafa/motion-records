@@ -227,9 +227,30 @@ başlıklarıyla, 19 gerçek ders sayısı; *hiçbir satır uydurulmadı*). 🤸
 > (4 kimlik ölçüldü, `Apple Distribution` dâhil), yani hesap kurulu görünüyor.
 > ⚠️ **Ama ölçülmedi**, ve *"muhtemelen çalışır"* bu ailede kabul edilen bir cümle değil.
 >
-> 📋 **Yapılacak (bizde, sende değil):** cihaz günü **başlamadan önce**, telefon takılı değilken
-> bile profil oluşturmayı tetikleyecek bir tur denenecek; sonucu buraya yazılacak. Ayrıca aile
-> reçetesine iki tuzak ekleniyor: `-allowProvisioningUpdates` ve
+> ### ✅ 10:05 GÜNCELLEME — **ALARM ÖLÇÜLDÜ VE DÜŞTÜ. YAPMAN GEREKEN BİR ŞEY YOK.**
+> Yukarıdaki uyarıyı **ben yükseltmiştim**; ASC API'siyle (salt-okunur) sonuna kadar ölçtüm ve
+> **indiriyorum**:
+> ```
+> Bundle ID'ler       ✅ 5/5 hesapta KAYITLI (hepsi T5HZGYBWK8 altında)
+> Sertifikalar        ✅ 4 kimlik, Apple Distribution dâhil
+> SENİN TELEFONUN     ✅ "Mustafa Kaan iPhone'u" · iPhone 14 Pro Max
+>                        23 Mayıs 2026'dan beri KAYITLI ve ENABLED
+> Tedarik profilleri  🔴 0 — ama bu OTOMATİK üretilen şey
+> ```
+> ⇒ **Eksik olan tek şey profil**, ve profil `-allowProvisioningUpdates`'in **kendiliğinden
+> yarattığı** şeydir — yeter ki bundle ID + sertifika + **kayıtlı cihaz** olsun. **Üçü de var.**
+> 🎯 Telefonun zaten kayıtlı olduğu için cihaz günü **bir cihaz slotu bile tüketmeyecek**.
+>
+> ⚖️ **Ve profili şimdiden oluşturmuyorum** — bilerek. Ön koşullar ölçüldü, risk düşük; profil
+> yaratmak Apple hesabında **dışa dönük bir mutasyon** olurdu ve ölçüm onu gereksiz kıldı.
+> *Bir riski ölçerek düşürebiliyorsan, onu bir mutasyonla önlemeye çalışma.*
+>
+> 🟡 **Tek ölçülmemiş kalem, adıyla:** Xcode'un bu makinede hesaba **giriş yapmış** olup olmadığı.
+> Sertifikaların varlığı işaret ediyor ama **kanıt değil** (sertifika, çıkış yapıldıktan sonra da
+> keychain'de durur). Cihaz gününün ilk derlemesi bunu net bir hatayla söyler ve düzeltmesi
+> **bir dakikadır** — oturumu yakmaz.
+>
+> 📋 Aile reçetesine yine de iki tuzak ekleniyor: `-allowProvisioningUpdates` ve
 > ***"imza geçti" ≠ "kurulur"*** — profilin **`ProvisionedDevices`** listesi ölçülmeli
 > (wildcard profil bayat olabilir ve telefonu içermeyebilir).
 
