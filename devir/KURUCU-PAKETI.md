@@ -129,6 +129,31 @@ ve her hat kendi ölçümüyle yazacak. **Şu an senden bir şey istemiyor** —
 
 ---
 
+## 5b · 🩺 SAĞLIK/FİTNESS SINIFLANDIRMASI — orkestratör karar verdi, teyidin gerekebilir
+
+Lissom `F2`de eklem-açısı ölçümlerini saklamaya başladı (`attempt_values.jsonl`). Sordu:
+*"bu Apple'ın App Privacy anketinde **Health** kategorisine girer mi, HealthKit kullanmasak bile?"*
+
+**Ölçüldü (orkestratör, bağımsız):** veri **yalnız cihazda** — `getApplicationSupportDirectory()`
+altında düz dosya; `attempt_values`'a dokunan **yedi** dosyanın hepsinde ağ dizgesi **0**,
+üretim `lib/` genelinde `HttpClient` **0** ve `package:http` **0**. Bulut senkronu yok,
+analitik yok.
+
+**KARAR:** Apple'ın tanımında **"collect" = cihazdan DIŞARI aktarmak.** Yalnız cihazda kalan veri
+toplanmış sayılmaz ⇒ **App Privacy anketinde beyan edilecek bir şey yok**, ve
+`NSPrivacyCollectedDataTypes` **boş kalır** — ama artık **ölçülmüş** bir sebeple.
+
+> *Bir verinin sınıfı, ne olduğundan çok NEREYE GİTTİĞİNE bağlıdır: aynı eklem açısı cihazda
+> kalırsa beyan gerektirmez, cihazdan çıkarsa sağlık/fitness sınıfına girer.*
+
+⚠️ **İki şerh, adıyla:**
+1. **iCloud yedeği** kullanıcının kendi yedeğidir, geliştirici erişimi yoktur ⇒ bugünkü okumada
+   toplama sayılmaz. **Bu bir yargıdır** — reason-code yargısı gibi, nihai teyit sende.
+2. **Bu karar bugün doğru.** Yarın paylaşım sayfası / destek paketi / analitik / bulut senkronu
+   eklenirse **beyan sessizce yalan olur.** ⇒ Lissom'a, belgeye değil **koda** bağlanan bir
+   tripwire kurması söylendi: kalıcılık yoluna bağlı **test-zamanı ağ sayacı**, regresyon kapısı
+   olarak. *Belge okunmaz, kapı koşar.*
+
 ## 6 · ✅ KAPANAN KALEMLER (bilgi — yapılacak bir şey yok)
 
 | Kalem | Durum | Kanıt |
