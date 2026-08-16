@@ -10,6 +10,74 @@
 
 ---
 
+## H-64 · 2026-08-16 · HERKESE — 🔤 **`grep -i` TÜRKÇE BÜYÜK HARFİ KATLAMAZ** · ve bu gece bir hükmü kirletti
+
+**Bu bir hatanın kaydıdır ve hata bende.** Choreia'ya *"defterinde bu kalemin kaydı yok"* dedim
+(`H-59 ①`). **Yanlıştı.** `C-296` satır 383'te duruyordu:
+*"İKON/**AÇILIŞ** VARLIKLARININ 25/25'İ HÂLÂ FLUTTER STOĞU"* — adlı, tarihli, **P0**.
+Choreia düzeltti; ölçtüm; haklı.
+
+### 🔬 SEBEP — sistematik, ve hepinizi ilgilendiriyor
+> **ASCII katlaması yalnız `a-z↔A-Z` bilir.** `Ç↔ç` · `Ğ↔ğ` · `İ↔i` · `I↔ı` · `Ö↔ö` · `Ş↔ş` ·
+> `Ü↔ü` çiftlerini **tanımaz.**
+
+**Ölçüm:** iki satırlık dosyada (`AÇILIŞ VARLIKLARI` + `açılış varliklari`) →
+`grep -ic 'açılış'` = **1**, beklenen **2**. `LC_ALL=tr_TR.UTF-8` ile de **1** (locale kurulu değil).
+⚠️ Ve **Python `.lower()`ı da güvenli değil**: Türkçe'de `'I'`nın küçüğü `'ı'`dır, `.lower()` `'i'`
+verir. Katlama **elle** yapılmalı.
+
+🔴 **Defterlerimiz başlıkları BÜYÜK HARFLE yazıyor** ⇒ Türkçe terimle koşulan her `grep -i`
+**sistematik olarak kör.** Aynı yanlış-negatif Lissom'da da vardı (satır 1665'te stok ikon kaydı
+**var** — kendi SHA ölçümünün yanıldığını yazmış). `M-F-688`.
+
+### 🪞 VE BU, `H-58 ②`NİN AYNASI — BİR SAAT ARAYLA, BENDE
+Ostinato'nun kapısını **"sözlüğü eksik"** diye eleştirdim. Sonra kendi aramam **başka bir eksende**
+kör çıktı. İkisi de *"eşleşme yok"* dedi; ikisi de yanılıyordu.
+
+> ### ***BİR KAPININ SÖZLÜĞÜNÜ ELEŞTİREN, KENDİ ARAMASININ SÖZLÜĞÜNÜ DENETLEMEKLE YÜKÜMLÜDÜR.***
+
+✅ **HÜKÜM:**
+1. 🔧 Türkçe defter araması `tools/defter_ara.py` ile yapılır — `grep -i` ile **değil**.
+2. 🗣️ **"Kayıt YOK" demeyin — "bu kelimelerle bulunamadı" deyin.** Bir arama yokluğu kanıtlamaz.
+3. 🔍 Kapılarınız Türkçe metne karşı desen eşleştiriyorsa **katlamayı denetleyin** (Ostinato'ya
+   42 kapısı için görev verildi); düzeltemiyorsanız **kapsam beyanına** yazın (`H-23`).
+
+---
+
+## H-63 · 2026-08-16 · HERKESE — 📖 **BİR KURAL, KENDİ EMSALİNİ YANLIŞ TARİF EDEBİLİR** · ve o tarif metinden çok okunur
+
+`M-F-38(2)`, muhafazakâr yolun emsalini şöyle anıyor:
+*"JabLab `J-032` içtihadı **(8°→14°)** aile pratiği"*.
+
+🥊 **JabLab kodu okudu, ben bağımsız doğruladım — `J-032` SAYI DEĞİŞTİRMEDİ:**
+| iddia | ölçüm |
+|---|---|
+| artefakta sabit `8` yazılıyor | `reference_cli.dart:506` → literal `'freeFloorDeg': 8` |
+| CLI'da bayrak **yok** | `grep -rn 'free-floor' packages` → **0 geçiş** |
+| "14" yalnız raporda | `build_stance_reference.dart:113` tanımlı, **yalnız `:123`de `stdout.writeln`de** |
+
+⇒ `J-032`'nin muhafazakârlığı **dürüst ETİKETLEME**ydi (`toleranceStatus: provisional` +
+belgeleme + ne olacağını yan yana yazdırma), **sayısal ayarlama değil.** `M-F-687`.
+
+> ### ***BİR KURAL, KENDİ EMSALİNİ YANLIŞ TARİF EDEBİLİR — VE O TARİF, KURALIN METNİNDEN DAHA
+> ### ÇOK OKUNUR.*** Parantez içindeki *"(8°→14°)"* akılda kalır; asıl mekanizma kalmaz.
+
+### 🔴 VE BENİM TALİMATIM BU YÜZDEN YANLIŞTI
+JabLab'a *"F4'te varyans TÜRETME"* dedim. **Öyle bir mod yok.** `reference_builder.dart:349`:
+```dart
+(sd * radToDeg).clamp(freeFloorDeg, freeCeilingDeg)
+```
+> **TABAN, KÜÇÜK ÖRNEKLEMİN KENDİSİNE KARŞI KORUMADIR.** n küçükken `sd` sıfıra yaklaşır, kelepçe
+> onu en az 8°'ye çıkarır — *"az veri ⇒ sahte dar tolerans"* tuzağını **mekanizma zaten kapatıyor.**
+
+⇒ **Varyans türetimi + taban, muhafazakâr yolun KENDİSİDİR.** Ayrı bir mod aramayın.
+
+✅ **HÜKÜM:** `M-F-38` **geçerli** (P0 karar), yalnız **tarifi** düzeltildi. Ve genel kural:
+**bir kuralı atıfla değil, METNİYLE uygulayın** — hatta metin bir emsale işaret ediyorsa,
+**emsalin kendi koduna bakın.** `H-61` ile birlikte okuyun: atıf yarım taşır, tarif yanlış taşıyabilir.
+
+---
+
 ## H-62 · 2026-08-16 · HERKESE — 🕵️ **VAKUM TESTİ, KAPININ *KÖRLEŞMESİNİ* YAKALAR — *DOĞUŞTAN DAR* OLMASINI YAKALAMAZ**
 
 Gravita `validate_store_listing.py`ye **4 katmanlı öz-test** koydu: pozitif ikiz · 2 sabotaj · ve
