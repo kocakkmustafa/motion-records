@@ -230,6 +230,45 @@ ve her hat kendi ölçümüyle yazacak. **Şu an senden bir şey istemiyor** —
 **KURUCUDAN İSTENEN:** onay değil, **bilgi**. Bir itirazın varsa (ör. *"font indirmesi kalsın"*)
 şimdi söyle — çünkü `D1` inince beyan da değişiyor.
 
+### ⭐ GÜNCELLEME (2026-08-16 08:10) — **KATEGORİ SAYISI 2 DEĞİL, 3.** Ve senden istenen iş **beşte bire indi**
+
+Gravita beş app'i **salt-okunur** olarak taradı (hiçbir kardeş depoya yazmadı, beşinin de
+`git status`u temiz doğrulandı). Üç şey çıktı:
+
+**① Bilinen ikisi, VARSAYILMADI — beş app'te AYRI AYRI doğrulandı.** `MediaPipeTasksCommon`
+0.10.21 → beş app'te de birebir aynı sonuç, aynı SPEC CHECKSUM. *"Aynı pod, aynı sonuç"* makul
+bir tahmindi; **tahmin ölçüm değildir**, ölçüldü.
+
+**② ⭐ YENİ: ÜÇÜNCÜ KATEGORİ — `UserDefaults`, beş app'te de.**
+```
+permission_handler_apple → LocationPermissionStrategy.m
+  NSUserDefaults standardUserDefaults   → NSPrivacyAccessedAPICategoryUserDefaults  (2 çağrı)
+```
+Bu paket ailede **pinli değil** — üç farklı sürüm çözülmüş (9.5.0 · 9.6.1 · 9.4.10) — ama
+**üçü de aynı iki çağrıyı taşıyor**. Yani *"bizde farklı sürüm var, bize uymaz"* ihtimali
+**önceden kapatıldı**.
+
+**③ 🎁 VE SENİN İŞİN AZALDI — bu iyi haber:**
+> Beş app **aynı üç kategoriyi** taşıyor ⇒ gerekçe-kodu kararı **beş ayrı karar değil,
+> BİR karar, beş kez uygulanır.**
+
+🔍 **Bir "uyuşmazlık" araştırıldı ve ANOMALİ ÇIKMADI:** `Podfile.lock` beş app'te de
+`permission_handler_apple (9.4.8)` diyor ama çözülen Dart sürümleri farklı. Sebep ölçüldü —
+paketin **kendi podspec'i** `s.version = '9.4.8'` diyor; **Dart paketi sürümü ile podspec sürümü
+ayrı numaralardır**, eklenti yazarı bump etmemiş. Flutter'da olağan. **Yanlış alarm olarak bu
+pakete girmedi.**
+
+⚠️ **VE HÂLÂ KAPANMAMIŞ BİR ÖLÇÜM BOŞLUĞU VAR — Gravita kendisi işaret etti:** aranan semboller
+Apple'ın resmî listesiyle **satır satır çapraz doğrulanmadı**. `getattrlist` ailesi gibi
+**iki kategoride birden** geçen semboller kaçmış olabilir. ⇒ *"DiskSpace: hiçbir yerde"* sonucu,
+**o semboller arandıysa** geçerlidir. Kapatılması Gravita'ya verildi.
+> ***ARANMAMIŞ BİR SEMBOLÜN SIFIRI, ÖLÇÜM DEĞİL SESSİZLİKTİR.***
+
+**KURUCUDAN İSTENEN — değişmedi: şu an yapılacak bir şey YOK.** Gerekçe kodunun hangisi olacağı
+(`C617.1` · `35F9.1` · `0A2A.1` …) bir **yargıdır** ve orkestratör **vermedi** — ne o ne de
+hatlar Apple incelemecisi. Sembol listesi tamamlanınca **tek sayfa hâlinde** önüne gelecek:
+üç kategori, her biri için ne yaptığımızın ölçülmüş açıklaması, ve senin seçeceğin kod.
+
 ---
 
 ## 5b · 🩺 SAĞLIK/FİTNESS SINIFLANDIRMASI — orkestratör karar verdi, teyidin gerekebilir
