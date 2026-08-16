@@ -110,6 +110,28 @@ değil — ve bu ayrımı yazmasaydım sayı olduğundan **kesin** okunurdu.
 🟢 **Bugün iş DURMADI:** tur-2 açılışında beş hattın da ağacı okunabildi, altı deponun altısı da
 `origin` ile senkron (0/0). Tur-1'in *"küçük parçalara böl, her doğrulanabilir adımda commit"*
 uyumu **çalışıyor.**
+
+#### 🔻 VE AYNI TURDA KENDİ YORUMUMU DARALTIYORUM (02:33 — **29 → 38**)
+Yukarıda *"eğilim hızlandı"* yazmıştım. Bir saat sonra tekrar ölçtüm: **38.** Ama bu, o cümleyi
+doğrulamıyor — **başka bir açıklamayı** görünür kılıyor:
+
+| açıklama | ne anlama gelir |
+|---|---|
+| **A · ortam bozuluyor** | iCloud giderek daha az yükleyebiliyor ⇒ kötüleşen bir arıza |
+| **B · biz çalıştıkça büyüyor** | her commit git nesnesi yazar, iCloud onları taşıyamaz ⇒ kuyruk **bizim çıktımızla orantılı** |
+
+⏱️ Bu saatte **7 commit** attık (hükümler, ölçümler, düzeltmeler) ve kuyruk **9** arttı.
+**B, A'dan daha iyi uyuyor** — ve ikisini ayırt etmeden *"eğilim hızlandı"* demek, sayıyı
+**olduğundan alarmcı** okutur.
+
+> ***BİR SAYININ ARTMASI, ONU ARTIRAN ŞEYİN KÖTÜLEŞTİĞİ ANLAMINA GELMEZ — ÜRETİMİN
+> ARTTIĞI ANLAMINA DA GELEBİLİR, VE İKİSİ AYNI GRAFİĞİ ÇİZER.***
+
+📌 **Kararın için pratik farkı şu:** A doğruysa beklemek pahalıdır. **B doğruysa beklemek pahalı
+değil — ama üretken her gece kuyruğu büyütür** ve sen ne zaman istersen (A ya da B seçeneğiyle)
+bir kerede boşaltılır. ⚠️ **Hangisi olduğunu ölçmedim**; ayırt edecek ölçüm (kuyruktaki dosyaların
+**kimliği**: aynı dosyalar mı takılı, yoksa hep yenileri mi) yapılmadı ve **yapılmış gibi de
+yazılmadı.**
 ⇒ Karar hâlâ **senin** (§0c'deki A/B/C seçenekleri değişmedi) ve hâlâ **acil değil** — ama
 *"ertelendikçe pahalılaşıyor"* cümlesinin arkasındaki sayı artık **iki kat daha büyük.**
 
