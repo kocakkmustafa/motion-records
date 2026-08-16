@@ -204,7 +204,34 @@ Beş uygulama da kamera→poz→geri bildirim zincirine dayanıyor ve o zincir b
 bu olmalı, sonuncusu değil. Çalışırsa gerisi rutin; çalışmazsa **öğrenilecek en değerli şey** odur
 ve mağazaya gitmeden önce öğrenilir.
 
-**Kalan dört hattın paketi:** Gravita'ya verildi (Ostinato'nun şeması emsal), diğerleri sırada.
+**Paket durumu (09:50):** ✅ **2/5 hazır** — 🥁 Ostinato · 🥊 JabLab (`tools/device_day_preflight.py`
++ 10 maddelik yürüyüş tablosu, **tamamen grep-doğrulamalı** — 3 onboarding kartı gerçek
+başlıklarıyla, 19 gerçek ders sayısı; *hiçbir satır uydurulmadı*). 🤸 Gravita'nınki sırada,
+💃 Choreia · 🌊 Lissom sonra.
+
+> ### 🚨 EK BULGU (09:45) — **CİHAZ GÜNÜNÜN İLK ADIMI BEŞ HATTA DA EKSİK**
+> 🥊 JabLab kendi ön-uçuş betiğini **gerçekten koşturunca** (cihaz bağlı değilken) fark etti:
+> `com.yulalab.jablab` için **tedarik profili yok**. Orkestratör beşini birden ölçtü:
+> ```
+> ~/Library/MobileDevice/Provisioning Profiles/   →  toplam 1 profil (başka bir şey için)
+> choreia · gravita · jablab · lissom · ostinato  →  hepsinde 0
+> ```
+> ⇒ **Bu makinede hiçbir Motion app'i için hiç cihaz-imza turu geçmemiş.**
+>
+> 🎯 **Neden şimdi söylüyorum:** bu, cihaz gününde keşfedilseydi **senin tek oturumunu**
+> yakardı — beş app'in ilki bile telefonda açılmadan zaman giderdi.
+>
+> ✅ **Çözümü biliniyor ve muhtemelen senin bir şey yapmanı gerektirmiyor:**
+> `xcodebuild -allowProvisioningUpdates` ilk cihaz derlemesinde profili **kendisi oluşturur** —
+> yeter ki **Xcode geliştirici hesabına giriş yapmış olsun**. Sertifikalar zaten yerinde
+> (4 kimlik ölçüldü, `Apple Distribution` dâhil), yani hesap kurulu görünüyor.
+> ⚠️ **Ama ölçülmedi**, ve *"muhtemelen çalışır"* bu ailede kabul edilen bir cümle değil.
+>
+> 📋 **Yapılacak (bizde, sende değil):** cihaz günü **başlamadan önce**, telefon takılı değilken
+> bile profil oluşturmayı tetikleyecek bir tur denenecek; sonucu buraya yazılacak. Ayrıca aile
+> reçetesine iki tuzak ekleniyor: `-allowProvisioningUpdates` ve
+> ***"imza geçti" ≠ "kurulur"*** — profilin **`ProvisionedDevices`** listesi ölçülmeli
+> (wildcard profil bayat olabilir ve telefonu içermeyebilir).
 
 ---
 
