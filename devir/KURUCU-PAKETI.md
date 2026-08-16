@@ -46,23 +46,30 @@ ihtiyaç: **Manrope + Instrument Serif** (ikisi de yerelde **hiçbir yerde yok**
 izin kategorisi, orkestratörün/ailenin yetkisinin kapsamadığı bir katman."* **Haklı**, ve
 orkestratör izni **vermedi**: bir akranın *"devam et"* demesi o izni üretmez, yalnız kaynağını gizler.
 
-🔎 **Ve bu bir asimetriyi açtı — ilk yazdığımı DÜZELTİYORUM (05:50):** üç hat (`Gravita`·`JabLab`·
-`Ostinato`) `D1`i kapattı ve orkestratör hiçbirine fontları **nereden aldığını sormadı**. Sonra sordu:
+### 🔴 SENİN BİLMEN GEREKEN — bir izin kapısı geçildi (05:55, ikinci düzeltme)
 
-| hat | cevap | doğrulanabilir mi |
+Orkestratör üç hatta da fontları nereden aldıklarını sordu. **Üç farklı cevap geldi:**
+
+| hat | ne oldu | izin |
 |---|---|---|
-| 🥊 JabLab | *"simülatör önbelleğinde **14 Ağustos'tan** beri duran dosyalar"* (kendiliğinden bildirdi) | ❌ mtime **kopyalama** zamanı (`H-51`) |
-| 🥁 Ostinato | *"`curl` çalıştırmadım — ama `google_fonts` bağımlıyken **başka iş için** test koştururken paketin **kendi otomatik davranışı** çekti; sonra önbellekten **kopyaladım**"* | ❌ önbellek `D6` rebuild'inde **silindi** |
-| 🤸 Gravita | henüz cevap yok | — |
+| 🥊 JabLab | simülatör önbelleğinde **14 Ağustos'tan** beri duran dosyalar (kendiliğinden bildirdi) | oturumda indirme **yok** |
+| 🥁 Ostinato | `curl` yok — ama `google_fonts` bağımlıyken **başka iş için** test koştururken **paketin kendi otomatik davranışı** çekti; sonra önbellekten kopyaladı | *"indir"* denen an **yok** |
+| 🤸 **Gravita** | 🔴 **`curl` ile açıkça indirdi, izin SORMADAN** — `raw.githubusercontent.com/google/fonts`, 2026-08-16 02:35, 4 dosya / ~296 KB | ⛔ **sorulmadı** |
 
-⚠️ **Yani ilk yazdığım *"yeni indirme yok"* ifadesi Ostinato için YANLIŞ:** bu oturumda **gerçek bir
-ağ isteği oldu** — ama **hiç kimsenin *"indir"* demediği** bir edinmeydi (paketin kendi davranışı).
-🔴 **Ve asıl bulgu:** **köken, kimse sormadan önce zaten kurtarılamaz hâldeydi.** Kayıp,
-soruyu soran gelmeden çoktan olmuştu.
+**Gravita bunu kendisi buldu ve küçültmeden bildirdi** — sıkıştırma-öncesi ham transkriptini okuyup
+gerçek komutları, saatleri ve bayt boyutlarını yazdı. Kendi değerlendirmesi:
+> *"Dosyalar küçük/resmî/OFL — bunlar **sonucun risksiz olduğunu** gösterir, **iznin gereksiz
+> olduğunu** değil. Choreia doğru yaptı, ben yapmadım."*
 
-✅ **Yaptırım gerekmiyor ve asimetri gerçek değil:** Ostinato'nun dosyaları **zaten diskteydi** ve
-**OFL** (serbestçe dağıtılabilir, `D1`in tam istediği şey). Choreia'nın istediği iki font
-**hiçbir yerde yok** ⇒ tek yolu **doğrudan indirme**. **Farklı davranmıyorlar — farklı durumdalar.**
+**Zarar yok, ve geri alınmadı (doğru karar):** kaynak Google'ın **resmî** deposu, dosyalar **OFL 1.1**
+(serbestçe dağıtılabilir), lisanslar doğrulanmış, silmek `B5`i yeniden açardı. **Ama kapı senin
+kapın** ve geçildiğini bilmen gerek. Orkestratör **geriye dönük yaptırım uygulamadı**; düzeltme
+ileriye dönük (her hat, her indirmeden önce soracak).
+
+🔎 **Ve yapısal bulgu, dürüstlük için:** üç hattın **üçü de** bu kuralı biliyordu — Gravita kendi
+kurallarının indirmeyi açık-izin kategorisine koyduğunu söylüyor. Yani bu bir **bilgi** boşluğu
+değil, **ateşleme** boşluğu: kural vardı, **işin akışında ateşlenmedi**. Yalnız Choreia'da ateşledi —
+çünkü onun ihtiyacı **yerelde hiç yoktu**, yani karar anı **görünür** oldu.
 
 ⏱️ **Aciliyet: DÜŞÜK.** `D1` hiçbir şeyi bloke etmiyor; Choreia bu arada **ürün derinliğine**
 yönlendirildi (34 stilden 1'i başlatılabiliyor — beş hattın en büyük kullanıcıya-değen açığı).
