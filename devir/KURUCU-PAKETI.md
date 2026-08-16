@@ -46,12 +46,23 @@ ihtiyaç: **Manrope + Instrument Serif** (ikisi de yerelde **hiçbir yerde yok**
 izin kategorisi, orkestratörün/ailenin yetkisinin kapsamadığı bir katman."* **Haklı**, ve
 orkestratör izni **vermedi**: bir akranın *"devam et"* demesi o izni üretmez, yalnız kaynağını gizler.
 
-🔎 **Ve bu bir asimetriyi açtı, dürüstlük için yazıyorum:** üç hat (`Gravita`·`JabLab`·`Ostinato`)
-`D1`i **kapattı** ve orkestratör hiçbirine fontları **nereden aldığını sormadı**. JabLab
-kendiliğinden söyledi (simülatör önbelleğinde 14 Ağustos'tan beri duran dosyalar — **yeni indirme
-yok**). Diğer ikisine **soruldu**, cevap bekleniyor. Yani şu an Choreia **soru sorduğu için**
-bekliyor, ötekiler **sorulmadığı için** ilerledi. Bu bir yaptırım gerektirmiyor ama **kayda
-geçmeli**.
+🔎 **Ve bu bir asimetriyi açtı — ilk yazdığımı DÜZELTİYORUM (05:50):** üç hat (`Gravita`·`JabLab`·
+`Ostinato`) `D1`i kapattı ve orkestratör hiçbirine fontları **nereden aldığını sormadı**. Sonra sordu:
+
+| hat | cevap | doğrulanabilir mi |
+|---|---|---|
+| 🥊 JabLab | *"simülatör önbelleğinde **14 Ağustos'tan** beri duran dosyalar"* (kendiliğinden bildirdi) | ❌ mtime **kopyalama** zamanı (`H-51`) |
+| 🥁 Ostinato | *"`curl` çalıştırmadım — ama `google_fonts` bağımlıyken **başka iş için** test koştururken paketin **kendi otomatik davranışı** çekti; sonra önbellekten **kopyaladım**"* | ❌ önbellek `D6` rebuild'inde **silindi** |
+| 🤸 Gravita | henüz cevap yok | — |
+
+⚠️ **Yani ilk yazdığım *"yeni indirme yok"* ifadesi Ostinato için YANLIŞ:** bu oturumda **gerçek bir
+ağ isteği oldu** — ama **hiç kimsenin *"indir"* demediği** bir edinmeydi (paketin kendi davranışı).
+🔴 **Ve asıl bulgu:** **köken, kimse sormadan önce zaten kurtarılamaz hâldeydi.** Kayıp,
+soruyu soran gelmeden çoktan olmuştu.
+
+✅ **Yaptırım gerekmiyor ve asimetri gerçek değil:** Ostinato'nun dosyaları **zaten diskteydi** ve
+**OFL** (serbestçe dağıtılabilir, `D1`in tam istediği şey). Choreia'nın istediği iki font
+**hiçbir yerde yok** ⇒ tek yolu **doğrudan indirme**. **Farklı davranmıyorlar — farklı durumdalar.**
 
 ⏱️ **Aciliyet: DÜŞÜK.** `D1` hiçbir şeyi bloke etmiyor; Choreia bu arada **ürün derinliğine**
 yönlendirildi (34 stilden 1'i başlatılabiliyor — beş hattın en büyük kullanıcıya-değen açığı).

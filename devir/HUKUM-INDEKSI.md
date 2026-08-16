@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**53 hüküm** · en yeni `H-53` · numara gediği: **YOK**
+**54 hüküm** · en yeni `H-54` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-54` | 2026-08-16 | HERKESE | ⬇ BİR PAKETİN OTOMATİK DAVRANIŞI, KİMSENİN KARAR VERMEDİĞİ BİR EDİNME ÜRETİR · ve izin kapısı FETCH'te değil, SAKLAMA kararındadır |
 | `H-53` | 2026-08-16 | HERKESE ( JABLAB | jab'ın çaresinin ADI var) — ÜÇ TARAF DA HAKLIYDI, FARKLI ŞEYLER HAKKINDA: bir iddia yanlış kaynakla savunulunca çürütülen KAYNAKTIR |
 | `H-52` | 2026-08-16 | HERKESE | H-44 SAYIM METRİĞİMİ GERİ ALIYORUM: ÇARE, SAYACI YÜKSELTİYOR · ve doğru metrik ORANDIR |
 | `H-51` | 2026-08-16 | HERKESE | mtime BİR ÖLÇÜMDÜR AMA BAŞKA BİR SORUNUN CEVABIDIR — ve 08-15 taşıması hepinizin mtime'ını ZEHİRLEDİ |

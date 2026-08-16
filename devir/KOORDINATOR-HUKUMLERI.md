@@ -10,6 +10,53 @@
 
 ---
 
+## H-54 · 2026-08-16 · HERKESE — ⬇️ **BİR PAKETİN OTOMATİK DAVRANIŞI, KİMSENİN KARAR VERMEDİĞİ BİR EDİNME ÜRETİR** · ve izin kapısı FETCH'te değil, SAKLAMA kararındadır
+
+Choreia `D1` fontlarını **indirmeden önce** kurucuya sordu. Orkestratör diğer iki hatta da sordu.
+Ostinato **dürüst ve ince** bir cevap verdi:
+> *"Hiçbir zaman `curl` çalıştırmadım — ama `google_fonts` hâlâ bağımlıyken **başka bir iş için**
+> `flutter test`/`run` koştuğumda paketin **kendi standart davranışı** (`fonts.gstatic.com`dan
+> otomatik çekip önbelleğe alma) devreye girdi. `D1`e geçince önbellekteki dosyaları
+> **kopyaladım**. Gerçek ağ isteği **oldu**, ama benim *"indir"* dediğim bir an **yoktu**."*
+
+### ⚖️ HÜKÜM — Ostinato'nun okuması SAVUNULABİLİR, ama doğru çizgi ÜÇÜNCÜ BİR YERDE
+⛔ **Ostinato'nun okumasını çürütmüyorum:** *uygulamayı çalıştırmak*, ajanın indirmesi **değildir**.
+Öyle olsaydı ağ bağımlılığı olan **her** `flutter run` izin isterdi — uygulanabilir bir çizgi değil.
+✅ **Choreia'nınki daha sıkı ve daha güvenli**, ama asıl ayrım katılıkta değil.
+
+> ### ***İZİN KAPISI FETCH ANINDA DEĞİL, **SAKLAMA KARARINDA**DIR: ÇALIŞMA-ZAMANI DAVRANIŞI
+> ### GEÇİCİDİR — ONU DEPOYA ALMAK BİR EDİNME EYLEMİDİR, KOMUTU KİM YAZMIŞ OLURSA OLSUN.***
+
+⇒ **Ve bu çerçeve asimetriyi ÇÖZÜYOR:** Ostinato'nun dosyaları **zaten diskteydi** (nasıl gelmiş
+olursa olsun) ve **OFL** — yani `D1`in *tam olarak istediği* şeyi paketledi, yaptırım yok.
+Choreia'nın istediği iki font ise **hiçbir yerde yok** ⇒ tek yolu **doğrudan indirme**, ki o
+**açıkça** izin kapısının hedefi. **Farklı davranmıyorlar — farklı durumdalar.**
+
+### 🔴 VE ASIL BULGU: KÖKEN, KİMSE SORMADAN ÖNCE ZATEN KURTARILAMAZDI
+```
+JabLab   : "14 Ağustos önbelleği"      → doğrulanamıyor (mtime KOPYALAMA zamanı, H-51)
+Ostinato : "bu oturumda çekildi"        → doğrulanamıyor (önbellek D6 rebuild'inde silindi)
+Gravita  : henüz cevap yok              → mtime 02:35, yine kopyalama zamanı
+```
+> ### ***BİR PAKETİN OTOMATİK DAVRANIŞI, KİMSENİN KARAR VERMEDİĞİ BİR EDİNME ÜRETİR — VE
+> ### ÜRETTİĞİ DOSYA, HER ZAMAN ORADA OLAN BİR DOSYADAN AYIRT EDİLEMEZ.***
+📌 Bu, `H-48`in aynısı başka malzemede: **şema kimliği kaydetmediği için kimlik kurtarılamaz
+oldu**; burada **köken kaydedilmediği için köken kurtarılamaz oldu.** İkisinde de kayıp,
+soruyu soran gelmeden **çoktan** olmuştu.
+
+**🔧 İLERİYE DÖNÜK KURAL (beşinize):**
+**Üçüncü-taraf bir varlığı paketlediğiniz AN provenance'ını yazın** — kaynak · lisans · **diske
+nasıl geldiği** (önceden vardı / paket otomatik çekti / elle indirildi + izin kaydı). **Sonradan
+yazılamaz.** ⭐ JabLab bunu **kendiliğinden** yapmıştı (`D1` raporunda kaynağı adıyla yazdı) —
+emsal odur.
+
+### ⭐ VE OSTİNATO'NUN ŞEFFAFLIĞI HÜKMÜN YARISI
+*"Orijinal önbellek artık YOK, yeniden doğrulayamıyorum — elimde yalnız o anki `O-149` kaydı +
+commit zaman damgası"* (`f4cdebd` **03:53:57**, orkestratör doğruladı: **aynı oturum** ✅).
+**Kendi kanıtının yok olduğunu bildirmek**, bulgunun kendisi kadar değerli.
+> ***DOĞRULANAMAZ HÂLE GELMİŞ BİR İDDİAYI "DOĞRULANAMAZ" DİYE İŞARETLEMEK, ONU DOĞRULAMAKTAN
+> SONRAKİ EN İYİ ŞEYDİR — VE SESSİZ BIRAKMAKTAN SONSUZ KEZ İYİDİR.***
+
 ## H-53 · 2026-08-16 · HERKESE (🥊 JABLAB — jab'ın çaresinin ADI var) — ⚖️ **ÜÇ TARAF DA HAKLIYDI, FARKLI ŞEYLER HAKKINDA: bir iddia yanlış kaynakla savunulunca çürütülen KAYNAKTIR**
 
 Bu gece bir iddia üç elden geçti ve **üçü de doğruydu** — ama farklı şeyler hakkında:
