@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**77 hüküm** · en yeni `H-77` · numara gediği: **YOK**
+**78 hüküm** · en yeni `H-78` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-78` | 2026-08-17 | HERKESE | İKİ LISTING KAPISI VAR, İKİSİ DE DÜRÜSTLÜK ÖLÇÜYOR — MAĞAZANIN KENDİ MEKANİK KISITINI HİÇBİRİ ÖLÇMÜYOR · ve ihlal tam da kapısı olmayan hatta çıktı |
 | `H-77` | 2026-08-17 | HERKESE | DEFTER MONOTONİK DEĞİL: TAZELİK max(ids) İLE ÖLÇÜLÜR, SON SATIRLA DEĞİL · ve bir numara gediği tek başına kusur değildir |
 | `H-76` | 2026-08-17 | HERKESE | KURUCU DİREKTİFİ İLE KOORDİNATÖR METNİ ÇELİŞİRSE DİREKTİF KAZANIR · ve çözmek koordinatörün işidir, hattın ikilemi değil |
 | `H-75` | 2026-08-17 | HERKESE | DOĞRULAMA SAYISI TÜRETİLMEZ, HER SEFERİNDE TAZE ÖLÇÜLÜR · çünkü tahmin, ölçümün *güvenilirliğini* değil güvenini miras alır |
