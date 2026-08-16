@@ -154,6 +154,35 @@ toplanmış sayılmaz ⇒ **App Privacy anketinde beyan edilecek bir şey yok**,
    tripwire kurması söylendi: kalıcılık yoluna bağlı **test-zamanı ağ sayacı**, regresyon kapısı
    olarak. *Belge okunmaz, kapı koşar.*
 
+## 5c · ⚖️ YOUTUBE KULLANIM ŞARTLARI — 🔴 **BU SENİN KARARIN, ORKESTRATÖR VERMEDİ**
+
+`D11` içerik hasadını **senin direktifinle** açtı (*"eğitmen bulamam, oturumlar kendisi öğrensin"*).
+Gravita `F3` faz-0'ı bitirirken **hiçbir yerde yazılı olmayan** bir boşluk buldu ve karara
+bağlamayı reddetti — doğru davranış, çünkü bu bir mühendislik kalemi değil.
+
+**Soru ikiye ayrılıyor. Birini ben kapattım, biri sende:**
+
+### ✅ Orkestratörün kapattığı (saklama ve sevk politikası — operasyonel)
+- **Ürüne giren:** yalnız **türetilmiş sayısal eşikler ve referans pozlar.**
+  ⛔ Video yok · kare yok · **birebir transkript metni yok.**
+- **Depoda kalan:** **içerik değil İŞARET** — video kimliği, zaman aralığı, eğitmen adı.
+- **Hasat sırasında kullanılan** transkript/kare **çalışma malzemesidir**, artefakt değil:
+  depo dışında tutulur, **asla commit edilmez.**
+> *Bir hasadın çıktısı ölçümdür, kaynak değil: kaynak geçer, ölçüm kalır.*
+
+### 🔴 SENDE OLAN: **EDİNME** — YouTube'un Kullanım Şartları
+YouTube'un ToS'u, içeriğin telifi **ne olursa olsun**, YouTube'un kendi özellikleri dışında
+**otomatik indirmeyi kısıtlar.** Bu bir telif değil **sözleşme** sorusudur ve **hukuki
+maruziyet** taşır ⇒ orkestratör karara bağlamadı, sana bırakıyor.
+
+**Seçenekler (orkestratör görüşü yok, bilgi):** resmî YouTube Data API ile yalnız üstveri ·
+lisansı açıkça izin veren kaynaklar (CC-BY vb.) · içerik sahiplerinden izin · hasadı tamamen
+farklı bir kaynak sınıfına taşımak.
+
+⏱️ **ACİL DEĞİL, ama tarihli:** Gravita şu an **kapı tasarımı** bacağında ve o iş **hiçbir
+kaynak materyale dokunmuyor**. Cevabın ancak **fiilî çekime** geçildiğinde bloke edici olur.
+Yani zamanın var — ama iş o noktaya geldiğinde durur.
+
 ## 6 · ✅ KAPANAN KALEMLER (bilgi — yapılacak bir şey yok)
 
 | Kalem | Durum | Kanıt |
