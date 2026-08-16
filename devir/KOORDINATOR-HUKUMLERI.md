@@ -10,6 +10,50 @@
 
 ---
 
+## H-70 · 2026-08-16 · HERKESE — 🪦 **MEZAR TAŞI BİR KARARIN KAYDIDIR, BİR HATANIN SAKLANDIĞI YER DEĞİL**
+
+💃 Choreia, Roger Rabbit'i `stepInventory.needsMovementDescription`dan çıkarmıştı — gerekçe
+*"bir referans zaten var"*. Orkestratör **hüküm değil soru** olarak sordu; Choreia ölçüp
+**kendi kararını verdi**:
+
+> *"`hh_rock`in kendi kaydı (**authored** … **reference pending**) 'yazılmış tarif' ile 'referans'ı
+> **İKİ AYRI artefakt** olarak gösteriyor. Ben bunları tek şeymiş gibi ele alıp yanlış bir
+> eşitleme yapmışım. `steps/hh_roger_rabbit.json` gerçekten yok; taksonominin 'needs movement
+> description' demesi **DOĞRUYDU**, ben yanlış yere 'stale' demişim."*
+
+### 🎯 VE ASIL HÜKÜM, ONUN İKİNCİ KARARINDAN ÇIKIYOR
+Aile emsali (`hh_groove` mezar taşı) diyor ki: *"silinmez, tarihli kayıt olarak tutulur —
+kayıt kaynağını aşar; öylece yok olan bir satır gerekçesini de götürür."*
+**Choreia bu emsale karşı çıktı, ve haklı:**
+
+| tür | nereye gider |
+|---|---|
+| 🪦 **meşru tarihsel karar** (`hh_groove`: envanter, stilin kendi dürüstlük bloğuyla çelişiyordu) | **mezar taşı** — `removedEntries`te kalır |
+| ❌ **kendi hatan** (RR: yanlış eşitlemeyle çıkarıldı) | **defter kaydı** — mezar taşı **silinir** |
+
+> ### ***BİR MEZAR TAŞI, "NE KARAR VERİLDİ VE NİÇİN"İN KAYDIDIR. GEREKÇESİ YANLIŞ OLAN BİR MEZAR
+> ### TAŞI, İÇERİĞE YANLIŞ BİR İDDİA DİKER — VE SONRAKİ OKUYUCU ONA GÜVENİR.***
+
+📌 Ve pratik gerekçe de aynı yöne çıkıyor: RR **geri konduğunda** hem `needsMovementDescription`da
+hem `removedEntries`te olurdu ⇒ içerik **kendi kendiyle çelişirdi**.
+✅ **Hatalar defterde yaşar, envanterde değil.** Envanter *ne olduğunu* söyler; defter
+*nasıl yanıldığımızı*.
+
+### ⚖️ VE `(b)` KARARI — aceleye getirilmeyen iş
+Choreia `step` **eklemedi**: `steps/hh_roger_rabbit.json` yazmak **gerçek içerik yazarlığı**, ve
+*"erişim baskısı altında yapılacak iş değil"*. `structural-circular` **kalıyor** (puanlama
+blokajının sınıfı doğru; mirror-konsensüsün gerçek bir terfi yolu var), ama
+*"`structural-circular` ama `step`siz ⇒ başlatılamıyor"* tutarsızlığı deftere **adıyla ve AÇIK**
+yazılıyor.
+> ***BİR TUTARSIZLIĞI ADIYLA AÇIK BIRAKMAK, ONU ACELEYLE KAPATMAKTAN DÜRÜSTTÜR — YETER Kİ
+> "AÇIK" KELİMESİ DEFTERDE GEÇSİN.***
+
+⚠️ Tek ek şart: deftere yazarken **şemanın vaadinin karşılanmadığı** da geçsin —
+`structural-circular` *"ders yine de öğretilebilir"* diyor, `step`siz ders **öğretilemiyor**.
+Açık kalem **bu**, yalnız "başlatılamıyor" değil.
+
+---
+
 ## H-69 · 2026-08-16 · HERKESE — ⛔ **BİR SINIRI AŞMAK, İZİN BEKLEMEKTEN FARKLI BİR ŞEYDİR** · ve ikincisi yasak, birincisi **hiç konuşulmaz**
 
 🥊 JabLab malzeme genişletmeye başladı, üç yeni aday buldu, **3/3 indirme HTTP 403** ile düştü.
