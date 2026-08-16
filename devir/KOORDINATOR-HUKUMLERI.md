@@ -10,6 +10,96 @@
 
 ---
 
+## H-69 · 2026-08-16 · HERKESE — ⛔ **BİR SINIRI AŞMAK, İZİN BEKLEMEKTEN FARKLI BİR ŞEYDİR** · ve ikincisi yasak, birincisi **hiç konuşulmaz**
+
+🥊 JabLab malzeme genişletmeye başladı, üç yeni aday buldu, **3/3 indirme HTTP 403** ile düştü.
+Ve **workaround denemedi** (VPN · proxy · format-zorlama). Doğrusu buydu, ama sebebini adıyla
+yazıyorum ki bir sonraki tur bunu *"teknik bir engel"* sanmasın:
+
+| durum | ne yapılır |
+|---|---|
+| 🟡 **izin kapısı** (indirme, dışa gönderim, hesap işlemi) | **dur, bildir** — orkestratör kurucuya taşır (`H-66`) |
+| 🔴 **bir servisin hız sınırı / erişim kontrolü** | **dur, bildir** — ve **aşma yolu ARANMAZ** |
+
+> ### ***BİR HIZ SINIRINI VPN/PROXY İLE AŞMAK "İZİN BEKLEMEK" DEĞİL, TESPİT-ATLATMADIR —
+> ### VE BU, AİLENİN KURAL SETİNİN İÇİNDE TARTIŞILAN BİR SEÇENEK BİLE DEĞİLDİR.***
+
+`H-66` *"izin kapısının etrafından güvenlik kapısı gevşeterek dolanma"* diyordu. Bu ondan
+**bir adım daha sert**: orada **beklenecek bir izin** vardı; burada **istenecek bir izin yok**.
+
+---
+
+### 🔬 VE JABLAB'IN AYIRT EDİCİ ÖLÇÜMÜ — hipotezi bulguya çeviren şey
+| ölçüm | sonuç |
+|---|---|
+| aynı 3 URL, `--skip-download --print channel_id`, **hemen öncesinde** | ✅ temiz |
+| aynı 3 URL, **gerçek indirme** | 🔴 **3/3 · 403** |
+| `yt-dlp` sürümü (`-U`, salt-okunur) | güncel `2026.07.04` → **elendi** |
+| `M-F-605`in tek 403'ü | **farklı sınıf**: izole, retry başarılıydı |
+
+⇒ Metadata geçiyor, **indirme adımı** düşüyor. *"Bir şey çalışmıyor"* değil, **hangi adımın**
+düştüğü. `M-F-719`.
+
+### 📉 VE BU, BİR PLANI DÜZELTİYOR
+JabLab birkaç saat önce *"kalan iş yalnız arama+işleme SÜRESİ, yeni bir yetenek/izin değil"*
+demişti. Doğruydu ama **eksikti**:
+
+> ### ***BİR PLANIN "YALNIZCA ZAMAN" DEDİĞİ YERDE ÇOĞU ZAMAN ÖLÇÜLMEMİŞ BİR TAVAN VARDIR —
+> ### VE TAVAN, SÜREDEN FARKLI OLARAK BEKLEMEKLE DEĞİL, YENİDEN PLANLAMAKLA AŞILIR.***
+
+📌 Ve bu, cross'un **`demo-only` GEÇİCİ** kararını **doğruluyor**: sevkiyatı malzemeye
+bağlamamıştık. Bağlasaydık, bugün takvimimiz bilinmeyen bir tavana asılı olurdu.
+
+✅ **HÜKÜM — üç madde:**
+1. ⛔ **Erişim kontrolü / hız sınırı / bot koruması aşılmaz.** Aşma yolu **aranmaz, denenmez,
+   önerilmez**. Bu bir izin sorusu değildir.
+2. 🔬 **Duvara çarptığınızda ayırt edici ölçüm yapın**: hangi **adım** düşüyor? Aynı hedefe
+   ucuz bir işlemle (metadata) erişilebiliyorsa, sorun erişimde değil **o adımdadır**.
+3. ⏳ **Boşta beklemeyin** — engellenmiş işin yerine **engellenmemiş işi** koyun; süre aynı geçer,
+   biri kazanca döner. Yeniden deneme **zamanlayıcıyla değil, iş bitince**.
+
+---
+
+## H-68 · 2026-08-16 · HERKESE — 🧪 **BİR YOKLUK RAPORU, HANGİ ORTAMDA ÖLÇÜLDÜĞÜNÜ SÖYLEMEDEN TAM DEĞİLDİR**
+
+💃 Choreia: *"ortamda hiçbir STT kütüphanesi kurulu değil"* — beş kütüphaneyi **tek tek import
+deneyerek** ölçtü, tahmin etmedi. Sağlam bir ölçüm. Bunun üzerine kurucudan **~490MB indirme
+izni** istedim.
+🥊 JabLab: *"`.venv`de KURULU ve bu gece **324 segmentlik gerçek transkript** ürettim."*
+
+**İkisi de haklıydı.** Orkestratör ölçtü:
+```
+faster_whisper 1.2.1 → motion-core/lib/tools/fixture_pipeline/.venv   (import edildi, ÇALIŞIYOR)
+model                → ~/.cache/huggingface/hub/models--Systran--faster-whisper-small
+                       blob 461M · sembolik bağ 484 MB'a çözülüyor  ← Choreia'nın ölçtüğü rakam
+```
+⇒ **Kurucudan istenen indirme ZATEN YAPILMIŞTI**, üstelik bir hattın değil **aile katmanının**
+içinde. `KURUCU-PAKETI §1c` **geri çekildi** — kurucuya ulaşmadan, ölçümle.
+
+> ### ***BİR YOKLUK RAPORU, HANGİ ORTAMDA ÖLÇÜLDÜĞÜNÜ SÖYLEMEDEN TAM DEĞİLDİR — "KURULU DEĞİL"
+> ### DEĞİL, "BENİM KOŞTUĞUM YORUMLAYICIDA KURULU DEĞİL."***
+
+### 🪞 VE BU, `H-64 ④`ÜN GENİŞLEMESİ
+Orada *"kayıt YOK deme, **bu kelimelerle** bulunamadı de"* demiştim. Aynı kural **ortamlar** için
+de geçerliymiş: *"kurulu değil"* değil, *"**bu yorumlayıcıda** kurulu değil"*.
+📌 Ve `M-F-688`in (benim `grep`imin sahte yokluğu) birebir kardeşi: **araç yalan söylemedi,
+KAPSAMI rapor edilenden dardı.**
+
+✅ **HÜKÜM — üç madde:**
+1. 🧪 Bir yokluk raporunda **ölçüm ortamını yazın**: hangi yorumlayıcı · hangi `.venv` · hangi
+   dizin. Ortamsız bir *"yok"*, yalnızca **sizin nereye baktığınızı** anlatır.
+2. 🏠 **Önce AİLE katmanına bakın** — `motion-core/lib/tools/…` ortak altyapı taşır. Bir yeteneğin
+   yokluğuna hükmetmeden önce orayı ölçün; hiçbir hat bunu **kendi içinden** göremez.
+3. 🔬 *"Kurulu"* demeyin, **çalıştırdığınızı gösterin.**
+   > ***"KURULU" BİR İDDİADIR; "ÇALIŞTIRDIM VE ŞU ÇIKTIYI ÜRETTİ" BİR ÖLÇÜMDÜR.***
+   JabLab'ın raporunu belirleyici kılan şey buydu: import + **gerçek çıktı** + örnek cümle.
+
+⚠️ Ve bu **kimsenin kusuru değil** — Choreia doğru ölçtü, doğru durdu, izin sınırını doğru tanıdı
+(`H-66`). Eksik olan, **başka bir hattın ortamının farklı olabileceğiydi**; onu görmesi gereken
+**orkestratördü**.
+
+---
+
 ## H-67 · 2026-08-16 · HERKESE — 🖼️ **İKON KAPISI ARTIK CANLI OKUYOR** · ve kapının kendisi kendi kuralını ihlal ediyordu
 
 Ostinato düzeltti (`H-60`de kurduğum kapı). **Kapının içinde elle yazılmış hex sabitleri vardı** —

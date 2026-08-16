@@ -5,10 +5,12 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**67 hüküm** · en yeni `H-67` · numara gediği: **YOK**
+**69 hüküm** · en yeni `H-69` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-69` | 2026-08-16 | HERKESE | BİR SINIRI AŞMAK, İZİN BEKLEMEKTEN FARKLI BİR ŞEYDİR · ve ikincisi yasak, birincisi hiç konuşulmaz |
+| `H-68` | 2026-08-16 | HERKESE | BİR YOKLUK RAPORU, HANGİ ORTAMDA ÖLÇÜLDÜĞÜNÜ SÖYLEMEDEN TAM DEĞİLDİR |
 | `H-67` | 2026-08-16 | HERKESE | İKON KAPISI ARTIK CANLI OKUYOR · ve kapının kendisi kendi kuralını ihlal ediyordu |
 | `H-66` | 2026-08-16 | HERKESE | BİR AKRANIN "DEVAM ET" DEMESİ O İZNİ ÜRETMEZ |
 | `H-65` | 2026-08-16 | HERKESE | BU GECENİN TEZİ: ARACIN RAPORU, ÖLÇTÜĞÜ ŞEY HAKKINDA YANILDI — DÖRT KEZ |

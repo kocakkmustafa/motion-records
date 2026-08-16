@@ -103,7 +103,31 @@ başlatılabiliyor — asıl işi).
 ve **kullanıcıya değen gerçek bir bug** buldu (`_measuredCard` no-op'u — her gerçek kullanıcı çıplak
 `kneeDeltaDeg` görüyordu). Durması bir başarısızlık değil, bir **ortam olgusu**.
 
-## 1c · ⬇️ İKİNCİ İNDİRME İZNİ — Choreia · konuşma-metne (STT) kurulumu · **BEKLİYOR**
+## 1c · ~~⬇️ İKİNCİ İNDİRME İZNİ~~ → 🟢 **GERİ ÇEKİLDİ — SENDEN BİR ŞEY İSTENMİYOR**
+
+> ### ✅ 09:35 · **ÖLÇÜMLE ÇÖZÜLDÜ, İZİN GEREKMİYOR**
+> Bu bölüm senden **~490MB'lık bir indirme izni** istiyordu. **İstemiyor artık** — çünkü indirme
+> **zaten yapılmış**, üstelik bir hattın değil **ailenin ortak katmanında**:
+> ```
+> faster_whisper 1.2.1 → motion-core/lib/tools/fixture_pipeline/.venv   (import edildi, çalışıyor)
+> model                → ~/.cache/huggingface/hub/models--Systran--faster-whisper-small
+>                        blob 461M · sembolik bağ 484 MB'a çözülüyor
+> ```
+> **Nasıl çıktı:** 💃 Choreia *"hiçbir STT kütüphanesi kurulu değil"* diye ölçmüştü (beş
+> kütüphaneyi tek tek import deneyerek — sağlam bir ölçüm). 🥊 JabLab ise *"bende kurulu ve bu
+> gece 324 segmentlik gerçek transkript ürettim"* dedi. **Çelişkiyi orkestratör ölçtü: ikisi de
+> haklıydı** — Choreia'nın koştuğu yorumlayıcıda gerçekten yok, aile venv'inde var.
+>
+> 📌 *Bir yokluk raporu, hangi ortamda ölçüldüğünü söylemeden tam değildir.* Hiçbir hat kendi
+> başına bunu göremezdi; **aile katmanına bakmak gerekiyordu.**
+>
+> **SENDEN İSTENEN: hiçbir şey.** Bu bölüm yalnızca kaydın tam olması için duruyor — bir izin
+> istendi ve **sana ulaşmadan ölçümle ortadan kalktı**. Roger Rabbit'in yolu açık; kalan iş
+> zaman, izin değil.
+
+<details><summary>📄 Talebin özgün metni (arşiv — artık geçerli değil)</summary>
+
+### ~~⬇️ Choreia · konuşma-metne (STT) kurulumu~~
 
 `1a`daki font iznyle **aynı sınıf**, aynı kapı. Choreia **kendi durdu** ve şunu yazdı:
 *"indirme kurucunun doğrudan izni gerektiriyor, **orkestratörün teşviki yeterli değil**"* — ve
@@ -153,6 +177,8 @@ manifestiyle **hip-hop** referansına sızmıştı.
 > *İki ayrı kapıdır; birini beklemek, ötekini açmanın gerekçesi değildir.* (`H-66`)
 
 **SENDEN İSTENEN:** yalnız **evet/hayır**. Cevap gelmezse yol otomatik olarak `demo-only` geçici.
+
+</details>
 
 ---
 
