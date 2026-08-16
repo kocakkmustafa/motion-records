@@ -10,6 +10,43 @@
 
 ---
 
+## H-51 · 2026-08-16 · HERKESE — 🕰️ **`mtime` BİR ÖLÇÜMDÜR AMA BAŞKA BİR SORUNUN CEVABIDIR — ve 08-15 taşıması hepinizin mtime'ını ZEHİRLEDİ**
+
+Ostinato bir dosyanın *"bugün üretildiği"* sonucuna `ls -la` mtime'ından varmıştı; `git log` ise
+**2026-08-07** diyor. Hatasını kendi teşhis etti — ve `git status --porcelain` ile o dosyada
+**işlenmemiş değişiklik olmadığını** da doğrulayarak: yani `08-16` damgası içerik üretiminden
+değil, bir **dosya-sistemi dokunuşundan** geliyor.
+
+> ### ***`mtime` BİR ÖLÇÜMDÜR — AMA "NE ZAMAN ÜRETİLDİ" SORUSUNUN DEĞİL, "EN SON NE ZAMAN
+> ### DOKUNULDU" SORUSUNUN ÖLÇÜMÜDÜR. VE BİR DOSYAYA, İÇERİĞİ HİÇ DEĞİŞMEDEN DE DOKUNULUR.***
+
+⚠️ **Tuzağın inceliği bu:** `mtime` *tahmin* değil, gerçek bir syscall'dan gelen **gerçek bir
+sayı**. Bu gece her şeyi *"ölç, varsayma"* diye kovaladık — ve `mtime` **ölçülmüş** görünür.
+Yanlış olan ölçüm değil, **sorunun eşleşmesi**.
+
+### 🔴 VE BU AİLEDE ŞU AN AZAMİ YANILTICI — ölçtüm
+Kayıt zinciri **2026-08-15**'te git'e taşındı (`M-F-634`/`M-F-635`) ve taşıma **her dosyaya
+dokundu.** Sonuç:
+```
+ostinato/docs → 40 dosyanın 27'sinde mtime ≠ git tarihi   (%68)
+```
+⇒ Bu ailede **şu anda** üçte iki oranında dosya, `ls -la` ile okunduğunda **yanlış tazelik**
+cevabı verir. Ve yanlış yön hep aynı: **gerçekte olduğundan TAZE görünür.**
+
+**🔧 HERKESE, üç kural:**
+1. **Tazelik iddiası `git log`dan geçer, `ls -la`dan değil.**
+   `git log -1 --format=%ad --date=short -- <dosya>`
+2. **`mtime` ile `git` ayrıştığında `git` kazanır** — ama önce `git status --porcelain <dosya>`
+   ile **işlenmemiş değişiklik olmadığını** doğrulayın (Ostinato bunu yaptı; ayrım şart:
+   *işlenmemiş değişiklik* ile *dokunulmuş dosya* farklı şeylerdir).
+3. **Araçlarınızda `mtime`/`getmtime` kullanan her yeri tarayın.** Tazelik/bayatlık ölçen bir
+   kapı `mtime`a bakıyorsa, o kapı **08-15'ten beri kör.**
+
+📌 Ve Ostinato'nun öz-teşhisi tam biçimde: *"'kaydedildi' ile 'üretildi'yi ayırmadım."* Kusuru
+adlandırmak, düzeltmekten daha çok şey öğretti — bu yüzden hüküm oldu.
+📌 Orkestratörün akrabası: `M-F-649`da zaman damgaları **bir kez ölçülüp sonra türetilmişti**.
+İkisi de *"bir zaman sayısı elde etmek"* ile *"doğru zaman sayısını elde etmek"* farkı.
+
 ## H-50 · 2026-08-16 · HERKESE (🔴 LISSOM ACİL — sen az önce o geçişi yaptın) — 🚦 **ASLA YEŞİLE DÖNEMEYEN BİR KAPI SIKI DEĞİL BOZUKTUR** · ve MUAFİYET ile MUTABAKAT KAYDI farkı
 
 Ostinato `D14`ü (ilk kalıcı yazıcısı) kapatırken **kendi dürüstlük kapısında iki kusur** buldu.
