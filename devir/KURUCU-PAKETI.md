@@ -43,6 +43,51 @@ açıyor. **Paketteki dakika-başına en yüksek getirili kalem budur.**
 
 ⏱️ ~10 dakika · ⛔ başka hiçbir şeye bağlı değil (`ToS`a da, font iznine de).
 
+## 0c · 🔴 **iCLOUD SENKRONU HATLARI DURDURDU** — 08-12'de işaretlenmişti, bugün **aktif engel**
+
+> Bu, paketteki tek **altyapı** kalemi ve **senin kararın** — 08-12 portföy denetiminde zaten
+> *"kurucu kararı"* diye işaretlenmişti. O gün **gizli bir risk**ti; bugün **iş durduruyor.**
+
+### 📊 ÖLÇÜLEN (2026-08-16 10:30 · 🤸 Gravita buldu, orkestratör bağımsız doğruladı)
+```
+brctl status | grep -c 'needs-upload'   →  17          ← 08-12 denetiminde 12 idi
+hata                                     →  CKInternalErrorDomain:1013 · "Saving asset failed"
+konum                                    →  .git/objects (dosya adları 37 karakter hex = git nesnesi)
+en eski takılı yükleme                   →  90+ saat
+```
+📈 **12 → 17: eğilim kötüleşiyor**, ve takılanlar **git nesneleri** — yani senkron, depoların
+iç yapısını taşıyamıyor.
+
+### 🚧 BUGÜNKÜ ETKİSİ — artık teorik değil
+`~/Documents/YULAlab-AI/` altındaki **her yol** bazı oturumlarda `Interrupted system call` (EINTR)
+veriyor — düz `ls` bile. 💃 **Choreia** ve 🤸 **Gravita** oturumları **hiçbir dosyayı okuyamıyor**;
+Choreia yarım yazılmış bir dosyayla, Gravita iki görev başlamadan durdu.
+⚠️ Ve iki ayrı kod yolu (`Bash` alt-süreci **ve** doğrudan dosya okuma) **aynı** şekilde düşüyor
+⇒ araç sorunu değil, **bağlama noktası**.
+
+🤔 **Bilmediğimiz şey, adıyla:** orkestratör oturumu **aynı ağacı hâlâ okuyup yazabiliyor**.
+Neden bazı oturumların düşüp diğerinin düşmediğini **çözemedik** — ve tahmin yürütmüyoruz.
+🟢 Geçici çare olarak orkestratör **okuma/yazma kanalı** oldu: tıkanan hatlara dosya içeriklerini
+mesajla taşıyor. **Çalışıyor ama ölçeklenmiyor.**
+
+### 🧭 SEÇENEKLER — fiyatlarıyla, **karar sende**
+| yol | kazanç | bedel |
+|---|---|---|
+| **A · Workspace'i iCloud DIŞINA taşı** | kalıcı çözüm; `git` doğal hızına döner | büyük taşıma, **beş canlı oturum** varken riskli; yolların hepsi değişir |
+| **B · `~/Documents` için iCloud senkronunu kapat** | hızlı, tersine çevrilebilir | **tüm makineyi** etkiler, yalnız Motion'ı değil; başka projelerin yedeği durur |
+| **C · Dokunma, bekle** | sıfır risk | eğilim **kötüleşiyor** (12→17) ve **şu an iş duruyor** |
+
+⛔ **Hiçbirini kendiliğinden yapmıyoruz.** Gravita `brctl reset`/`evict` denemedi, dizin taşımadı,
+iCloud ayarına dokunmadı — ve bu doğruydu: paylaşılan bir bağlama noktasını tek taraflı
+"düzeltmek", **beş oturumun yarım işini** yok edebilirdi.
+
+### 📌 VE BUNUN YAYINA ETKİSİ — şimdilik SINIRLI
+Bugünkü ana çıktılar (ikonlar · gizlilik kapısı · cihaz günü paketleri · defter kayıtları)
+**push edilmiş durumda** — kayıp yok. Engellenen şey **yeni iş**, geçmiş iş değil.
+⇒ **Acil değil, ama ertelendikçe pahalılaşıyor.**
+
+---
+
 ## 1a · ⬇️ TEK SATIRLIK ONAY — Choreia font indirme izni (`D1` için, BEKLİYOR)
 
 > **Soru:** Choreia `D1`i tamamlamak için **6 dosya indirebilir mi?**
