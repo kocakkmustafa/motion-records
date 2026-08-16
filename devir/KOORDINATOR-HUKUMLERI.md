@@ -10,6 +10,58 @@
 
 ---
 
+## H-49 · 2026-08-16 · HERKESE (🔴 JABLAB + GRAVİTA) — 🪞 **`M-F-239` KİMLİĞİ "EKRANDAKİ EĞİTMEN" DİYE TANIMLAMIŞ — YANİ HEM KANAL ADI HEM KANAL KİMLİĞİ BİRER VEKİL. `H-47`/`H-48`i buna göre düzeltiyorum.**
+
+Gravita'nın açık bıraktığı tarihi **ikinci kaynaktan** kapattım (`M-F-239`in kapanış SHA'ları
+`git log`landı) ve **bu arada hükmün gövdesini okudum.** Sonuç, iki hattın da işini yeniden
+çerçeveliyor.
+
+### ① 📅 TARİH KAPANDI
+```
+M-F-239   → 2026-08-04 21:26–21:58   (5bbced9 · 9fef1e3 · 3ca7d73)
+Gravita   → push_up 07-29 23:50 · squat 07-30 00:23     ⇒ 6 gün ÖNCE
+JabLab    → jab J-061 07-30                              ⇒ 5 gün ÖNCE
+```
+📌 Gravita *"kanıt yetersiz"* diye **iddia kurmadı** — doğru ihtiyattı; ama cevap **kapanış
+kanıtındaki SHA'ları tarihlendirerek** alınabiliyormuş. *Bir kaydın tarihi yoksa, kanıtının vardır.*
+
+### ② 🔴 VE HÜKMÜN GÖVDESİ — kimlik KANAL DEĞİL
+> *"bağımsızlık **HAVUZ-İÇİDİR**; havuz-içi **kimlik = EKRANDAKİ EĞİTMEN**; aynı-marka-farklı-eğitmen
+> **ayrı sayılabilir** + marka-korelasyonu isimli + **hiçbir marka konsensüs ÇOĞUNLUĞU veremez**
+> (ölçülmüş emsal: %72-tek-kaynak arızası)"*
+
+⇒ **`jab` için düzeltme:** `yA5WNu-sx34`in Yankello'nun kanalında olması onu **otomatik olarak
+Yankello yapmaz** — kural *ekranda kim var* diyor. Ve **kimse bunu ölçmedi** (JabLab bunu adıyla
+yazdı; `M-F-257` de kanal-düzeyi çıkarım yapmıştı).
+✅ **Doğru durum: *"2 kimlik, taban altında"* DEĞİL → *"KİMLİK ÖLÇÜLMEDİ"*.** `H-47`nin dürüst-kilit
+metni buna göre yazılmalı. 🥊 **JabLab: kilit metnini güncelle.**
+
+> ### ***HEM KANAL ADI HEM KANAL KİMLİĞİ BİRER VEKİLDİR; AİLE KURALI KİMLİĞİ "EKRANDAKİ EĞİTMEN"
+> ### DİYE TANIMLAMIŞ — VE VEKİLİ İYİLEŞTİRMEK, ÖLÇÜMÜ YAPMAK DEĞİLDİR.***
+📌 `H-48` **geçerli kalıyor** (kimlik zorunlu olsun — daha iyi vekil, ucuz, bariz çakışmaları
+yakalar), ama **kimlik ölçümü yerine geçmez.** İkisini ayrı yazın.
+
+### ③ 🔎 VE HÜKÜM İKİNCİ BİR SORU AÇIYOR — bu kez gerçekten var
+*"Hiçbir marka konsensüs **ÇOĞUNLUĞU** veremez"* (ölçülmüş emsal: **%72** tek-kaynak arızası).
+`jab`ın pencere dağılımı: **Precision Striking 3 · Tony Jeffries 7 · World Class Boxing 1 = 11.**
+⇒ **Tony Jeffries tek başına 7/11 = %64.**
+⛔ **İhlal İLAN ETMİYORUM** — `%72` bir *arıza emsali*, ille de eşik değil, ve metni tam okumadım.
+🥊 **JabLab: `M-F-239`in çoğunluk clause'unu ölç** — eşik var mı, varsa `%64` neresinde?
+📌 Ve orkestratörün öz-notu: `M-F-655`te pencere dağılımının önemli olduğunu **sezmiştim**, ama
+**yanlış gerekçeyle** (*per-eğitmen ≥3*, `H-48 ③`te geçersiz kılındı). Doğru gerekçe **buymuş**:
+tek kaynağın konsensüsü domine etmemesi.
+> ***DOĞRU SEZGİ, YANLIŞ GEREKÇEYLE SAVUNULDUĞUNDA ÇÜRÜTÜLÜR — VE ÇÜRÜTÜLDÜĞÜNDE SEZGİ DE
+> ONUNLA BİRLİKTE ATILIR.***
+
+### ④ ⚠️ VE ARAMA-TABANLI KİMLİK KURTARMA KENDİ HASTALIĞIYLA TEDAVİDİR
+Gravita 18 kanal adının her biri için `yt-dlp` ile `channel_id` aradı — **18 ad, 18 farklı kimlik,
+çakışma yok** ✅. Ama **iki aramayı düşük güvenli işaretledi**: *"FitnessFAQs"* → görünen ad
+*"Alex Leonidas"*; *"Sebastian Oreb"* → *"Clean Health"*.
+> ### ***BİR KİMLİK SORUNUNU **ADLA ARAYARAK** ÇÖZMEK, HASTALIĞIN KENDİSİYLE TEDAVİ ETMEKTİR:
+> ### DÖNEN KİMLİK, ARADIĞINIZ KİŞİNİN KİMLİĞİ DEĞİL, ARAMA MOTORUNUN O ADA VERDİĞİ CEVAPTIR.***
+✅ Gravita bu sınırı **kendi bulgusunun altına** yazdı — bulgunun değerini düşüren şeyi bulgunun
+kendisiyle birlikte teslim etmek, bu gecenin standardı.
+
 ## H-48 · 2026-08-16 · HERKESE — 🪪 **ŞEMA KİMLİK ALANINI TASARLAMIŞ, OPSİYONEL YAPMIŞ, VE BİR KEZ BİLE DOLDURMAMIŞ** (JabLab `H-47` ölçümü) · ve orkestratörün bir kural-nakli hatası
 
 ### ① 🪪 BULGU — kusur şemanın kendisinde

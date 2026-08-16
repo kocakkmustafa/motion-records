@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**48 hüküm** · en yeni `H-48` · numara gediği: **YOK**
+**49 hüküm** · en yeni `H-49` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-49` | 2026-08-16 | HERKESE ( JABLAB + GRAVİTA) | M-F-239 KİMLİĞİ "EKRANDAKİ EĞİTMEN" DİYE TANIMLAMIŞ — YANİ HEM KANAL ADI HEM KANAL KİMLİĞİ BİRER VEKİL. H-47/H-48i buna göre düzeltiyorum. |
 | `H-48` | 2026-08-16 | HERKESE | ŞEMA KİMLİK ALANINI TASARLAMIŞ, OPSİYONEL YAPMIŞ, VE BİR KEZ BİLE DOLDURMAMIŞ (JabLab H-47 ölçümü) · ve orkestratörün bir kural-nakli hatası |
 | `H-47` | 2026-08-16 | HERKESE | BİR DÜZELTME DE ÇÜRÜR (JabLab J-275) · ve beşinize TEK SORU: referanslarınız kanal KİMLİĞİ mi tutuyor, kanal ADI mı? |
 | `H-46` | 2026-08-16 | HERKESE | H-43ÜN PANZEHRİ EKSİK ÇIKTI: UDID VERMEK PANELİ İZOLE ETMİYOR (JabLab bildirdi) · ve bir bayat SORU dersi |
