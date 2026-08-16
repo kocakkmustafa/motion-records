@@ -182,10 +182,45 @@ ve mağazaya gitmeden önce öğrenilir.
 
 ---
 
-## 3 · 🎨 İKON ONAYI (`D8`) — henüz HAZIR DEĞİL
+## 3 · 🎨 İKON ONAYI (`D8`) — **3/5 HAZIR** · ve bu bölüm bayattı, düzeltildi
 
-**Durum:** ⏳ hatlar 2–3 aday üretecek (tek renk zemin + tek beyaz glif; Choreia mor · Lissom deniz
-yeşili · Gravita turuncu · JabLab kırmızı · Ostinato lacivert). Takas hakkı kurucuda.
+> 🔻 **ÖNCEKİ HÂLİ YANLIŞTI (08-16 09:10 düzeltmesi).** Burada *"hatlar 2–3 aday üretecek"* ve
+> bir renk planı yazıyordu (*Choreia mor · Lissom deniz yeşili · Gravita turuncu · JabLab kırmızı ·
+> Ostinato lacivert*). **Beşten üçü gerçekle uyuşmuyordu**, ve süreç de anlatıldığı gibi
+> yürümedi — daha iyi bir şey oldu. Aşağısı **ölçülmüş** durumdur.
+
+### ✅ ÜÇ HAT GERÇEK İKONUNU ÜRETTİ — her biri TEK aday, ama **kapıdan geçmiş**
+| hat | ikon | plan ne demişti |
+|---|---|---|
+| 🤸 Gravita | **`#AA262F`** kızıl | ~~turuncu~~ ❌ |
+| 🥁 Ostinato | **`#252B45`** koyu lacivert | lacivert ✅ |
+| 🥊 JabLab | **`#610001`** koyu kırmızı | kırmızı ✅ |
+| 💃 Choreia | ⏳ **stok** — teması gül pembesi `#F0A6BD` | ~~mor~~ ❌ |
+| 🌊 Lissom | ⏳ **stok** — teması leylak-gül `#B0748F` | ~~deniz yeşili~~ ❌ |
+
+### 🔬 VE ARADA BİR ÖLÇÜM ARACI DOĞDU — `D8`in sorusunu değiştiriyor
+Beş markanın **dördü 351°→26° arasında, 35°'lik tek bir renk yayında** çıktı (OKLCH'de ölçüldü;
+hex karşılaştırması bu soruyu **cevaplayamaz**, sRGB'de eşit sayısal adım eşit algısal adım
+değildir). ⚠️ En kötüsü: JabLab'ın ilk vurgusu Gravita'nın ikonundan **1,4°** uzaktaydı —
+mağaza ızgarasında **ayırt edilemez**.
+
+🔧 `tools/ikon_ayirt_kapisi.py` yazıldı, gerçek `AppIcon` dosyalarını **canlı okuyor**.
+Kural: `ΔH≥60°` **veya** (`ΔL≥0.15` **veya** `ΔC≥0.08`).
+✅ **Şu anki aile durumu: 0 çarpışma.** JabLab çakışmayı kendi canlı token'ıyla (`JColors.deep`)
+**açıklık ekseninde** çözdü — renk icat etmedi.
+
+### 🙋 SENDEN İSTENEN — üç ikon için **beğeni**, teknik onay değil
+Renkler **ayırt edilebilirlik açısından ölçüldü ve geçti**; sana kalan **estetik takas hakkı**.
+Bir rengi değiştirmek istersen kapıdan geçirilir, çarpışma çıkarsa söylenir. Choreia ve Lissom
+sıraya girdi.
+📌 **Gliflerin hiçbiri senin marka kalemini taşımıyor** — hatlar kendi tasarım token'larından
+üretti. Marka kimliği hakkın duruyor.
+
+### 🖼️ VE İLİŞKİLİ BİR AÇIK KALEM — açılış ekranı markası
+🥊 JabLab açılış görselini **bilerek TAM SAYDAM** üretti: Flutter'ın 1×1 şablon kusuru kapandı,
+**ama marka glifi konmadı** — çünkü `J-174` o hakkı **sana** bırakmıştı. Slot hazır, boyutlar
+doğru. Bir glif verirsen yerine geçer; vermezsen açılış ekranı **düz renk** kalır (Apple'ın kendi
+yönergeleri zaten sade açılış ekranı önerir — bu bir kusur değil, bir tercih).
 
 ---
 
