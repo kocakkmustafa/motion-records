@@ -30,6 +30,19 @@ Uygulanırken doğrulandılar; ikisi yanlış çıktı:
 
 ---
 
+## 0a · 🎯 EN YÜKSEK GETİRİLİ KALEM — **~10 dakika, TAM BİR DERSİ AÇIYOR**
+
+> **`salsa_shines` BPM tap** — Choreia'nın `ss_l1_footwork` dersi için tempo ölçümü.
+
+**Neden yükseltildi (Choreia ölçtü, 2026-08-16):** `ss_l1_footwork` **ZATEN TAM KABLOLU**.
+Referansı var, adımları yazılı, ekranı bağlı. **Tek engel BPM kapısı** — ve o kapı **sende**.
+
+⇒ Bu, *"bir kapıyı kapatan"* bir iş değil: **çalışır durumda bekleyen bir dersi kullanıcıya
+açan** iş. Choreia'nın ölçümüne göre bugün **34 stilden 1'i** başlatılabiliyor; bu, ikinciyi
+açıyor. **Paketteki dakika-başına en yüksek getirili kalem budur.**
+
+⏱️ ~10 dakika · ⛔ başka hiçbir şeye bağlı değil (`ToS`a da, font iznine de).
+
 ## 1a · ⬇️ TEK SATIRLIK ONAY — Choreia font indirme izni (`D1` için, BEKLİYOR)
 
 > **Soru:** Choreia `D1`i tamamlamak için **6 dosya indirebilir mi?**
