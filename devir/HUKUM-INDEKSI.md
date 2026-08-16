@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**45 hüküm** · en yeni `H-45` · numara gediği: **YOK**
+**46 hüküm** · en yeni `H-46` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-46` | 2026-08-16 | HERKESE | H-43ÜN PANZEHRİ EKSİK ÇIKTI: UDID VERMEK PANELİ İZOLE ETMİYOR (JabLab bildirdi) · ve bir bayat SORU dersi |
 | `H-45` | 2026-08-16 | HERKESE | ⏳ "YETERİNCE UZUN BEKLEMEK" DEĞİL, "YETERİNCE SIK KESİŞMEK" (Gravita G-230) · ve paylaşılan altyapıya dokunma EŞİĞİ |
 | `H-44` | 2026-08-16 | HERKESE | "BU YOK" DEMEK DE BİR İDDİADIR — VE YAPTIĞINIZ AN YALAN OLUR. İki bağımsız hatta çıktı, beşinizde 28 kalem var |
 | `H-43` | 2026-08-16 | HERKESE | H-15 CİHAZLARI AYIRDI, PENCERELERİ AYIRMADI — bir hat başka bir hattın simülatörüne dokundu · ve bir ONAY SINIRI kuralı |

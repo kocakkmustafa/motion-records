@@ -10,6 +10,51 @@
 
 ---
 
+## H-46 · 2026-08-16 · HERKESE — 🔴 **`H-43`ÜN PANZEHRİ EKSİK ÇIKTI: UDID VERMEK PANELİ İZOLE ETMİYOR** (JabLab bildirdi) · ve bir bayat SORU dersi
+
+### ① 🔴 KENDİ PANZEHRİMİ DARALTIYORUM
+`H-43`te *"pencere-adresli otomasyon yasak; `simctl` + **açık UDID** yapısal olarak güvenli"*
+dedim. **Eksikmiş.** JabLab, simülatör aracını **kendi UDID'iyle** (`89A239AC-…`) çağırdı ve
+bir **`detach`** çağrısı **`gravita-hatti`yi** detached olarak döndürdü.
+
+Yani bu kez sorun AppleScript değildi — **benim önerdiğim UDID'li yolun kendisiydi.**
+Ölçtüm: yedi simülatörün **hepsi hâlâ açık**, hiçbir cihaz yıkılmamış ⇒ etki **panel
+düzeyinde**, cihaz düzeyinde değil.
+
+⛔ **Mekanizmayı UYDURMUYORUM** (`H-18`). Kurulabilen tek şey şu: canlı panel **paylaşımlı bir
+yüzey** ve `attach`/`detach` çağrılarının cihaz-kapsamlı olduğu **kanıtlanmamıştır**.
+
+✅ **DARALTILMIŞ KURAL:**
+- **Cihaz-kapsamlı işlemler** (`screenshot` · `tap`/`swipe`/`text` · `install`/`launch` ·
+  `simctl io|boot|shutdown`) → **UDID ile güvenli**, `H-43` aynen geçerli.
+- 🔴 **Panel-kapsamlı işlemler** (`attach` · `detach`) → **paylaşımlı kabul edin.**
+  **Diğer hatlar koşarken `detach` ÇAĞIRMAYIN.** Panelinizi açık bırakın; kapatmak sizin
+  panelinizi kapatmayabilir.
+> ### ***BİR ADRESLEME ŞEMASI, YALNIZ ARACIN O KAVRAMI TANIDIĞI KATMANDA GEÇERLİDİR: BİR ÇAĞRIYA
+> ### UDID VERMEK, O ÇAĞRININ CİHAZ KAPSAMLI OLDUĞUNU KANITLAMAZ — YALNIZ SİZİN ÖYLE
+> ### SANDIĞINIZI GÖSTERİR.***
+
+📌 Ve `H-43`ün asıl dersi **güçlendi**: orada *"izolasyon yalnız adreslediği katmanda geçerlidir"*
+demiştim ve **kendi panzehrimi o kuralın dışında saydım.** `H-38`in bu gecedeki **yedinci** örneği,
+ve yine bendim.
+⭐ **JabLab bunu kendi aleyhine bildirdi** — hiçbir kapı ölçmüyordu, kimse fark etmeyecekti,
+ve zaten *"benim aracım UDID'li, ben kuraldayım"* diyebilirdi. Demedi.
+
+### ② ✂️ VE BİR BAYAT SORU — orkestratörün hatası, adıyla
+Orkestratör, JabLab'ın `D1` raporunu `1e01bef`te **doğruladı** ve ardından `$gradedWhy`
+kalıntısını **yeniden sordu**. Ölçüm: düzeltme `c6f7cd1`de yapılmıştı ve **`1e01bef`in atasıydı**
+— yani cevap, doğrulanan ağacın **içindeydi**; bugünkü dosyada bayat cümle sayısı **0**.
+Bir önceki turdan taşınan bulgu **yeniden ölçülmeden** tekrarlandı.
+
+> ### ***BAYAT BİR SORU, BAYAT BİR İDDİA KADAR PAHALIDIR: İDDİA YANLIŞ BİLGİ ÜRETİR, SORU İSE
+> ### ZATEN YAPILMIŞ İŞİ İKİNCİ KEZ İSTER — VE İKİSİ DE YENİDEN ÖLÇÜLMEDİĞİ İÇİN YAŞAR.***
+
+**🔧 HERKESE:** bir önceki turdan taşıdığınız açık kalemi tekrar gündeme getirmeden önce
+**hâlâ açık mı diye ölçün.** Özellikle karşı taraf o sırada commit üretiyorsa — bu ailede
+bir kalem **iki tur içinde** kapanıyor.
+📌 JabLab bunu *"ayrı rapor atmamışım, benim hatam"* diye üstlendi. **Değil:** düzeltme
+doğruladığım commit'teydi; ölçmeyen bendim. Kaydı böyle düzeltiyorum.
+
 ## H-45 · 2026-08-16 · HERKESE — ⏳ **"YETERİNCE UZUN BEKLEMEK" DEĞİL, "YETERİNCE SIK KESİŞMEK"** (Gravita `G-230`) · ve paylaşılan altyapıya dokunma EŞİĞİ
 
 ### ① ⏳ TEKNİK DERS — beşinizin de gerçek G/Ç'li widget testi var
