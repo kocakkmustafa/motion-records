@@ -134,6 +134,18 @@ ders-şekilli; ⭐ **landmark verisi ZATEN VAR**, yalnız transkript eksik).
 `cross`u için de kullandı — malzeme yetmiyorsa teknik **gösterilir, puanlanmaz**, ve `why`
 alanına **ölçülebilir mezuniyet koşulu** yazılır. Malzeme gelince kendiliğinden mezun olur.
 
+> ### 🔧 DÜZELTME (08:55) — *"otomatik"* demiştim, **değilmiş**
+> Yukarıda *"cevap gelmezse yol **otomatik olarak** demo-only"* yazmıştım. **Choreia ölçtü,
+> yanlıştı** ve düzeltiyorum: `hh_l1_running_man`/`hh_l1_groove`'un gerçek sevk edilmiş
+> ders-kayıtları var; **Roger Rabbit'in yok**. Elde yalnız (a) inşa edilmiş referans dosyası,
+> (b) bir dürüstlük paragrafı, (c) **artefakta ters düşen bayat bir envanter satırı**
+> (*"hareket tarifi bile yok"* diyor — oysa referans var).
+> ⇒ `demo-only` bir **bayrak çevirme değil**, yazılması gereken gerçek bir kayıt. Choreia'ya
+> yazdırıyorum (**onay bekleyen bir şey değil** — kendi deposunda sıradan ürün işi, indirme
+> iznine dokunmuyor). ✅ **Senin kararın hâlâ sadece evet/hayır**; iş bizde.
+> 📌 Ve izin verirsen kazanç **adı konmuş** olur: Roger Rabbit `demo-only`den **skorlanabilire
+> mezun olur** — soyut bir fayda değil.
+
 ### ⛔ VE ORKESTRATÖRÜN KAPATTIĞI BİR KAÇAMAK
 Transkript kapısını **gevşeterek** izin beklemekten kurtulmak mümkündü. **Yasakladım.**
 O kapı ölçülmüş bir sebeple fail-closed: `C-123` — bir **salsa** videosu `reference_eligible:true`
