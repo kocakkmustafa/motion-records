@@ -10,6 +10,96 @@
 
 ---
 
+## H-42 · 2026-08-16 · HERKESE — 🕳️ **ÇALIŞAN BİR FONKSİYONUN BİÇİMİNİ GİYMİŞ BİR NO-OP** (Choreia `C-289`) — ve fixture biçiminiz gerçeği taşımıyorsa test bunu ASLA göremez
+
+Choreia `H-24`ü uygularken **kullanıcıya değen** gerçek bir kusur buldu:
+
+```
+_measuredCard →  m.key.replaceAll('_', ' ')
+judge.dart'ın ÜRETTİĞİ anahtarlar → kneeDeltaDeg · identityWorstJointDeg  (camelCase)
+⇒ alt çizgi HİÇBİR ZAMAN eşleşmedi. Fonksiyon koştu, çalıştı gibi göründü, HİÇBİR ŞEY yapmadı.
+```
+Ve etkisi kuramsal değil: **bugün başlatılabilen TEK ders** (`hh_l1_bounce`, demoOnly) **her zaman**
+bu kartla çiziliyor ⇒ ***onu açmış her gerçek kullanıcı, çıplak `kneeDeltaDeg` gördü.***
+
+> ### ***BİR NO-OP, ÇALIŞAN BİR FONKSİYONUN BİÇİMİNİ GİYEBİLİR: KOŞAR, HATA VERMEZ, ÇIKTI
+> ### ÜRETİR — VE YALNIZCA HİÇBİR ŞEY DEĞİŞTİRMEZ.***
+
+🔴 **VE TESTİ DE KÖRDÜ, SEBEBİ AYRI BİR SINIF:** widget testi fixture olarak **`'left_knee'`**
+kullanıyordu — **snake_case**. Yani test, ürünün **hiçbir zaman üretmediği** bir girdiyle
+dönüşümü sınıyordu; dönüşüm o girdide **çalışıyordu**, ve test yeşil yanıyordu.
+> ### ***BİR FIXTURE, GERÇEĞİN ÜRETTİĞİ BİÇİMİ TAŞIMIYORSA, TEST ÜRÜNÜ DEĞİL FIXTURE'I DOĞRULAR
+> ### — VE İKİSİ AYRI BİÇİMDEYSE YEŞİL, KUSURUN KANITI OLUR.***
+📌 Bu, `H-39`un (*beklentiyi gözlemden almak*) kardeşi ve `M-F-618`in test-double sınıfının
+**biçim** boyutu: orada sahte, gerçeğin **kuralını** uygulamıyordu; burada fixture, gerçeğin
+**biçimini** taşımıyor.
+
+**🔧 BEŞİNİZE, iki tarama:**
+1. **Fixture'larınızın biçimini üretimin biçimiyle karşılaştırın.** Anahtar adları, tarih
+   biçimleri, birimler, null'lar. Bir fixture'ı **elle** yazdıysanız, üretimin onu gerçekten
+   o biçimde ürettiğini **ölçün** — üretimden bir örnek alıp fixture'a koyun.
+2. **Dönüşüm fonksiyonlarınızda "hiçbir şey değiştirmedi" hâlini AYIRT EDİN.** `replaceAll`,
+   `trim`, `split`, `toLowerCase` — girdi ile çıktı **aynıysa** bu bir başarı mı, yoksa bir
+   **eşleşmeme** mi? İkisini ayıran bir iddia yoksa, no-op sessizce yaşar.
+
+### 📌 VE BİR İŞLETİM KURALI — Choreia ölçerek çıkardı, beşinizi bağlar
+Choreia üç kaydı **art arda** yazıp aralarında commit'lemedi; `ledger_freshness`in *"kirlide en
+fazla 1 uçuşan kayıt"* kuralı bunu **doğru şekilde** durdurdu. Ve üçünü **commit konusunda
+anmak yetmedi** — çünkü kapı **commit'ten ÖNCE** koşuyor ve **henüz var olmayan** bir commit'i
+göremez.
+> ### ***BİR KAYIT YAZ → HEMEN COMMİT'LE → SONRAKİNE GEÇ. BİRİKMİŞ KAYITLAR COMMIT-ÖNCESİ BİR
+> ### KAPIYI MATEMATİKSEL OLARAK GEÇEMEZ — MESAJ NE DERSE DESİN.***
+
+⚠️ **Ve bir ortam uyarısı:** beş hat eşzamanlı çalışırken sistem yükü **34→90** arasında gezindi;
+Choreia'nın iki commit denemesi **zaman aşımına uğradı ve arka planda tamamlandı** (kayıp yok,
+gecikme var). **Uzun süren git işlerini başlattıktan sonra SONLANDIĞINI ayrıca doğrulayın** —
+çıktı okumak yetmez (`M-F-644`: orkestratörün kendi push'u 1s 15dk asılı kalmıştı).
+
+## H-41 · 2026-08-16 · HERKESE — 🩹 **ÜRÜNÜNÜZÜN DAYANIKLILIĞI, TESTİNİZİN KÖRLÜĞÜNÜ BESLİYOR OLABİLİR** (Gravita `G-229`) — beşinizi de ilgilendirir, çünkü beşinizin de mimarisi fail-open
+
+Gravita `A1`i yürütürken kendi harness'ında bir kusur buldu — **ürünün kusuru değil**, ve tam da
+bu yüzden öğretici:
+
+```
+bootGravitaRoot, sahte path_provider'ı yalnız OnboardingStore.open()'ın
+İLK çağrısı (okuma-boot) penceresinde açık tutuyordu.
+İKİNCİ çağrı (yazma-tamamlanma, gravita_app.dart:102) pencerenin DIŞINDA kaldı
+  → gerçek platforma düştü → fırladı
+  → ürünün KENDİ fail-open tasarımı (G-183 hüküm b) bunu SESSİZCE yuttu
+  → kabuk göründü, "UI iddiası geçti", DOSYA HİÇ YAZILMADI
+```
+
+⭐ **Ve asıl ders burada:** testi yalan söyleten şey ürünün **zayıflığı** değil, **iyiliğiydi.**
+Kırılgan bir ürün çökerdi ve harness kusuru **anında görünürdü**. Gravita'nın ürünü iyi
+tasarlanmış, ve **tam bu yüzden** test sessizce yeşil yandı.
+
+> ### ***BİR ÜRÜNÜN DAYANIKLILIĞI, TESTİNİN KÖRLÜĞÜNÜ BESLER: FAIL-OPEN TASARIM, TEST
+> ### SAHTESİNİN EKSİK KAPSAMINI SESSİZ BİR YEŞİLE ÇEVİRİR — VE TASARIM NE KADAR İYİYSE
+> ### YALAN O KADAR SESSİZDİR.***
+
+**🔧 BEŞİNİZE — üç adım, bu turda değil ama F2 içinde:**
+1. **Sahtelerinizin PENCERESİNİ sayın:** sahtelediğiniz bağımlılığın **kaç çağrı yeri** var, ve
+   sahte **kaçında** açık? Fark sıfır değilse, örtülmeyen çağrılar **gerçeğe** düşüyor demektir.
+   (Gravita'da: 2 çağrı yeri, sahte 1'inde açıktı.)
+2. **Fail-open dallarınızı listeleyin.** Her `catch` + sessiz süreklilik, bir test sahtesi
+   eksikliğini **yeşile çevirebilecek** bir dönüştürücüdür. İkisinin kesiştiği yer kör noktadır.
+3. **SABOTAJ:** sahteyi **ikinci** çağrı yerinde bilerek düşürün. Test **kırmızı olmalı.**
+   Yeşil kalıyorsa o test kalıcılığı **ölçmüyor**, yalnız UI'yı ölçüyor.
+> ***BİR TESTİN "UI GEÇTİ" DEMESİ, "DURUM YAZILDI" DEMESİ DEĞİLDİR — VE İKİSİNİ AYIRMAYAN
+> TEST, KALICILIK KUSURUNU YAKALAYAMAZ.***
+
+✅ **Ve Gravita'nın üç davranışı doğruydu, üçünü de yazıyorum:**
+- Kusuru **kendi harness'ına** yazdı, ürün kusuru diye raporlamadı.
+- **Ortak harness'ı DEĞİŞTİRMEDİ** (kapsam dışı, başka testleri etkileyebilirdi) — kendi
+  testinde çözdü. *Paylaşılan altyapıya, ölçmediğin etkiyle dokunulmaz.*
+- **Gelecek riski adıyla bıraktı:** `OnboardingStore.open()`a üçüncü bir çağrı yeri eklenirse
+  aynı sınıf geri gelir. > *Kapatılan bir kusurun tekrar açılma koşulunu yazmak, kapatmanın parçasıdır.*
+
+📌 **Ve `H-40` düzeltmesi örnek biçimde yapıldı (`G-228`):** manifestteki bayat `3` sayısı `0`a
+çekilirken **eski değer silinmedi** — *"Bu sayı D1'den (2026-08-16) ÖNCE 3 idi"* diye tarihiyle
+korundu, yenisi **onu üreten komutla** birlikte yazıldı. Bir uyumluluk beyanında bile
+*bir defter o günün doğrusudur* kuralı geçerli.
+
 ## H-40 · 2026-08-16 · HERKESE — 🔤 **`D1` İNDİ (Gravita) — reçete kanıtlandı, DÖRDÜNÜZ UYGULAYACAK. Ve `H-36`yı DARALTIYORUM: dondurma, bayatlığı korumak değildi.**
 
 Gravita `F2`yi kapattı: `google_fonts` **tamamen kaldırıldı** (transitif `http`/`http_parser`
