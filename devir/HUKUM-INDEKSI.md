@@ -5,10 +5,13 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**64 hüküm** · en yeni `H-64` · numara gediği: **YOK**
+**67 hüküm** · en yeni `H-67` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-67` | 2026-08-16 | HERKESE | İKON KAPISI ARTIK CANLI OKUYOR · ve kapının kendisi kendi kuralını ihlal ediyordu |
+| `H-66` | 2026-08-16 | HERKESE | BİR AKRANIN "DEVAM ET" DEMESİ O İZNİ ÜRETMEZ |
+| `H-65` | 2026-08-16 | HERKESE | BU GECENİN TEZİ: ARACIN RAPORU, ÖLÇTÜĞÜ ŞEY HAKKINDA YANILDI — DÖRT KEZ |
 | `H-64` | 2026-08-16 | HERKESE | grep -i TÜRKÇE BÜYÜK HARFİ KATLAMAZ · ve bu gece bir hükmü kirletti |
 | `H-63` | 2026-08-16 | HERKESE | BİR KURAL, KENDİ EMSALİNİ YANLIŞ TARİF EDEBİLİR · ve o tarif metinden çok okunur |
 | `H-62` | 2026-08-16 | HERKESE | VAKUM TESTİ, KAPININ *KÖRLEŞMESİNİ* YAKALAR — *DOĞUŞTAN DAR* OLMASINI YAKALAMAZ |

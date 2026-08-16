@@ -103,6 +103,47 @@ başlatılabiliyor — asıl işi).
 ve **kullanıcıya değen gerçek bir bug** buldu (`_measuredCard` no-op'u — her gerçek kullanıcı çıplak
 `kneeDeltaDeg` görüyordu). Durması bir başarısızlık değil, bir **ortam olgusu**.
 
+## 1c · ⬇️ İKİNCİ İNDİRME İZNİ — Choreia · konuşma-metne (STT) kurulumu · **BEKLİYOR**
+
+`1a`daki font iznyle **aynı sınıf**, aynı kapı. Choreia **kendi durdu** ve şunu yazdı:
+*"indirme kurucunun doğrudan izni gerektiriyor, **orkestratörün teşviki yeterli değil**"* — ve
+haklı. Ben bu izni **veremem**, yalnız taşırım.
+
+### 🎯 NE İSTENİYOR
+Roger Rabbit hareketinin referansı, üç öğretmenin **yön konusunda anlaşmaması** yüzünden kilitli
+(`mirrorConfident:false`). Choreia hedefli arama yaptı ve **11 yeni aday** buldu. Hepsi
+`unknown` — ama sebebi **içerik değil**: adayların **transkript dosyası fiilen yok**, ve
+sınıflandırıcı transkriptsiz içeriği (bilerek) reddediyor.
+
+Transkript üretmek bir **STT (konuşma→metin) kurulumu** istiyor: **paket + model ağırlığı
+indirmesi**. Ortamda beşi de yok (`faster_whisper` · `whisper` · `openai_whisper` ·
+`speech_recognition` · `vosk` — beşi de doğrudan import denemesiyle ölçüldü).
+
+### 💰 KARŞILIĞINDA NE AÇILIYOR
+**11 aday.** En güçlüsü `DEFnniCN7ok` (Nustudios, 736s — havuzdaki en uzun; açıklaması açıkça
+ders-şekilli; ⭐ **landmark verisi ZATEN VAR**, yalnız transkript eksik).
+
+### 🚦 VE ÜÇ YOLDAN BİRİ — hiçbiri sevkiyatı durdurmaz
+| yol | sonuç |
+|---|---|
+| ✅ **izin ver** | 11 aday sınıflandırmaya girer; Roger Rabbit'in yön belirsizliği **çözülebilir** |
+| ⛔ **izin verme** | Roger Rabbit `demo-only` **geçici** sınıfta sevk edilir — gösterilir, puanlanmaz |
+| ⏸️ **karar verme** | aynı şey: geçici `demo-only`, sonra istediğin zaman açılır |
+
+📌 **Üçüncü sütun önemli: bu kalem yayını ENGELLEMİYOR.** Aile bu gece aynı deseni 🥊 JabLab'ın
+`cross`u için de kullandı — malzeme yetmiyorsa teknik **gösterilir, puanlanmaz**, ve `why`
+alanına **ölçülebilir mezuniyet koşulu** yazılır. Malzeme gelince kendiliğinden mezun olur.
+
+### ⛔ VE ORKESTRATÖRÜN KAPATTIĞI BİR KAÇAMAK
+Transkript kapısını **gevşeterek** izin beklemekten kurtulmak mümkündü. **Yasakladım.**
+O kapı ölçülmüş bir sebeple fail-closed: `C-123` — bir **salsa** videosu `reference_eligible:true`
+manifestiyle **hip-hop** referansına sızmıştı.
+> *İki ayrı kapıdır; birini beklemek, ötekini açmanın gerekçesi değildir.* (`H-66`)
+
+**SENDEN İSTENEN:** yalnız **evet/hayır**. Cevap gelmezse yol otomatik olarak `demo-only` geçici.
+
+---
+
 ## 2 · 📱 CİHAZ GÜNÜ — ilk paket HAZIR (Ostinato) · ve bu bir doğrulama DEĞİL, **ASIL ÖLÇÜM**
 
 **🥁 Ostinato hazır** (`7177c55`): `tools/device_day_preflight.py` + `docs/device-day/RECIPE.md`

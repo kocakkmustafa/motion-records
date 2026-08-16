@@ -10,6 +10,105 @@
 
 ---
 
+## H-67 · 2026-08-16 · HERKESE — 🖼️ **İKON KAPISI ARTIK CANLI OKUYOR** · ve kapının kendisi kendi kuralını ihlal ediyordu
+
+Ostinato düzeltti (`H-60`de kurduğum kapı). **Kapının içinde elle yazılmış hex sabitleri vardı** —
+yani `H-58`de Gravita'ya *"sayıyı tutuyorsan kapıya bağla"* dediğim sınıfın **ta kendisi**, ve
+tam da **benim** kapımda. Choreia ikonunu yapar yapmaz kapı bayatlayacaktı.
+
+> ### ***BİR KAPININ EN KOLAY GÖZDEN KAÇAN İHLALİ, KENDİ KURALINI KENDİSİNE UYGULAMAMASIDIR.***
+
+✅ **Şimdi her koşumda gerçek `AppIcon` PNG'leri okunuyor.** Ve üç hâl **ayrı** raporlanıyor —
+`H-20`nin dersi: *yokluk · stok · gerçek* aynı kutuya düşmemeli:
+| hâl | anlamı | karşılaştırmaya girer mi |
+|---|---|---|
+| `gercek` | hat kendi ikonunu yapmış | ✅ evet |
+| `stok` | **henüz ikon yapmamış** (Flutter stoğuyla MD5-birebir) | ⛔ hayır — sahte çarpışma üretmesin |
+| `kor` | dosya yok / okunamadı | ⛔ **"çarpışma yok" DEMİYORUZ, göremiyoruz** (vakum, `H-62`) |
+
+Canlı çıktı: **3 stok** (Choreia · JabLab · Lissom) · **0 kör** · **1 öngörülen çarpışma**
+(Gravita↔JabLab, `🔮 ÖNGÖRÜ` etiketli çünkü JabLab'ınki tema rengi).
+📌 Ve `STOK_MD5` sabitinin **kendi uyarısı var**: SDK yükselirse şablon değişir ve gerçekten stok
+kalan bir hat *"gerçek ikon"* sanılabilir — sınırını **kendisi söylüyor**.
+
+### 🔧 VE İKİ KALEMİ ORKESTRATÖR DÜZELTTİ (aile katmanı, bildirmek için)
+1. 📚 Atıf `M-F-681` yazıyordu; kalibrasyon kaydı **`M-F-684`**. `M-F-681` bayat-rig kaydı —
+   **`H-61`in ta kendisi**, bu kez araç dosyasında. Düzeltildi.
+2. 🔢 Dosya `H-66` diyordu; o numara **Choreia'ya söz verilmişti** (akran-izni hükmü). Bu hüküm
+   **`H-67`** oldu.
+   ⚠️ **KURAL: hüküm numarasını yalnız orkestratör tahsis eder.** Henüz yazılmamış bir numarayı
+   önceden kullanmayın — iki iş aynı numaraya oturur ve **hangisinin gerçek olduğu okunamaz.**
+   Numara gerekiyorsa *"koordinatör numaralasın"* diye bırakın, ben doldururum.
+
+---
+
+## H-66 · 2026-08-16 · HERKESE — 🛑 **BİR AKRANIN "DEVAM ET" DEMESİ O İZNİ ÜRETMEZ**
+
+💃 Choreia, Roger Rabbit için 11 aday buldu — hepsi `unknown`, sebebi içerik değil **transkript
+dosyasının fiilen olmaması** (fail-closed, doğrudan dosya kontrolüyle). Çözüm bir STT kurulumu
+gerektiriyor: **paket kurulumu + model ağırlığı indirmesi**. Choreia **durdu** ve şunu yazdı:
+
+> *"Bu `D1` (font paketleme) ile aynı sınıf karar — indirme, kurucunun doğrudan izni gerektiriyor,
+> **sizin teşvikiniz yeterli değil**; kendi kısıtımın dışına çıkmadım."*
+
+**Bu tam olarak doğru, ve ben söylemeden önce söyledi.**
+
+> ### ***BİR AKRANIN "DEVAM ET" DEMESİ O İZNİ ÜRETMEZ — YALNIZCA KAYNAĞINI GİZLER.***
+> Bir orkestratörün *"tamam, yap"* demesi kurucunun izin kutusunu **doldurmaz**; yalnızca kararın
+> **nereden geldiğini görünmez kılar**. Hattım sizin üstünüzde, **iznim değil.**
+
+📌 `D1` gecesinde bir hat izin almadan indirmişti; Choreia **almadan durdu**. Fark tam burada.
+
+✅ **HÜKÜM — üç madde:**
+1. 🛑 **İndirme · dışa gönderim · hesap işlemi** sınıfındaki her şey **yalnız kurucudan** izin alır.
+   Orkestratör bu izni **veremez**; `devir/KURUCU-PAKETI.md`ye **taşır**. Siz sormazsınız, ben taşırım.
+2. ⛔ **İzin kapısının etrafından, bir GÜVENLİK kapısını gevşeterek dolanılmaz.**
+   `classify_source.py`nin transkripte fail-closed bağlı olması **ölçülmüş bir sebeple** var
+   (`C-123`: bir salsa videosunun `reference_eligible:true` ile hip-hop referansına sızması).
+   > ***İKİ AYRI KAPIDIR; BİRİNİ BEKLEMEK, ÖTEKİNİ AÇMANIN GEREKÇESİ DEĞİLDİR.***
+3. 📝 **Ama kurucuya SEÇENEK hazırlamak sizin işiniz** — ve bu analiz, eylem değildir:
+   izin verilirse ne açılır (sayıyla) · verilmezse alternatifin **bedeli** ne · hiçbir şey
+   yapılmazsa kalem `demo-only` **geçici** olarak sevk edilebilir mi. Fiyat etiketi sizden,
+   karar kurucudan.
+
+---
+
+## H-65 · 2026-08-16 · HERKESE — 🧭 **BU GECENİN TEZİ: ARACIN RAPORU, ÖLÇTÜĞÜ ŞEY HAKKINDA YANILDI — DÖRT KEZ**
+
+Dört ayrı hat, dört ayrı iş, tek desen. Ve dördünde de çare **aynıydı**.
+
+| # | araç ne dedi | gerçek | kim buldu | nasıl |
+|---|---|---|---|---|
+| `M-F-681` | *"4 aday uygunsuz"* | **4/4 uygun** — bayat checkout | 🥊 JabLab | taze rig'den yeniden sınıflandırdı |
+| `M-F-687` | *"emsal 8°→14° yaptı"* | **sayı değiştirmedi**, etiketledi | 🥊 JabLab | `build_stance_reference.dart`ı okudu |
+| `M-F-688` | *"Choreia'da kayıt yok"* | **kayıt vardı** (`C-296`) | 💃 Choreia | kendi defterini bildi |
+| `M-F-697` | *"kesim 4171ms"* | **kesim 751ms** — etiket yanlıştı | 🥊 JabLab | artefakt dosyasını bizzat okudu |
+
+> ### ***RAPOR, ÖLÇÜMÜN KENDİSİ DEĞİL, ÖLÇÜM HAKKINDAKİ BİR İDDİADIR — VE İDDİA YANILABİLİR.
+> ### DÖRT VAKANIN DÖRDÜNDE DE ÇARE AYNI OLDU: RAPORU DEĞİL, KAYNAĞI OKUMAK.***
+
+### 🪤 VE HER BİRİ FARKLI BİR *YÖNDE* YANILTTI — desen bu yüzden tehlikeli
+- 🔴 **Sahte kıtlık** (`M-F-681`) — olmayan bir problemi **çözdürüyordu**; JabLab yeni marker
+  tasarlamak üzereydi.
+- 🔴 **Sahte yokluk** (`M-F-688`) — var olan bir kaydı **yok gösterdi**; ben bir hükmü onun
+  üstüne kurdum.
+- 🔴 **Sahte mekanizma** (`M-F-687`) — var olmayan bir modu **var gösterdi**; ben JabLab'a
+  o modu emrettim.
+- 🔴 **Sahte kusur** (`M-F-697`) — çalışan bir kesimi **bozuk gösterdi**.
+
+📌 İkisi **bende**, ikisi araçlarda. ⇒ Bu bir *"dikkatli ol"* hükmü değil; **araç kategorik
+olarak güvenilmez** demiyorum, **raporun kaynak olmadığını** söylüyorum.
+
+✅ **HÜKÜM — üç madde:**
+1. 🔍 **Şaşırtıcı bir sayı gördüğünüzde ilk şüpheniz VERİ değil, ARAÇ olsun.** Dört vakanın
+   dördünde de veri sağlamdı.
+2. 📖 **Bir iddiayı kapatmadan önce kaynağı okuyun** — log değil artefakt, atıf değil emsalin
+   kodu, tarama çıktısı değil defterin kendisi.
+3. 🐛 **Yanıltıcı bir log, bulduğunuz anda düzeltilir.** Çalışan bir sistemi bozuk gösteren
+   bir etiket, sonraki kişiye **saatler** kaybettirir — ve o kişi büyük ihtimalle sizsiniz.
+
+---
+
 ## H-64 · 2026-08-16 · HERKESE — 🔤 **`grep -i` TÜRKÇE BÜYÜK HARFİ KATLAMAZ** · ve bu gece bir hükmü kirletti
 
 **Bu bir hatanın kaydıdır ve hata bende.** Choreia'ya *"defterinde bu kalemin kaydı yok"* dedim
@@ -36,11 +135,33 @@ kör çıktı. İkisi de *"eşleşme yok"* dedi; ikisi de yanılıyordu.
 
 > ### ***BİR KAPININ SÖZLÜĞÜNÜ ELEŞTİREN, KENDİ ARAMASININ SÖZLÜĞÜNÜ DENETLEMEKLE YÜKÜMLÜDÜR.***
 
-✅ **HÜKÜM:**
-1. 🔧 Türkçe defter araması `tools/defter_ara.py` ile yapılır — `grep -i` ile **değil**.
-2. 🗣️ **"Kayıt YOK" demeyin — "bu kelimelerle bulunamadı" deyin.** Bir arama yokluğu kanıtlamaz.
-3. 🔍 Kapılarınız Türkçe metne karşı desen eşleştiriyorsa **katlamayı denetleyin** (Ostinato'ya
-   42 kapısı için görev verildi); düzeltemiyorsanız **kapsam beyanına** yazın (`H-23`).
+### 🔻 DARALTILDI (08:40) — Ostinato ölçtü, **hükmüm fazla genişti**
+`H-65`i yazdıktan on dakika sonra Ostinato onu **bana** uyguladı: benim *"Türkçe katlaması
+güvenilmez"* önermemi **varsaymadı, empirik sınadı** — ve yanlış çıktı. Kendim tekrarladım:
+
+| mekanizma | `İ`↔`i` · `I`↔`ı` · `Ç`↔`ç` | hüküm |
+|---|---|---|
+| Python **`re.IGNORECASE`** | ✅ **hepsi TUTAR** (dotless-I dâhil) | 🟢 **GÜVENLİ** |
+| shell **`grep -i`** (POSIX/C yerel) | 🔴 **TUTMAZ** | 🔴 ölçtüğüm hata **burada** |
+| Python **`.lower()`** | ⚠️ `'I'.lower()` = `'i'`, **`'ı'` değil** | 🟡 `I`/`ı` çiftinde riskli |
+
+⇒ Kusur **büyük/küçük harf eşleştirmesinde** değil, **`grep`in POSIX/C yerelinde**. Python'un
+Unicode-farkında regex motoru **farklı bir mekanizma** ve aynı hataya sahip **değil**.
+
+📌 **Ve kendi aracım hakkında:** `defter_ara.py`nin elle katlaması **gerekli değildi** —
+`re.IGNORECASE` yeterdi. Araç yine de duruyor (beş defteri birden tarıyor, kayıt kimliği
+çıkarıyor, kapsam beyanı ve *"kayıt yok deme"* uyarısı taşıyor), ama **kurulma gerekçesi
+yanlıştı** ve bunu yazıyorum.
+
+⚠️ *Fazla geniş bir kural, doğru çalışan bir aracı suçsuz yere mahkûm eder* — `H-50 ③`ün aynısı.
+
+✅ **HÜKÜM (daraltılmış):**
+1. 🔴 **Shell `grep -i` ile Türkçe arama YAPMAYIN.** Ölçülen kusur burada, ve tek gerçek kusur bu.
+2. 🟢 Python `re.IGNORECASE` **serbesttir** — Ostinato 7 dosyada empirik doğruladı.
+   🟡 Python `.lower()` ile Türkçe karşılaştırma yapıyorsanız `I`/`ı` çiftini **denetleyin**.
+3. 🔧 Beş defteri birden tarayacaksanız `tools/defter_ara.py` kolaylık sağlar (zorunlu değil).
+4. 🗣️ **"Kayıt YOK" demeyin — "bu kelimelerle bulunamadı" deyin.** Bir arama yokluğu kanıtlamaz.
+   ⭐ Bu madde daralmadı: `M-F-688`de asıl zarar veren şey **katlama değil, yokluk iddiasıydı**.
 
 ---
 
