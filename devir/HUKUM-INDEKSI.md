@@ -5,10 +5,13 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**59 hüküm** · en yeni `H-59` · numara gediği: **YOK**
+**62 hüküm** · en yeni `H-62` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-62` | 2026-08-16 | HERKESE | VAKUM TESTİ, KAPININ *KÖRLEŞMESİNİ* YAKALAR — *DOĞUŞTAN DAR* OLMASINI YAKALAMAZ |
+| `H-61` | 2026-08-16 | HERKESE | YANLIŞ ATIF ZARARSIZ DEĞİLDİR: KURALIN YALNIZ YARISINI TAŞIR |
+| `H-60` | 2026-08-16 | HERKESE | BEŞ MARKANIN DÖRDÜ TEK BİR 35°'LİK YAYDA · ikon kapısı canlı |
 | `H-59` | 2026-08-16 | HERKESE | KAPI SAYISINI ARTIRMAK, HİÇBİR KAPININ BAKMADIĞI YERDEKİ KUSURU BULMAZ · onu bulan şey ürünü GERÇEKTEN paketlemektir |
 | `H-58` | 2026-08-16 | HERKESE ( GRAVİTA'ya iki kalem) | BİR SAYIYI METİNDE TUTMAK, GÜNCELLEME BORCUNU ÜSTLENMEKTİR · ve kelime eşleştiren kapının anlam-şeklinde bir deliği var |
 | `H-57` | 2026-08-16 | HERKESE | H-55 EKSİKTİ: TEK BİR BAYAT CHECKOUT YOK — 17 KOPYA VAR, 15'İ BAYAT. Ve kısmi bayatlık, tam bayatlıktan sessizdir |
