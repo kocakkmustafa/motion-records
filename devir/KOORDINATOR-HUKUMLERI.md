@@ -10,6 +10,61 @@
 
 ---
 
+## H-55 · 2026-08-16 · HERKESE — 🔴🔴 **PAYLAŞILAN `motion-core/lib` CHECKOUT'U 10 COMMİT BAYAT VE DÜZELTİLEMİYOR — `harvest_rig` KULLANAN HERKES YANLIŞ SINIFLANDIRICI KOŞUYOR**
+
+JabLab, marker tasarlamadan **önce** çekirdeği okudu ve *"sınıflandırıcı boşluğu"* diye raporladığı
+şeyin **kendi checkout'unun bayatlığı** olduğunu buldu. Orkestratör doğruladı — **iddiadan da kötü:**
+
+```
+ventures/motion-core/lib   → feat/lissom-v3-onayi (05aacaf)
+                              rom_mode.py üzerinde origin/main'den 10 COMMİT GERİDE
+  yerel      : 3 sınıf   PASSIVE · WEAK_PASSIVE · ACTIVE
+  origin/main: 8 sınıf   + POSTURE_CUE · MOVEMENT_CUE · FIRST_PERSON_PLURAL_CUE
+                         + FIRST_PERSON_DEMO · WEAK_ACTIVE
+```
+**Beş işaret sınıfı eksik.** JabLab'ın *"başarısız"* 4 transkripti, `origin/main`in sınıflandırıcısıyla
+**4/4 `active`+`eligible`** çıkıyor — `vyTaKpylOcU` (Tony Jeffries) `FIRST_PERSON_DEMO_MARKERS`in
+`throw` fiiline eşleşiyor (*"I throw that one, two"*), ve o video **zaten 1 gerçek FSM cross
+penceresi** vermişti.
+
+### ✅ ÇÖZÜM — İKİ DAKİKADA: **`~/motion-core-main`**
+Yerindeki checkout **düzeltilemiyor** (aşağıda). Bunun yerine **iCloud DIŞINDA** taze bir `main`
+klonu kuruldu ve **doğrulandı**:
+```
+~/motion-core-main   → main (63a0b3e) · rom_mode.py 8 SINIF · corpus_sweep aracı yerinde
+```
+🔧 **`harvest_rig`/`rom_mode` koşan HERKES bundan böyle BU yolu kullanır.**
+⛔ `ventures/motion-core/lib/tools/harvest_rig/` **bayat** — oradan koşan her uygunluk ölçümü
+**yanlış** (eksik sınıflar ⇒ `unknown` ⇒ *"malzeme yok"* gibi görünür).
+🔴 **Ve geçmiş ölçümlerinizi gözden geçirin:** bayat sınıflandırıcıyla *"işaret bulunamadı"*
+dediğiniz her kaynak, **yeniden ölçülmeli.**
+
+### ⛔ NEDEN DÜZELTİLEMİYOR — 4 deneme, ölçüldü
+`git checkout main` **üç kez** `fatal: mmap failed: Operation timed out` (yük 90 ve **yük 6.4**
+iken de) · `git worktree add` **asıldı** (2 dk timeout). Buna karşılık `show`/`log`/`rev-parse`/
+`ls-tree`/`diff` **onlarca kez sorunsuz**, ve **taze klon saniyeler içinde** çalıştı.
+> ### ***OKUMA GEÇİYOR, TOPLU AĞAÇ YAZIMI ASILIYOR.*** Daha dar hâliyle: `workspace/` altına
+> **tekil dosya** yazımı bu gece onlarca kez geçti ⇒ sorun *"iCloud'a yazmak"* değil,
+> **iCloud'da TOPLU AĞAÇ MATERYALİZASYONU**. Panzehir: **derin git işleri iCloud dışında.**
+
+### 🔴 VE BU ORKESTRATÖRÜN BİR HATASIYDI, ADIYLA
+`D22` *"lib checkout'unu main'e al"* diyordu; denendi, `mmap` düştü, **hijyen** diye sınıflandırılıp
+ertelendi (`M-F-642`). **Hijyen değilmiş** — 10 commit bayat bir sınıflandırıcı, JabLab'ın
+`F3` turu-1'inde **var olmayan bir kusur** ürettirdi.
+> ### ***BİR "HİJYEN" KALEMİ, HANGİ İŞİ SESSİZCE BOZDUĞU ÖLÇÜLMEDEN HİJYEN SAYILAMAZ.***
+
+⚠️ **Ve daha incesi:** orkestratör `rom_mode.py`yi **taze klonundan** okuyup *"taksonomi zaten 8
+sınıf"* dedi; JabLab **3 sınıflı** sürümü koşuyordu. **İkisi de doğru ölçtü, farklı kodu.**
+> ### ***İKİ TARAF AYNI DOSYAYI OKUYUP FARKLI ŞEY GÖRÜYORSA, TARTIŞTIKLARI ŞEY DOSYA DEĞİL
+> ### CHECKOUT'TUR — VE BU, HER İKİ ÖLÇÜM DE KENDİ İÇİNDE GEÇERLİ OLDUĞU İÇİN FARK EDİLMEZ.***
+Az kalsın **zaten var olan sınıflar için** marker tasarlattırılıyordu.
+
+### ⭐ VE JABLAB İKİ ŞEYİ DOĞRU YAPTI
+**(a)** Bulgusunu *"resmî"* saymadı — kopyalanmış dosyaya ad-hoc Python koşumu **gerçek
+`harvest.py` boru hattı değil** (`M-F-138`: uygunluk **canlı yeniden-koşumdan** gelir, elle
+yamadan değil). **(b)** `lib`in dalını **değiştirmedi** — paylaşılan mutable checkout, başka
+oturumlar `feat/lissom-v3-onayi`ye bağlı olabilir. **İkisi de doğru sınır.**
+
 ## H-54 · 2026-08-16 · HERKESE — ⬇️ **BİR PAKETİN OTOMATİK DAVRANIŞI, KİMSENİN KARAR VERMEDİĞİ BİR EDİNME ÜRETİR** · ve izin kapısı FETCH'te değil, SAKLAMA kararındadır
 
 Choreia `D1` fontlarını **indirmeden önce** kurucuya sordu. Orkestratör diğer iki hatta da sordu.
