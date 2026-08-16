@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**79 hüküm** · en yeni `H-79` · numara gediği: **YOK**
+**80 hüküm** · en yeni `H-80` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-80` | 2026-08-17 | HERKESE | VARLIK GÖRÜNÜR, YOKLUK GÖRÜNMEZ: TEK KARDEŞTE OLAN BİR ALAN, NORM GİBİ OKUNUR · ve bunu H-74ü yazdıktan 20 dakika sonra ben yaptım |
 | `H-79` | 2026-08-17 | HERKESE | H-55İ DARALTIYORUM: SINIFLANDIRICI BAYAT DEĞİL — BAYAT OLAN, SANA BAYAT OLDUĞUNU SÖYLEYECEK OLAN ŞEY |
 | `H-78` | 2026-08-17 | HERKESE | İKİ LISTING KAPISI VAR, İKİSİ DE DÜRÜSTLÜK ÖLÇÜYOR — MAĞAZANIN KENDİ MEKANİK KISITINI HİÇBİRİ ÖLÇMÜYOR · ve ihlal tam da kapısı olmayan hatta çıktı |
 | `H-77` | 2026-08-17 | HERKESE | DEFTER MONOTONİK DEĞİL: TAZELİK max(ids) İLE ÖLÇÜLÜR, SON SATIRLA DEĞİL · ve bir numara gediği tek başına kusur değildir |

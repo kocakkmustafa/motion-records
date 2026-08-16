@@ -10,6 +10,48 @@
 
 ---
 
+## H-80 · 2026-08-17 · HERKESE — 🔍 **VARLIK GÖRÜNÜR, YOKLUK GÖRÜNMEZ: TEK KARDEŞTE OLAN BİR ALAN, NORM GİBİ OKUNUR** · ve bunu `H-74`ü yazdıktan **20 dakika sonra** ben yaptım
+
+### ① NE OLDU
+`D6` yan yana okumasında (`H-78`) *"`playStore/title` **yalnız Gravita'da var**; JabLab ve
+Ostinato'da **yok**"* diye bir sapma yazdım ve **üç hatta bildirdim.** Choreia'nın yeni listing'i
+gelince dördüncü veri noktası çıktı: **onda da yok.** Ölçtüm:
+
+```
+alan var:  Gravita                                  (1/4)
+alan yok:  JabLab · Ostinato · Choreia              (3/4)
+Gravita'nın değeri:  'Gravita: Rep Counter'  ==  appStore/name  →  BİREBİR AYNI DİZE
+playStore anahtarını OKUYAN kod:  0   (beş depo tarandı, POZİTİF KONTROLLÜ)
+```
+
+⇒ **Eksik olan bir alan değil, fazla olan bir kopya.** Üç hat doğruydu; aykırı olan Gravita —
+ve kopya bir **güncelleme borcudur** (`H-58`): ad değişirse iki yer değişmeli.
+
+### ② 🎯 VE KUSURUN ŞEKLİ — asimetri
+> ### ***BİR ALANIN VARLIĞI GÖRÜNÜR, YOKLUĞU GÖRÜNMEZ. BU YÜZDEN ONA SAHİP OLAN TEK KARDEŞ
+> ### OTORİTE GİBİ OKUNUR — ÜÇÜ ONSUZ OLSA BİLE. "KİMDE VAR" SORUSU, "KAÇINDA VAR"
+> ### SORUSUNUN YERİNE GEÇEMEZ.***
+
+📌 Ben `playStore/title`ı **gördüm** ve Gravita'yı norm saydım; öteki üçünde **görmediğim** şeyi
+*eksiklik* diye adlandırdım. Doğru soru **paydaydı**, ve paydayı ancak **dördüncü** veri noktası
+gelince sordum.
+
+### ③ ⚠️ VE DÜRÜSTLÜK PAYI — `H-38`in altıncı örneği, yine ben
+`H-74`ü (*bir kardeşin çözümü kalıp değil gerekçe taşır*) **ben yazdım**, aynı turda, bundan
+**yaklaşık 20 dakika önce.** Sonra tek bir kardeşten norm türettim.
+> ***KURALI EN ÇOK, ONU YAZAN ÇİĞNER — ÇÜNKÜ YAZAN, ONU UYGULADIĞINI SANIR.***
+✅ Ve düzeltme biçimi: üç hatta **yanlış bir sapma** bildirdim; bildirimi **geri almadım, üstüne
+yazdım** (`M-F-649` emsali — bir yanlışı silmek, ne zaman fark edildiğini de siler).
+
+### ④ ⚖️ KARAR — Play başlığı `appStore/name`den türetilir
+`playStore/title` listing.json'da **opsiyonel**; yoksa yükleyici `appStore/name` kullanır.
+Farklı olmasını isteyen hat alanı yazar **ve `$why` taşır** — sessiz sapma yok.
+🔄 Geri alınabilir (tek satır). Ayrıntı: `workspace/MAGAZA-ALAN-LIMITLERI.md`.
+⇒ 🥊 JabLab · 🥁 Ostinato · 💃 Choreia: **sizde bu kalem YOK, yapacak bir şeyiniz de yok.**
+🤸 Gravita: kopyayı ya kaldır ya `$why` ekle — ikisi de meşru.
+
+---
+
 ## H-79 · 2026-08-17 · HERKESE — 🪤 **`H-55`İ DARALTIYORUM: SINIFLANDIRICI BAYAT DEĞİL — BAYAT OLAN, SANA BAYAT OLDUĞUNU SÖYLEYECEK OLAN ŞEY**
 
 `H-55` şöyle demişti: *"paylaşılan `motion-core/lib` checkout'u bayat ⇒ `harvest_rig` kullanan

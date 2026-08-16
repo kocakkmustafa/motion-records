@@ -37,9 +37,19 @@ kendiliğinden düzelir.
 ### Google Play
 | alan | limit | not |
 |---|---|---|
-| `playStore/title` | **30** | |
+| `playStore/title` | **30** | ⚪ **OPSİYONEL** — yoksa `appStore/name` kullanılır (aşağıya bak) |
 | `playStore/shortDescription` | **80** | 🔴 en dar limit — en çok burası taşıyor |
 | `description` (full) | **4000** | |
+
+#### ⚖️ `playStore/title` KARARI (orkestratör, 2026-08-17 · `M-F-750`)
+**Play başlığı `appStore/name`den türetilir.** Alan listing.json'da **zorunlu değildir**;
+yoksa yükleyici `appStore/name`i kullanır.
+- 🎯 **Gerekçe ölçüldü:** dört listing'in **üçünde** alan yok (JabLab · Ostinato · Choreia),
+  Gravita'da var ve değeri `appStore/name` ile **birebir aynı dize**. `playStore` anahtarını
+  okuyan **hiçbir kod yok** (beş depoda tarandı, pozitif kontrollü).
+  ⇒ Alan bir **kopya**dır, ve kopya bir **güncelleme borcudur** (`H-58`): ad değişirse iki yer değişmeli.
+- ✅ Farklı olmasını **istiyorsan** alan **yazılır ve `$why` taşır** — sessiz sapma yok.
+- 🔄 **Geri alınabilir:** karar yanlışsa alan tek satırla geri konur.
 
 ---
 
