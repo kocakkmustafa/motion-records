@@ -1,3 +1,16 @@
+> ## ⛔ SÜPERSEDE — 2026-08-16
+> **Bu dosya OTORİTE DEĞİLDİR ve güncel değildir.** En yüksek andığı kayıt `M-F-560`;
+> aile defteri **`M-F-651`**de. 91 kayıt geride kaldı ve **kimse fark etmedi** — ki bu,
+> ailenin bu gece avladığı *bayat iddia* sınıfının kendisidir.
+>
+> **Kuralların TEK canlı otoritesi:** `devir/KOORDINATOR-HUKUMLERI.md` (45 hüküm).
+> İşaret indeksi: `devir/HUKUM-INDEKSI.md` (üretilir, içerik taşımaz).
+>
+> Bu dosya **tarihsel kayıt** olarak duruyor — 2026-08-12'de Gravita'nın çıkardığı
+> aday listesidir ve o günün doğrusudur. Silinmedi, **düzeltilmedi**, üstüne tarih atıldı.
+
+---
+
 # 🧭 AİLE KURALLARI — ADAY LİSTESİ (Gravita çıkardı, 2026-08-12)
 
 > ⛔ **BU BİR KURAL LİSTESİ DEĞİL, BİR ADAY LİSTESİDİR.** Hangisinin

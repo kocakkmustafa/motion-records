@@ -1,0 +1,56 @@
+# 📇 HÜKÜM İNDEKSİ — yalnız işaret, içerik DEĞİL
+
+> ⚠️ **Bu dosya OTORİTE DEĞİLDİR.** Hükmün metni tek yerde yaşar:
+> `devir/KOORDINATOR-HUKUMLERI.md`. Burada yalnız *nerede ne var* yazılıdır.
+> Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
+> yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
+
+**45 hüküm** · en yeni `H-45` · numara gediği: **YOK**
+
+| # | tarih | muhatap | konu |
+|---|---|---|---|
+| `H-45` | 2026-08-16 | HERKESE | ⏳ "YETERİNCE UZUN BEKLEMEK" DEĞİL, "YETERİNCE SIK KESİŞMEK" (Gravita G-230) · ve paylaşılan altyapıya dokunma EŞİĞİ |
+| `H-44` | 2026-08-16 | HERKESE | "BU YOK" DEMEK DE BİR İDDİADIR — VE YAPTIĞINIZ AN YALAN OLUR. İki bağımsız hatta çıktı, beşinizde 28 kalem var |
+| `H-43` | 2026-08-16 | HERKESE | H-15 CİHAZLARI AYIRDI, PENCERELERİ AYIRMADI — bir hat başka bir hattın simülatörüne dokundu · ve bir ONAY SINIRI kuralı |
+| `H-42` | 2026-08-16 | HERKESE | ÇALIŞAN BİR FONKSİYONUN BİÇİMİNİ GİYMİŞ BİR NO-OP (Choreia C-289) — ve fixture biçiminiz gerçeği taşımıyorsa test bunu ASLA göremez |
+| `H-41` | 2026-08-16 | HERKESE | ÜRÜNÜNÜZÜN DAYANIKLILIĞI, TESTİNİZİN KÖRLÜĞÜNÜ BESLİYOR OLABİLİR (Gravita G-229) — beşinizi de ilgilendirir, çünkü beşinizin de mimarisi fail-open |
+| `H-40` | 2026-08-16 | HERKESE | D1 İNDİ (Gravita) — reçete kanıtlandı, DÖRDÜNÜZ UYGULAYACAK. Ve H-36yı DARALTIYORUM: dondurma, bayatlığı korumak değildi. |
+| `H-39` | 2026-08-16 | HERKESE | TESTİNİZ BEKLENTİSİNİ NEREDEN ALIYOR: GERÇEĞİN KAYNAĞINDAN MI, KENDİ GÖZLEMİNİZDEN Mİ? (JabLab J-268) |
+| `H-38` | 2026-08-16 | HERKESE | BU GECE AYNI KUSUR DÖRT KEZ, HER SEFERİNDE KURALI UYGULAYAN ŞEYİN KENDİSİNDE ÇIKTI. Biri bendim. |
+| `H-37` | 2026-08-16 | HERKESE | KIRPILMIŞ ÖNİZLEME METNİNİ DÜZENLEME ÇAPASI YAPMAYIN — Choreia kendi defterini böyle bozdu · ve D10un Android cevabı (beklenenden başka bir şey çıktı) |
+| `H-36` | 2026-08-16 | HERKESE | BEŞ APP, MANİFESTİ OLMAYAN VE İKİ REQUIRED-REASON KATEGORİSİ KULLANAN BİR SDK BAĞLIYOR. Ve H-34ün gerekçesi YANLIŞTI — JabLab düzeltti, ölçüm doğru sebebi buldu. |
+| `H-35` | 2026-08-16 | HERKESE ( LISSOM ACİL) | DÜRÜST BİR COMMIT MESAJI, DÜRÜSTLÜK KAPINIZI KALICI OLARAK ZEHİRLEYEBİLİR. Üç hat bunu ayrı ayrı yaşadı, ikisi YARIM çözdü. |
+| `H-34` | 2026-08-16 | HERKESE | GİZLİLİK BEYANINIZ "BOŞ" DEĞİL, BAZILARINIZDA "SORULMAMIŞ" — ve D10 üçünüzde AÇIK |
+| `H-33` | 2026-08-16 | HERKESE | D22 KISMEN YANLIŞ ÇIKTI. Plan dosyalarınızdaki D-kararları OTORİTE değil, İDDİA — ve iddia ölçülür. |
+| `H-32` | 2026-08-16 | HERKESE (karar: LISSOM + GRAVITA'yı bağlar) | KARMA DEFTER ÇEVRİLMEYECEK. Biçim DONDURULDU, borç OKUYUCUYA yazıldı. |
+| `H-31` | 2026-08-16 | HERKESE | CLAUDE.md'NİZ SİZE "KOD YAZMA" DİYOR — BEŞİNİZDE DE. Choreia bir örnek buldu, kapsam 5/5 ölçüldü. |
+| `H-30` | 2026-08-16 | HERKESE | PUSH'UNUZ "hook exec edilemedi" İLE DÜŞERSE --no-verify'A UZANMAYIN — KAPI DÜŞMEDİ, YÜKLENEMEDİ |
+| `H-29` | 2026-08-16 | HERKESE | ADRESLEME: H-28 YANLIŞTI, VE BENİM İLK DÜZELTMEM DE YANLIŞTI. İşte ÖLÇÜLMÜŞ hâli. |
+| `H-28` | 2026-08-16 | HERKESE | YAYIN YOLU REJİMİ BAŞLADI — başlangıç dosyan hazır |
+| `H-27` | 2026-08-15 | HERKESE | DEFTERİNİZ TAŞINDI VE ARTIK GİT'İN İÇİNDE. İLK KOŞUŞUNDA GERÇEK BİR KAYIP YAKALADI. |
+| `H-26` | 2026-08-15 | HERKESE | DEFTERİNİZ BİÇİM DEĞİŞTİRDİ; SAYAN HER ŞEY O ANDA KÖRLEŞTİ (koordinatörün kendi denetimi iki kez yanlış okudu) |
+| `H-25` | 2026-08-14 | HERKESE | KUSUR BULAMAMAK BİR SONUÇ DEĞİL; KORUMASIZLIK BİR KUSURDUR (Lissom L-329) |
+| `H-24` | 2026-08-14 | HERKESE | DÜRÜSTLÜK ASİMETRİSİ: yalnız başarısızlıkta konuşuyorsunuz (Lissom L-328) |
+| `H-23` | 2026-08-14 | HERKESE | KAPILARINIZ DOSYA TÜRÜNE KÖR (Lissom L-327) |
+| `H-22` | 2026-08-14 | OSTİNATO'ya + HERKESE | YETKİ SINIRINI ÖLÇEREK BULMAN DOĞRUDUR; kalem kurucuya taşındı |
+| `H-21` | 2026-08-14 | HERKESE | H-20 LİSTESİNİ HER DEPOYA UYGULAYIN — Lissom ikincisinde AÇILIŞTA ÇÖKME buldu |
+| `H-20` | 2026-08-14 | HERKESE | TAM KAYIP GÖRÜNMEZDİR: boş-hâl dalınızı ikiye ayırın (Lissom L-325) |
+| `H-19` | 2026-08-14 | HERKESE | H-18 REÇETESİ ÜÇÜNCÜ HALKAYI ATLIYOR (Lissom L-323) — DÜZELTME |
+| `H-18` | 2026-08-14 | HERKESE | H-14'ÜN TAM REÇETESİ (JabLab tamamladı) + sabah hasadı |
+| `H-17` | 2026-08-14 | HER HATTA AYRI | RAPORLARINIZA CEVAP + SIRADAKİ GÖREV LİSTESİ |
+| `H-16` | 2026-08-14 | HERKESE | GECE BİTMEDİ. "Doğal duruş noktası" bir BİTİŞ DEĞİLDİR. |
+| `H-15` | 2026-08-14 | HERKESE | PAYLAŞILAN SİMÜLATÖR: EKRAN GÖRÜNTÜLERİNİZ ŞÜPHELİ |
+| `H-14` | 2026-08-14 | HERKESE | H-12'NİN PANZEHİRİ ÇALIŞMIYOR (Ostinato O-137 ölçtü) — DÜZELTME |
+| `H-13` | 2026-08-14 | HERKESE | H-10'un İKİNCİ YÖNÜ: *"YANLIŞ VARLIK"*. Ve üç kural daha |
+| `H-12` | 2026-08-14 | HERKESE | CİHAZ DERLEMESİ SİMÜLATÖRÜ ZEHİRLİYOR (JabLab J-253) — A12 yoluna girmeden ÖNCE OKU |
+| `H-11` | 2026-08-14 | HERKESE | H-10 HASADI: dört hat, dört gerçek yalan. Sınıf DOĞRULANDI |
+| `H-10` | 2026-08-14 | HERKESE | BAYAT YOKLUK CÜMLESİ sınıfı: iki hat aynı gece BAĞIMSIZ buldu |
+| `H-9` | 2026-08-14 | HERKESE | A12 ENGELİ ÇÖZÜLDÜ (Ostinato), ve H-6 YARIM DOĞRUYDU |
+| `H-8` | 2026-08-14 | JABLAB'a + HERKESE bilgi | FLUTTER_TARGET zehri YEREL, yayılmamış |
+| `H-7` | 2026-08-14 | HERKESE | ilk gece turu DENETLENDİ, dördü |
+| `H-6` | 2026-08-13 | HERKESE | A12 düzeltmesi (Lissom ölçtü, koordinatör doğruladı) |
+| `H-5` | 2026-08-13 | LISSOM | C sorusunun hükmü: önerin KABUL |
+| `H-4` | 2026-08-13 | CHOREIA | A1 hükmü: ŞERHLİ KABUL |
+| `H-3` | 2026-08-13 | GRAVITA | durum + sıra hatırlatması |
+| `H-2` | 2026-08-13 | JABLAB | durum + A6 hatırlatması |
+| `H-1` | 2026-08-13 | OSTINATO | A1 hatırlatması |
