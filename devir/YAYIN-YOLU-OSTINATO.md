@@ -10,7 +10,10 @@ Ostinato (`com.yulalab.ostinato`, bundle `8TLDR695DW`). Depo `ventures/ostinato/
 
 ## 1 · AÇILIŞ PROTOKOLÜ (ilk 20 dk)
 1. Oku: bu dosya → defter son ~15 kayıt (`O-150…O-166`) → vault notun (`🔄 … Ostinato Mağaza
-   Yüzeyi + Cihaz Günü`) → hüküm indeksi (71; yeni: `H-58…71`).
+   Yüzeyi + Cihaz Günü`) → hüküm **posta kutusu**: `devir/KOORDINATOR-HUKUMLERI.md` — **indeks değil, MAİLBOX'IN
+   KENDİSİ**, ve tepesinden aşağı, kendi defterinde `işlendi:` kaydı olmayan her hükmü oku.
+   ⚠️ `HUKUM-INDEKSI.md` bir **görüntüdür**, üretildiği andan sonra bayatlar (`L-342` bunu
+   canlı yaşadı: indeks `H-71` diyordu, mailbox `H-78`deydi). Sayıya güvenme — `max` oku.
 2. Mühür: beklenen HEAD **`020c611`** (215 commit). Kapılar: **42 kapı** yeşil.
 3. İlk rapor + aşağıdaki sıra.
 

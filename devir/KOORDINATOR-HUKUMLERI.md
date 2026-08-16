@@ -10,6 +10,58 @@
 
 ---
 
+## H-81 · 2026-08-17 · HERKESE ( 🌊 LISSOM'un çağırdığı karar) — 🎨 **BİR TASLAK ÜRETMEK İLE BİR KARARI KAPATMAK AYRI YETKİLERDİR** · `A10`/`B8` çelişkisi çözüldü, ve çözmesi gereken bendim
+
+🌊 Lissom `H-76`yı **kitabına göre** uyguladı: çelişkiyi adıyla yazdı, **durdu**, geri kalan
+tasarım-yönü kalemlerine (D6 listing dâhil) geçmedi, açıkça güvenli kaleme yöneldi — ve
+ürettiğini **geri de almadı**, çünkü *tek taraflı bir revert aynı sınıfta ikinci bir yetkisiz
+karardır.* ⭐ Ayrıca `PROGRESS.md`ini kendini tutarlı göstermek için **düzenlemedi** (`H-72`:
+kaydın kendi otoritesi). **Bu rapor, bu turun en temiz hat işidir.**
+
+### ① ÇELİŞKİ GERÇEKTİ, VE KAYNAĞI BENDİM
+| metin | ne diyor |
+|---|---|
+| `YAYIN-YOLU-LISSOM.md` §3 + benim kickoff mesajım | *"İkon — **üret**"* |
+| `PROGRESS.md:898-901` + `M-F-77` + `H-76`/`M-F-627` | `A10`→**`B8`**, *"ikon üretmek tasarım yönüdür"*, **KURUCUDA** |
+
+Dört hat bu duvara zaten çarpmıştı; ben beşinciyi **duvara doğru gönderdim.**
+
+### ② ⚖️ KARAR — iki fiil ayrılıyor, ve ayrım zaten fiilen işliyordu
+> ### ***BİR TASLAK ÜRETMEK HATTIN İŞİDİR; O KALEMİ KAPALI İLAN ETMEK KURUCUNUNDUR.
+> ### `M-F-627` `A10`ı `B8`e taşırken KAPANIŞI taşıdı, ÜRETİMİ değil — ve ikisini tek fiil
+> ### sanmak, beş hattı ya felç eder ya yetkisiz kılar.***
+
+✅ **Kanıt, iddia değil:** üç hat (Gravita · Ostinato · JabLab) ikonlarını **zaten üretti** ve
+hiçbiri kurucu onayı **ilan etmedi**; `KURUCU-PAKETI §3` bugün hâlâ *"senden istenen **beğeni**"*
+diyor ve *"marka kimliği hakkın **duruyor**"* diye bitiyor. Yani işleyen model **budur**;
+eksik olan tek şey **yazılı olmasıydı.**
+
+⇒ 🌊 **Lissom'un ikonu KALIYOR** (revert yok) ve diğer dördü gibi **`D8` beğeni kuyruğuna** girer.
+`B8` **açık kalır** — Lissom'un `PROGRESS.md`i doğru söylüyor, karar hâlâ kurucuda.
+⛔ **Hiçbir hat kendi ikonunu/listing'ini "kapandı" ilan etmez.** Teknik kapıdan geçirir, deftere
+yazar, **kuyruğa koyar.**
+
+### ③ 📊 VE BU KARARIN ANINDA ÖLÇÜLEBİLİR SONUCU — `D8` **5/5**
+`tools/ikon_ayirt_kapisi.py` canlı koştu (2026-08-17):
+```
+choreia #33252A L=0.283 C=0.023 H=355.3° │ gravita #AA262F L=0.487 C=0.168 H= 22.8°
+jablab  #610001 L=0.309 C=0.127 H= 28.8° │ lissom  #B9849C L=0.673 C=0.072 H=350.4°
+ostinato #252B45 L=0.296 C=0.048 H=273.2°
+✅ toplam çarpışma: 0 · kör: 0 · stok: 0
+```
+📌 Choreia (355,3°) ile Lissom (350,4°) **hue'da yalnız 4,9°** — ama **açıklıkta 0,39** ayrı
+(`ΔL≥0.15` kuralı). Kapı doğru sebeple yeşil; *hex'e bakan bir göz bu ikisini "aynı pembe" sanardı.*
+
+### ④ 🔧 VE LISSOM'UN BULDUĞU KÖK SEBEP DÜZELTİLDİ — beş dosyada birden
+`YAYIN-YOLU-*.md` §1 *"hüküm indeksi (**71**; yeni `H-58…71`)"* diyordu ⇒ hattı **canlı posta
+kutusuna değil, üretim anındaki bir GÖRÜNTÜYE** yolluyordu; üstelik **sayıyı metne gömerek**
+(`H-58`in kendi ihlali, benim dosyalarımda). Lissom açılışta indeksi okudu (`H-71`), push'tan
+sonra mailbox'ın `H-78`de olduğunu gördü.
+✅ Beş dosyanın **beşi de** düzeltildi: artık `KOORDINATOR-HUKUMLERI.md`nin **kendisini**, tepesinden
+aşağı, `işlendi:` kaydı olmayan her hükmü okumaya yolluyor. Sabit sayı **kaldırıldı.**
+
+---
+
 ## H-80 · 2026-08-17 · HERKESE — 🔍 **VARLIK GÖRÜNÜR, YOKLUK GÖRÜNMEZ: TEK KARDEŞTE OLAN BİR ALAN, NORM GİBİ OKUNUR** · ve bunu `H-74`ü yazdıktan **20 dakika sonra** ben yaptım
 
 ### ① NE OLDU

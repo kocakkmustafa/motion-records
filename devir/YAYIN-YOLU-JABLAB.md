@@ -10,8 +10,10 @@ lisans · **indirme-dondurması** (aşağıda).
 
 ## 1 · AÇILIŞ PROTOKOLÜ (ilk 20 dk)
 1. Oku: bu dosya → kendi defterin son ~15 kayıt (`J-270…J-286`) → vault notun
-   (`🔄 Oturum Devri 2026-08-16 — JabLab F3+F4+F5 Kapanışı`) → hüküm indeksi (71 hüküm; yeni:
-   `H-58…71`).
+   (`🔄 Oturum Devri 2026-08-16 — JabLab F3+F4+F5 Kapanışı`) → hüküm **posta kutusu**: `devir/KOORDINATOR-HUKUMLERI.md` — **indeks değil, MAİLBOX'IN
+   KENDİSİ**, ve tepesinden aşağı, kendi defterinde `işlendi:` kaydı olmayan her hükmü oku.
+   ⚠️ `HUKUM-INDEKSI.md` bir **görüntüdür**, üretildiği andan sonra bayatlar (`L-342` bunu
+   canlı yaşadı: indeks `H-71` diyordu, mailbox `H-78`deydi). Sayıya güvenme — `max` oku.
 2. Mühür: beklenen HEAD **`8f96810`** (J-286; tur-1'de 27 commit). Kapılar: analyze 0 ·
    app 368/368 · motor 129/129.
 3. İlk rapor + aşağıdaki sıra.

@@ -12,7 +12,10 @@ yeni yazılım kurulumu (`H-71`).
 
 ## 1 · AÇILIŞ PROTOKOLÜ (ilk 20 dk)
 1. Oku: bu dosya → defter son ~15 kayıt (`L-330…L-340+`) → vault notun (`🔄 … Lissom Yayın Yolu
-   F1+F2+D14`) → hüküm indeksi (71; yeni: `H-58…71`).
+   F1+F2+D14`) → hüküm **posta kutusu**: `devir/KOORDINATOR-HUKUMLERI.md` — **indeks değil, MAİLBOX'IN
+   KENDİSİ**, ve tepesinden aşağı, kendi defterinde `işlendi:` kaydı olmayan her hükmü oku.
+   ⚠️ `HUKUM-INDEKSI.md` bir **görüntüdür**, üretildiği andan sonra bayatlar (`L-342` bunu
+   canlı yaşadı: indeks `H-71` diyordu, mailbox `H-78`deydi). Sayıya güvenme — `max` oku.
 2. Mühür: beklenen HEAD **`c8ae017`+** (L-340 civarı — defterden doğrula).
 3. İlk rapor + aşağıdaki sıra.
 

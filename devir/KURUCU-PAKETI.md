@@ -372,14 +372,21 @@ başlıklarıyla, 19 gerçek ders sayısı; *hiçbir satır uydurulmadı*). 🤸
 > Ostinato lacivert*). **Beşten üçü gerçekle uyuşmuyordu**, ve süreç de anlatıldığı gibi
 > yürümedi — daha iyi bir şey oldu. Aşağısı **ölçülmüş** durumdur.
 
-### ✅ ÜÇ HAT GERÇEK İKONUNU ÜRETTİ — her biri TEK aday, ama **kapıdan geçmiş**
-| hat | ikon | plan ne demişti |
-|---|---|---|
-| 🤸 Gravita | **`#AA262F`** kızıl | ~~turuncu~~ ❌ |
-| 🥁 Ostinato | **`#252B45`** koyu lacivert | lacivert ✅ |
-| 🥊 JabLab | **`#610001`** koyu kırmızı | kırmızı ✅ |
-| 💃 Choreia | ⏳ **stok** — teması gül pembesi `#F0A6BD` | ~~mor~~ ❌ |
-| 🌊 Lissom | ⏳ **stok** — teması leylak-gül `#B0748F` | ~~deniz yeşili~~ ❌ |
+### ✅ **2026-08-17: BEŞ HAT DA İKONUNU ÜRETTİ — `D8` ARTIK 5/5, STOK SIFIR**
+`tools/ikon_ayirt_kapisi.py` **canlı** koştu (gerçek `AppIcon` dosyalarını okuyarak):
+
+| hat | ikon | OKLCH | plan ne demişti |
+|---|---|---|---|
+| 🤸 Gravita | **`#AA262F`** kızıl | L 0.487 · C 0.168 · H 22.8° | ~~turuncu~~ ❌ |
+| 🥁 Ostinato | **`#252B45`** koyu lacivert | L 0.296 · C 0.048 · H 273.2° | lacivert ✅ |
+| 🥊 JabLab | **`#610001`** koyu kırmızı | L 0.309 · C 0.127 · H 28.8° | kırmızı ✅ |
+| 💃 Choreia | **`#33252A`** koyu füme-bordo | L 0.283 · C 0.023 · H 355.3° | ~~mor~~ ❌ |
+| 🌊 Lissom | **`#B9849C`** açık leylak-gül | L 0.673 · C 0.072 · H 350.4° | ~~deniz yeşili~~ ❌ |
+
+**✅ çarpışma 0 · kör 0 · stok 0.**
+📌 Choreia (355,3°) ile Lissom (350,4°) **hue'da yalnız 4,9° uzakta** — ayrımı **açıklık** yapıyor
+(ΔL = 0,39). Kapı doğru sebeple yeşil; *hex'e bakan bir göz bu ikisini "aynı pembe" sanardı.*
+⇒ **Beğeni kuyruğun doldu: 3/5 değil, 5/5.**
 
 ### 🔬 VE ARADA BİR ÖLÇÜM ARACI DOĞDU — `D8`in sorusunu değiştiriyor
 Beş markanın **dördü 351°→26° arasında, 35°'lik tek bir renk yayında** çıktı (OKLCH'de ölçüldü;

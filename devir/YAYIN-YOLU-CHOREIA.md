@@ -10,7 +10,10 @@ Choreia (`com.yulalab.choreia`, bundle `PDRAB4FYBS`). Depo `ventures/choreia/app
 
 ## 1 · AÇILIŞ PROTOKOLÜ (ilk 20 dk)
 1. Oku: bu dosya → defter son ~15 kayıt (`C-296…C-306+`) → vault notun (`🔄 … Choreia H-70 Roger
-   Rabbit + iCloud Fırtınası`) → hüküm indeksi (71; yeni: `H-58…71`; `H-70` **senin ayrımın**).
+   Rabbit + iCloud Fırtınası`) → hüküm **posta kutusu**: `devir/KOORDINATOR-HUKUMLERI.md` — **indeks değil, MAİLBOX'IN
+   KENDİSİ**, ve tepesinden aşağı, kendi defterinde `işlendi:` kaydı olmayan her hükmü oku.
+   ⚠️ `HUKUM-INDEKSI.md` bir **görüntüdür**, üretildiği andan sonra bayatlar (`L-342` bunu
+   canlı yaşadı: indeks `H-71` diyordu, mailbox `H-78`deydi). Sayıya güvenme — `max` oku.
 2. Mühür: beklenen HEAD **`a66c0a2`+** (H-70 kapanışı; sonrasında bayat-sayı düzeltmesi commit'i
    olabilir — defterin son kaydından doğrula). Kapılar: 25/25.
 3. İlk rapor + aşağıdaki sıra.

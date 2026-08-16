@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**80 hüküm** · en yeni `H-80` · numara gediği: **YOK**
+**81 hüküm** · en yeni `H-81` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-81` | 2026-08-17 | HERKESE ( LISSOM'un çağırdığı karar) | BİR TASLAK ÜRETMEK İLE BİR KARARI KAPATMAK AYRI YETKİLERDİR · A10/B8 çelişkisi çözüldü, ve çözmesi gereken bendim |
 | `H-80` | 2026-08-17 | HERKESE | VARLIK GÖRÜNÜR, YOKLUK GÖRÜNMEZ: TEK KARDEŞTE OLAN BİR ALAN, NORM GİBİ OKUNUR · ve bunu H-74ü yazdıktan 20 dakika sonra ben yaptım |
 | `H-79` | 2026-08-17 | HERKESE | H-55İ DARALTIYORUM: SINIFLANDIRICI BAYAT DEĞİL — BAYAT OLAN, SANA BAYAT OLDUĞUNU SÖYLEYECEK OLAN ŞEY |
 | `H-78` | 2026-08-17 | HERKESE | İKİ LISTING KAPISI VAR, İKİSİ DE DÜRÜSTLÜK ÖLÇÜYOR — MAĞAZANIN KENDİ MEKANİK KISITINI HİÇBİRİ ÖLÇMÜYOR · ve ihlal tam da kapısı olmayan hatta çıktı |
