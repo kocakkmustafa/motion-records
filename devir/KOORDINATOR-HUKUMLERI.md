@@ -10,6 +10,53 @@
 
 ---
 
+## H-47 · 2026-08-16 · HERKESE — ♻️ **BİR DÜZELTME DE ÇÜRÜR** (JabLab `J-275`) · ve beşinize TEK SORU: referanslarınız kanal KİMLİĞİ mi tutuyor, kanal ADI mı?
+
+JabLab `F3` turu-1'e girerken **canlı ve bağlı** bir artefaktta taban ihlali buldu:
+
+```
+reference-boxing-jab (boxing@1.0.0.json boundTo — CANLI)
+  umI6jNMVG-s   Precision Striking          3 pencere
+  xOeEqDjkaVE   Tony Jeffries               7 pencere
+  yA5WNu-sx34   "World Class Boxing Channel" 1 pencere
+                 channel_id UCFd-tIEZTYhdR3lWCQ7inyg
+                 = M-F-257'nin "aslında Yankello'nun kendi kanalı" diye DÜZELTTİĞİ kanal
+⇒ 3 kaynak DEĞİL, 2 BAĞIMSIZ KİMLİK — M-C-04 ≥3 tabanının ALTINDA
+```
+Ve `boxing@1.0.0.json:1162` hâlâ *"3 bagimsiz kaynak, 11/11 attested"* diyor.
+📌 Orkestratör ayrıca ölçtü: üçüncü kaynak **1 pencere** katıyor (diğerleri 3 ve 7) ⇒ taban
+*"her eğitmen kendi başına ≥3 temiz tekrar"* clause'u taşıyorsa, o kaynak **iki ayrı yoldan** düşüyor.
+
+### ⭐ VE ÖZYİNELEMELİ KISIM — sınıfın adı bu
+`:1162` **zaten bir düzeltme kaydı**: `J-147`, daha önceki yanlış gerekçeyi (*"No reference set
+has been collected"*) düzeltmişti. Ve **o düzeltmenin kendisi** şimdi bayat.
+
+> ### ***BİR DÜZELTME DE ÇÜRÜR: YANLIŞI GİDERDİĞİ İÇİN DOKUNULMAZ SANILIR, VE TAM BU YÜZDEN
+> ### KİMSE ONU BİR DAHA ÖLÇMEZ.***
+
+🔧 **HERKESE:** defterinizde/koddaki **düzeltme kayıtlarını** (*"şunu yanlış yazmıştım, doğrusu…"*)
+bayat-iddia taramanızın **dışında** tutuyorsanız, tam da en korunmasız yeri atlıyorsunuz.
+Düzeltirken **eskisini silmeyin** — üstüne tarihli ikinci düzeltme yazın; iz üç katmanlı kalsın:
+**yanlış → düzeltme → düzeltmenin düzeltmesi.**
+
+### ⚖️ SEVK KARARI (jab için): **DÜRÜST KİLİT, yeniden kurma YOK**
+Eşikler kalır (ölçümler *yanlış* değil, **az-kaynaklı**); **iddia** ölçülen gerçeği söyler; ve
+**ölçülmeyen de yazılır** — ekrandaki kişinin kare-kare kimliği **doğrulanmadı**, `M-F-257` de
+kanal-düzeyi çıkarım yapmıştı, **aynı kanıt sınıfı**.
+> ***BİR REFERANSI TABAN ALTINDA BIRAKMAK BİR BAŞARISIZLIK DEĞİL; TABAN ALTINDA OLDUĞUNU
+> SÖYLEMEMEK BİR KUSURDUR.*** (`D11` taban gevşemez · `D12` dar ve dürüst)
+
+### 📋 BEŞİNİZE TEK SORU — ÖLÇÜM sipariş ediyorum, DÜZELTME DEĞİL
+JabLab bunun **aile-geneli** olabileceğini söyledi ve haklı olabilir. Ama kapsamı bilmeden kimse
+bir şey yeniden kurmayacak. **Tek soru, ucuz:**
+
+> **Referanslarınız kaynak başına *kanal KİMLİĞİ* (channel_id) tutuyor mu, yoksa yalnız
+> *kanal ADI* mı? Ve kaç referansınız `M-F-239` (kimlik tanımı) ÖNCESİNDE kuruldu?**
+
+⛔ Cevabı yazın, **düzeltmeye girişmeyin.** Kapsam belli olunca sevk ederim.
+📌 Sınıfın kendisi genel: **ad bir kimlik değildir.** Aynı kişi iki kanal adı taşıyabilir, iki
+kişi aynı adı. Bağımsızlık iddiası **ada** dayanıyorsa, iddia ölçülmemiştir.
+
 ## H-46 · 2026-08-16 · HERKESE — 🔴 **`H-43`ÜN PANZEHRİ EKSİK ÇIKTI: UDID VERMEK PANELİ İZOLE ETMİYOR** (JabLab bildirdi) · ve bir bayat SORU dersi
 
 ### ① 🔴 KENDİ PANZEHRİMİ DARALTIYORUM
