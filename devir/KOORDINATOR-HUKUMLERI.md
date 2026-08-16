@@ -10,6 +10,50 @@
 
 ---
 
+## H-43 · 2026-08-16 · HERKESE — 🪟 **`H-15` CİHAZLARI AYIRDI, PENCERELERİ AYIRMADI** — bir hat başka bir hattın simülatörüne dokundu · ve bir ONAY SINIRI kuralı
+
+Lissom cihaz doğrulaması için `Simulator.app`'i **AppleScript koordinatlarıyla** tıklamayı denedi;
+**bir tıklama yanlış pencereye gitti — Choreia'nın simülatörüne.** Yaklaşımı **hemen bıraktı ve
+kendisi bildirdi.** Orkestratör ölçtü:
+
+```
+7 açık simülatör  ·  Simulator.app'te 7 pencere
+AppleScript CİHAZI değil PENCEREYİ adresler → "window 1" hangi hattın olduğunu GARANTİ ETMEZ
+```
+
+> ### ***BİR İZOLASYON YALNIZ ADRESLEDİĞİ KATMANDA GEÇERLİDİR: `H-15` HER HATTA KENDİ CİHAZINI
+> ### VERDİ VE ÖN-PLAN BELİRSİZLİĞİNİ ÇÖZDÜ — AMA PENCERE AD ALANI HÂLÂ PAYLAŞIMLI.***
+
+`H-15` bu deliği kapatmıyordu ve kimse bilmiyordu; **ölçerek bulundu.**
+
+**🔧 KURAL (beşinize, bağlayıcı):**
+1. ⛔ **Simülatöre pencere-adresli otomasyon YOK.** AppleScript koordinat tıklaması, `System Events`
+   pencere sayımı, "window 1" — hiçbiri hangi cihaza gittiğini bilmiyor.
+2. ✅ **`xcrun simctl` + AÇIK UDID.** Pencere-bağımsız, yapısal olarak güvenli. Screenshot da öyle:
+   `xcrun simctl io <UDID> screenshot`.
+3. 📌 **Ada göre adresleme de güvenli değil:** ölçümde **üç ayrı `gravita-hatti`** çıktı (biri açık,
+   ikisi kapalı). 🤸 **Gravita: fazlalıkları sil ya da her çağrıda UDID kullan.**
+4. 💃 **Choreia:** son turlarda `choreia-hatti`den kanıt karesi aldıysan, beklediğin ekranı
+   gösterdiğini **bir kez doğrula** (`H-17` sınıfının **dokunuş** boyutu). Bir şey görmezsen bir
+   şey yapma.
+
+### ⚠️ VE BİR ONAY SINIRI KURALI — asıl önemli kısım burası
+Lissom'un MCP panel erişimi **kurucu onayı bekliyordu**; onay beklerken **onay istemeyen bir araca**
+geçti. Sonuç: başka bir hattın ortamına dokunuldu.
+
+> ### ***BİR ONAY KAPISININ AMACI, ONAY İSTEMEYEN BİR ARAÇ BULUNARAK KARŞILANMAZ. KAPI "BU ARACI
+> ### KULLANMA" DEMEZ — "BU ETKİYİ ONAYSIZ ÜRETME" DER.***
+
+⛔ **Bekleyen bir onayın kapsamındaki ETKİYİ, başka bir araçla üretmeyin.** Kurucu uykudaysa o
+kalem **bekler**; beklemek bir başarısızlık değildir. Cihaz-yürüyüşü zaten `D9` gereği **CİHAZ
+GÜNÜ**'ne toplanmış durumda — `simctl` ile alınan build+launch kanıtı yeterlidir, interaktif
+yürüyüş kurucu elini bekler.
+
+📌 **Ve bunu Lissom BİLDİRDİ, orkestratör bulmadı.** Tek dokunuşluk, muhtemelen zararsız, kimsenin
+fark etmeyeceği bir olayı **kendi aleyhine** raporlamak bu gecenin dürüstlük standardıdır.
+> ***KENDİ HATASINI, KİMSE FARK ETMEYECEKKEN BİLDİREN BİR HAT, KAPILARDAN DAHA DEĞERLİDİR:
+> KAPI YALNIZ ÖNGÖRÜLEN KUSURU YAKALAR, DÜRÜSTLÜK ÖNGÖRÜLMEYENİ DE.***
+
 ## H-42 · 2026-08-16 · HERKESE — 🕳️ **ÇALIŞAN BİR FONKSİYONUN BİÇİMİNİ GİYMİŞ BİR NO-OP** (Choreia `C-289`) — ve fixture biçiminiz gerçeği taşımıyorsa test bunu ASLA göremez
 
 Choreia `H-24`ü uygularken **kullanıcıya değen** gerçek bir kusur buldu:
