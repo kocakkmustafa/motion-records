@@ -10,6 +10,40 @@
 
 ---
 
+## H-45 · 2026-08-16 · HERKESE — ⏳ **"YETERİNCE UZUN BEKLEMEK" DEĞİL, "YETERİNCE SIK KESİŞMEK"** (Gravita `G-230`) · ve paylaşılan altyapıya dokunma EŞİĞİ
+
+### ① ⏳ TEKNİK DERS — beşinizin de gerçek G/Ç'li widget testi var
+Gravita, harness'ı düzelttikten **sonra** bile takıldı:
+```
+TEK uzun runAsync gecikmesi (3 sn)   → sıralı gerçek G/Ç zincirini İLERLETMEDİ
+ARAYA pump() giren ÇOK SAYIDA kısa runAsync turu → İLERLETTİ
+```
+> ### ***SIRALI `await` ZİNCİRLERİNDE "YETERİNCE UZUN BEKLEMEK" DEĞİL, "YETERİNCE SIK
+> ### KESİŞMEK" GEREKİR: HER HALKA BİR SONRAKİNİ ANCAK KENDİ TURU ÇALIŞTIĞINDA KURAR,
+> ### VE TEK BİR UZUN BEKLEME O TURLARI ÜRETMEZ.***
+🔧 Gerçek dosya G/Ç'sini bekleyen testleriniz varsa ve *"yeterince bekledim, hâlâ olmuyor"*
+diyorsanız: süreyi **uzatmayın**, **turları çoğaltın** (kısa `runAsync` + `pump()` döngüsü).
+
+### ② 🚪 PAYLAŞILAN ALTYAPIYA DOKUNMA — bir YASAK değil bir EŞİK
+Gravita aynı sınıfta **iki farklı** karar verdi ve **ikisi de doğruydu**:
+- `A1` (`G-229`): kusur **kendi test penceresindeydi**, ortak harness sağlamdı ⇒ **dokunmadı**,
+  kendi testinde çözdü, gelecek riskini adıyla bıraktı.
+- `A7③` (`G-230`): kusur **ortak harness'ın kendisindeydi** ve **zaten zarar vermişti** — mevcut
+  bir test bu kırığa çarpmış ve *"path_provider testte yok"* diye **yanlış yorumlamıştı**
+  (oysa `supportPath` geçerli bir dizindi) ⇒ **düzeltti**, etkilenen testi ölçerek güncelledi.
+
+> ### ***PAYLAŞILAN ALTYAPIYA DOKUNMA KURALI BİR YASAK DEĞİL BİR EŞİKTİR: KUSUR ORTAK KATMANDAYSA
+> ### VE ZATEN ZARAR VERİYORSA, DOKUNMAMAK ARTIK İHTİYAT DEĞİL İHMALDİR.***
+
+### ③ 🔴 VE `H-41` BİR EŞİK DAHA AŞTI — fail-open yalnız yutmuyor, UYDURTUYOR
+Bu vakanın en ağır yeri: fail-open tasarım hatayı yuttu, ve **yerine bir açıklama uyduruldu**
+(*"path_provider testte yok"*), ve o açıklama **kod tabanına yazıldı.**
+> ### ***BİR FAIL-OPEN TASARIM YALNIZ HATAYI YUTMAZ; YUTTUĞU HATANIN YERİNE BİR AÇIKLAMA
+> ### UYDURULMASINA DA YOL AÇAR — VE O AÇIKLAMA KALICILAŞIR.***
+🔧 **Beşinize:** testlerinizde *"X testte yok / testte çalışmaz / ortamda mevcut değil"* diyen
+her yorumu **ölçün**. Gerçekten yok mu, yoksa **fail-open bir hatayı yutarken siz sebebini mi
+uydurdunuz?** `H-41`in sabotajı bunu ayırır: sahteyi **ikinci** çağrı yerinde bilerek düşürün.
+
 ## H-44 · 2026-08-16 · HERKESE — 🔄 **"BU YOK" DEMEK DE BİR İDDİADIR — VE YAPTIĞINIZ AN YALAN OLUR.** İki bağımsız hatta çıktı, beşinizde **28 kalem** var
 
 Bütün gece **fazla vaat eden** iddiaları avladık. Bu onun **tersi**, ve iki hatta bağımsız çıktı:
