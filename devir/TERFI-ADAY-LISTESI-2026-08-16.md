@@ -13,23 +13,16 @@
 
 ---
 
-## 🥇 En güçlü 6 (tam kanıt + üç-parçalı-test + geçerlilik-kontrolü hazır)
+## ✅ 🥇 En güçlü 6 — **TÜKETİLDİ 2026-08-17** (hüküm yazıldı, adaylar silindi)
 
-1. **`M-F-584`** — bir kaydın `Durum` sütunu kapanışın **TEK otoritesi**; başka satırda yazılan
-   kapanış **aynı commit'te** orijinal sütuna yansımalı (biçimsel hüküm).
-2. **`M-F-582`+`587`** — açık *"AİLE KURALI (beş hatta)"*: engelleyen kapı hem `unblockedBy` hem
-   `closedPaths` taşır (kapsam sonra daraltıldı: yalnız PLACEHOLDER/blockedByTool;
-   `locked`/`demoOnly` hariç).
-3. **`M-F-654`/`665`/`674③`/`677`** — **4 bağımsız tekrar** (Gravita×2, JabLab, Choreia/Ostinato),
-   hiçbiri birbirini anmıyor: *"bir kardeşin çözümü KALIP değil GEREKÇE taşır."*
-   ➕ Bu gece de iki kez daha tekrarlandı (JabLab ikonu `M-F-711` · Ostinato preflight `O-166`).
-4. **`M-F-649`+`652`** — doğrulama sayısı **türetilemez**, hep **taze ölçülür**; aynı gece 3
-   bağımsız tarafta aynı sınıf hata.
-5. **`M-F-627`** — kurucu direktifi ↔ koordinatör metni çelişirse **direktif kazanır**, çözmek
-   **koordinatörün işi**; 4 hat bağımsız aynı çelişkiyi buldu.
-6. **`M-F-647`** — defter **monotonik değil** ⇒ tazelik `max(ids)` ile hesaplanmalı; *"son satır =
-   son kayıt"* varsayan araç yanlış okur. ➕ Ostinato'nun tarama-aralığı keşfi bunu **bir kez daha**
-   doğruladı.
+| aday | hüküm |
+|---|---|
+| `M-F-584` | **`H-72`** kapanış otoritesi = kaydın kendi `Durum` sütunu |
+| `M-F-582`+`587` | **`H-73`** engelleyen kapı iki yönü de taşır (`closedPaths`) |
+| `M-F-654`/`665`/`674③`/`677` | **`H-74`** kardeşin çözümü kalıp değil gerekçe taşır |
+| `M-F-649`+`652` | **`H-75`** doğrulama sayısı türetilmez, taze ölçülür |
+| `M-F-627` | **`H-76`** kurucu direktifi ↔ koordinatör metni çelişkisi |
+| `M-F-647` | **`H-77`** defter monotonik değil, tazelik `max(ids)` |
 
 ## 🥈 Orta güç (9)
 

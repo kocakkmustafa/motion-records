@@ -1,7 +1,7 @@
 # 📦 KURUCU PAKETİ — Motion ailesi yayın yolu
 
 > Orkestratör biriktirir, kurucu tek oturuşta yapar. **Sona bırakılmaz, büyür.**
-> Açılış: 2026-08-16 02:30 · son güncelleme: 2026-08-16 02:30
+> Açılış: 2026-08-16 02:30 · son güncelleme: **2026-08-17 (tur-2 açılışı)**
 > Kural: her madde **tek oturuşta yapılabilir** netlikte — dosya yolu + tek-tık komut + beklenen kanıt.
 
 ---
@@ -91,6 +91,27 @@ böl, her doğrulanabilir adımda commit"* talimatı verildi. Bu **çalışıyor
 uyum**.
 
 ⇒ Aciliyet: 🔴 *"her şey durdu"* **değil** · 🟠 *"işin maliyeti sessizce artıyor"* **evet**.
+
+### 📈 EK ÖLÇÜM (2026-08-17, tur-2 açılışı) — **17 → 29. EĞİLİM HIZLANDI.**
+```
+brctl status | grep -c 'needs-upload'   →  29
+```
+| tarih | takılı yükleme | not |
+|---|---|---|
+| 2026-08-12 | **12** | portföy denetiminde *"gizli risk"* diye işaretlendi |
+| 2026-08-16 (tur-1 kapanışı) | **17** | *"eğilim kötüleşiyor"* |
+| **2026-08-17 (tur-2 açılışı)** | **29** | 🔴 dört günde **2,4 kat** |
+
+📌 **Yorumu dürüstçe daraltıyorum — bu sayı bir kesit, bir hız değil.** 29, *"29 dosya kayıp"*
+demek değil; *"29 yükleme sırada takılı"* demek. Ölçülmemiş olan: bunların **kaçının** tur-1'den
+kalan **aynı** dosyalar olduğu. ⇒ *"Kötüleşiyor"* iddiam **sayının kendisine** dayanıyor, kimliğine
+değil — ve bu ayrımı yazmasaydım sayı olduğundan **kesin** okunurdu.
+
+🟢 **Bugün iş DURMADI:** tur-2 açılışında beş hattın da ağacı okunabildi, altı deponun altısı da
+`origin` ile senkron (0/0). Tur-1'in *"küçük parçalara böl, her doğrulanabilir adımda commit"*
+uyumu **çalışıyor.**
+⇒ Karar hâlâ **senin** (§0c'deki A/B/C seçenekleri değişmedi) ve hâlâ **acil değil** — ama
+*"ertelendikçe pahalılaşıyor"* cümlesinin arkasındaki sayı artık **iki kat daha büyük.**
 
 ### 📌 VE BUNUN YAYINA ETKİSİ — şimdilik SINIRLI
 Bugünkü ana çıktılar (ikonlar · gizlilik kapısı · cihaz günü paketleri · defter kayıtları)

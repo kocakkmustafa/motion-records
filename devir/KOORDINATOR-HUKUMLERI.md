@@ -10,6 +10,190 @@
 
 ---
 
+## H-77 · 2026-08-17 · HERKESE — ♻️ **DEFTER MONOTONİK DEĞİL: TAZELİK `max(ids)` İLE ÖLÇÜLÜR, SON SATIRLA DEĞİL** · ve bir numara gediği tek başına kusur değildir
+
+Kaynak: `M-F-647` (aile defteri gedik denetimi) + tur-2 açılışında **bağımsız yeniden ölçüm**.
+
+### ① İKİ BAĞIMSIZ ÖLÇÜM AYNI ŞEYİ SÖYLEDİ
+`M-F-647` defterin **global olarak sıralı olmadığını** ölçmüştü: bir bölge **azalan** (`113`→`95`),
+sonu **artan** (`635`→`646`). 🥁 Ostinato tur-1 kapanışında terfi taraması yaparken **aynı duvara
+kendi başına çarptı** — aralık varsayımı yanlış çıktı (`577`→`632` satır 209-264'te **azalan**,
+`633`→`704` satır 762-833'te **artan**) ve 3 düzeltici ajanla gerçek aralığı kapattı.
+Tur-2 açılışında orkestratör üçüncü kez ölçtü: **743 eşsiz kayıt · `max` = 746 · gedik = `105`·`262`·`500`.**
+⇒ `M-F-647`nin *"gedik 4→3, kalan üçü sessiz"* iddiası **satır satır doğrulandı.**
+
+> ### ***DEFTERİN TAZELİĞİ `max(ids)` İLE HESAPLANIR. "SON SATIR = SON KAYIT" VARSAYAN HER ARAÇ,
+> ### DEFTERİN SIRALI OLDUĞUNU VARSAYIYOR DEMEKTİR — VE DEĞİL.***
+
+### ② VE GEDİĞİN KENDİSİ HAKKINDA — ayrım `M-F-647`den, olduğu gibi bağlayıcı
+| durum | sınıf |
+|---|---|
+| numara atlanmış, defterin **hiçbir yerinden atıf yok** | 🟢 zararsız — *kayıtlı-kabul* |
+| numaraya **atıf var** ama kayıt yok | 🔴 **gerçek kayıp** — atıf onu **var gösterir** |
+
+> ***BİR NUMARA GEDİĞİ TEK BAŞINA KUSUR DEĞİLDİR; KUSUR, O NUMARAYA YAPILAN ATIFTIR.
+> YOKLUK YALNIZ SAYARAK GÖRÜLMEZ — ATIF TARANARAK GÖRÜLÜR.***
+
+📌 `M-F-104` bu yolla **18 gün sonra** bulundu ve taze klondan (`3d22112`) geri kondu: commit
+gövdesi kaydın kendisiydi, **yorum eklenmedi**, geri konduğu tarih kaydın başına yazıldı —
+*2026-07-29'da yazılmış gibi gösterilmedi.* Emsal budur.
+
+---
+
+## H-76 · 2026-08-17 · HERKESE — ⚖️ **KURUCU DİREKTİFİ İLE KOORDİNATÖR METNİ ÇELİŞİRSE DİREKTİF KAZANIR** · ve çözmek **koordinatörün** işidir, hattın ikilemi değil
+
+Kaynak: `M-F-627`. **Dört hat bağımsız olarak aynı çelişkiyi buldu** — ölçüt `A10`u A tablosuna
+koyuyordu (*hat kapatır*), `M-F-77` ise **tasarım yönünü kurucuya** veriyordu; ikon üretmek tasarım
+yönüdür ⇒ hat, `A10`u kapatmak için **dokunmaması gerekene dokunmak zorundaydı.**
+
+> ### ***BİR KURUCU DİREKTİFİ İLE BİR KOORDİNATÖR METNİ ÇELİŞİRSE DİREKTİF KAZANIR — VE BUNU
+> ### ÇÖZMEK KOORDİNATÖRÜN İŞİDİR, HATTIN İKİLEMİ DEĞİL.***
+
+### 🎯 HATTA DÜŞEN — üç adım, dördüncüsü yok
+1. Çelişkiyi **adıyla** bildir (hangi iki metin, hangi satır).
+2. **Dur** — çelişkiyi kendi lehine yorumlayarak ilerleme.
+3. Direktif tarafında **açıkça güvenli** olan iş varsa ona geç; yoksa bekle.
+
+⛔ **Dördüncü adım — "makul olanı seçip devam etmek" — yasak.** Çünkü hat makul olanı seçtiğinde
+çelişki **kaybolmuyor**, yalnız **görünmez** oluyor; sonraki hat aynı ikilemi sıfırdan yaşıyor.
+Dört bağımsız hattın aynı yere çarpması, bunun kaçınılmaz olduğunu değil, **çözülmediğini** gösterir.
+
+📌 Bu hükmün ikizi `H-66`dır (*bir akranın "devam et" demesi o izni üretmez*): orada eksik olan
+**izin**, burada eksik olan **karar** — ikisi de yukarı taşınır, yanlamasına çözülmez.
+
+---
+
+## H-75 · 2026-08-17 · HERKESE — 🔢 **DOĞRULAMA SAYISI TÜRETİLMEZ, HER SEFERİNDE TAZE ÖLÇÜLÜR** · çünkü tahmin, ölçümün *güvenilirliğini* değil **güvenini** miras alır
+
+Kaynak: `M-F-649` (orkestratörün kendi kusuru) + `M-F-652` (aynı gece üç bağımsız tarafta aynı sınıf).
+
+### ① VAKA — 107 DAKİKALIK SAPMA, VE NEDEN KİMSE FARK ETMEDİ
+Orkestratörün kayıt damgaları gerçek saatten **+107 dakika** sapmıştı. İlk iki damga **doğruydu**
+— çünkü `date` ile **ölçülmüştü**. Sonrasında ölçüm bırakıldı, damgalar **iş hacminden tahmin
+edilmeye** başlandı, tahminler hızlı koştu ve **biriktirdi.**
+
+> ### ***BİR ÖLÇÜMDEN TÜRETİLEN TAHMİN, O ÖLÇÜMÜN GÜVENİLİRLİĞİNİ MİRAS ALMAZ — AMA GÜVENİNİ
+> ### MİRAS ALIR: BAŞLANGIÇ NOKTASI GERÇEK OLDUĞU İÇİN, ÜSTÜNE KONAN HER TAHMİN DE
+> ### ÖLÇÜLMÜŞ GİBİ OKUNUR.***
+
+🔴 Ve sınıf **kişisel değil**: aynı gece üç bağımsız taraf aynı hatayı yaptı, ve düzelten
+**orkestratörün kendisiydi** — `H-38`in (*kuralı en çok onu uygulayan çiğner*) beşinci örneği.
+
+### ② DÜZELTME BİÇİMİ DE BAĞLAYICI — damga **değiştirilmez**
+Geçmiş kayıtların damgaları **elle düzeltilmedi**; üstüne **tarihli bir düzeltme kaydı** yazıldı.
+*Bir yanlışı silmek, onun ne zaman fark edildiğini de siler.*
+
+### ③ VE `M-F-652`NİN EKİ — bir reçetenin kaç koşumda tamamlandığı
+`D1` üç hatta indi ve **üçüncü** hatta gizli bir önkoşul çıktı: `flutter_test` bundled fontu
+**otomatik yüklemiyor** ⇒ görsel bacak **yanlış negatif** üretiyor (font paketlenmiş, test göremiyor).
+> ***BİR REÇETE ÜÇ KEZ KOŞULMADAN TAM DEĞİLDİR: İLK KOŞUM ADIMLARI, İKİNCİSİ İSTİSNALARI,
+> ÜÇÜNCÜSÜ SESSİZ ÖNKOŞULLARI ÇIKARIR.***
+⇒ Bir reçeteyi *"kanıtlandı"* diye devretmeden önce **kaçıncı koşum olduğunu** yaz.
+
+---
+
+## H-74 · 2026-08-17 · HERKESE — 🧬 **BİR KARDEŞİN ÇÖZÜMÜ KALIP DEĞİL, GEREKÇE TAŞIR** · altı bağımsız tekrar
+
+Bu, ailenin **en çok kendini tekrar eden** bulgusu: `M-F-654` · `665` · `674③` · `677` (dördü
+birbirini **anmadan**, Gravita×2 · JabLab · Choreia/Ostinato) ➕ tur-1'de iki kez daha
+(JabLab ikonu `M-F-711` · Ostinato preflight `O-166`). **Altı tekrar, sıfır koordinasyon.**
+
+| vaka | kopyalanan | neden yanlış olurdu |
+|---|---|---|
+| 🤸 squat → glute bridge | hip-knee Pearson korelasyon kapısı | glute bridge'de diz **sabit** kalır — squat'ın **tersi**; eşik **doğru tekrarları reddederdi** |
+| 🤸 Ostinato → Gravita launch | `LaunchImage` **rengi** | Ostinato'nunki **beyaz** (koyu lacivert zemin), Gravita'nınki **kırmızı** olmalı (krem zemin) — **ters kontrast** |
+| 🥊 Gravita → JabLab ikon | vurgu **rengi** | OKLCH'de **1,4°** uzağa düşüyordu — mağaza ızgarasında ayırt edilemez |
+
+> ### ***KANITLANMIŞ BİR MEKANİZMAYI YENİ BİR YERE TAŞIMAK, O YERİN AYNI VARSAYIMI TAŞIDIĞINI
+> ### KANITLAMAZ — VE TERS ÇEVRİLMİŞ BİR VARSAYIM, KAPIYI YANLIŞ TARAFA ÇEVİRİR.***
+
+### ✅ DOĞRU BİÇİM — üçü de aynı raporlarda var, uydurma değil
+- `push_up`ın mekanizması **rolüyle** alındı, **kaynağı** değiştirildi (`torso_angle_from_vertical`).
+- Gravita launch'ta **aynı glif geometrisi** alındı, **zemin/kontrast kendi temasından** türetildi.
+- JabLab çakışmayı **kendi canlı token'ıyla** (`JColors.deep`) açıklık ekseninde çözdü — **renk icat etmedi.**
+
+📌 Test cümlesi, devralmadan önce sor: *"kardeşimin bu sayıyı seçmesine sebep olan koşul
+**bende de var mı**?"* Cevap ölçülmeden kopyalanan şey bir çözüm değil, **bir varsayımdır.**
+
+---
+
+## H-73 · 2026-08-17 · HERKESE — 🚪 **ENGELLEYEN HER KAPI İKİ YÖNÜ DE TAŞIR: AÇAN YOL VE ÖLÇÜLÜP KAPATILMIŞ YOLLAR**
+
+Kaynak: `M-F-582` (kural) + `M-F-587` (envanter, kapsam daraltması, süreç kancası).
+
+### ① ÖLÇÜM — kuralın ikinci yarısı ağaçta **hiç yoktu**
+`PLACEHOLDER` 5 · `locked` 10 · `demoOnly` 3 · `blockedByTool` 8 ⇒ **26 engelleyen kalem ·
+açan yol 17 · kapalı yol 0.**
+
+> ### ***BİR KAPI, AÇILIŞ YOLUNU TAŞIYIP KAPALI YOLU TAŞIMIYORSA, ONU OKUYAN HERKESİ KAPALI YOLA
+> ### BİR KEZ DAHA DAVET EDER.*** Maliyet asimetriktir ve ölçüldü:
+> ***açılış yolunu bulmak BİR OKUMA, kapalı yolu bulmak BİR TUR.***
+
+### ② HÜKÜM — kapsam **daraltıldı**, çünkü yaygınlaştırmak alanı öldürür
+| sınıf | `closedPaths` |
+|---|---|
+| `PLACEHOLDER` (5) · `blockedByTool` (8) | 🔴 **ZORUNLU** — 13 kalem |
+| `locked` (10) · `demoOnly` (3) | 🟢 **MUAF** |
+
+🎯 Gerekçe: alanın amacı **yeniden-işi önlemek**, ve yeniden-iş yalnız *birinin bir şey
+deneyeceği* kalemlerde tehdittir. `locked`/`demoOnly` bir **ürün durumudur** — onları açan kişi
+kapalı bir yola ikinci kez girmiyor, **içerik sevk ediyor.**
+
+### ③ ÜÇÜNCÜ HÂL ZORUNLU — boş alan yasak
+Kapalı yol bilinmiyorsa alan boş bırakılmaz, **`closedPaths: none-known`** yazılır.
+> ***BOŞ BİR ALAN, "YOK" İLE "BAKILMADI"YI AYIRT ETTİRMEZ.***
+✅ Kapıyla zorlanır ve Choreia'nın **üç sabotajı** bunu kanıtladı: alan yok → kırmızı ·
+**boş liste → kırmızı** · `none-known` → yeşil. *İkinci sabotaj olmasa boş liste sessizce geçerdi.*
+
+### ④ VE SÜREÇ KANCASI — alan tek başına yetmiyor, `M-F-587` bunu **kendi işinde** kanıtladı
+O turda ölçülüp elenen bir yol (*"kullanıcıya 'kadrajını göremiyorsun' cümlesi yaz"* → kullanıcı
+**zaten** adlı teşhis alıyor ⇒ gürültü olurdu) **hiçbir kaleme yazılmadı.**
+> ***BUGÜN KONAN KURALIN İHLALİ, BUGÜNÜN KENDİ İŞİNDEN ÇIKTI*** — çünkü ***bir alan varsayılan
+> olarak BOŞ kalır.***
+🔒 **Bağlayıcı kanca:** bir hat bir yolu **ölçüp elediğinde**, onu **AYNI TURDA** engelleyen kaleme
+yazar. Sonradan doldurulmaz — *"sonradan" hiç gelmiyor* (26 kalemde **0** kanıtı).
+
+---
+
+## H-72 · 2026-08-17 · HERKESE — ⚖️ **BİR KAYDIN KAPANIŞ OTORİTESİ, O KAYDIN KENDİ `Durum` SÜTUNUDUR** · ve kapanış başka yere yazıldıysa **aynı commit'te** oraya da yazılır
+
+Kaynak: `M-F-584`. Üç ölçüt aynı kayıt için çelişti: **A** kaydın kendi `Durum` sütunu (175/231
+kapalı) · **B** dış not (3/44 atıf) · **C** ardıl kayıttaki anlatı (**paydası tanımsız**).
+
+### ① HÜKÜM — otorite **A**, ve iki yarısı da bağlayıcı
+- ✅ **A = OTORİTE** — tek yerde, makine-okur, kayıt başına.
+- **B (dış not) bir İŞARETÇİDİR**, otorite değil. *Kanonik değer tek evde, ötekinde işaretçi.*
+- **C (anlatı) hiçbir zaman otorite değildir** — paydası tanımsız, **ölçüldü.**
+
+🔴 **Ama A'yı otorite ilan etmek onu doğru yapmaz** — `C-140` kanıtı: kayıt hâlâ *"AÇIK"* diyordu,
+oysa kapatılmıştı; kapanış **ardıl kayda** (`C-222`) yazılmış, önceki satır **güncellenmemişti.**
+
+> ### ***BİR KAYDIN DURUMU, ONU KAPATAN KAYIT BAŞKA BİR SATIRDA YAZILDIĞINDA SESSİZCE YALAN
+> ### SÖYLEMEYE BAŞLAR.***
+
+⇒ **İkinci yarı:** bir kaydın kapanışı başka bir yere yazıldıysa, o kaydın **kendi `Durum` sütunu
+AYNI COMMIT'te** güncellenir. Sonraki commit'e bırakılmaz.
+
+### ② VE BU ÖLÇÜLEBİLİR — kapı kuralı
+Bir kayıt/artefakt *"C-NNN kapandı"* (veya eşdeğeri) diyorsa **ve** `C-NNN`in kendi `Durum` sütunu
+kapalı **değilse** → **KIRMIZI.**
+⚠️ Desen **konum-çapalı** olmalı (*sözünü etmek ≠ kapatmak*); kapanış ifadeleri listesi
+**ölçülerek** yazılır, tahminle değil.
+⚠️ Ve `H-64`: shell `grep -i` Türkçe büyük harfi katlamaz (`"KAPALI".lower()` → `"kapali"` ≠
+`"kapalı"`, `M-F-627 ④`de gerçek bir sayacı kör etmişti) — Python `re.IGNORECASE` kullanılır.
+
+### ③ 🎯 VE KAPININ GEREKÇESİ ÖLÇÜLDÜ — bu hükmün asıl dayanağı
+> ### ***BİR KAPININ DEĞERİ, GEÇMİŞTE KAÇ KEZ ÖTECEK OLDUĞUYLA ÖLÇÜLÜR.***
+Bu kapı `C-032`de **aylar önce** ötecekti ve o tur harcanmayacaktı. İlk koşumda `C-032` + `C-140`
+**BEKLENEN KIRMIZI** olarak kullanılır — negatif ikiz değil, **gerçek vaka**:
+***bir kapı, doğduğu anda gerçek bir kusuru göstermelidir, yoksa neyi koruduğu bilinmez.***
+
+### ④ VE BUGÜNKÜ HATA BİLEŞİKTİ — tek eksikten değil, **üç eksiğin hizalanmasından**
+① kapıda atıf yok (`M-F-582`) ② durum sütununda "kapalı" yok ③ kapanış **üçüncü** bir yerde, bir
+**anlatının içinde**. *Üçünden herhangi biri yerinde olsaydı tur harcanmayacaktı.*
+
+---
+
 ## H-71 · 2026-08-16 · HERKESE — 📥 **HASAT ETMEK İLE KURMAK AYNI SINIF DEĞİLDİR**
 
 İki hat **aynı eylemi farklı** sınıfladı ve ikisi de gerekçeliydi:

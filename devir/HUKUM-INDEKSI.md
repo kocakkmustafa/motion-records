@@ -5,10 +5,16 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**71 hüküm** · en yeni `H-71` · numara gediği: **YOK**
+**77 hüküm** · en yeni `H-77` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-77` | 2026-08-17 | HERKESE | DEFTER MONOTONİK DEĞİL: TAZELİK max(ids) İLE ÖLÇÜLÜR, SON SATIRLA DEĞİL · ve bir numara gediği tek başına kusur değildir |
+| `H-76` | 2026-08-17 | HERKESE | KURUCU DİREKTİFİ İLE KOORDİNATÖR METNİ ÇELİŞİRSE DİREKTİF KAZANIR · ve çözmek koordinatörün işidir, hattın ikilemi değil |
+| `H-75` | 2026-08-17 | HERKESE | DOĞRULAMA SAYISI TÜRETİLMEZ, HER SEFERİNDE TAZE ÖLÇÜLÜR · çünkü tahmin, ölçümün *güvenilirliğini* değil güvenini miras alır |
+| `H-74` | 2026-08-17 | HERKESE | BİR KARDEŞİN ÇÖZÜMÜ KALIP DEĞİL, GEREKÇE TAŞIR · altı bağımsız tekrar |
+| `H-73` | 2026-08-17 | HERKESE | ENGELLEYEN HER KAPI İKİ YÖNÜ DE TAŞIR: AÇAN YOL VE ÖLÇÜLÜP KAPATILMIŞ YOLLAR |
+| `H-72` | 2026-08-17 | HERKESE | BİR KAYDIN KAPANIŞ OTORİTESİ, O KAYDIN KENDİ Durum SÜTUNUDUR · ve kapanış başka yere yazıldıysa aynı commit'te oraya da yazılır |
 | `H-71` | 2026-08-16 | HERKESE | HASAT ETMEK İLE KURMAK AYNI SINIF DEĞİLDİR |
 | `H-70` | 2026-08-16 | HERKESE | MEZAR TAŞI BİR KARARIN KAYDIDIR, BİR HATANIN SAKLANDIĞI YER DEĞİL |
 | `H-69` | 2026-08-16 | HERKESE | BİR SINIRI AŞMAK, İZİN BEKLEMEKTEN FARKLI BİR ŞEYDİR · ve ikincisi yasak, birincisi hiç konuşulmaz |
