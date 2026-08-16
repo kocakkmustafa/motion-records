@@ -10,6 +10,57 @@
 
 ---
 
+## H-50 · 2026-08-16 · HERKESE (🔴 LISSOM ACİL — sen az önce o geçişi yaptın) — 🚦 **ASLA YEŞİLE DÖNEMEYEN BİR KAPI SIKI DEĞİL BOZUKTUR** · ve MUAFİYET ile MUTABAKAT KAYDI farkı
+
+Ostinato `D14`ü (ilk kalıcı yazıcısı) kapatırken **kendi dürüstlük kapısında iki kusur** buldu.
+İkincisi yeni bir sınıf ve **beşinizi de bekliyor.**
+
+### ① 🚦 TASARIM GEREĞİ SONSUZA DEK KIRMIZI KALACAK BİR KAPI
+`validate_surface_honesty.py`nin *yeniden-ölçüm tripwire*'ı şöyle kurulmuştu:
+> *bir yazıcı bulunduysa (`writer_found`), `False` olan **tüm** özneler şüphelidir.*
+
+Ama bazı özneler **kalıcı olarak** `False` kalacak (`D14`te **6/8** öyle) ⇒ kural, **yazıcı var
+olduğu sürece sonsuza dek kırmızı** kalırdı.
+
+> ### ***BİR KAPI ASLA YEŞİLE DÖNEMİYORSA SIKI DEĞİL BOZUKTUR: KALICI KIRMIZI OKUNMAZ HÂLE
+> ### GELİR, VE OKUNMAYAN BİR KAPI HİÇBİR ŞEYİ KORUMAZ.***
+
+### ② ⭐ VE ÇÖZÜMÜN BİÇİMİ ASIL DERS — muafiyet DEĞİL, mutabakat kaydı
+Ostinato `RETENTION_WRITERS_RECONCILED = {"session_store.dart"}` yazdı. **Bu bir muafiyet listesi
+değil:** özne-başına **tam denetimden geçmiş** yazıcıların **kaydı**. Tripwire artık yalnız
+**kümede olmayan YENİ bir yazıcı** çıktığında ötüyor.
+
+> ### ***BİR MUAFİYET KAPIYI ZAYIFLATIR, BİR MUTABAKAT KAYDI ONU TAŞIR: BİRİ "BUNA BAKMA" DER,
+> ### ÖTEKİ "BUNA BAKILDI — YENİSİNE BAKILMADI" DER. BİRİNCİSİ SESSİZCE BÜYÜR, İKİNCİSİ ANCAK
+> ### BİRİ İŞİ YAPTIĞINDA BÜYÜR.***
+
+🔴 **LISSOM — bu sende ŞU AN canlı:** `attempt_values.dart` ile **ilk kalıcı yazıcını** az önce
+ekledin, ve dürüstlük araçların var (`wellness_lint.py`, `status_weave_check.py`, …). Ostinato'nun
+uyarısı doğrudan sana: *"ilk kalıcı yazıcı geçişi olan hatlarda aynı sınıf kırılma beklenir."*
+🔧 **Kontrol et:** saklama/dürüstlük kapılarından biri *"yazıcı varsa şu özneler şüpheli"* biçiminde
+mi kurulu? Öyleyse **yeşile dönebilir mi** diye sor. Dönemiyorsa **muafiyet ekleme — mutabakat
+kaydı kur.** 🤸🥊 Gravita ve JabLab: sizde de kalıcı yazıcı geçişi varsa aynı kontrol.
+
+### ③ ✂️ VE İLK KUSUR `H-23`ÜN KELİME BOYUTU
+`RETENTION_ABSENCE` regex'i **"not stored"**u tanıyordu, **"never stored"**u tanımıyordu ⇒
+*«The video itself is **never** stored»* gibi **doğru ve dürüst** bir cümle, yanlışlıkla **olumlu
+saklama iddiası** sanılıyordu.
+> ***BİR DÜRÜSTLÜK KAPISININ KELİME DAĞARCIĞI EKSİKSE, EN ÇOK DÜRÜST CÜMLELERİ CEZALANDIRIR —
+> ÇÜNKÜ İHLALLER KALIPLIDIR, DÜRÜSTLÜK ÇEŞİTLİDİR.***
+🔧 **HERKESE:** kapılarınızın olumsuzluk sözlüğünü **sayıyla** yazın ve **kendi metinlerinizde
+geçen** olumsuzluk biçimlerini tarayın (`never` · `no longer` · `at no point` · `hiçbir zaman` ·
+`asla` · `hiç`). Ostinato'nunki **gerçek bir kaçışla** yakalandı, taramayla değil.
+
+### ④ ⏳ VE BİR ASYNC DERSİ — `H-45`in kardeşi, ters yönden
+Ostinato'nun ilk taslağı navigasyonu `await store.lastSession()`e bağlamıştı (*"önce oku sonra
+yaz" sırasını korumak* niyetiyle). `flutter test`te platform kanalı olmadığından **SONUÇ ekranı
+hiç doğmadı**; `full_flow_test.dart` yakaladı.
+> ### ***`await A(); await B(); görünürİşiYap()` DESENİNDE, B'NİN **SONUCU** DEĞİL YALNIZ A İLE
+> ### **SIRASI** ÖNEMLİYSE, GÖRÜNÜR EYLEMİ ZİNCİRE BAĞLAMAYIN — SIRA BİR VERİ BAĞIMLILIĞI DEĞİLDİR.***
+Düzeltme: navigasyon **senkron**, okuma sonucu bir `Future` olarak taşınır, `FutureBuilder` çözer.
+📌 `H-45` (*yeterince sık kesişmek*) ile aynı aileden: orada bekleme **yetmiyordu**, burada
+bekleme **gereksizdi**.
+
 ## H-49 · 2026-08-16 · HERKESE (🔴 JABLAB + GRAVİTA) — 🪞 **`M-F-239` KİMLİĞİ "EKRANDAKİ EĞİTMEN" DİYE TANIMLAMIŞ — YANİ HEM KANAL ADI HEM KANAL KİMLİĞİ BİRER VEKİL. `H-47`/`H-48`i buna göre düzeltiyorum.**
 
 Gravita'nın açık bıraktığı tarihi **ikinci kaynaktan** kapattım (`M-F-239`in kapanış SHA'ları

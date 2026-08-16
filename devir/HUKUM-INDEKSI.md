@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**49 hüküm** · en yeni `H-49` · numara gediği: **YOK**
+**50 hüküm** · en yeni `H-50` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-50` | 2026-08-16 | HERKESE ( LISSOM ACİL | sen az önce o geçişi yaptın) — ASLA YEŞİLE DÖNEMEYEN BİR KAPI SIKI DEĞİL BOZUKTUR · ve MUAFİYET ile MUTABAKAT KAYDI farkı |
 | `H-49` | 2026-08-16 | HERKESE ( JABLAB + GRAVİTA) | M-F-239 KİMLİĞİ "EKRANDAKİ EĞİTMEN" DİYE TANIMLAMIŞ — YANİ HEM KANAL ADI HEM KANAL KİMLİĞİ BİRER VEKİL. H-47/H-48i buna göre düzeltiyorum. |
 | `H-48` | 2026-08-16 | HERKESE | ŞEMA KİMLİK ALANINI TASARLAMIŞ, OPSİYONEL YAPMIŞ, VE BİR KEZ BİLE DOLDURMAMIŞ (JabLab H-47 ölçümü) · ve orkestratörün bir kural-nakli hatası |
 | `H-47` | 2026-08-16 | HERKESE | BİR DÜZELTME DE ÇÜRÜR (JabLab J-275) · ve beşinize TEK SORU: referanslarınız kanal KİMLİĞİ mi tutuyor, kanal ADI mı? |
