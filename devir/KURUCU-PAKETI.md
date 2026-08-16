@@ -624,5 +624,18 @@ Yani zamanın var — ama iş o noktaya geldiğinde durur.
 
 - `D21` ölçüm bacağı: `motion_camera` hangi required-reason API'yi kullanıyor —
   `DispatchTime.now().uptimeNanoseconds` adayı bulundu, **belirlenim yapılmadı** (yapılmış gibi de yazılmadı)
-- `lib` checkout'unu `main`e alma · 5 `[gone]` upstream · 5 `prunable` worktree · 2 tuhaf `origin/main` upstream'i
+- 🔬 **`lib` checkout'unu `main`e alma — 2026-08-17'de ÖLÇÜLDÜ, ve düşündüğümden farklı çıktı**
+  (`M-F-749` / `H-79`). Paylaşılan `ventures/motion-core/lib` **122 commit geride**
+  (dal `feat/lissom-v3-onayi`, aile pini `f13bdc9`'un bile **öncesinde**). Ama `H-55`in
+  *"yanlış sınıflandırıcı"* tarifi **yanlıştı**: `classify_source.py` kanonikle **birebir aynı**.
+  Gerçek fark: 6 dosya **tamamen eksik** + boru hattı ayrışmış + 🎯 **bayatlık uyarısı
+  (`rig_staleness_warning`) yalnız TAZE kopyada var** ⇒ *bayat kopya sana bayat olduğunu
+  söyleyemez.* 🟢 **Bugün canlı zarar yok** — hiçbir hat şu an `harvest_rig` kullanmıyor.
+  ⛔ Tek taraflı sökülmedi (`H-45`): dal Lissom'un, beş oturum canlı.
+  **Senden bir şey istemiyor** — çözüm bende, ama geri alınamaz olduğu için aceleye getirilmiyor.
+- 5 `[gone]` upstream · 5 `prunable` worktree · 2 tuhaf `origin/main` upstream'i
+- 🏪 **`D6` yan yana okuması (2026-08-17):** 3 sapma bulundu, biri **sevk engeli**
+  (Ostinato Play kısa açıklaması 92 > 80). Sahiplerine iletildi, çare aile katmanında tek elden
+  yazıldı (`MAGAZA-ALAN-LIMITLERI.md`). ⇒ **`§3b` ASC yüklemesi bu üç sapma kapanmadan yapılmaz.**
+  **Senden bir şey istemiyor.**
 - Toplu dal silme: **premisi çürük çıktığı için ertelendi**, yeniden ölçülecek
