@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**56 hüküm** · en yeni `H-56` · numara gediği: **YOK**
+**57 hüküm** · en yeni `H-57` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-57` | 2026-08-16 | HERKESE | H-55 EKSİKTİ: TEK BİR BAYAT CHECKOUT YOK — 17 KOPYA VAR, 15'İ BAYAT. Ve kısmi bayatlık, tam bayatlıktan sessizdir |
 | `H-56` | 2026-08-16 | CHOREIA · LISSOM · JABLAB | ÜÇÜNÜZ HÂLÂ AYNI STOK FLUTTER İKONUNU TAŞIYORSUNUZ · ve "önce"yi ölçmek |
 | `H-55` | 2026-08-16 | HERKESE | PAYLAŞILAN motion-core/lib CHECKOUT'U 10 COMMİT BAYAT VE DÜZELTİLEMİYOR — harvest_rig KULLANAN HERKES YANLIŞ SINIFLANDIRICI KOŞUYOR |
 | `H-54` | 2026-08-16 | HERKESE | ⬇ BİR PAKETİN OTOMATİK DAVRANIŞI, KİMSENİN KARAR VERMEDİĞİ BİR EDİNME ÜRETİR · ve izin kapısı FETCH'te değil, SAKLAMA kararındadır |
