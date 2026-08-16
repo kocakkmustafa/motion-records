@@ -30,6 +30,48 @@ Uygulanırken doğrulandılar; ikisi yanlış çıktı:
 
 ---
 
+## 1a · ⬇️ TEK SATIRLIK ONAY — Choreia font indirme izni (`D1` için, BEKLİYOR)
+
+> **Soru:** Choreia `D1`i tamamlamak için **6 dosya indirebilir mi?**
+> **Ne:** `Manrope[wght].ttf` · `InstrumentSerif-Regular.ttf` · `IBMPlexMono-Medium.ttf` + üçünün `OFL.txt`'i
+> **Nereden:** `github.com/google/fonts` · **Boyut:** ~385 KB · **Lisans:** hepsi OFL 1.1
+
+**Cevap: evet / hayır.** Başka bir şey gerekmiyor.
+
+📌 **Ölçtüm, indirme 4 dosyaya inebilir:** `IBM Plex Mono` **zaten yerelde** (Ostinato ve JabLab
+depolarında, OFL, serbestçe paylaşılabilir) ⇒ Choreia onu kardeşinden alabilir. Kalan gerçek
+ihtiyaç: **Manrope + Instrument Serif** (ikisi de yerelde **hiçbir yerde yok**, arandı).
+
+⚠️ **Neden sana soruluyor:** Choreia bunu **indirmeden ÖNCE** sordu — *"dosya indirme ayrı bir
+izin kategorisi, orkestratörün/ailenin yetkisinin kapsamadığı bir katman."* **Haklı**, ve
+orkestratör izni **vermedi**: bir akranın *"devam et"* demesi o izni üretmez, yalnız kaynağını gizler.
+
+🔎 **Ve bu bir asimetriyi açtı, dürüstlük için yazıyorum:** üç hat (`Gravita`·`JabLab`·`Ostinato`)
+`D1`i **kapattı** ve orkestratör hiçbirine fontları **nereden aldığını sormadı**. JabLab
+kendiliğinden söyledi (simülatör önbelleğinde 14 Ağustos'tan beri duran dosyalar — **yeni indirme
+yok**). Diğer ikisine **soruldu**, cevap bekleniyor. Yani şu an Choreia **soru sorduğu için**
+bekliyor, ötekiler **sorulmadığı için** ilerledi. Bu bir yaptırım gerektirmiyor ama **kayda
+geçmeli**.
+
+⏱️ **Aciliyet: DÜŞÜK.** `D1` hiçbir şeyi bloke etmiyor; Choreia bu arada **ürün derinliğine**
+yönlendirildi (34 stilden 1'i başlatılabiliyor — beş hattın en büyük kullanıcıya-değen açığı).
+
+## 1b · ⌨️ UYANDIRMA LİSTESİ — senin klavyeni isteyen oturumlar
+
+Atıl bir oturumu yalnız **kurucu klavyesi** uyandırır (`§2`). Toplu bildiriyorum, tek tek değil.
+
+| hat | durum | ölçüm |
+|---|---|---|
+| 💃 **Choreia** | 🔴 **tur üretmiyor** | son commit **2 sa** önce · ağaç **temiz** (iş ortasında değil) · transkript **04:01'den beri yazılmıyor** |
+| 🌊 Lissom | ⏸️ **kendi kararıyla molada** | kendi ana oturumuyla senkron bekliyor — **uyandırma gerekmiyor**, meşru |
+
+**Choreia'nın kaldığı yer** (kaybolmadı, `devir/` içinde yazılı): `D1` (ailede 3/5 kapandı, reçete
+`H-40`, üç tuzak önceden iletildi) → `T7` kamera beyanı → **ürün derinliği** (34 stilden 1'i
+başlatılabiliyor — asıl işi).
+📌 Choreia bu gece **iyi iş çıkardı**: `D4`+`D10`u derlemeyle doğrulayarak kapattı, `H-31`i uyguladı,
+ve **kullanıcıya değen gerçek bir bug** buldu (`_measuredCard` no-op'u — her gerçek kullanıcı çıplak
+`kneeDeltaDeg` görüyordu). Durması bir başarısızlık değil, bir **ortam olgusu**.
+
 ## 2 · 🔴 CİHAZ GÜNÜ (henüz HAZIR DEĞİL — hatlar reçete üretiyor)
 
 **Durum:** ⏳ beklemede. Beş hat da önce ekran/kapı işlerini kapatıyor.
