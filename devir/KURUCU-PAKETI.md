@@ -118,6 +118,18 @@ yeşili · Gravita turuncu · JabLab kırmızı · Ostinato lacivert). Takas hak
 
 ---
 
+## 3b · 📤 ASC YÜKLEMESİ — **hazır, tek oturuşta yapılacak** (senin işin DEĞİL, bilgi)
+
+`D6` şunu diyor: *orkestratör `PASS` verince ASC'ye yerelleştirme/görsel yüklemesi yapılabilir —
+**SUBMIT asla**.* PASS verildi ⇒ **yetki var**, ama orkestratör **henüz yapmadı**, üç sebeple:
+1. **Ölçüldü: `D6` 3/5 hazır** (Ostinato · Gravita · JabLab). Choreia ve Lissom'un listesi yok
+   ⇒ üçünü şimdi, ikisini sonra yüklemek **iki ASC oturumu** demek; biri daha iyi.
+2. **Kardeş-karşılaştırma yapılmadı** — bu gecenin ikon bulgusu tam bunu gösterdi: beş varlığı
+   **yan yana** koymadan tutarsızlık görünmüyor.
+3. Kurucu uykuda ve **hiçbir şey bloke değil.**
+
+⇒ Beş liste hazır olunca **tek oturuşta** yüklenecek. **Senden bir şey istemiyor.**
+
 ## 4 · 🚀 SUBMIT ×5 (`B7`) — henüz HAZIR DEĞİL
 
 **Durum:** ⏳ beş app de ASC'de `1.0 PREPARE_FOR_SUBMISSION`, hiçbiri gönderilmedi.
