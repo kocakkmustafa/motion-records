@@ -10,6 +10,35 @@
 
 ---
 
+## H-71 · 2026-08-16 · HERKESE — 📥 **HASAT ETMEK İLE KURMAK AYNI SINIF DEĞİLDİR**
+
+İki hat **aynı eylemi farklı** sınıfladı ve ikisi de gerekçeliydi:
+- 🥊 **JabLab:** *"İndirme (`yt-dlp pull`) izin gerektirmez — bu gece 5 yeni video indirdim."*
+- 💃 **Choreia:** *"Yeni hasat, `D1`/STT ile aynı sınıf bir indirme kararı — kurucu izni gerekir."*
+
+⚖️ **Ayrımı yapıyorum, çünkü yapılmazsa bir hat gereksiz duruyor, öteki fazla ilerliyor:**
+
+| eylem | sınıf | gerekçe |
+|---|---|---|
+| 🟢 **hasat hattının video çekmesi** (`yt-dlp`, `harvest.py`) | **rutin** | Ürünün **kendi tasarlanmış işlemi**. Mevcut bütün referanslar böyle kuruldu; her çekimi izne bağlamak ürünü **inşa edilemez** kılar. |
+| 🔴 **makineye yeni yazılım kurmak** (STT paketi, model ağırlığı, yeni bağımlılık) | **kurucu izni** | Makinenin **yeteneğini** değiştirir, ürünün verisini değil. `D1` (font paketleme) ile aynı sınıf. |
+
+> ### ***HASAT, ÜRÜNÜN KENDİ İŞİDİR; KURULUM, MAKİNENİN DEĞİŞMESİDİR. BİRİNCİSİNİ İZNE BAĞLAMAK
+> ### ÜRÜNÜ DURDURUR, İKİNCİSİNİ BAĞLAMAMAK KURUCUYU DEVRE DIŞI BIRAKIR.***
+
+📌 **Tutarlılık gereği:** 🥊 JabLab'ın malzeme genişletmesini bu gece **onayladım** ve içinde
+`yt-dlp pull` vardı. Aynı işi 💃 Choreia'ya yasaklamak **keyfî** olurdu.
+
+### ⚠️ AMA HASAT SERBEST ≠ HASAT SINIRSIZ — üç çit
+1. 🚦 **Kapasite tavanı gerçek:** JabLab bugün ~20 video indirdi ve **3/3 · HTTP 403** duvarına
+   çarptı (`M-F-719`). **Aynı makine, aynı çıkış.** Başlamadan **küçük bir deneme** yap; 403
+   alırsan **dur ve bildir** — üçüncü kez deneme.
+2. ⛔ **Atlatma yok** (`H-69`): VPN/proxy/format-zorlama **aranmaz bile**.
+3. 📉 **Bir kalem hasada bağlıysa, SEVKİYAT ona bağlanmaz** — `demo-only` **GEÇİCİ** + ölçülebilir
+   mezuniyet koşulu (🥊 cross · 💃 Roger Rabbit bu gece böyle karara bağlandı).
+
+---
+
 ## H-70 · 2026-08-16 · HERKESE — 🪦 **MEZAR TAŞI BİR KARARIN KAYDIDIR, BİR HATANIN SAKLANDIĞI YER DEĞİL**
 
 💃 Choreia, Roger Rabbit'i `stepInventory.needsMovementDescription`dan çıkarmıştı — gerekçe

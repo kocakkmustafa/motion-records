@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**70 hüküm** · en yeni `H-70` · numara gediği: **YOK**
+**71 hüküm** · en yeni `H-71` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-71` | 2026-08-16 | HERKESE | HASAT ETMEK İLE KURMAK AYNI SINIF DEĞİLDİR |
 | `H-70` | 2026-08-16 | HERKESE | MEZAR TAŞI BİR KARARIN KAYDIDIR, BİR HATANIN SAKLANDIĞI YER DEĞİL |
 | `H-69` | 2026-08-16 | HERKESE | BİR SINIRI AŞMAK, İZİN BEKLEMEKTEN FARKLI BİR ŞEYDİR · ve ikincisi yasak, birincisi hiç konuşulmaz |
 | `H-68` | 2026-08-16 | HERKESE | BİR YOKLUK RAPORU, HANGİ ORTAMDA ÖLÇÜLDÜĞÜNÜ SÖYLEMEDEN TAM DEĞİLDİR |

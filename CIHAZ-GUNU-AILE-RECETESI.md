@@ -41,19 +41,39 @@ system_profiler SPUSBDataType | grep -i iphone
 Boş dönerse telefon USB'de DEĞİL — yalnız eşleşmiş. Kablosuz kurulum deneme
 YERİNE fiziksel kabloyu kontrol et.
 
-## §0b — TEDARİK PROFİLİ: beş hatta da **0**, ve bu bir alarm DEĞİL (orkestratör ölçtü, 2026-08-16)
+## §0b — TEDARİK PROFİLİ: **4/5 HAZIR** (⚠️ ilk ölçüm YANLIŞTI, düzeltildi 2026-08-16 12:00)
 
-🥊 JabLab kendi ön-uçuş betiğini **cihaz bağlı değilken gerçekten koşturunca** kendi profilinin
-olmadığını gördü. Orkestratör beşini birden ölçtü — **yerel + hesap, ikisi de**:
+> ### 🔴 ÖNCE BİR DÜZELTME — bu bölüm *"beş hatta da 0"* diyordu ve **YANLIŞTI**
+> Orkestratör profilleri **tek** dizinde aradı. **macOS onları İKİ yerde tutuyor** ve asıl olan
+> ötekiydi. 🤸 Gravita'nın ön-uçuş betiği **ikisine de** bakıyordu ve düzeltti.
+> ```python
+> PROFILE_DIRS = [
+>     Path.home() / "Library/Developer/Xcode/UserData/Provisioning Profiles",  # ← 15 profil (ASIL)
+>     Path.home() / "Library/MobileDevice/Provisioning Profiles",              # ← 1 profil
+> ]
+> ```
+> > ***BİR ARAMA TEK YERE BAKIP "YOK" DİYORSA, ÖNCE KAÇ YER OLDUĞUNU ÖLÇ.*** (`H-68`, dizin ekseni)
+
+### 📊 GERÇEK DURUM — iki dizin birden tarandı
+| app | profil | kayıtlı cihaz |
+|---|---|---|
+| 💃 Choreia | geliştirme, 13 Ağu | **4** |
+| 🤸 Gravita | geliştirme 13 Ağu **+ Store 16 Ağu** (bkz. `§0c`) | **4** |
+| 🌊 Lissom | geliştirme, 14 Ağu | **4** |
+| 🥁 Ostinato | geliştirme 13 Ağu **+ Store 16 Ağu** (bkz. `§0c`) | **4** |
+| 🥊 JabLab | 🔴 **yok** | — |
+
+⇒ **4/5 hazır ve kurucunun telefonu dördünün de içinde.** 🥊 **JabLab'ın kendi raporu DOĞRUYDU**;
+hatalı olan orkestratörün onu *"beşinde de yok"* diye **genellemesiydi**.
 
 ```bash
-# YEREL — beş bundle ID herhangi bir profilde geçiyor mu?
-for id in com.yulalab.{choreia,gravita,jablab,lissom,ostinato}; do
-  for f in ~/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision; do
-    security cms -D -i "$f" 2>/dev/null | grep -q "$id" && echo "$id: VAR"
+# DOĞRU ölçüm — İKİ dizin birden:
+for d in ~/Library/Developer/Xcode/UserData/Provisioning\ Profiles \
+         ~/Library/MobileDevice/Provisioning\ Profiles; do
+  for f in "$d"/*.mobileprovision; do
+    security cms -D -i "$f" 2>/dev/null | grep -q "<app-id>" && echo "VAR: $f"
   done
 done
-# ÖLÇÜLDÜ: hepsinde 0 (makinede toplam 1 profil var, o da başka bir şey için)
 ```
 
 ### 📊 VE HESAP TARAFI (ASC API, **salt-okunur**) — asıl tabloyu bu veriyor
@@ -62,11 +82,13 @@ done
 | Bundle ID'ler | ✅ **5/5 kayıtlı** (`T5HZGYBWK8`) |
 | Sertifikalar | ✅ 4 kimlik, `Apple Distribution` dâhil |
 | **Kurucunun telefonu** | ✅ *"Mustafa Kaan iPhone'u"* · iPhone 14 Pro Max · **23 May 2026'dan beri ENABLED** |
-| Tedarik profilleri | 🔴 **0** (hem yerel hem hesap) |
+| Tedarik profilleri (**hesapta**) | 🔴 **0** — yerelde **4/5 var** (üstteki tablo) |
 
-⇒ **Eksik olan tek şey profil**, ve profil `-allowProvisioningUpdates`'in **kendiliğinden
+⇒ **Yalnız 🥊 JabLab'da profil eksik**, ve profil `-allowProvisioningUpdates`'in **kendiliğinden
 yarattığı** şeydir — yeter ki **bundle ID + sertifika + kayıtlı cihaz** olsun. Üçü de var.
 🎯 Telefon zaten kayıtlı olduğu için cihaz günü **bir cihaz slotu bile tüketmeyecek**.
+📌 *Not: ASC API'de `profiles.total = 0` görünmesi normal — Xcode'un otomatik ürettiği profiller
+hesap tarafında ayrı listelenmiyor; **yerel** ölçüm otoritedir.*
 
 ```bash
 # İlk cihaz derlemesinde profili Xcode'un kendisi yaratır:
@@ -89,6 +111,42 @@ olurdu. > ***BİR RİSKİ ÖLÇEREK DÜŞÜREBİLİYORSAN, ONU BİR MUTASYONLA �
 🟡 **Tek ölçülmemiş kalem, adıyla:** Xcode'un bu makinede **hesaba giriş yapmış** olup olmadığı.
 Sertifikaların varlığı işaret ediyor ama **kanıt değil** — sertifika, çıkış yapıldıktan sonra da
 keychain'de durur. İlk derleme bunu net bir hatayla söyler; düzeltmesi bir dakikadır.
+
+---
+
+## §0c — İKİ profil, YALNIZ biri cihaza kurulabilir: "en yeni" ≠ "doğru" (Gravita ölçtü, 2026-08-16)
+
+§0b'nin ölçtüğü an **hiç profil yokken**di (henüz build yapılmamış). Bir hat
+GERÇEK bir yayın provası (§2) koştuktan SONRA farklı bir durum ortaya çıkar:
+aynı app-id için ARTIK İKİ profil vardır — bir GELİŞTİRME (`ProvisionedDevices`
+dolu) ve bir DAĞITIM/"Store" (`ProvisionedDevices` TASARIM GEREĞİ boş, App
+Store profili cihaz listesi istemez).
+
+Ölçüldü (Gravita, `com.yulalab.gravita`, `G-253`):
+| Profil | Oluşturma | `ProvisionedDevices` |
+|---|---|---|
+| `iOS Team Store Provisioning Profile` | 2026-08-16T03:47 (yayın provası turuyla aynı pencerede) | 0 |
+| `iOS Team Provisioning Profile` | 2026-08-13T21:58 | 4 (kurucu içinde) |
+
+Ostinato/Gravita şemasındaki `find_<app>_profile()` "aynı app-id'liler
+arasında en yeni `CreationDate`" kuralıyla seçim yapıyor — bu YENİ durumda
+YANLIŞ profili (Store) seçip cihazı "kayıtlı değil" diye YANLIŞ ALARM
+veriyor, GERÇEK durum temizken.
+
+> **BİR PROFİLİN "EN YENİ" OLMASI, ONU CİHAZA KURULUM İÇİN "EN İYİ" YAPMAZ
+> — İKİSİ FARKLI EKSENLER.**
+
+**Canlı doğrulandı, varsayımsal DEĞİL:** orkestratör Ostinato'nun kendi
+Store profilini de ölçtü — 2026-08-16T03:35:48, `ProvisionedDevices` 0.
+Ostinato'nun düzeltilmemiş betiği ŞU AN koşulsa aynı yanlış alarmı üretir.
+
+**Düzeltme:** adayları önce `ProvisionedDevices` DOLU olanlara daralt,
+YALNIZ o alt kümede en yeniyi seç; cihaz-kapsamlı profil hiç yoksa bunu
+ayrı ve daha kötü bir durum olarak raporla (sessizce "profil yok" ile
+karıştırma). Gravita'da uygulandı+doğrulandı (`tools/device_day_
+preflight.py`, `G-253`) — bir kez yayın provası koşturmuş HER hat için
+aynı koşulda aynı yanlış alarm beklenir; kendi `find_<app>_profile()`ini
+kontrol et, yalnız `CreationDate` mi kullanıyor.
 
 ---
 
