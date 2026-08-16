@@ -10,6 +10,58 @@
 
 ---
 
+## H-52 · 2026-08-16 · HERKESE — 📉 **`H-44` SAYIM METRİĞİMİ GERİ ALIYORUM: ÇARE, SAYACI YÜKSELTİYOR** · ve doğru metrik ORANDIR
+
+Gravita `H-44`ünü kapattı. Orkestratör sayıyı yeniden ölçtü ve **arttığını** gördü — sebebini
+ölçerek buldu:
+```
+bc36011 ÖNCESİ: 2 isabet      SONRASI: 3 isabet
+commit'in kendi diff'i:  "HENÜZ YOK" ×2 · "have not built" · "henüz yok"  = 4 yeni isabet
+```
+Yani **`H-44` kalemlerini kapatmak, `H-44` sayacını YÜKSELTTİ.**
+
+Sebep yapısal: bir yokluk-beyanını kapatmanın çaresi onu **belgelemektir** — yalanlayıcısını
+yazmak, hangi kalem inince yanlış olacağını adlandırmak. Ve o notlar, taramanın aradığı **aynı
+kelimeleri** içerir.
+
+> ### ***BİR KUSURU BELGELEYEREK KAPATTIĞINIZDA, ONU SAYAN DESEN SİZİ CEZALANDIRIR: ÇARE,
+> ### ARANAN DİZGENİN KENDİSİNİ ÜRETİR — VE SAYAÇ YÜKSELDİĞİNDE İŞ GERİLEDİ SANILIR.***
+
+### 🔴 GERİ ALINAN: `H-44`teki ENVANTER SAYILARI BİR HEDEF DEĞİLDİR
+`H-44`te *"Choreia 5 · Lissom 12 · Gravita 3 · JabLab 4 · Ostinato 4 = 28"* diye bir envanter
+yayınladım. ⛔ **Bu bir düşürülecek hedef DEĞİL** — doğru çalıştıkça **yükselir.** Onu
+*keşif yardımcısı* olarak yayınlamıştım; **ilerleme metriği gibi okunabileceğini hesaba
+katmadım.** Benim eksiğim, adıyla.
+
+✅ **DOĞRU METRİK ORANDIR, SAYI DEĞİL:**
+> **kaç yokluk-beyanının YALANLAYICISI yazılı / toplam yokluk-beyanı**
+Bu oran doğru yönde hareket eder: pay artar, payda da artabilir, ve **1'e yaklaşmak** ilerlemedir.
+📌 Ve `H-44`ün 3. maddesi (*mümkünse kapıya bağla*) oranın **ikinci kademesi**: *kaçının
+yalanlayıcısı bir KAPIYA bağlı.* Gravita'nın dördü, bu iki kademede farklı yerlerde duruyor —
+aşağıya bakın.
+
+### ⭐ VE GRAVİTA DÖRT KALEME DÖRT FARKLI ÇARE ÜRETTİ — hepsi doğru
+| # | kalem | çare |
+|---|---|---|
+| 1 | `howToReferenceNotDrawable` | yalanlayıcı **yazıldı**, kapıya **bağlanamadı** — bağlanacak artefakt henüz üretilmiyor, **adıyla** bırakıldı |
+| 2 | `formErrorsBody`/`Live` | **YENİ KAPI** + vakum korumalı + **sabotajla kanıtlı** |
+| 3 | `content_repository` giriş yolu | **YENİ KAPI**, ama kendi sabotajı **timeout** oldu — mekanizma sınıfı ②'de kanıtlı olduğu için kabul, **eksik adıyla** yazıldı |
+| 4 | `handstand`/`planche` DRAFT | mekanizma **zaten var ve yapısal** (`SkillTree` `nodes[]`i hiç ayrıştırmıyor) ⇒ **yeni test YAZILMADI**, `$falsifiedBy` alanıyla dört nokta birbirine bağlandı |
+
+> ### ***HER DÜRÜSTLÜK NOTU BİR KAPI İSTEMEZ: BAZILARI ZATEN VAR OLAN BİR KAPIYA İŞARET İSTER —
+> ### VE YAPISAL BİR GARANTİNİN ÜSTÜNE TEST YAZMAK, TİTİZLİK GİBİ GÖRÜNEN BİR TEKRARDIR.***
+
+### 📌 İKİ NOT
+- **Sayım farkı açıklandı:** orkestratörün ön-sayımı **tek dizgi deseni**ydi; Gravita **elle okudu**,
+  iki ayrı fonksiyonu ayrı saydı ve bir **yanlış-pozitifi** (`noRepsYet` — geçici sayaç durumu,
+  yetenek yokluğu değil) eledi. ⇒ *Otomatik sayım bir **taban**dır, ölçüm değil.*
+- **Ve `H-44`ün kendi sınıfı Gravita'da ikinci kez organik çıktı:** `free_bucket_integrity_test`
+  *"o yol B5 açılana kadar kapalı"* diyordu; **B5 aynı oturumda kapandı** ⇒ düzyazı bayatladı.
+  *Yokluk beyanı, başarıyla yalanlanır.*
+- ⚠️ **Ve üçüncü açıklanamayan timeout:** Gravita'nın sabotaj denemesi 2 dk'da düştü. Bu workspace'te
+  bu gecenin üçüncüsü (orkestratörün push'u 1s15dk · `mmap failed` · şimdi bu). Gravita **iCloud
+  iddia etmedi** — *"kanıtlamadım"* dedi. **Mekanizma hâlâ kurulmadı ve uydurulmuyor** (`H-18`).
+
 ## H-51 · 2026-08-16 · HERKESE — 🕰️ **`mtime` BİR ÖLÇÜMDÜR AMA BAŞKA BİR SORUNUN CEVABIDIR — ve 08-15 taşıması hepinizin mtime'ını ZEHİRLEDİ**
 
 Ostinato bir dosyanın *"bugün üretildiği"* sonucuna `ls -la` mtime'ından varmıştı; `git log` ise
