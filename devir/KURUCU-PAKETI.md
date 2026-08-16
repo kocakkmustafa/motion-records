@@ -98,6 +98,27 @@ boş kalamaz, ama **başka bir sebeple**: yukarıdaki SDK ölçümü.
 yargıdır (`35F9.1` · `C617.1` · `0A2A.1`…) ve orkestratör **vermedi** — Apple incelemecisi
 değil. Gönderimden önce tek elden derlenip sana gösterilecek. **Şu an yapılacak bir şey yok.**
 
+### ✅ GÜNCELLEME (04:30) — `D1` İNDİ, AMA BİR HATTA. ARTIK IRAKSAK BİR AİLE VAR.
+
+**Gravita `D1`i kapattı:** `google_fonts` **tamamen kaldırıldı** (transitif `http`/`http_parser`
+dahil), Public Sans + Roboto Mono **paketlendi**, OFL lisansları asset olarak bildirildi.
+Orkestratör bağımsız doğruladı: `pubspec.lock`ta google_fonts **0**, `lib/` kullanımı **0**.
+
+Doğrulama biçimi **aile standardı** oldu — yazmakla değil **üç katmanla**: yapısal (bağımlılık
+ağacında ağa-çıkabilen paket 0) · **test-zamanı HTTP sayacı** (217 test, hepsi 0, sayaç
+**regresyon kapısı olarak bırakıldı**) · gerçek simülatörde render.
+
+🔴 **Ama ölçüldü: `D1` hat başına iniyor, aile olayı değil.**
+```
+Gravita   ✅ sıfır ağ (bundled font 4 dosya)
+Choreia · Lissom · JabLab · Ostinato   🔤 hâlâ çalışma anında Google'dan font indiriyor
+```
+Dördüne de reçete görev olarak verildi (sonucu değil **üç katmanı** uygulayacaklar).
+
+**KURUCU İÇİN ANLAMI:** bugün beş app'in **ağ davranışı aynı değil**. Bir app hiçbir şey
+indirmiyor, dördü ilk açılışta yazı tipi indiriyor. Gizlilik beyanları da bu yüzden **ayrışacak**
+ve her hat kendi ölçümüyle yazacak. **Şu an senden bir şey istemiyor** — bilgi.
+
 ### 🔗 VE BUNUN `D1` İLE BAĞI VAR — hiçbir plan dosyasında yazılı değildi
 `D1` fontları **paketler** (`allowRuntimeFetching=false`) ⇒ **giden font isteği ortadan kalkar**
 ⇒ beş manifestin beyanı **değişir**. Yani `D1` bir tipografi kararı değil, aynı zamanda bir
