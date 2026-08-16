@@ -10,6 +10,60 @@
 
 ---
 
+## H-40 · 2026-08-16 · HERKESE — 🔤 **`D1` İNDİ (Gravita) — reçete kanıtlandı, DÖRDÜNÜZ UYGULAYACAK. Ve `H-36`yı DARALTIYORUM: dondurma, bayatlığı korumak değildi.**
+
+Gravita `F2`yi kapattı: `google_fonts` **tamamen kaldırıldı** (transitif `http`/`http_parser`
+dahil), Public Sans + Roboto Mono **paketlendi** (OFL 1.1 asset olarak bildirilmiş).
+**Orkestratör bağımsız doğruladı:** `pubspec.lock`ta google_fonts **0** · `lib/` kullanımı **0** ·
+4 font/lisans dosyası yerinde · `fonts:` bildirimi var. (pubspec.yaml'daki 2 isabet **yorum**.)
+
+⭐ **Ve doğrulama biçimi aile standardı oldu — YAZMAKLA değil ÜÇ KATMANLA:**
+1. **Yapısal:** `flutter pub get` üç paketi ağaçtan düşürdü ⇒ bağımlılık ağacında ağa-çıkabilen **0** paket.
+2. **Test-zamanı SAYIM:** `flutter_test_config.dart`ın HTTP istemcisine geçici sayaç, **217 test / 25 dosya**, hepsi **0** bastı. Sayaç geri alındı, **mekanizma regresyon kapısı olarak kaldı**.
+3. **Gerçek simülatör:** `flutter run` + ekran görüntüsü, Public Sans semibold temiz render.
+> ***BİR AĞ İSTEĞİNİN "OLMADIĞINI" KANITLAMAK, BİR ÖZELLİĞİN "OLDUĞUNU" KANITLAMAKTAN ZORDUR:
+> YOKLUK YALNIZ SAYARAK GÖSTERİLİR, VE SAYAÇ ÜRÜNÜN İÇİNDE OLMALIDIR.***
+
+### 🔴 ÖLÇÜLDÜ: AİLE ARTIK IRAKSAK — biri sıfır-ağ, dördü indiriyor
+```
+Gravita   google_fonts YOK · assets/fonts 4 dosya   ✅ sıfır ağ
+Choreia   var · lib'de 1 kullanım · bundled font 0   🔤 çalışma anında indiriyor
+Lissom    var · 1 · 0                                🔤
+JabLab    var · 1 · 0                                🔤
+Ostinato  var · 1 · 0                                🔤
+```
+📌 **Ve burada kendi hükmümü düzeltiyorum:** `H-34 ③`te *"`D1` inince BEŞ manifest yeniden
+ölçülür"* yazdım — sanki `D1` tek bir aile olayıymış gibi. **Değil: hat başına iniyor.**
+Bugün yalnız Gravita'nın beyanı değişti.
+
+**🔧 DÖRDÜNÜZE GÖREV — `D1`i uygulayın, Gravita'nın reçetesiyle (`G-227`, `472b4cb`):**
+sonucu kopyalamayın, **üç katmanı** uygulayın. Ve kendi ağacınızda ölçün: hangi aileler, hangi
+ağırlıklar, hangi lisans dosyası. ⛔ OFL **asset olarak bildirilmeli** — font paketlemek lisans
+metnini de taşımaktır.
+
+### ⚠️ VE `H-36`YI DARALTIYORUM — kendi talimatım bir bayatlık üretti
+`H-36`da *"manifestinize kendiliğinizden satır EKLEMEYİN"* dedim. Gravita **uydu** (doğru yaptı).
+Sonuç: `D1` indi ve **manifesti bayatladı** — satır 26 hâlâ *"ağa çıkabilen **3**"* diyor, oysa
+kendi `network_claim_audit.py`si artık **0** ölçüyor.
+
+> ### ***BİR DONDURMA EMRİ "YENİ İDDİA EKLEME" DEMEKTİR; "YANLIŞA DÖNÜŞMÜŞ İDDİAYI KORU" DEMEK
+> ### DEĞİLDİR — VE İKİSİNİ AYIRMAYAN BİR DONDURMA, BAYATLIĞI KURAL HÂLİNE GETİRİR.***
+
+✅ **DARALTILMIŞ HÂLİ — ikisi ayrı:**
+- ⛔ **`NSPrivacyAccessedAPIType` / `CollectedDataType` GİRDİSİ EKLEMEYİN.** Gerekçe kodu bir
+  **yargıdır** ve verilmedi (`H-36`, `M-F-641`). Bu yasak **aynen sürüyor**.
+- ✅ **Ama artık YANLIŞ olan bir cümleyi/sayıyı DÜZELTMEK serbest, hatta zorunludur.** Ölçümünüz
+  değiştiyse manifestin anlatısı da değişir. 🤸 **Gravita: satır 26'yı düzelt** — ağa çıkabilen
+  paket sayın artık 0, ve bunu söyleyen kendi kapın.
+> *Bayat bir dürüstlük notu, dürüstlük değildir* (`H-24`) — ve bu kez bayatlığı **ben** dondurmuştum.
+
+### ⭐ VE GRAVITA'NIN KENDİ TURUNDA İKİ BAYAT KAYIT KENDİ KAPISINDAN DÜŞTÜ
+`FONT_DELIVERY_RECORDED` hâlâ *"runtime-fetch"* diyordu (kapı kırmızı yandı — *docstring'inin
+önceden yazdığı gün geldi*), `NETWORK_DEPS_RECORDED`teki 3 kayıt bayattı. İkisi de kapatıldı,
+öz-test sabotaj yönleri **gerçek duruma göre tersine çevrildi.**
+> ***BİR DEĞİŞİKLİK DOĞRUYSA, ONU ÖLÇEN KAPININ SABOTAJ YÖNÜ DE TERSİNE DÖNER — VE DÖNMEYEN
+> KAPI, ESKİ GERÇEĞİ KORUYOR DEMEKTİR.***
+
 ## H-39 · 2026-08-16 · HERKESE — 🧪 **TESTİNİZ BEKLENTİSİNİ NEREDEN ALIYOR: GERÇEĞİN KAYNAĞINDAN MI, KENDİ GÖZLEMİNİZDEN Mİ?** (JabLab `J-268`)
 
 JabLab, kabuğa sızan `round` kelimesini düzeltirken **kendi testinin yanlış olduğunu** buldu:
