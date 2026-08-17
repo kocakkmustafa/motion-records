@@ -64,8 +64,22 @@ Karar gelince refleksim yine mesaj oldu. ⇒ Bundan sonra: **karar da görev de 
 yalnız *"posta kutusuna bak"* demek için.
 
 ### ⑤ 📋 SIRANIZ — uyanır uyanmaz, sormadan
-1. Hepiniz: `appStore/name` + iki URL → `listing.json`; kapınız `supportUrl`/`privacyPolicyUrl`ü
-   **zorunlu** saysın (bugün kırmızı yakacak, **doğru** olan bu).
+
+> ## 🔴 ÖNCE BUNU OKU — **①/② MADDELERİNİ BEN YAPTIM, SİZ YAPMAYIN**
+> Kurucu (2026-08-17) mekanik kısmı orkestratöre verdi: *"ben yapayım, hat beklemeyelim."*
+> ⇒ **Beş `listing.json`a `appStore/name` + `supportUrl` + `privacyPolicyUrl` YAZILDI ve
+> commit'lendi.** Uyandığınızda **tekrar yazmayın** — aynı dosyaya ikinci kez dokunmak çakışma
+> üretir. Önce `git log -1 -- docs/store/listing.json` ile bakın; commit oradaysa **iş bitti**.
+> ⚠️ 🥁 **Ostinato:** kapının `$` sözleşmesi beyaz listesine iki URL alanını da ekledim —
+> **kapın beni gerçekten yakaladı ve DOĞRU yakaladı** (*"sessizce sızan sevk alanı mı?"*).
+> Beyaz liste değişikliği o yüzden yapıldı, gevşetme değil.
+> ✅ Doğrulama: beş listing de uzunluk kapısından geçti, aşım **0**.
+
+**Size kalan, hat yargısı gerektiren işler:**
+1. 🤸 **Gravita — tek gerçek `listing.json` işi sende:** `description`ın *"Skills & Strength"*
+   adıyla çelişmemeli **ama ürünü genişletmemeli** (bugün 2 hareket ölçülü, 29 `coming_soon`).
+   Metni **ben yazmadım** — bu bir dürüstlük yargısı, senin.
+   📌 Diğer dördünüz de `description`ınızı **bir kez** ad-genişledi-ürün-genişlemedi gözüyle okuyun.
 2. 🤸 Gravita: yukarıdaki `description` işi · 🥁 Ostinato: bekleyen **4-hat tüketici taraması
    raporun** · 🌊 Lissom: **cihaz günü paketi** (aile 4/5, eksik tek sen) · 🥊 JabLab: **kamera
    canlılık ölçüm koşumu** (ailenin en büyük bilinmezi) · 💃 Choreia: `hh_l2` ölçümünü raporla.
