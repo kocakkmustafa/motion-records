@@ -617,6 +617,43 @@ hatlar Apple incelemecisi. Sembol listesi tamamlanınca **tek sayfa hâlinde** �
 
 ---
 
+### ✅ `D21` ÖLÇÜM BACAĞI KAPANDI (2026-08-17, orkestratör) — **`motion_camera` TEK kategori kullanıyor**
+
+`§8`de *"belirlenim yapılmadı"* diye açık bırakmıştım. Ölçüldü — kanonik kaynakta
+(`motion-core-main`, HEAD `63a0b3e`; aile pini `f13bdc9` **atası olduğu doğrulandı**):
+
+```
+MotionCameraPlugin.swift (313 satır) · beş required-reason kategorisi tek tek tarandı
+  SystemBootTime   → 🎯 2 İSABET   satır 211  let started = DispatchTime.now()
+                                   satır 266  Int((DispatchTime.now().uptimeNanoseconds
+                                                  - started.uptimeNanoseconds) / 1000)
+  FileTimestamp    → isabet YOK      DiskSpace       → isabet YOK
+  ActiveKeyboard   → isabet YOK      UserDefaults    → isabet YOK
+  POZİTİF KONTROL  → func 10 · AVCapture 11   (tarayıcı gerçek kodu okuyor)
+```
+
+**Ne işe yarıyor — kodun kendisinden:** iki damga arasındaki fark `envelope["infUs"]`e yazılıyor,
+yani **tek bir poz-çıkarım çağrısının kaç mikrosaniye sürdüğü**. Saf bir **uygulama-içi
+performans ölçümü**; ne saat okunuyor ne cihaz kimliği türetiliyor, ve `§5b`de ölçüldüğü gibi
+kamera yolundan **hiçbir şey cihazdan çıkmıyor**.
+
+> ⚖️ **Gerekçe kodunu SEÇMİYORUM** — o yargı senin (`35F9.1` · `8FFB.1` · `3D61.1` …).
+> Yukarıdaki paragraf, Apple'ın listesindeki tanımla eşleştirebilmen için yazıldı; **eşleştirmeyi
+> yapmadım ve yapılmış gibi de yazmadım.**
+
+#### 🔴 VE BU, "ÖLÇ → DOLDUR → PAKETLE" SIRASINI HAKLI ÇIKARDI
+`motion_camera`ın kendi `PrivacyInfo.xcprivacy`si bugün `NSPrivacyAccessedAPITypes`ı **boş dizi**
+olarak beyan ediyor. ⇒ Dosya **bugünkü hâliyle paketlenseydi, Apple'a YANLIŞ bir beyan gitmiş
+olurdu** — kullandığı kategori var, beyanı boş.
+✅ `D21` teyit edildi: podspec `s.source_files = 'Classes/**/*'`, **`resources`/`resource_bundles`
+yok** ⇒ dosya pod'a girmiyor, bugün **atıl**. Sıra bilerek ters çevrilmişti ve **doğruymuş.**
+
+🟡 **Ufak tutarsızlık, alarm değil:** podspec `s.version = '0.1.0'`, pubspec `version: 0.1.2`
+(pin commit'i `f13bdc9` *"0.1.2"* diyor). Bu, `§5 ③`te `permission_handler_apple` için ölçülen
+sınıfın **aynısı** — Dart sürümü ile podspec sürümü ayrı numaralardır; farkı bu kez **biz** açtık,
+kendi eklentimizde. Hiçbir çözümleme podspec sürümüne bakmıyor (hatlar `path:`/`ref:` kullanıyor)
+⇒ **etkisiz**, ama adı konsun.
+
 ## 5b · 🩺 SAĞLIK/FİTNESS SINIFLANDIRMASI — orkestratör karar verdi, teyidin gerekebilir
 
 Lissom `F2`de eklem-açısı ölçümlerini saklamaya başladı (`attempt_values.jsonl`). Sordu:
@@ -697,8 +734,10 @@ Yani zamanın var — ama iş o noktaya geldiğinde durur.
 
 ## 8 · 📌 ORKESTRATÖRÜN KENDİ AÇIK KALEMLERİ (kurucu işi DEĞİL, şeffaflık için)
 
-- `D21` ölçüm bacağı: `motion_camera` hangi required-reason API'yi kullanıyor —
-  `DispatchTime.now().uptimeNanoseconds` adayı bulundu, **belirlenim yapılmadı** (yapılmış gibi de yazılmadı)
+- ✅ ~~`D21` ölçüm bacağı~~ → **KAPANDI 2026-08-17** (`M-F-755`): `motion_camera` **tek** kategori
+  kullanıyor — **SystemBootTime**, `DispatchTime.now().uptimeNanoseconds` (satır 211+266), amacı
+  **çıkarım gecikmesi ölçümü** (`infUs`). Diğer dört kategoride **isabet yok**, pozitif kontrollü.
+  Ayrıntı `§5`te. ⚖️ Gerekçe **kodu** hâlâ senin yargın — seçmedim.
 - 🔬 **`lib` checkout'unu `main`e alma — 2026-08-17'de ÖLÇÜLDÜ, ve düşündüğümden farklı çıktı**
   (`M-F-749` / `H-79`). Paylaşılan `ventures/motion-core/lib` **122 commit geride**
   (dal `feat/lissom-v3-onayi`, aile pini `f13bdc9`'un bile **öncesinde**). Ama `H-55`in
