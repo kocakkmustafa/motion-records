@@ -502,7 +502,55 @@ karakterlik düzenleme kırmızıya çevirir.
 🎯 **Ve `H-78`'in zamanlaması işe yaradı:** 🌊 Lissom listing'ini **kapıyla birlikte** yazdı
 (`L-345`, 276 satırlık test) — geri dönüp düzeltilmedi, **kapının altında doğdu**.
 
-### ⏸️ ASC YÜKLEMESİ — **PASS verildi, ama bir şart bekliyor**
+### 🔴 **17:05 — ASC AÇILDI, YÜKLENMEDİ. İKİ KARAR SENDE, VE BİRİ SEVK ENGELİ**
+
+`D6` 5/5 commit'li+push'lu, limit aşımı 0 ⇒ yükleme yetkim açıktı. **Yüklemeden önce ASC'nin
+bugünkü hâlini okudum** (salt-okunur) ve iki şey çıktı. **Yüklemedim** — sebepleri aşağıda.
+
+#### ⛳ KARAR 1 — 🔗 **SUPPORT URL: beş app GÖNDERİLEMEZ durumda**
+```
+listing.json şemasında supportUrl → 5/5 YOK   (şemada hiç yoktu, hat hatası değil)
+aile+site genelinde arandı        → Motion için HİÇBİR YERDE yok
+emsal                             → braavolabs.com/support VAR
+```
+🔴 **Apple, Support URL olmadan gönderim kabul etmiyor** ⇒ `D6` 5/5 olmasına rağmen beş app bugün
+gönderilemez. Ve URL'in **gerçekten açılması** gerekir; uydurulmaz.
+
+**Senden istenen — bir adres:** `yulalab.com/support` gibi tek ortak sayfa mı, app başına ayrı mı?
+Sayfanın **var olması** da gerekiyor (Apple açıyor). ⇒ Bu hem karar hem küçük bir altyapı işi.
+📌 Kararı ben veremem: uydurulmuş bir URL **gönderimde reddedilir**, ve olmayan bir sayfaya
+işaret etmek `M-F-748` sınıfı bir dürüstlük kusuru olurdu.
+
+#### ⛳ KARAR 2 — 🏷️ **UYGULAMA ADI: mağazadaki ad ile yazdığımız ad uyuşmuyor, 5/5**
+| hat | ASC'de **canlı** | `listing.json` |
+|---|---|---|
+| 💃 Choreia | `Choreia: Learn to Dance` | `Choreia` |
+| 🌊 Lissom | `Lissom: Mobility & Yoga` | `Lissom` |
+| 🥊 JabLab | `JabLab: Shadow Training` | `JabLab` |
+| 🥁 Ostinato | `Ostinato: Music Practice` | `Ostinato` |
+| 🤸 **Gravita** | `Gravita: Skills & Strength` | 🔴 **`Gravita: Rep Counter`** |
+
+Dördü kısaltma farkı. 🤸 **Gravita'nınki bir KONUMLANDIRMA farkı** — *"Skills & Strength"* ile
+*"Rep Counter"* aynı ürün hakkında **farklı iddialar**.
+⚠️ Ve Gravita'nın `description`ı bir **tekrar sayacını** anlatıyor: o metni *"Skills & Strength"*
+adının altına yüklersem **mağaza sayfası kendiyle çelişir.**
+
+> ***BOŞ BİR MAĞAZA SAYFASI, KENDİYLE ÇELİŞEN BİR MAĞAZA SAYFASINDAN İYİDİR.***
+
+**Senden istenen:** hangi ad kalacak? (Adı **değiştirmedim** — marka kimliği senin, `§3`.)
+
+#### ✅ VE İYİ HABER — bir portföy kusuru burada YOK
+Beş app'in yerelleştirmesi **`en-US`** (Readio/LifeOS'taki *"yalnız `tr` ama dünyaya dağıtılıyor"*
+kusuru **Motion'da yok**, ölçüldü) ve tüm metin alanları **`null`** ⇒ yükleme bir şeyin üstüne
+**yazmayacak**, boşluğu **dolduracak**. Karar gelir gelmez tek oturuşta yüklenir.
+
+---
+
+### ⏸️ ASC YÜKLEMESİ — *(07:27 notu — ilk şart karşılandı)*
+✅ Ostinato commit'ledi (`O-167`: 92→76 **+ uzunluk kapısı 206 satır** + 4-hat tüketici taraması),
+beş depo `origin` ile **0/0**. Bu şart **kapandı**; yükleme artık yukarıdaki iki karara bağlı.
+
+<details><summary>şartın özgün metni</summary>
 `D6` yetkisi açıldı (`5/5` + çapraz okuma yapıldı). ⛔ **SUBMIT yok** — o yalnız sende (`B7`).
 Yükleme yine de **bekliyor**, tek ve adı konmuş bir sebeple:
 
@@ -510,8 +558,9 @@ Yükleme yine de **bekliyor**, tek ve adı konmuş bir sebeple:
 > ***MAĞAZAYA, GİT'TE KARŞILIĞI OLMAYAN BİR METİN GÖNDERİLMEZ — gönderilirse mağaza ile depo
 > ayrışır ve NE GÖNDERDİĞİMİZİ KANITLAYAMAYIZ.***
 
-⇒ Ostinato commit'ler commit'lemez beş liste **tek oturuşta** yüklenecek. **Senden bir şey
-istemiyor.**
+⇒ Ostinato commit'ler commit'lemez beş liste **tek oturuşta** yüklenecek.
+
+</details>
 
 ---
 

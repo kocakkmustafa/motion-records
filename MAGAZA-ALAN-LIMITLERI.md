@@ -41,6 +41,23 @@ kendiliğinden düzelir.
 | `playStore/shortDescription` | **80** | 🔴 en dar limit — en çok burası taşıyor |
 | `description` (full) | **4000** | |
 
+### 🔗 URL ALANLARI — **2026-08-17'de eklendi** (`H-83`; beş listing'in beşinde de yoktu)
+| alan | zorunlu mu | not |
+|---|---|---|
+| `supportUrl` | 🔴 **ZORUNLU** | **Apple bunsuz gönderim kabul etmiyor.** URL'in **gerçekten açılması** gerekir — uydurulmaz. |
+| `marketingUrl` | ⚪ opsiyonel | |
+
+⚠️ **Değeri hat SEÇMEZ** — hangi adres olacağı kurucu/altyapı kararıdır (ailede emsal:
+`braavolabs.com/support`). Karar gelene kadar alan **boş bırakılmaz, YAZILMAZ**; kapı onu
+*"eksik"* diye kırmızı yakar ve bu **doğru** davranıştır.
+
+### 🏷️ `appStore/name` — **ASC'deki CANLI adla eşleşmelidir** (`H-83`)
+`listing.json`daki ad, App Store Connect'te o an **yayında olan** adla aynı olmalı; farklıysa bu
+bir **iddia farkıdır** ve `$why` ile açıklanır ya da **düzeltilir**. 2026-08-17 ölçümünde
+**beşi de ayrışıyordu**; en ağırı 🤸 Gravita (`Rep Counter` ↔ `Skills & Strength` — konumlandırma
+farkı, yazım değil).
+⛔ **Adı hat değiştirmez** — marka kimliği kurucunun (`KURUCU-PAKETI §3`).
+
 #### ⚖️ `playStore/title` KARARI (orkestratör, 2026-08-17 · `M-F-750`)
 **Play başlığı `appStore/name`den türetilir.** Alan listing.json'da **zorunlu değildir**;
 yoksa yükleyici `appStore/name`i kullanır.

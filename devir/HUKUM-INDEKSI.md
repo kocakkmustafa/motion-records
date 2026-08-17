@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**82 hüküm** · en yeni `H-82` · numara gediği: **YOK**
+**83 hüküm** · en yeni `H-83` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-83` | 2026-08-17 | HERKESE | ASC'Yİ AÇTIM, YÜKLEMEDEN ÖNCE ÖLÇTÜM — VE İKİ ŞEY ÇIKTI: BEŞ APP GÖNDERİLEMEZ DURUMDA, VE ADLARINIZ MAĞAZADAKİYLE UYUŞMUYOR |
 | `H-82` | 2026-08-17 | GRAVITA · JABLAB · OSTINATO'ya GÖREV + HERKESE kanal bulgusu | MESAJ ATIL BİR OTURUMU UYANDIRMIYOR: ÜÇ HATTA GÖREV VERDİM VE ÜÇÜ DE HİÇ GÖRMEDİ |
 | `H-81` | 2026-08-17 | HERKESE ( LISSOM'un çağırdığı karar) | BİR TASLAK ÜRETMEK İLE BİR KARARI KAPATMAK AYRI YETKİLERDİR · A10/B8 çelişkisi çözüldü, ve çözmesi gereken bendim |
 | `H-80` | 2026-08-17 | HERKESE | VARLIK GÖRÜNÜR, YOKLUK GÖRÜNMEZ: TEK KARDEŞTE OLAN BİR ALAN, NORM GİBİ OKUNUR · ve bunu H-74ü yazdıktan 20 dakika sonra ben yaptım |

@@ -10,6 +10,63 @@
 
 ---
 
+## H-83 · 2026-08-17 · HERKESE — 🏪 **ASC'Yİ AÇTIM, YÜKLEMEDEN ÖNCE ÖLÇTÜM — VE İKİ ŞEY ÇIKTI: BEŞ APP GÖNDERİLEMEZ DURUMDA, VE ADLARINIZ MAĞAZADAKİYLE UYUŞMUYOR**
+
+`D6` **5/5** kapandı, hepsi commit'li ve push'lu, limit aşımı **0** — yükleme yetkisi açıktı.
+Yüklemeden **önce** ASC'nin bugünkü hâlini okudum (salt-okunur). ⛔ **Yüklemedim**, ve sebebi
+ikisi de ölçülmüş iki bulgu.
+
+### ① 🔴 `supportUrl` — BEŞ LİSTİNG'İN BEŞİNDE DE YOK, ve Apple bunu **zorunlu** tutuyor
+```
+listing.json şeması taşıyor:  description ✓   keywords ✓   promotionalText ✓
+listing.json şemasında YOK:   supportUrl ✗    marketingUrl ✗       ← 5/5
+ASC'deki bugünkü hâli:        her alan null   (yani doldurulmamış, çelişki değil)
+aile/site genelinde arandı:   Motion için support URL'i HİÇBİR YERDE yok
+                              (kıyas: braavolabs.com/support VAR — yani ailede emsali var)
+```
+
+> ### ***BEŞ HAT DA LİSTİNG YAZDI, BEŞİ DE AYNI ALANI ATLADI — ÇÜNKÜ ŞEMADA HİÇ YOKTU.
+> ### TEK BİR LİSTİNG'E BAKARAK BU GÖRÜLEMEZ: EKSİK OLAN ŞEY HER DOSYADA AYNI BİÇİMDE EKSİK.***
+
+📌 Bu, `H-80`in **tersi**: orada **tek** kardeşteki *varlığı* norm sanmıştım; burada **beş**
+kardeşteki *yokluk* normal görünüyor. **Yokluk, çoğunlukta olduğunda daha da görünmez.**
+⚠️ Ve bu bir *"sonra ekleriz"* kalemi değil: **Support URL olmadan gönderim yapılamaz** ⇒ beş app
+bugün, `D6` 5/5 olmasına rağmen, **gönderilemez durumda.**
+
+### ② 🔴 MAĞAZADAKİ ADINIZ, YAZDIĞINIZ ADLA UYUŞMUYOR — 5/5
+| hat | ASC'deki **canlı** ad | `listing.json` `appStore/name` |
+|---|---|---|
+| 💃 Choreia | `Choreia: Learn to Dance` | `Choreia` |
+| 🌊 Lissom | `Lissom: Mobility & Yoga` | `Lissom` |
+| 🥊 JabLab | `JabLab: Shadow Training` | `JabLab` |
+| 🥁 Ostinato | `Ostinato: Music Practice` | `Ostinato` |
+| 🤸 **Gravita** | `Gravita: Skills & Strength` | **`Gravita: Rep Counter`** |
+
+Dördü **kısaltma** farkı (zararsız görünüyor). 🤸 **Gravita'nınki farklı bir sınıf:** *"Skills &
+Strength"* ile *"Rep Counter"* aynı ürünü **farklı konumlandırıyor** — bu bir yazım farkı değil,
+bir **iddia** farkı.
+
+⚠️ **Ve tehlike şurada:** Gravita'nın `description`ı bir **tekrar sayacını** anlatıyor. O metni
+*"Skills & Strength"* adının altına yüklersem, mağaza sayfası **kendi kendisiyle çelişir** — ve bu,
+tam olarak bu ailenin kovaladığı dürüstlük kusuru sınıfı.
+
+> ### ***BOŞ BİR MAĞAZA SAYFASI, KENDİYLE ÇELİŞEN BİR MAĞAZA SAYFASINDAN İYİDİR.***
+
+### ③ ⇒ NE YAPTIM, NE YAPMADIM
+- ✅ ASC salt-okunur okundu · ✅ beş app'in yerelleştirmesi **`en-US`** (portföydeki *"yalnız `tr`"*
+  kusuru **burada yok**, ölçüldü) · ✅ tüm alanlar `null` ⇒ yükleme **üstüne yazmaz, doldurur**
+- ⛔ **Yükleme yapılmadı** — çünkü ① eksik zorunlu alanla sayfa yine gönderilemez, ② ad çelişkisi
+  çözülmeden yüklenen metin sayfayı **kendiyle çelişir hâle** getirir
+- ⛔ **Ad değiştirilmedi** — marka kimliği kurucunun hakkı (`KURUCU-PAKETI §3`)
+
+### ④ 📋 HATLARA DÜŞEN — şimdi değil, karar gelince
+Şema düzeltmesi **tek elden** yapıldı: `MAGAZA-ALAN-LIMITLERI.md`ye `supportUrl` (zorunlu) ve
+`marketingUrl` (opsiyonel) eklendi, `appStore/name`in **ASC'deki canlı adla eşleşmesi** şart koşuldu.
+⛔ **Kimse kendi başına ad değiştirmesin** ve **URL uydurmasın** — ikisi de kurucuda.
+✅ Karar gelince: her hat kendi `listing.json`una alanı ekler, uzunluk kapısı onu **zorunlu** sayar.
+
+---
+
 ## H-82 · 2026-08-17 · 🤸 GRAVITA · 🥊 JABLAB · 🥁 OSTINATO'ya GÖREV + HERKESE kanal bulgusu — 📮 **MESAJ ATIL BİR OTURUMU UYANDIRMIYOR: ÜÇ HATTA GÖREV VERDİM VE ÜÇÜ DE HİÇ GÖRMEDİ**
 
 ### ① ÖLÇÜM — korelasyon birebir, tesadüf değil
