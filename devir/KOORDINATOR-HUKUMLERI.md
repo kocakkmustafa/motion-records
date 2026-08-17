@@ -10,6 +10,69 @@
 
 ---
 
+## H-85 · 2026-08-17 · HERKESE — ✅ **KURUCU DÖRT KARARI DA VERDİ. DEĞERLER BURADA — UYANMANIZ YETERLİ, MESAJ BEKLEMEYİN**
+
+`H-83` *"karar kurucuda"* diyordu; dördünüz onu okuyup **aksiyon almadınız** ve bu **doğruydu**.
+Kararlar geldi. **Bu kez mesaja değil buraya yazıyorum** — sebebi §4'te, ve sebep **benim
+hatam**.
+
+### ① 🏷️ AD — **ASC'deki CANLI adlar kalıyor.** `listing.json`daki `appStore/name` bunlara çekilecek
+| hat | yeni `appStore/name` | uzunluk |
+|---|---|---|
+| 💃 Choreia | `Choreia: Learn to Dance` | 23/30 ✓ |
+| 🌊 Lissom | `Lissom: Mobility & Yoga` | 23/30 ✓ |
+| 🤸 Gravita | `Gravita: Skills & Strength` | 26/30 ✓ |
+| 🥊 JabLab | `JabLab: Shadow Training` | 23/30 ✓ |
+| 🥁 Ostinato | `Ostinato: Music Practice` | 24/30 ✓ |
+
+⚠️ 🤸 **GRAVITA — sende ek iş var, ötekilerde yok.** Adın *"Skills & Strength"*, `description`ın
+bir **tekrar sayacını** anlatıyor. Sayfa **kendiyle çelişmemeli** — ama ⛔ **ürünü olduğundan
+geniş de gösterme**: bugün ölçülen **2 hareket**, 29'u `coming_soon`. Doğru çizgi, farkı
+*kapatmak değil* **adıyla söylemek**. Kendi `$claimAuditWhy` disiplinini uygula.
+📌 Diğer dördünüz: ad genişledi ama ürün genişlemedi — `description`ınızı **bir kez** o gözle
+okuyun (💃 Choreia: *"Learn to Dance"* ↔ 34 stilden **1'i** başlatılabiliyor).
+
+### ② 🔗 URL — ikisi de kesin, ikisi de `listing.json`a girecek
+```
+supportUrl        https://yulalab.com/support
+privacyPolicyUrl  https://yulalab.com/privacy/motion
+```
+Orkestratör `yulalab.com`da `/privacy/motion` sayfasını **yazdı** (beş app ortak; kamera cihazdan
+çıkmaz · cihazda saklananlar · **font indirmesi dürüstçe** — dördünüz Google Fonts'tan çekiyor,
+🤸 Gravita çekmiyor) ve `/support`u Motion'ı kapsayacak hâle getirdi. `typecheck` **exit 0**.
+⏸️ **Sayfalar henüz canlı değil** — commit/deploy kurucu onayında (`yulalab-com`, aile dışı depo).
+⇒ Alanları **şimdi yazın**; kapı onları zorunlu saysın. Canlılık ayrı bir kapı, orkestratörde.
+
+### ③ 🔞 SİZDE İŞ YOK — orkestratör kapattı
+Yaş derecesi **beş app'te de kuruldu ve doğrulandı**: `appStoreAgeRating = FOUR_PLUS`,
+`healthOrWellnessTopics = true` (kurucu kararı). Fiyat **ücretsiz**, yayın **otomatik**
+(`AFTER_APPROVAL`) — kurucu seçti. **Bunlara dokunmayın.**
+
+### ④ 🔴 VE NEDEN BU KEZ MESAJ DEĞİL DE BURASI — kusur bende, üçüncü kez
+Dördünüz `H-83`ü okudunuz, *"aksiyon yok"* dediniz, turunuzu bitirdiniz. Sonra ben kararları
+**cross-session mesajla** gönderdim ve **beşiniz de o an atıldınız** ⇒ mesajlar transkriptinize
+düştü, **hiçbiri işlenmedi**, ve arayüzde beşiniz de ⚠️ göründünüz. Kurucu bunu *"oturumlar yine
+hata verdi"* diye gördü.
+🟢 **Hata yoktu:** beşiniz de `done (success)` ile kapandınız. Ölçüldü — beş oturumun beşinde de
+son olay **işlenmemiş bir mesajım**, ve hiçbirinde hata metni yok.
+
+> ### ***EYLEM GEREKTİREN İŞ MESAJA YAZILMAZ. MESAJ YALNIZ TUR İÇİNDEKİ BİR OTURUMA ULAŞIR;
+> ### ATIL BİR OTURUMDA BEKLER VE ONU "TAKILMIŞ" GÖSTERİR. KALICI TAŞIYICI BU DOSYADIR.***
+
+📌 `H-82`de görevleri buraya taşımıştım — ama **kararları** taşımadım, çünkü o an karar yoktu.
+Karar gelince refleksim yine mesaj oldu. ⇒ Bundan sonra: **karar da görev de önce buraya**, mesaj
+yalnız *"posta kutusuna bak"* demek için.
+
+### ⑤ 📋 SIRANIZ — uyanır uyanmaz, sormadan
+1. Hepiniz: `appStore/name` + iki URL → `listing.json`; kapınız `supportUrl`/`privacyPolicyUrl`ü
+   **zorunlu** saysın (bugün kırmızı yakacak, **doğru** olan bu).
+2. 🤸 Gravita: yukarıdaki `description` işi · 🥁 Ostinato: bekleyen **4-hat tüketici taraması
+   raporun** · 🌊 Lissom: **cihaz günü paketi** (aile 4/5, eksik tek sen) · 🥊 JabLab: **kamera
+   canlılık ölçüm koşumu** (ailenin en büyük bilinmezi) · 💃 Choreia: `hh_l2` ölçümünü raporla.
+3. Turunuzu **bitirmeden önce** bu dosyanın tepesine bakın (`H-82 §6`).
+
+---
+
 ## H-84 · 2026-08-17 · HERKESE ( 💃 CHOREIA'nın bulgusu) — 🕳️ **BİR KAYNAĞI TEK BİR EKSENDE ELEYEN KAPI, BAŞKA BİR EKSENDEKİ TEK CEVABI DA ÇÖPE ATAR**
 
 💃 Choreia `C-313`te 10 adayı zincirden geçirdi ve **rapor PASS** — ama içindeki asıl bulgu

@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**84 hüküm** · en yeni `H-84` · numara gediği: **YOK**
+**85 hüküm** · en yeni `H-85` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-85` | 2026-08-17 | HERKESE | KURUCU DÖRT KARARI DA VERDİ. DEĞERLER BURADA — UYANMANIZ YETERLİ, MESAJ BEKLEMEYİN |
 | `H-84` | 2026-08-17 | HERKESE ( CHOREIA'nın bulgusu) | BİR KAYNAĞI TEK BİR EKSENDE ELEYEN KAPI, BAŞKA BİR EKSENDEKİ TEK CEVABI DA ÇÖPE ATAR |
 | `H-83` | 2026-08-17 | HERKESE | ASC'Yİ AÇTIM, YÜKLEMEDEN ÖNCE ÖLÇTÜM — VE İKİ ŞEY ÇIKTI: BEŞ APP GÖNDERİLEMEZ DURUMDA, VE ADLARINIZ MAĞAZADAKİYLE UYUŞMUYOR |
 | `H-82` | 2026-08-17 | GRAVITA · JABLAB · OSTINATO'ya GÖREV + HERKESE kanal bulgusu | MESAJ ATIL BİR OTURUMU UYANDIRMIYOR: ÜÇ HATTA GÖREV VERDİM VE ÜÇÜ DE HİÇ GÖRMEDİ |
