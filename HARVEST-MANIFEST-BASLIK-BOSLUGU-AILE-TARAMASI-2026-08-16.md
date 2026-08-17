@@ -226,4 +226,52 @@ okuyor. Backfill Choreia'nın kendi doğruluğu için ACİL DEĞİL; ama iki-kay
 tutarsızlığın kendisi (manifest eksik, sidecar dolu) yine de gerçek ve düzeltilebilir bir
 hijyen sorunu — yalnız kimseyi şu an yanıltmıyor.
 
-*(Diğer 4 app için aynı yöntemle koşan bir tarama sürüyor; sonucu geldiğinde ayrı eklenecek.)*
+## EK — TÜKETİCİ ÖLÇÜMÜ: diğer 4 hat (2026-08-17, Ostinato hattı, `H-82`③ görevi)
+
+**Yöntem, Choreia'yla birebir aynı soru:** boş alanların (`title`/`description`/`rom_mode`/
+`reference_eligible`/`context_tags`/`context_source`) KENDİSİ değil, onları **manifest'in
+kendi kopyasından okuyan bir kod var mı** — her hattın `tools/`/`packages/*/tool` ağacı
+tarandı (Python: `.get("title"`/`["title"]` deseni; Dart: `m['title']` deseni). **Salt-okunur**
+— hiçbir dosyada tek bayt değiştirilmedi. ⛔ Bu ölçüm bir çare ÖNERMİYOR (`H-82`'nin sınırı) —
+karar tek elden orkestratörde.
+
+| Hat | tüketici bulundu mu | manifest mi sidecar mı | sınıf |
+|---|---|---|---|
+| 🥁 **Ostinato** | `tools/reclassify_rom.py:69-76` | **sidecar** (`raw/<id>.info.json`) — manifest'in kopyasına HİÇ bakmıyor | 🟢 (Choreia'nın 🟢*'ı ile AYNI mekanizma) |
+| 🤸 **Gravita** | `tools/reclassify_eligibility.py:121-130` | **manifest** — `(lib/"manifests").glob("*.json")`den `json.loads`, `m.get("title")`/`m.get("description")` doğrudan manifest kopyasından | 🔴 |
+| 🌊 **Lissom** | `tools/reclassify_pool.py:97-116` | **manifest** — `MANIFESTS.glob("*.json")`den `json.loads`, `m.get("title", "")`/`m.get("description", "")` doğrudan manifest kopyasından | 🔴 |
+| 🥊 **JabLab** | `title`/`description` için **YOK** (repoda taranan hiçbir dosya bu ikisini manifest'ten okumuyor) — ama AYNI blok'un diğer dört alanı için **VAR**: `packages/jablab_engine/tool/segment_punches.dart:194-201` (`_refreshEligibility`), `m['reference_eligible']`/`m['rom_mode']`/`m['context_tags']`/`m['context_source']` — Dart `Map` köşeli-parantez erişimi, eksik anahtarda **`null`** döner (Python `KeyError` gibi patlamaz) | 🔴 (title/desc için 🟢 — ayrı alan çifti, aynı blok) |
+
+### Gravita ve Lissom — aynı sınıf, ikisi de fail-open değil ama SESSİZ
+
+İkisi de `m.get(key, "")`/`m.get(key) or ""` deseniyle eksik alanı **boş string**e düşürüyor,
+sonra `rom_mode.classify(title="", description="", transcript=..., ...)` çağırıyor. Transkript
+VARSA (`sourcesSeen`e transkript de giriyor) sınıflandırma yine de anlamlı bir sonuç
+üretebilir — ama transkriptsiz bir kaynak için bu, sınıflandırıcıyı **kasıtlı fail-closed**
+tasarımının (`rom_mode.py`: "ayrım kamerada görünmez, yalnız anlatıda") beslediği metni
+sessizce sıfırlamak demek. **Etki alanı ölçüldü, iddia edilmedi:** Gravita'da 3 manifest
+(title+desc ikisi de eksik), Lissom'da title-eksik 47 / desc-eksik 50 manifest bu yolun
+üzerinden geçerse aynı riske girer — GERÇEKTEN geçtiler mi (bu araçlar o kayıtlara karşı hiç
+koşuldu mu) bu görevin kapsamı dışı, ayrı bir ölçüm gerektirir.
+
+### JabLab — farklı alan çifti, ama AYNI blok, ve `null` zaten bir anlam taşıyor
+
+`segment_punches.dart`ın kendi yorumu (satır 211-213) `referenceEligible`ta **YOK ile `false`
+AYNI DEĞİLDİR** diyor — yokluk "henüz sınıflandırılmadı" anlamına geliyor kodun kendi
+sözleşmesinde. Gap-etkili bir manifest bu fonksiyondan geçerse `m['reference_eligible']` →
+`null` döner ve `out['referenceEligible']` bu `null` ile EZİLİR (satır 223: `out.addAll(fresh)`)
+— eğer o kaynağın DAHA ÖNCE gerçek bir sınıflandırması varsa (örn. ilk hasat sırasında
+üretilmiş), bu "tazeleme" onu sessizce "henüz sınıflandırılmadı" durumuna geri düşürür. Bu
+fonksiyon yalnız `--manifests <dir>` bayrağıyla çağrıldığında çalışıyor (opsiyonel yol) —
+GERÇEKTEN JabLab'ın 3/5 gap-etkili manifestine karşı çalıştırıldı mı, bu ölçümün kapsamı dışı.
+
+### Sonuç — dört hattın dördü de tarandı, iki farklı sınıf çıktı
+
+🟢 **Choreia + Ostinato:** aynı mekanizma (sidecar'dan doğrudan okuma), canlı kusur yok.
+🔴 **Gravita + Lissom:** aynı mekanizma (manifest kopyasından okuma), title/description alanları
+için potansiyel canlı maruziyet — gerçekleşti mi (araç o kayıtlara karşı koşuldu mu) ayrı ölçüm
+gerektirir. 🔴 **JabLab:** title/description için maruziyet YOK, ama AYNI blok'un
+`rom_mode`/`reference_eligible`/`context_tags`/`context_source` dörtlüsü için farklı bir
+mekanizmayla (`--manifests` tazeleme yolu) maruz.
+
+*(Bu ek 2026-08-17'de tamamlandı — diğer 4 app'in dördü de tarandı, yukarıdaki tablo nihai.)*

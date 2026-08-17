@@ -501,6 +501,37 @@ Hazırlık kanıtı tamamlanınca sıra önerisiyle birlikte buraya gelecek.
 
 ---
 
+## 5-TUR2 · ✅ 🔐 **GEREKÇE KODU ARTIK TEK SAYFA — KARARA HAZIR** (2026-08-17)
+
+> 🎯 **Paketin en yüksek getirili karar kalemi bu: ~30 dakika, BİR karar, BEŞ app açılıyor.**
+> 📄 **`devir/GEREKCE-KODU-TEK-SAYFA.md`** — dört satır, her birinin *"ne yapıyoruz"*u koddan
+> ölçülmüş, senin dolduracağın **boş bir kod sütunu** var.
+
+Aylardır *"sembol listesi tamamlanınca tek sayfa hâlinde önüne gelecek"* diyordum. **Geldi.**
+İki bacak ayrı ayrı kapandı ve ancak birlikte tamamlanıyor:
+- 🤸 **App katmanı** (Gravita, `G-256`): Apple'ın **30 sembolünün 30'u** tarandı — önceki tur
+  yalnız **4/30** aramıştı. `H-82`nin sorduğu asıl şüphe (`getattrlist` ailesi, çift-kategori)
+  **üç yüzeyin hiçbirinde yok**. Vakum kontrollü, önceki sayılar bağımsız yeniden koşumla
+  **birebir** doğrulandı.
+- 🎼 **Eklenti katmanı** (orkestratör, `M-F-755`): `motion_camera` **tek** kategori kullanıyor —
+  **SystemBootTime**, çıkarım gecikmesi ölçümü için. Pozitif kontrollü.
+
+**Sonuç: kullanılan 3 kategori** (FileTimestamp · SystemBootTime · UserDefaults) ·
+**kullanılmayan 2 kategori ölçüldü** (DiskSpace 13/13 sembol → 0 · ActiveKeyboards 1/1 → 0).
+
+🔴 **Ve tek sayfadaki en önemli satır:** `motion_camera`ın manifesti bugün
+`NSPrivacyAccessedAPITypes`ı **boş** beyan ediyor, oysa kategori **kullanıyor** ⇒ *bugünkü hâliyle
+paketlenseydi Apple'a **yanlış beyan** giderdi.* Paketlenmedi — **ÖLÇ → DOLDUR → PAKETLE** sırası
+bilerek ters çevrilmişti ve **doğruymuş**.
+
+⚠️ Sayfadaki **5 sınır adıyla yazılı** — en önemlisi: kapalı ikilideki **8 üst-düzey Swift
+sembolü ölçülemedi** (`nm -u` yalnız C-linkajı görür). *Bu bir "temiz" değil, bir "görülemedi".*
+
+⚖️ **Kod seçilmedi ve seçilmeyecek** — o yargı sende. Sen dört satırı doldur, gerisi bizde
+(doldur → paketle → paketlendiğini **ölçerek** doğrula).
+
+---
+
 ## 5 · 🔒 GİZLİLİK BEYANI — KURUCU BİLGİSİ GEREKİYOR (karar değil, ONAY)
 
 **Bu, gönderim-dürüstlüğü sınıfı. Kurucunun bilmesi gereken tek şey burada.**
