@@ -482,7 +482,40 @@ yönergeleri zaten sade açılış ekranı önerir — bu bir kusur değil, bir 
 
 ---
 
-## 3b · 📤 ASC YÜKLEMESİ — **hazır, tek oturuşta yapılacak** (senin işin DEĞİL, bilgi)
+## 3b-TUR2 · ✅ **`D6` 5/5 KAPANDI — SIFIR LİMİT İHLALİ** (2026-08-17 07:27, canlı ölçüm)
+
+| | 💃 Choreia | 🌊 Lissom | 🤸 Gravita | 🥊 JabLab | 🥁 Ostinato |
+|---|---|---|---|---|---|
+| `name` (30) | 7 | 6 | 20 | 6 | 8 |
+| `subtitle` (30) | 22 | 27 | **30 =** | 22 | 27 |
+| `promotionalText` (170) | 162 | 163 | 152 | 142 | 140 |
+| `keywords` (100) | 95 | 94 | 85 | 94 | **100 =** |
+| `shortDescription` (80) | 75 | 70 | 76 | 76 | **76** ⬅ *92'den indi* |
+| `description` (4000) | 1896 | 1670 | 1565 | 1576 | 1411 |
+| `$ageRating` | ✓ | ✓ | ✓ | ✓ | ✓ |
+
+**Limit aşımı: 0.** Sabahki iki sapmanın **ikisi de kapandı** — Ostinato'nun Play sevk engeli
+(92→76, dürüstlük cümlesi **atılmadı, sıkıştırıldı**) ve JabLab'ın `ageRating`→`$ageRating`'i.
+⚠️ İki alan **tam ucunda** (Gravita `subtitle` 30/30 · Ostinato `keywords` 100/100) — tek
+karakterlik düzenleme kırmızıya çevirir.
+
+🎯 **Ve `H-78`'in zamanlaması işe yaradı:** 🌊 Lissom listing'ini **kapıyla birlikte** yazdı
+(`L-345`, 276 satırlık test) — geri dönüp düzeltilmedi, **kapının altında doğdu**.
+
+### ⏸️ ASC YÜKLEMESİ — **PASS verildi, ama bir şart bekliyor**
+`D6` yetkisi açıldı (`5/5` + çapraz okuma yapıldı). ⛔ **SUBMIT yok** — o yalnız sende (`B7`).
+Yükleme yine de **bekliyor**, tek ve adı konmuş bir sebeple:
+
+> 🥁 Ostinato'nun düzeltmesi şu an **yalnız çalışma ağacında**, commit edilmemiş.
+> ***MAĞAZAYA, GİT'TE KARŞILIĞI OLMAYAN BİR METİN GÖNDERİLMEZ — gönderilirse mağaza ile depo
+> ayrışır ve NE GÖNDERDİĞİMİZİ KANITLAYAMAYIZ.***
+
+⇒ Ostinato commit'ler commit'lemez beş liste **tek oturuşta** yüklenecek. **Senden bir şey
+istemiyor.**
+
+---
+
+## 3b · 📤 ASC YÜKLEMESİ — *(tur-1 gerekçesi, tarihsel — yukarısı günceldir)*
 
 `D6` şunu diyor: *orkestratör `PASS` verince ASC'ye yerelleştirme/görsel yüklemesi yapılabilir —
 **SUBMIT asla**.* PASS verildi ⇒ **yetki var**, ama orkestratör **henüz yapmadı**, üç sebeple:
