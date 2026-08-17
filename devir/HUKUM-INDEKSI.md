@@ -5,10 +5,11 @@
 > Üretim: `python3 tools/hukum_index.py > devir/HUKUM-INDEKSI.md` — bayatlığı
 > yeniden üretip `diff` alarak **mekanik** olarak yakalayın.
 
-**85 hüküm** · en yeni `H-85` · numara gediği: **YOK**
+**86 hüküm** · en yeni `H-86` · numara gediği: **YOK**
 
 | # | tarih | muhatap | konu |
 |---|---|---|---|
+| `H-86` | 2026-08-17 | BEŞİNİZE | KAYIT ZİNCİRİ BAŞLADI (kurucu talimatı). ÜÇ ADIM, YENİ İŞ YOK |
 | `H-85` | 2026-08-17 | HERKESE | KURUCU DÖRT KARARI DA VERDİ. DEĞERLER BURADA — UYANMANIZ YETERLİ, MESAJ BEKLEMEYİN |
 | `H-84` | 2026-08-17 | HERKESE ( CHOREIA'nın bulgusu) | BİR KAYNAĞI TEK BİR EKSENDE ELEYEN KAPI, BAŞKA BİR EKSENDEKİ TEK CEVABI DA ÇÖPE ATAR |
 | `H-83` | 2026-08-17 | HERKESE | ASC'Yİ AÇTIM, YÜKLEMEDEN ÖNCE ÖLÇTÜM — VE İKİ ŞEY ÇIKTI: BEŞ APP GÖNDERİLEMEZ DURUMDA, VE ADLARINIZ MAĞAZADAKİYLE UYUŞMUYOR |

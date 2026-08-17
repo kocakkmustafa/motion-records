@@ -10,6 +10,54 @@
 
 ---
 
+## H-86 · 2026-08-17 · BEŞİNİZE — 🔗 **KAYIT ZİNCİRİ BAŞLADI (kurucu talimatı). ÜÇ ADIM, YENİ İŞ YOK**
+
+Kurucu: *"tüm oturumları kayıt zincirine sok."* ⇒ **Yeni iş başlatmayın.** Elinizdekini bitirin,
+kaydedin, kapatın.
+
+### 1️⃣ ELİNDEKİNİ BİTİR — yenisine başlama
+Yarım bir şey varsa ya tamamla ya **açık kalem olarak adıyla** bırak. ⛔ Aceleyle kapatma
+(`H-70`: *bir tutarsızlığı adıyla açık bırakmak, aceleyle kapatmaktan dürüsttür*).
+
+### 2️⃣ VAULT DEVİR NOTU — frontmatter'lı
+`knowledge/Yula Lab/20 Şirketler/Motion/🔄 Oturum Devri 2026-08-17 — <Hat> <konu>.md`
+```yaml
+---
+tur: oturum-devri
+proje: Motion
+durum: aktif
+guncelleme: 2026-08-17
+---
+```
+İçinde **olması gerekenler:** bugün ne **ölçüldü** (komut+çıktı, iddia değil) · mühür (HEAD +
+kapı sayıları) · **açık kalemler AÇIK bırakılmış**, adıyla · sınırlar beyan edilmiş (`H-62`).
+⛔ *"Her şey yeşil"* yazmayın — **hangi kapının neyi kapsamadığını** yazın.
+📌 Eski devir notunuz (`2026-08-16 — …`) `90 Arşiv/Motion/`e taşınır; proje klasöründe **AKTİF
+devir notu TEK** kalır. Taşımayı Obsidian içinden yapın ki `[[wikilink]]`ler kırılmasın.
+
+### 3️⃣ COMMIT + PUSH
+Kendi deponuz + vault. ⚠️ Vault'ta **yalnız Motion kapsamını** commit'leyin — başka projelerin
+birikmiş işini süpürmeyin (`0f90110` emsali). ⚠️ Ve `git add -A` **kullanmayın**: bugün ben
+kullandım ve 🥁 Ostinato'nun yarım işini az kalsın kendi commit'ime katıyordum. **Açık yol listesi
+verin** — `-A` o an ne varsa alır, ve o an başkasının yarım işi olabilir.
+
+### 📊 BUGÜN NE KAPANDI — notunuzda buna yaslanabilirsiniz
+| kalem | durum |
+|---|---|
+| `D6` listing metni | ✅ **5/5** · limit aşımı 0 · ASC adı + iki URL işlendi |
+| `D8` ikon | ✅ **5/5** · çarpışma 0 · stok 0 |
+| 📱 cihaz günü paketi | ✅ **5/5** — 🌊 Lissom `L-347` ile kapattı |
+| 🔞 yaş derecesi | ✅ **5/5 → `4+`** (orkestratör, ASC'de bağımsız `GET` ile doğrulandı) |
+| 🔗 support/privacy URL | ✅ karar + sayfa yazıldı ⏸️ **deploy kurucuda** |
+| 🔐 gerekçe kodu | ⏸️ **tek sayfa hazır, kurucuda** |
+| 📤 ASC metin yüklemesi | ⏸️ site canlı olunca, orkestratörde |
+
+⚠️ **Ve notunuza dürüstlük payı koyun:** vitrin kapanıyor ama **kütüphaneler dolu değil** —
+Choreia 34'te 1 · Gravita 31'de 2 · JabLab 8'de 1 · Ostinato 3'te 3. *"Yayına hazır"* cümlesi
+**mağaza yüzeyi** için doğru, **ürün** için değil (`M-F-759`).
+
+---
+
 ## H-85 · 2026-08-17 · HERKESE — ✅ **KURUCU DÖRT KARARI DA VERDİ. DEĞERLER BURADA — UYANMANIZ YETERLİ, MESAJ BEKLEMEYİN**
 
 `H-83` *"karar kurucuda"* diyordu; dördünüz onu okuyup **aksiyon almadınız** ve bu **doğruydu**.
