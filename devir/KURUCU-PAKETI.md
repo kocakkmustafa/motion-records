@@ -186,7 +186,53 @@ değil, **ateşleme** boşluğu: kural vardı, **işin akışında ateşlenmedi*
 ⏱️ **Aciliyet: DÜŞÜK.** `D1` hiçbir şeyi bloke etmiyor; Choreia bu arada **ürün derinliğine**
 yönlendirildi (34 stilden 1'i başlatılabiliyor — beş hattın en büyük kullanıcıya-değen açığı).
 
-## 1b · ⌨️ UYANDIRMA LİSTESİ — senin klavyeni isteyen oturumlar
+## 1b-TUR2 · ⌨️ **UYANDIRMA — 2026-08-17 07:05 · ÜÇ HAT ATIL, GÖREVLERİ YAZILI, TEK ENGEL SENİN KLAVYEN**
+
+> 🔴 **Paketteki en yüksek getirili kalem şu an bu.** Üç hat **4,5 saattir** boşta duruyor ve
+> üçünün de görevi **hazır yazılmış** durumda. Enter'a basmak dışında bir şey gerekmiyor.
+
+### 📊 ÖLÇÜLDÜ (iddia değil — oturum durumu + transkript sonu)
+| hat | durum | son aktivite | bu turda ürettiği |
+|---|---|---|---|
+| 💃 Choreia | 😴 atıl | 02:33 | ✅ **121 tur** — ikon · listing · cihaz günü paketi |
+| 🌊 Lissom | 😴 atıl | 02:33 | ✅ **32 tur** — ikon · launch · 12 yokluk-iddiası · süreç bulgusu |
+| 🤸 Gravita | 😴 atıl | 02:29 | ⚠️ **hiçbir şey** — görevini görmedi |
+| 🥊 JabLab | 😴 atıl | 02:29 | ⚠️ **hiçbir şey** — görevini görmedi |
+| 🥁 Ostinato | 😴 atıl | 02:29 | ⚠️ **hiçbir şey** — görevini görmedi |
+
+🟢 **HİÇBİRİ HATA ALMADI.** Beşi de `done (success)` ile temiz kapandı; üçü açılış protokolünü
+koşup kapılarını **yeşil** raporladı (Gravita `222/222 · 175/175 · 20/20` · JabLab
+`analyze 0 · 368/368 · 129/129`), sonra *bekle-ve-hazır-ol* moduna geçti — **doğru davranış.**
+
+### 🔍 NEDEN ÜÇÜ BOŞ KALDI — ve kusur bende
+Orkestratör mesajı **atıl bir oturumu uyandırmıyor**; yalnız **tur içindeki** bir oturuma
+ulaşıyor. Korelasyon birebir: mesajı *"queued"* dönen iki hat çalıştı, *"sent"* dönen üç hat
+hiç uyanmadı (`H-82`). ⇒ Görevler transkriptlerine **düştü ama okunmadı.**
+📌 Aile bunu tur-1'de zaten ölçmüştü (`§1b`, aşağıda) ve posta kutusunu tam bu yüzden kurmuştu.
+**Ben posta kutusunu atlayıp doğrudan mesaj yazdım.** ✅ Düzeltildi: üç görev artık
+`KOORDINATOR-HUKUMLERI.md`de `H-82` altında **yazılı** — hatların uyanması **yeterli**.
+
+### ⌨️ SENDEN İSTENEN — üç oturumda Enter, başka bir şey değil
+`YAYIN-YOLU-GRAVITA` · `YAYIN-YOLU-JABLAB` · `YAYIN-YOLU-OSTINATO`
+Bir şey yazmana bile gerek yok; *"devam"* yeter. Her biri tur başında posta kutusunu okuyacak ve
+görevini **orada** bulacak.
+
+### 🔴 VE İKİNCİ YARISI — hatlar da bana ulaşamıyor
+🤸 Gravita ve 🥊 JabLab **bağımsız olarak** şunu yazdı: *"peer listesinde 7 Motion oturumu var ama
+hangisinin orkestratör olduğu **isimden ayırt edilemiyor**"* ⇒ raporlarını kendi defterlerine
+bıraktılar (doğru davranış) ama **bana hiç ulaşmadı.** Kanal **iki yönde de** kırık; tek sağlam
+taşıyıcı posta kutusu.
+💡 *Kalıcı çare senin elinde olabilir:* oturumlara ayırt edilebilir **ad** verilirse
+(`ORKESTRATOR`, `CHOREIA`…) hat→orkestratör yönü kendiliğinden açılır. Bu bir **öneri**, karar senin.
+
+### 🩺 Ve bir gerçek hata — tek tanesi, atlatıldı
+🌊 Lissom'un `git push`u **3 kez** `mmap failed: Operation timed out` ile düştü (iCloud sınıfı,
+`§0c`). iCloud-dışı geçici klondan (`--no-hardlinks`) push ederek atlattı, sonrakiler doğrudan
+çalıştı. **Kayıp yok** — ama `§0c` kararının maliyeti artık **bir hattın turunda** görünüyor.
+
+---
+
+## 1b · ⌨️ UYANDIRMA LİSTESİ — senin klavyeni isteyen oturumlar *(tur-1, tarihsel)*
 
 Atıl bir oturumu yalnız **kurucu klavyesi** uyandırır (`§2`). Toplu bildiriyorum, tek tek değil.
 

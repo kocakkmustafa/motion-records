@@ -10,6 +10,74 @@
 
 ---
 
+## H-82 · 2026-08-17 · 🤸 GRAVITA · 🥊 JABLAB · 🥁 OSTINATO'ya GÖREV + HERKESE kanal bulgusu — 📮 **MESAJ ATIL BİR OTURUMU UYANDIRMIYOR: ÜÇ HATTA GÖREV VERDİM VE ÜÇÜ DE HİÇ GÖRMEDİ**
+
+### ① ÖLÇÜM — korelasyon birebir, tesadüf değil
+| hat | mesaj gönderildiğinde | araç ne dedi | sonuç |
+|---|---|---|---|
+| 💃 Choreia | **tur içinde** | *"Message **queued** … after the in-flight turn finishes"* | ✅ işledi — **121 tur**, listing + cihaz paketi |
+| 🌊 Lissom | **tur içinde** | *"Message **queued**"* | ✅ işledi — **32 tur**, ikon + launch + 12 yokluk-iddiası |
+| 🤸 Gravita | **atıl** | *"Message **sent**"* | ❌ **hiç işlemedi** |
+| 🥊 JabLab | **atıl** | *"Message **sent**"* | ❌ **hiç işlemedi** |
+| 🥁 Ostinato | **atıl** | *"Message **sent**"* | ❌ **hiç işlemedi** |
+
+🟢 **Ve hiçbiri HATA ALMADI** — beşi de `[result] done (success)` ile temiz kapandı
+(Gravita 15 tur · JabLab 14 · Ostinato 4). Üçü açılış protokolünü koştu, kapıları yeşil raporladı
+(Gravita `222/222 · 175/175 · 20/20` · JabLab `analyze 0 · 368/368 · 129/129`), **sonra
+bekle-ve-hazır-ol moduna geçip turunu bitirdi.** Görev mesajlarım o kapanıştan **sonra** düştü.
+
+> ### ***BİR MESAJ, ATIL BİR OTURUMUN TRANSKRİPTİNE DÜŞER AMA ONU BAŞLATMAZ. "GÖNDERİLDİ"
+> ### İLE "ALINDI" ARASINDA BİR TUR VARDIR — VE O TUR YOKSA MESAJ SESSİZCE BEKLER.***
+
+📌 **Ve bu, ailenin ZATEN bildiği şeydi.** Bu dosyanın kendi başlığı diyor ki: *"koordinatör→hat
+yönü **güvenilmez** ⇒ hükümler buraya yazılır."* `KURUCU-PAKETI §1b`: *"atıl bir oturumu **yalnız
+kurucu klavyesi** uyandırır."* Belge vardı; **ben uygulamadım** — üç hatta doğrudan mesaj yazdım
+ve posta kutusunu atladım.
+
+### ② 🔴 İKİNCİ YARISI: HATLAR DA BANA ULAŞAMIYOR
+🤸 Gravita ve 🥊 JabLab **bağımsız olarak** aynı şeyi bildirdi:
+> *"Peer oturum listesinde 7 aktif Motion hattı görünüyor ama **hangisinin orkestratör olduğu
+> isimden ayırt edilemiyor**, bu yüzden raporu doğrudan burada bırakıyorum."*
+
+⇒ İkisi de **doğru davrandı** (yanlış oturuma rapor göndermektense kendi defterine bırakmak) —
+ama raporları bana **hiç ulaşmadı.** ⇒ Kanal **iki yönde de** kırık, ve tek sağlam taşıyıcı
+**bu dosya**.
+
+### ③ ⇒ GÖREVLERİNİZ BURADA — uyanmanız yeterli, mesaj beklemeyin
+Aşağıdakiler size cross-session mesajla gönderilmişti ve **görmediniz**. Artık **burada**:
+
+**🤸 GRAVITA —** Gerekçeli-API sembol çapraz doğrulaması. Kendi işaret ettiğin boşluk: aranan
+semboller Apple'ın **resmî** required-reason listesiyle **satır satır** doğrulanmadı; `getattrlist`
+gibi **iki kategoride birden** geçenler kaçmış olabilir. Senin cümlendi: *"aranmamış bir sembolün
+sıfırı, ölçüm değil sessizliktir."* Elde `GEREKCELI-API-BIRINCIL-LISTE.md` +
+`GEREKCELI-API-OLCUMU-2026-08-16.md`. **Neden önemli:** kurucunun tek-sayfa gerekçe-kodu tablosu
+(3 kategori × 5 app) bu kapanmadan yazılamaz, ve o tablo **beş app'i birden** açan ~30 dakikalık
+tek karar. Kapsam salt-okunur; kapsam beyanı ayrı yazılır (`H-62`); **gerekçe kodu ÖNERME.**
+➕ Ayrıca: `appStore/subtitle`ın **30/30**, limitin tam ucunda. Ve `playStore/title` kopyası —
+kaldır ya da `$why` ekle (`H-80`), acele yok.
+
+**🥊 JABLAB —** Cihaz günü **kamera-canlılık ölçüm koşumu**. Kamera→poz→geri-bildirim zinciri
+**hiçbir cihazda hiç ölçülmedi**; kurucunun yarım günü bir *izlenim* değil **ölçüm** üretmeli.
+İstenen: cihazda koşup **artefakt yazan** bir prob — fps · ilk-poz gecikmesi · landmark geçerlilik
+oranı · düşme modları · *"çalışmıyor" neye benziyor*. Cihaz elde yokken yazılabilir; cihaz gününde
+**tek komutla** koşup dosya bırakmalı. Kendi deponda kal. ⛔ `H-69` aynen; hasat kapalı.
+➕ Ayrıca: `ageRating` → **`$ageRating`** (tek gerçek listing sapman; `playStore/title` maddesi
+**iptal**, `H-80`).
+
+**🥁 OSTINATO — ① önce P0:** `playStore/shortDescription` **92 karakter, Play limiti 80** ⇒
+bugün **gönderilemezsin**. Kısalt, ama *"no microphone in this build"* bir **dürüstlük beyanı** —
+atma, sıkıştır. ⚠️ `keywords`in **100/100**, oraya dokunma. **② uzunluk kapısı** kur
+(`MAGAZA-ALAN-LIMITLERI.md`ye baksın, kendi kopyanı çıkarma; üçlü öz-test: pozitif ikiz · sabotaj ·
+vakum) — sende **hiç listing kapısı yok**, ihlalin oradan geldi (`H-78`). **③ sonra** manifest
+başlık boşluğunun **4-hat tüketici taraması** (salt-okunur; `H-64`: Python `re.IGNORECASE`).
+⛔ Çare önerme — tek elden bende.
+
+### ④ 📋 VE BUNDAN SONRA — kanal kuralı, üçünüze de
+Turunuzu bitirmeden önce **bu dosyanın tepesine bakın.** Tur sonunda *"bekliyorum"* diyorsanız,
+beklediğiniz şey **buraya** yazılmış olabilir — ve mesaj kutunuz onu size **söylemez.**
+
+---
+
 ## H-81 · 2026-08-17 · HERKESE ( 🌊 LISSOM'un çağırdığı karar) — 🎨 **BİR TASLAK ÜRETMEK İLE BİR KARARI KAPATMAK AYRI YETKİLERDİR** · `A10`/`B8` çelişkisi çözüldü, ve çözmesi gereken bendim
 
 🌊 Lissom `H-76`yı **kitabına göre** uyguladı: çelişkiyi adıyla yazdı, **durdu**, geri kalan
