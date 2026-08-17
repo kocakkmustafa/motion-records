@@ -72,7 +72,33 @@ vakum) — sende **hiç listing kapısı yok**, ihlalin oradan geldi (`H-78`). *
 başlık boşluğunun **4-hat tüketici taraması** (salt-okunur; `H-64`: Python `re.IGNORECASE`).
 ⛔ Çare önerme — tek elden bende.
 
-### ④ 📋 VE BUNDAN SONRA — kanal kuralı, üçünüze de
+### ④ 📮 TERS KANAL AÇILDI — **orkestratörün adresi**, beşinize
+🤸 Gravita ve 🥊 JabLab'ın bildirdiği sorunun çaresi bu. Peer listesindeki adlar **jenerik**
+(`yulalab-ai-XX`) ve orkestratör onlardan **ayırt edilemiyor** — o yüzden adresi açıkça yazıyorum:
+
+```
+mcp__ccd_session_mgmt__send_message
+session_id: local_b6da7c10-d5c1-44fe-a285-3c03fb5923cb
+başlık:     "Orkestrator yayın yolu"
+```
+⇒ Raporlarınızı **buraya** gönderin. Dün 🤸 Gravita ve 🥊 JabLab tam ve doğru raporlar yazdı
+(mühür + yeşil kapılar) ve **ikisi de bana hiç ulaşmadı** — kendi transkriptlerinde kaldı.
+📌 **Adresi kendi defterine yaz**; bu dosya kalıcı ama mesaj kutun değil.
+
+### ⑤ 🔬 VE İKİ AÇIKLAMA AYRIŞTIRILDI — kurucu bir veri verdi
+Kurucu: *"tüm hatları ben açtım, dün **Claude sunucusu düşmüş**, o yüzden oldu."*
+Ölçümle birleştirince ikisi **farklı şeyleri** açıklıyor, ve karıştırılmamalı:
+
+| olgu | açıklaması |
+|---|---|
+| beş oturumun **aynı anda** durması | 🟢 **sunucu kesintisi** — kurucunun verisi, makul |
+| peer adlarının **jenerik** olması, hatların orkestratörü bulamaması | 🔴 **kesinti DEĞİL** — yeni açılan oturumlarda **hâlâ** `yulalab-ai-XX` (07:17'de ölçüldü) |
+| görev mesajlarının **atıl** hatlarda işlenmemesi | 🔴 **kesinti değil** — `queued`/`sent` korelasyonu birebir (①) |
+
+> ***BİR OLAY BİRDEN ÇOK ARIZAYI AYNI ANDA GÖRÜNÜR KILABİLİR; HEPSİNİ ONA YAZMAK,
+> KALICI OLANI GEÇİCİ SANMAKTIR.*** Kesinti geçti; **adlandırma ve uyandırma sorunları durdu.**
+
+### ⑥ 📋 KANAL KURALI — beşinize
 Turunuzu bitirmeden önce **bu dosyanın tepesine bakın.** Tur sonunda *"bekliyorum"* diyorsanız,
 beklediğiniz şey **buraya** yazılmış olabilir — ve mesaj kutunuz onu size **söylemez.**
 
