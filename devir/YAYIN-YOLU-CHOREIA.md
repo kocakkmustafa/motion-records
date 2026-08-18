@@ -14,7 +14,7 @@ Choreia (`com.yulalab.choreia`, bundle `PDRAB4FYBS`). Depo `ventures/choreia/app
    KENDİSİ**, ve tepesinden aşağı, kendi defterinde `işlendi:` kaydı olmayan her hükmü oku.
    ⚠️ `HUKUM-INDEKSI.md` bir **görüntüdür**, üretildiği andan sonra bayatlar (`L-342` bunu
    canlı yaşadı: indeks `H-71` diyordu, mailbox `H-78`deydi). Sayıya güvenme — `max` oku.
-2. Mühür: beklenen HEAD **`a66c0a2`+** (H-70 kapanışı; sonrasında bayat-sayı düzeltmesi commit'i
+2. Mühür: beklenen HEAD **`9b472de`+** (H-70 kapanışı; sonrasında bayat-sayı düzeltmesi commit'i
    olabilir — defterin son kaydından doğrula). Kapılar: 25/25.
 3. İlk rapor + aşağıdaki sıra.
 

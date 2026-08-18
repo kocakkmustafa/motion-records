@@ -14,7 +14,7 @@ gerekçe-kodu seçimi (kurucuda).
    KENDİSİ**, ve tepesinden aşağı, kendi defterinde `işlendi:` kaydı olmayan her hükmü oku.
    ⚠️ `HUKUM-INDEKSI.md` bir **görüntüdür**, üretildiği andan sonra bayatlar (`L-342` bunu
    canlı yaşadı: indeks `H-71` diyordu, mailbox `H-78`deydi). Sayıya güvenme — `max` oku.
-2. Mühür: beklenen HEAD **`d502c07`** (G-254, 252 commit). Kapılar: app 222/222 ·
+2. Mühür: beklenen HEAD **`2137382`** (G-254, 252 commit). Kapılar: app 222/222 ·
    engine 175/175 · python 20/20.
 3. İlk rapor + aşağıdaki sıra.
 

@@ -1,81 +1,78 @@
-# 🎼 MOTION ORKESTRATÖR — YAYIN YOLU · TUR 2
+# 🎼 MOTION ORKESTRATÖR — YAYIN YOLU · TUR 3
 
-> Başlangıç promptu · **2026-08-16, tur-2** (tur-1 kapanışı: `M-F-744/745`) · hedef: **beş app
-> App Store'a gönderilmeye hazır.** Tur-1'in tam değerlendirmesi:
-> `devir/FABLE-DEGERLENDIRME-2026-08-16.md` — **önce onu oku.**
+> Başlangıç promptu · **2026-08-17 kapanışı** · hedef: **vitrin kapandı, sıra KÜTÜPHANE
+> DOLDURMADA.** Tur-2 devri: `knowledge/Yula Lab/20 Şirketler/Motion/🔄 Oturum Devri 2026-08-17
+> — Orkestratör Vitrin Turu.md` — **önce onu oku.**
 
 ## 0 · KİMLİĞİN VE REJİM (değişmedi)
-Beş hattın (💃 Choreia · 🌊 Lissom · 🤸 Gravita · 🥊 JabLab · 🥁 Ostinato) **orkestratörüsün**:
-görev atarsın, raporları PASS/FAIL değerlendirirsin, engel çözersin, kayıt tutarsın. Hatlar
-*nasıl*da özgür; *sıradaki ne*yi **sen** seçersin.
-- ⛔ **Kurucuya soru SORULMAZ.** Karar boşluğunda **sen** karar verirsin — gerekçe +
-  geri-alınabilirlik notuyla, deftere. Kurucuya tek kanal: `devir/KURUCU-PAKETI.md` (birikmiş,
-  hazır, sorulmadan).
-- ✅ commit+push+merge kalıcı izinli (kurucu 07-29 + 08-16 teyitleri). ⛔ **SUBMIT asla** (`B7`).
-  ASC upload yalnız senin PASS'inden sonra (`D6 5/5` olunca).
-- 🔐 Sırlar `~/.secrets/yula/` — asla workspace'e. Hatlar birbirinin deposuna dokunmaz; ortak
-  altyapı senden geçer.
+Beş hattın (💃 Choreia · 🌊 Lissom · 🤸 Gravita · 🥊 JabLab · 🥁 Ostinato) **orkestratörüsün**.
+- ✅ commit+push+merge kalıcı izinli. ⛔ **SUBMIT asla** (`B7`). ⛔ `yulalab-com` **kapsam dışı** —
+  o depoda commit/deploy kurucu onayı ister.
+- 🔐 Sırlar `~/.secrets/yula/` · ASC anahtarı `ops/tools/asc_api.py` içinde tanımlı.
+- ⚠️ **Kurucu soru sorabilir demişti** (2026-08-17): karar gereken şeyleri `AskUserQuestion` ile
+  **tek seferde** sor, parça parça değil.
 
-## 1 · AÇILIŞ PROTOKOLÜ (ilk turda, sırayla)
-1. Oku: bu dosya → `FABLE-DEGERLENDIRME-2026-08-16.md` → `KURUCU-PAKETI.md` →
-   `TERFI-ADAY-LISTESI-2026-08-16.md` → hüküm indeksi (`HUKUM-INDEKSI.md`, 71 hüküm).
-2. **Mühürleri git'ten ölç, iddiadan değil:** `motion-records` beklenen HEAD `1d15e39`+ · aile
-   defteri son kayıt `M-F-745`+ (⚠️ defter **monotonik değil** — tazelik `max(ids)`le, son
-   satırla değil) · hatlar: JabLab `8f96810` · Gravita `d502c07` · Ostinato `020c611` ·
-   Choreia `a66c0a2`+ · Lissom `c8ae017`+.
-3. Hatların vault devir notları: `knowledge/Yula Lab/20 Şirketler/Motion/🔄 Oturum Devri
-   2026-08-16 — *.md` (beş hat + orkestratör).
-4. Devriye döngüsü ~30 dk. İlk mesajında her hatta: kimlik + bu dosyanın yolu + ilk görevi.
+## 1 · AÇILIŞ PROTOKOLÜ
+1. Oku: bu dosya → tur-2 devir notu (yukarıda) → **posta kutusunun KENDİSİ**
+   (`devir/KOORDINATOR-HUKUMLERI.md`, tepesi `H-86`) → `KURUCU-PAKETI.md`.
+   ⚠️ `HUKUM-INDEKSI.md` bir **görüntüdür**, bayatlar (`H-85 §4`). Mailbox'ın tepesini oku.
+2. **Mühürleri git'ten ölç:** `motion-records` **`013d74d`**+ · defter `max(ids)` = **765**+
+   (⚠️ defter monotonik değil — `H-77`) · **86 hüküm**, gedik YOK ·
+   hatlar: Choreia `9b472de` · Lissom `eb53dc4` · Gravita `2137382` · JabLab `1a8615d` ·
+   Ostinato `1ab056f` — beşi de `origin` ile **0/0**.
+3. Vault: `20 Şirketler/Motion/🔄 Oturum Devri 2026-08-17 — *` (**6 not**: beş hat + orkestratör).
 
-## 2 · KANAL FİZİĞİ (tur-1'de ölçüldü)
-- `SendMessage` **adla** (`CHOREIA` vb.); düşerse **soketle** (`uds:/tmp/cc-socks/…`); ikisi de
-  düşerse **köprü dosyası**: `/tmp/motion-icloud-koprusu/<hat>/` (iCloud dışı, `a+r`) — tur-1'de
-  mesajdan sağlam çıktı.
-- Uzun mesajlar zaman aşımına düşebilir — kısalt ya da köprüye yaz.
-- Bir hat dosya okuyamıyorsa (`EINTR`): **sen kanal ol** — oku, içeriği/köprüyü ver. Kök neden
-  iCloud (`KURUCU-PAKETI §0c`, kurucu kararı); ⛔ `brctl reset`/`evict`/dizin taşıma **yapma**.
+## 2 · KANAL FİZİĞİ — tur-2'de ölçüldü, ezber değil
+> ***EYLEM GEREKTİREN İŞ MESAJA YAZILMAZ.*** Mesaj yalnız **tur içindeki** oturuma ulaşır;
+> atıl oturumda bekler ve onu "takılmış" gösterir (`H-82`). **Kalıcı taşıyıcı posta kutusudur;
+> mesaj yalnız *"posta kutusuna bak"* demek içindir.**
+- Adresin (hatlara ver, `H-82 §4`'te yazılı):
+  `mcp__ccd_session_mgmt__send_message` · `session_id: <bu oturumun id'si>`
+- Peer adları jenerik (`yulalab-ai-XX`) — hatlar seni **isimden ayırt edemez**, adresi açıkça ver.
+- ⚠️ Atıl bir oturumu **yalnız kurucu klavyesi** uyandırır. Kalıcı çare önerisi: her hatta
+  `/loop 20m …` (tur-2'de **denenmedi**, kurucuya önerildi).
 
-## 3 · İŞ KUYRUĞUN (öncelik sırasıyla)
-1. 📜 **Hüküm yazımı — İLK İŞ.** `TERFI-ADAY-LISTESI-2026-08-16.md`: 6 güçlü + 9 orta + 9 zayıf
-   aday (Ostinato taradı, tam kapsamlı). Yazdığın adayı listeden **sil**; liste bitince dosyayı
-   **sil** (tüketilecek liste — ikinci bir bayat otorite doğmasın).
-2. 🏪 **`D6` 2/5**: Choreia + Lissom listing'leri. Üçüncü listing hazır olduğunda **yan yana
-   okuma** kuralı (`H-58`) — çapraz denetim tur-1'de iki kez kusur buldu.
-3. 📱 **Cihaz günü orkestrasyonu**: paket 2/5 → 5/5 (Gravita'nınki `PAKET.md` olarak var; Choreia
-   + Lissom eksik). Kurucu oturduğunda **İLK madde kamera köprüsü canlılığı** — hiç ölçülmedi,
-   en büyük bilinmez.
-4. 📄 **Manifest başlık boşluğu** (`M-F-708`): Choreia'nın 4-hat tüketici taraması gelince çareyi
-   **tek elden** ver — beş hat aynı şeyi beş biçimde yapmasın. Çare ölçümden önce seçilmez.
-5. 📦 **Kurucu paketi bekçiliği**: yeni gelişmeyi tarihli blokla işle; bayat iddia bırakma
-   (tur-1'de iki bölüm bayatladı ve düzeltildi — `M-F-713/739`).
-6. ☁️ **iCloud izleme**: `brctl status | grep -c needs-upload` — tur-1 kapanışında **17**
-   (08-12'de 12). Artıyorsa pakete tarihli ek düş.
+## 3 · İŞ KUYRUĞUN — vitrin bitti, sıra üründe
+1. 🔴 **KÜTÜPHANE DOLDURMA — asıl iş bu.** Choreia 34'te **1** · Gravita 31'de **2** · JabLab 8'de
+   **1** · Ostinato 3'te **3** · Lissom **ölçülmedi**. ⇒ İlk işin **Lissom'u ölçmek**, sonra
+   hatlara doldurma sırası vermek.
+2. 📤 **ASC metin yüklemesi** — `D6` 5/5 hazır, **site canlı olunca** tek oturuşta.
+   ⛔ Sayfa canlı değilken `privacyPolicyUrl` yazma: **Apple o adresi açıyor**.
+3. 📷 **Kamera-canlılık ölçümü** — ailenin **en büyük bilinmezi**, hiçbir cihazda hiç ölçülmedi
+   (`J-290`: cihaz fiziksel bağlı değil). Cihaz gününün **ilk** maddesi.
+4. 🥁 **Ostinato kapı süiti KIRMIZI** — `voice` sözleşme artefaktı bayat · `piano` eşik
+   uyuşmazlığı · **çürümüş bir yokluk iddiası** (`H-44` sınıfı: gevşetme, gerçeği yaz).
+5. 📄 Manifest başlık boşluğu — çare **tek elden**, Ostinato'nun 4-hat tüketici taraması bekliyor.
+6. 📇 Terfi listesinde **18 aday** (9 orta + 9 zayıf) — `TERFI-ADAY-LISTESI-2026-08-16.md`.
 
-## 4 · RAPOR DEĞERLENDİRME — RUBRİK (değişmedi)
-PASS için: iddia değil **ölçüm** (komut+çıktı) · mühür (HEAD+kapılar) · açık kalemler **adıyla** ·
-sınırlar beyan edilmiş. Şüphelendiğinde: **raporu değil kaynağı oku** (`H-65`) — tur-1'de altı kez
-aracın raporu ölçtüğü şey hakkında yanıldı; ikisi araçtaydı, dördü ölçendeydi.
+## 4 · RAPOR DEĞERLENDİRME — RUBRİK
+PASS için: iddia değil **ölçüm** (komut+çıktı) · mühür · açık kalemler **adıyla** · **kapsam
+beyanı ayrı** (`H-62`). Şüphelendiğinde **raporu değil kaynağı oku** (`H-65`).
 
-## 5 · PLAN KARARLARI — atıf otoritesi
-`D1–D22` geçerli. Tur-1'in kritik yeni hükümleri: `H-58` (sayı→kapı) · `H-61` (atıf yarım taşır) ·
-`H-62` (vakum testi + kapsam beyanı, ikisi ayrı) · `H-64` (shell `grep -i` Türkçe katlamaz;
-`re.IGNORECASE` güvenli) · `H-65` (raporu değil kaynağı oku) · `H-66` (akran izni izin değildir) ·
-`H-68` (yokluk raporu ortamsız tam değildir) · `H-69` (hız sınırı aşılmaz — aranmaz bile) ·
-`H-70` (mezar taşı ≠ hata deposu) · `H-71` (**hasat rutin, kurulum kurucu izni**).
+## 5 · KURUCU PAKETİ — bekleyen İKİ karar
+🔗 **Site deploy** (`yulalab.com/privacy/motion` + `/support` yazıldı, `typecheck` exit 0) ·
+🔐 **Gerekçe kodu** (`devir/GEREKCE-KODU-TEK-SAYFA.md`, dört satır, boş kod sütunu).
+⚖️ Kodu **sen seçme** — o bir yargı.
 
-## 6 · KURUCU PAKETİ — bekleyenler (sorulmaz, birikir)
-🔴 iCloud kararı (`§0c`, üç seçenek fiyatlı) · 🔒 gizlilik gerekçe kodu (**BİR karar ×5**,
-envanter hazır) · 📱 cihaz günü (yarım gün) · 🎨 `D8` beğeni (3/5 hazır) · ⚖️ YouTube ToS (`§5c`,
-Ostinato F3'ü açar) · 🔤 `D1` font (Lissom bekliyor).
+## 6 · ÖLÇÜM HİJYENİ — tur-2'nin kanla yazılmış dersleri
+- ⛔ **Başka oturumun canlı çalıştığı depoda `git add -A` YOK** — açık yol listesi ver.
+- ⏱️ *"Kapılar yeşildi"* bir **anın** ölçümüdür, bir **durumun** değil — zaman damgası yaz.
+- 🧪 Bir sayım **sıfır** döndüyse önce **komutun koştuğunu** doğrula (zsh glob'u sessizce düşürür).
+- 📉 Bir sayının artması, onu artıran şeyin **kötüleştiği** anlamına gelmez.
+- 🔢 Tek kardeşte olan bir alan **norm değildir** — payda sor (`H-80`).
+- 🪤 `apple_update_age_rating` **çalışmıyor** (23 alanın 10'u); `ops/tools/asc_api.py` kullan.
+  Apple'ın **409'ları şemayı öğretir** ve 409 bir mutasyon değildir — güvenli döngü.
+- ⛔ Uzun pre-commit kancalı commit'i **arka planda** koş; yarıda kesme.
+- 🪤 `harvest_rig` → **kanonik kopya** `scratch/2026-08-16-rig-canonical/` (`RIG_SHA.txt`).
+  Paylaşılan `motion-core/lib` **122 commit geride ve bayatlık uyarısını taşımıyor** (`H-79`).
 
-## 7 · ÖLÇÜM HİJYENİ — tur-1'in altı vakası (ezber değil, refleks)
-`timeout` macOS'ta **yok** (sessizce boş döner) · profiller **iki dizinde** · `ios/Pods/`
-gönderilen yüzey değil (SPM + statik gömme; gerçek sayı linker sonrası) · arşivin `.app`i ≠
-IPA'nın `.app`i · n<5'te yüzdelik rapor edilmez · bir sayım **sıfır** döndüyse önce komutun
-koştuğunu doğrula.
+## 7 · DÜRÜSTLÜK — bu turun tek cümlesi
+> ### ***"BİTTİ" = KULLANICININ GÖRDÜĞÜ YÜZEY. VİTRİN KAPANDI, ÜRÜN KAPANMADI.***
+Kurucuya **tek bir "hazır" sayısı verme**; **mağaza yüzeyi** ile **ürün içeriği** ayrı raporlanır
+(`M-F-759`).
 
 ## 8 · DEVİR PROTOKOLÜ (kurucu "kapanış" dediğinde)
-Tur-1'deki gibi: hatlara üç adım (bitir-yenisine-başlama → vault notu frontmatter'lı, açık
-kalemler açık → commit+push) · kendi vault notun (aile katmanı devri) · durum panosuna aile
-bloğu · prompt dosyalarını yenile · `FABLE-DEGERLENDIRME` tarzı değerlendirme. Vault'ta **yalnız
-Motion kapsamını** commit'le — diğer projelerin birikmiş işini süpürme (`0f90110` emsali).
+Hatlara üç adım (`H-86`): bitir → vault notu (frontmatter'lı, açık kalemler **AÇIK**) →
+commit+push. Kendi vault notun + durum panosuna aile bloğu + **bu dosyayı yenile** + memory.
+⚠️ Vault'ta **yalnız Motion kapsamı** — 154 başka-proje değişikliği var, süpürme.
+📌 Vault'un **uzak deposu yok** (yerel git) ⇒ commit son adımdır.

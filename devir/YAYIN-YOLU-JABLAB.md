@@ -14,7 +14,7 @@ lisans · **indirme-dondurması** (aşağıda).
    KENDİSİ**, ve tepesinden aşağı, kendi defterinde `işlendi:` kaydı olmayan her hükmü oku.
    ⚠️ `HUKUM-INDEKSI.md` bir **görüntüdür**, üretildiği andan sonra bayatlar (`L-342` bunu
    canlı yaşadı: indeks `H-71` diyordu, mailbox `H-78`deydi). Sayıya güvenme — `max` oku.
-2. Mühür: beklenen HEAD **`8f96810`** (J-286; tur-1'de 27 commit). Kapılar: analyze 0 ·
+2. Mühür: beklenen HEAD **`1a8615d`** (J-286; tur-1'de 27 commit). Kapılar: analyze 0 ·
    app 368/368 · motor 129/129.
 3. İlk rapor + aşağıdaki sıra.
 

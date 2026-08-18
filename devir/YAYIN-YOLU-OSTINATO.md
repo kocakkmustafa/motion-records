@@ -14,7 +14,7 @@ Ostinato (`com.yulalab.ostinato`, bundle `8TLDR695DW`). Depo `ventures/ostinato/
    KENDİSİ**, ve tepesinden aşağı, kendi defterinde `işlendi:` kaydı olmayan her hükmü oku.
    ⚠️ `HUKUM-INDEKSI.md` bir **görüntüdür**, üretildiği andan sonra bayatlar (`L-342` bunu
    canlı yaşadı: indeks `H-71` diyordu, mailbox `H-78`deydi). Sayıya güvenme — `max` oku.
-2. Mühür: beklenen HEAD **`020c611`** (215 commit). Kapılar: **42 kapı** yeşil.
+2. Mühür: beklenen HEAD **`1ab056f`** (215 commit). Kapılar: **42 kapı** yeşil.
 3. İlk rapor + aşağıdaki sıra.
 
 ## 2 · DURUMUN (ölçülmüş) — cihaz gününe HAZIRSIN

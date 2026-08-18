@@ -16,7 +16,7 @@ yeni yazılım kurulumu (`H-71`).
    KENDİSİ**, ve tepesinden aşağı, kendi defterinde `işlendi:` kaydı olmayan her hükmü oku.
    ⚠️ `HUKUM-INDEKSI.md` bir **görüntüdür**, üretildiği andan sonra bayatlar (`L-342` bunu
    canlı yaşadı: indeks `H-71` diyordu, mailbox `H-78`deydi). Sayıya güvenme — `max` oku.
-2. Mühür: beklenen HEAD **`c8ae017`+** (L-340 civarı — defterden doğrula).
+2. Mühür: beklenen HEAD **`eb53dc4`+** (L-340 civarı — defterden doğrula).
 3. İlk rapor + aşağıdaki sıra.
 
 ## 2 · DURUMUN (ölçülmüş)
