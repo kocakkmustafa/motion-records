@@ -1,9 +1,50 @@
 # Motion Ailesi — İlerleme Kaydı
 
+## 2026-10-01 — kaynak birleştirme ve kanıt sınırı
+
+Core PR #3 ve #4, yararlı GitHub Actions kontrolleriyle birleşti;
+kanonik `main@c8dd6a6d6eab5bc2b468f2acfeab01db2ef5424b` temiz.
+Eski kanonik WIP ve foundation/PR4 linked worktree'leri exact SHA, inode,
+arşiv ve kaldırma makbuzlarıyla korundu. Beş uygulamanın Core pinleri
+henüz `f2ea161c7e974d57b114ba7773836c72be17a381`; yeni medya/store/
+telemetri API'lerinin uygulama içinde kullanımı ve uçtan uca kabulü açık.
+
+Ostinato `main@1de443d`, Choreia `main@6cf0331`, Lissom
+`main@7f2e8f2`, Gravita `main@d7143f3` ve JabLab `main@bc10c21`
+olarak beş ilk kurs kaynak PR #1'i birleşti. Her birinde kaynak başı
+üç CI işi yeşil; beşinin post-merge `main` CI'ı da yeşil. JabLab'ın
+birleşme sonrası `36864448316` üç işi `main@bc10c21` için SUCCESS;
+tam SHA/iş sonucu
+`scratch/2026-10-01-all-products-session-closeout/MOTION-SESSION-HANDOFF.md`
+ve `ACTIVE-RUNS.json` esas alınır.
+
+Beş ilk kurs hâlâ 263 ders/46 modül; 2.020 sahne/2.456 medya varyantı
+taslak sözleşmedir. Dokuz medya HOLD, 259 exact `NO_CALL` hedef/556
+oluşum açık. Gerçek gösterim medyası, bağımsız uzman hata etiketi,
+nitelikli tam-kurs model ve kurucu fiziksel kabulü sıfırdır. Git/CI yeşili
+mağaza veya model kabulü sayılmaz. İkinci kurs seçilmedi; otomasyon PAUSED.
+
+## 2026-09-28 — beş ilk kurs PR kaynağı; Core WIP ayrı
+
+Beş uygulamanın ilk kurs kaynağı **O60/C48/J39/G56/L60 = 263 ders/46 modül**
+olarak kendi mevcut PR #1 dallarına push edildi: Ostinato `505a95e`,
+Choreia `42a14d9`, JabLab `fd1053f`, Gravita `3be3984`, Lissom `694aabd`.
+Güncel başların **15/15 Actions işi bütçe engeli yüzünden başlamadı**;
+yararlı CI ve merge **0**. Bunlar kaynak hazırlığıdır: onaylı gösterim
+medyası **0**, nitelikli tam-kurs kamera/nota/klinik/mastery modeli **0**,
+kurucu fiziksel kabulü **0**. Beş uygulama sabit Core
+`f2ea161c7e974d57b114ba7773836c72be17a381` commitini tüketir.
+
+Core'un kanonik eski checkout'unda **17 WIP**, ayrı foundation worktree'sinde
+hesap/entitlement/Supabase içerikli **54 staged** dosya kalır. Bu kaynaklar
+beş kurs PR'ına katılmadı; güvenlik/sağlayıcı/CI denetimi ayrı yapılacak.
+Eksik tarihsel vardiyaların tam defteri `DEFTER.md` ve Obsidian Motion
+panosudur; aşağıdaki 2026-08-12 uyarısı eski kayıt bölümlerine ilişkindir.
+
 > ## 🔴 BU DOSYA BAYAT — 2026-08-12 12:15 ölçümü
 > **Son gerçek girdi: 2026-08-06 19:03.** O tarihten beri **dört vardiya** işlendi (08-07 · 08-11 · 08-12 gece · 08-12 gündüz) ve **hiçbiri buraya yazılmadı.**
 > **Ölçüm:** burada en yüksek kayıtlar `L-206 · G-111` — DEFTER'de karşılıkları **`L-277 · G-185`**, ve **M-F 500'lü hiçbir kayıt burada YOK** (DEFTER **M-F-536**'da).
-> ⛔ ***Bu dosyayı GÜNCEL DURUM olarak okuma.*** Güncel kaynak: `DEFTER.md` (olay defteri) + Obsidian `📊 Durum Panosu — Motion` (durum) + `CEKIRDEK-TURU-GUNDEMI.md` (tur kuyruğu).
+> ⛔ ***Aşağıdaki tarihsel bölümleri GÜNCEL DURUM olarak okuma.*** 2026-09-28 üst eki dar kaynak/PR anlık görüntüsüdür; ayrıntılı güncel kaynak: `DEFTER.md` (olay defteri) + Obsidian `📊 Durum Panosu — Motion` (durum) + `CEKIRDEK-TURU-GUNDEMI.md` (tur kuyruğu).
 > **🪤 SEBEBİ ADIYLA:** M-F-503'te kapanış zinciri **altı maddeye** çıkarıldı (devir notları · sıra · pano · link-check · yedek · başlangıç promptları) — **PROGRESS.md o listede YOK.** Yani dosya unutulmadı, ***zincirde adı hiç geçmediği için sessizce düştü.*** Bu, bugün gün boyu ölçülen *"kaydın varlığı ≠ ona giden yolun varlığı"* sınıfının **kapanış zincirindeki** hâli — ve ikinci kez aynı zincirde çıkıyor (birincisi: başlangıç promptları, M-F-503).
 > ✅ **Kalıcı düzeltme:** kapanış zincirine **⑦. madde — `PROGRESS.md` vardiya bloğu** eklenir. Bugünün bloğu bu vardiyanın kapanışında yazılacak; **08-07/08-11/08-12-gece blokları DEFTER'den geri-yazılabilir ama BU VARDİYADA YAPILMADI** — borç adıyla duruyor.
 > *(Bayatlığı JabLab bildirdi, J-216. Koordinatör ölçtü ve bu uyarıyı koydu; dosyanın kendisine dokunulmadı.)*
