@@ -7,3 +7,7 @@
 artifacts/
 
 .DS_Store
+
+# Yerel Python çalıştırma artıkları kayıt deposuna girmez.
+__pycache__/
+*.py[cod]
