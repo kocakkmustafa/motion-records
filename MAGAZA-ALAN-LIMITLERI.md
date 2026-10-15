@@ -31,7 +31,7 @@ kendiliğinden düzelir.
 | `appStore/name` | **30** | görünen ad |
 | `appStore/subtitle` | **30** | |
 | `appStore/promotionalText` | **170** | inceleme olmadan güncellenebilir |
-| `appStore/keywords` | **100** | **virgüller dâhil**, tüm dize |
+| `appStore/keywords` | **100** | **UTF-8 byte, virgüller dâhil**, tüm dize (2026-10-15 birim düzeltmesi) |
 | `description` | **4000** | |
 
 ### Google Play
@@ -77,7 +77,7 @@ Gravita `tools/validate_store_listing.py`, JabLab `test/store_listing_test.dart`
 ikisi de meşru; hat kendi biçimini seçer.
 
 **Ölçülecek üç şey:**
-1. **Uzunluk** — yukarıdaki her alan için `len(str)`; aşarsa **KIRMIZI**.
+1. **Uzunluk** — `appStore/keywords` için `len(str.encode("utf-8"))`, diğer alanlar için `len(str)`; aşarsa **KIRMIZI**. Keyword sınırında 100 byte geçer, 102 byte kalır; çok byte'lı Türkçe karakterler tek karakter sayılamaz (2026-10-15).
 2. **Varlık** — zorunlu alan **eksikse** kırmızı. ⚠️ *"Yok"* ile *"boş"* ayrı yazılır
    (`H-73`: boş bir alan "yok" ile "bakılmadı"yı ayırt ettirmez).
 3. **`$` sözleşmesi** — `$` ile başlayan anahtar **gönderilmeyen** kalemdir (gerekçe/metadata).
