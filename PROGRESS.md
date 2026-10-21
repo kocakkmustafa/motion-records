@@ -1,5 +1,40 @@
 # Motion Ailesi — İlerleme Kaydı
 
+## 2026-10-21 — Core tek yazarı: K08 deadline/UNKNOWN, J01 kapanışı, 13+ yaş/veli + kısa saklama (kaynak)
+
+Yalnız yerel commit; **push yok** (onay gerekiyor). Taban `main@d69e1078`.
+
+- `a235f21` K08: yöntem bazında tek toplam bütçe (`MotionDeadline`); refreshIdentity getUser10s/toplam20s,
+  user_not_found temizliği bütçe dışında `MotionLocalCleanupPending`; uzlaştırma turu okuma10s/tur20s,
+  takılan makbuz `false` sayılmaz, single-flight serbest + retry timer; kabul edilmiş temizlik UUID başına
+  tek bilet (`localCleanupPending`); misafir/logout 20s; Auth/profil/silme mutasyonlarında kesin 4xx dışı
+  her sonuç `MotionOperationUnknown`, otomatik tekrar yok; silmede yanıt kaybı → tek makbuz okuma;
+  sayfa UNKNOWN'u OK'lanana/sahip değişene kadar mutasyonları kapatır, bilinmeyen profil kaydında
+  taslağı ezmeden tek okuma. 9 yeni 14-dil metni. Paket 0.2.0→0.3.0.
+- `4eba5e9` OST-T3-J01: geç GET + düzenle/kaydet (başarı/başarısız), auth-stream hatası (taslaklı/taslaksız),
+  A→B→A (eski okuma/kayıt/tutulan callback) testleri.
+- **Exact `4eba5e9`** ayrık worktree, `flutter pub get --offline` + analyzer + tam test:
+  **analyzer temiz, 240 PASS / 5 SKIP** (d69 194 + 46 yeni; 5 SKIP = yerel Supabase/Mailpit entegrasyonu).
+  Kanıt: `scratch/2026-10-21-motion-core-k08/runs/exact-4eba5e9-account-20261021T194416Z/`.
+  Not: git-ignored ana ağaç kilidi path bağımlılığı motion_entitlements'ı 0.1.0 gösteriyordu (kaynak 0.1.1);
+  `--enforce-lockfile` bu yüzden reddetti, CI gibi `pub get --offline` kullanıldı.
+- `7eb5c4d` `MotionAccountClient.deletionReceipt` getter (Gravita/JabLab sarmalayıcıları için).
+- `5011c6a` 13+ yaş/veli + kısa saklama: nötr ay/yıl ekranı, ülke rıza yaşı tablosu (Dart+SQL eşliği testli,
+  hukuk incelemesi gerekli), 13 altı hesap yok (istemci + kayıt tetikleyicisi P0013), rıza yaşı altı kısıtlı hesap
+  (profil yazımı RLS ile kapalı) + `motion-parental-consent` Edge (request/view/decide; veli e-postası ve jeton yalnız
+  özet; ret → hesap silme), gençlere pazarlama yok/analitik açık katılım, onaysız hesap 30 gün purge, restore sonrası
+  silme özetlerini yeniden uygulama (service_role). `signUpWithAge` (Lissom `signUp` override'ı kırılmasın diye ayrı).
+  15 yeni 14-dil metni + 14-dil veli e-postası. Migration/Edge/SQL testi canlıda veya yerel Supabase'de **UNRUN**.
+  Ayrıntı `lib/docs/compliance/YAS-VELI-VE-SAKLAMA.md`; hazırlık planı `scratch/2026-10-21-motion-core-k08/PREP-PLAN.tr.md`;
+  tüketici pin listesi `TUKETICI-PIN-2026-10-21.md`.
+- `5832031` CI: satır-anahtarlı app-özgü kelime allowlist'i (MotionApp enum 5→13) yenilendi. Ara commit'ler
+  bu taramada NONPASS; **tek önerilen tüketici pini `5832031`**.
+- **Exact `5832031`** ayrık worktree, tek mutex koşusu: app-özgü kelime taraması PASS (+10 birim OK), Deno fmt/check
+  + 29/29 test (8 yeni veli onayı sözleşmesi), Flutter analyzer temiz + **256 PASS / 5 SKIP** (5 SKIP = yerel
+  Supabase/Mailpit). Kanıt: `scratch/2026-10-21-motion-core-k08/runs/exact-5832031-*/`. SQL (`supabase/tests/motion_age_consent.sql`)
+  ve migration replay UNRUN (yerel Supabase/Docker onayı yok).
+- P1 (host startup gözlemcisi, Ostinato) Core dışı; formal security scan terminal (yeniden deneme yok).
+
 ## 2026-10-01 — kaynak birleştirme ve kanıt sınırı
 
 Core PR #3 ve #4, yararlı GitHub Actions kontrolleriyle birleşti;
