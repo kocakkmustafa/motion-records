@@ -33,6 +33,7 @@ Yalnız yerel commit; **push yok** (onay gerekiyor). Taban `main@d69e1078`.
   + 29/29 test (8 yeni veli onayı sözleşmesi), Flutter analyzer temiz + **256 PASS / 5 SKIP** (5 SKIP = yerel
   Supabase/Mailpit). Kanıt: `scratch/2026-10-21-motion-core-k08/runs/exact-5832031-*/`. SQL (`supabase/tests/motion_age_consent.sql`)
   ve migration replay UNRUN (yerel Supabase/Docker onayı yok).
+- **22 Ekim:** kullanıcı onayıyla `5832031` main'e fast-forward push; CI run [39733713974](https://github.com/kocakkmustafa/motion-core/actions/runs/39733713974) **12/12 SUCCESS**.
 - P1 (host startup gözlemcisi, Ostinato) Core dışı; formal security scan terminal (yeniden deneme yok).
 
 ## 2026-10-01 — kaynak birleştirme ve kanıt sınırı
