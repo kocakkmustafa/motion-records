@@ -34,6 +34,12 @@ Yalnız yerel commit; **push yok** (onay gerekiyor). Taban `main@d69e1078`.
   Supabase/Mailpit). Kanıt: `scratch/2026-10-21-motion-core-k08/runs/exact-5832031-*/`. SQL (`supabase/tests/motion_age_consent.sql`)
   ve migration replay UNRUN (yerel Supabase/Docker onayı yok).
 - **22 Ekim:** kullanıcı onayıyla `5832031` main'e fast-forward push; CI run [39733713974](https://github.com/kocakkmustafa/motion-core/actions/runs/39733713974) **12/12 SUCCESS**.
+- **22 Ekim:** SQL sözleşme testleri yerel PG 18.6 geçici cluster'da (Supabase `auth` shim'i, Docker/indirme yok): 8 migration
+  replay + `motion_rls.sql` + `motion_age_consent.sql` **PASS**; negatif kontrol (kısıt kapatılınca) beklenen FAIL.
+  Kanıt `scratch/2026-10-22-motion-core-sql/`. Gerçek Supabase/GoTrue replay ve 5 SKIP entegrasyon hâlâ Docker onayı bekler.
+- **22 Ekim:** beş app `5832031` pinledi (Ostinato 8500c2b+4042ebf, Choreia fa411f1, JabLab 9b34d3d+8a389b4, Lissom 7e57522,
+  Gravita çalışma ağacında). Uyarlamalar yalnız test fikstürü (sayfanın yeni sahip-kapsamlı yaş okumaları) ve
+  `deletionReceipt`/bütçe iletimi; Core uyumsuzluğu bildirilmedi.
 - P1 (host startup gözlemcisi, Ostinato) Core dışı; formal security scan terminal (yeniden deneme yok).
 
 ## 2026-10-01 — kaynak birleştirme ve kanıt sınırı
