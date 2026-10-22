@@ -98,7 +98,8 @@ ve kalabilir; ama `description`/`account-data-safety-draft.md` yaş/ülke verisi
 
 **Supabase/Mailpit yerel entegrasyon (5 SKIP + gerçek Supabase replay):**
 1. Onay: "Docker Desktop ile `supabase start` için Supabase yerel imajlarını çek ve çalıştır" (ağ indirme ~GB; yalnız yerel konteyner).
-   Docker Desktop kurulu ve açık değilse kullanıcı açar/kurar. Supabase CLI kurulu değilse `brew install supabase/tap/supabase` onayı.
+   Makinede Supabase CLI (`/opt/homebrew/bin/supabase`) ve Docker Desktop zaten kurulu (22 Ekim `which` kontrolü); ek kurulum yok,
+   yalnız Docker Desktop'ın açık olması ve imaj çekme onayı gerekir.
 2. Sonra Core oturumu kendisi yürütür: `supabase start` → `supabase db reset --local` → SQL testleri → `MOTION_LOCAL_*` ile
    `local_account_integration_test.dart` → `supabase functions serve` + Deno → `supabase stop`. Kullanıcı girdisi gerekmez
    (yerel anon anahtar `supabase status` çıktısından, sır değildir).
