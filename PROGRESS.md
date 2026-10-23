@@ -40,6 +40,13 @@ Yalnız yerel commit; **push yok** (onay gerekiyor). Taban `main@d69e1078`.
 - **22 Ekim:** beş app `5832031` pinledi (Ostinato 8500c2b+4042ebf, Choreia fa411f1, JabLab 9b34d3d+8a389b4, Lissom 7e57522,
   Gravita çalışma ağacında). Uyarlamalar yalnız test fikstürü (sayfanın yeni sahip-kapsamlı yaş okumaları) ve
   `deletionReceipt`/bütçe iletimi; Core uyumsuzluğu bildirilmedi.
+- **23 Ekim (kullanıcı onayıyla yerel Docker/Supabase):** `30a2cb2` mağaza ülkesi önceliği (açık override > App Store/Play
+  ülkesi, alpha-3→alpha-2 JDK tablosu > cihaz bölgesi); `c530309` satış ayrı sabit `motionSubscriptionSalesAvailable=true`
+  (`motionPaidFeaturesAvailable` kamera kapısı olarak kapalı kaldı; dört app onu kamera kapısı olarak kullanıyor) + veli onayı
+  bekleyen hesaba satın alma önerilmez; `260b2ad` **gerçek GoTrue'da bulunan kusur**: yaş metadata'sı Auth'ta kalıyordu
+  (GoTrue insert sonrası satırı yeniden yazıyor) → BEFORE INSERT/UPDATE soyma + ertelenmiş FK (yeni migration `20261023120000`).
+  Exact `260b2ad` yerel Supabase: replay + SQL 2/2 + **5/5 entegrasyon (CI'da hep SKIP)** + veli onayı E2E **23/23 PASS**.
+  Kanıt `scratch/2026-10-23-motion-core-local-supabase/`. Push yok (onay gerekiyor).
 - P1 (host startup gözlemcisi, Ostinato) Core dışı; formal security scan terminal (yeniden deneme yok).
 
 ## 2026-10-01 — kaynak birleştirme ve kanıt sınırı

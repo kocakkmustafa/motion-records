@@ -68,3 +68,19 @@ Her app: `flutter analyze` + aşağıdaki hedefli dosyalar + pin eşitlik testle
 Yeni davranış için app'lerde eklenmesi önerilen kabul: (1) tutulan giriş yanıtında Core sayfası
 UNKNOWN + OK gösterir ve ikinci istek göndermez; (2) silme yanıt kaybında host dosyaları korunur
 (Gravita/JabLab getter iletilmeden ve iletilerek); (3) B aşamasında 13 altı kayıt kapalı ve kalıcı.
+
+## 23 Ekim eki — `260b2ad` (push onayı bekliyor)
+
+`5832031` üstüne: `30a2cb2` mağaza ülkesi, `c530309` satış sabiti + kısıtlı genç satın alma engeli, `260b2ad` yaş metadata
+soyma migration'ı (`20261023120000`, canlı deploy'da `20261021190000` ile birlikte uygulanır). Push sonrası app'ler:
+
+- **Satış (kurucu kararı):** `MotionAccountPage(paidFeaturesAvailable: motionSubscriptionSalesAvailable)` geçin (Core varsayılanı
+  bilinçli olarak kapalı; açılışta üyelik sorgusu yapacağı için host regresyonu gerekir). **`motionPaidFeaturesAvailable`'ı
+  kamera/ölçüm kapısı olarak kullanmaya devam edin — o `false` kalır.** Gravita `gravita_account_page.dart:168` bu sabiti
+  `paidFeaturesAvailable`'a veriyor → satış sabitine çevrilmeli. Choreia/JabLab/Lissom `requireMotionPaidAccess` (ücretli
+  ders/kamera) kapısı değişmez.
+- **Mağaza ülkesi:** ek kablolama yok; `countryCode` vermeyen sayfa kayıt/yaş onayında `in_app_purchase.countryCode()` okur
+  (3 s sınır, hata → cihaz bölgesi). Test fikstürleri `storefrontCountry: () async => null` geçebilir.
+- **Kısıtlı genç:** `MotionMembershipPage` artık `ageStatus()` okur; `implements` fake'ler nsm ile hata verir → kısıt yok sayılır
+  (güvenli), `extends` fake'ler gerçek REST'e gider → fikstür `motion_age_declarations`/`motion_parental_consents` GET'lerine yanıt vermeli
+  (Ostinato/JabLab'ın yaptığı gibi).
