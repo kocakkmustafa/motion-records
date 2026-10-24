@@ -9,6 +9,57 @@ fikstür etkisi · canlı önkoşul · hedefli regresyon.
 
 ---
 
+## R2 — `2451428dea30fb9e29db819441bfd5a4fe35adaf` (2026-10-25)
+
+- **Tam SHA:** `2451428dea30fb9e29db819441bfd5a4fe35adaf` (`main`, fast-forward push `cdcbf04..2451428`)
+- **CI:** run `40142159830` — 12/12 success (ara SHA'lar: `b0b27b7` 40142149306, `0bae251` 40142154564; ikisi de 12/12, yalnız R2 ucu pinlenir)
+- **Yerel kanıt (exact SHA, ekip kilidi + makine mutex'i):** `2451428` CI-eşdeğeri — tarama PASS, Deno **42/42** (+6 SMTP, +1 Play deneme fazı, +1 SMTP sözleşme), `motion_entitlements` **70/70** (+8 deneme), `motion_account` **276 PASS / 5 SKIP**; aynı tutuşta yerel Supabase (Docker): temiz replay 9 migration + SQL **2/2** + entegrasyon **5/5** + veli onayı E2E **23/23**, posta **SMTP üzerinden** (functions → `host.docker.internal:5498` düz metin yerel havuz; 2 posta, TR konu UTF-8). Makbuz: `scratch/2026-10-25-motion-core-r2/runs/r2-full-2451428-20261024T231330Z/` + `local-acceptance-2451428/`. Ara SHA'lar exact PASS: `runs/r2-exact-b0b27b7-0bae251-20261024T224715Z/`. **Implicit TLS (465) loopback makbuzu:** üretim `sendSmtpMail` + `Deno.connectTls` → test CA'lı SMTPS havuzu, el sıkışma OK, posta alındı (`scratch/2026-10-25-motion-core-r2/smtps/receipt.txt`). Canlı Edge'den 465 çıkışı UNKNOWN (CORE-07 smoke 3.4).
+- **İçerik:** CORE-03 `b0b27b7` mağaza ücretsiz denemesi (Android deneme teklifi + iOS SK2 tanıtım teklifi) · CORE-05 `0bae251` veli onayı postası Google Workspace SMTP 465 · Lissom LIS-01 talebi `2451428` (kalıcı yaş bloğunda açıklama).
+- **R1'den geçiş:** R1 (`cdcbf04`) için yapılan app değişiklikleri aynen geçerli; R2 ek kaynak değişikliği istemez. **Doğrudan R2'ye pinlemek önerilir** (R1 pin'i atlanabilir).
+
+### Paket sürümleri
+| Paket | R1 | R2 |
+|---|---|---|
+| `motion_account` | 0.4.0 | **0.5.0** |
+| `motion_entitlements` | 0.2.0 | **0.3.0** (yeni doğrudan bağımlılık `in_app_purchase_storekit ^0.4.13`; önceden geçişli olarak çözülüyordu) |
+
+### API farkı
+| Alan | R2 |
+|---|---|
+| `StoreProductRef.freeTrialPeriod` | **Yeni** `String?` (ISO-8601; gün/hafta → gün, ör. `P14D`) + `freeTrialDays` getter. Yalnız mağaza bu hesaba ücretsiz deneme sunduğunda dolu; yoksa/uygunluk okunamazsa null (deneme iddiası yok). `localizedPrice` her zaman yinelenen fiyattır. |
+| `FlutterPurchaseAdapter` (Android) | İlk fazı ücretsiz + sonlu, ardından ücretli faz gelen Play teklifi base plan'a bağlanır; satın alma o teklifin `offerToken`'ı ile yapılır. Ücretli tanıtım fiyatları satılmaz. Teklif kimliğine değil faza bakılır. |
+| `FlutterPurchaseAdapter` (iOS) | StoreKit 2 tanıtım teklifi `freeTrial` ise ve `SK2Product.isIntroductoryOfferEligible` true dönerse deneme gösterilir. Yeni isteğe bağlı kurucu parametresi `introductoryOfferEligible` (test enjeksiyonu). |
+| `MotionMembershipPage` | Deneme varsa satır: "N gün ücretsiz, ardından aylık/yıllık {mağaza fiyatı}" + deneme yenileme/iptal metni (24 saat kuralı), 14 dil. Yeni `MotionAccountLocalizations.trialThenPrice(...)`. |
+| `MotionAccountPage(ageBlocked: true)` | Kayıt formunda 13+ açıklaması artık açılışta da görünür (önceden yalnız oturum içi engelde). |
+| Veli onayı postası (Edge) | HTTP posta adaptörü ve `MOTION_MAIL_API_URL` / `MOTION_MAIL_API_KEY` **kaldırıldı**. Yeni: `MOTION_SMTP_HOST` (`smtp.gmail.com`), `MOTION_SMTP_PORT` (465), `MOTION_SMTP_USER`, `MOTION_SMTP_PASSWORD` (Workspace uygulama şifresi), `MOTION_SMTP_TLS` (`implicit`; `none` yalnız `127.0.0.1`/`localhost`/`::1`/`host.docker.internal`), `MOTION_MAIL_FROM` (doğrulanan hesap veya "send as" takma adı), `MOTION_CONSENT_PAGE_URL`. Eksik/güvensiz yapılandırma → `503 mail_unavailable` (fail closed). Parola/adres/gövde loglanmaz. HTTP sözleşmesi (view/decide/CORS) değişmedi. |
+
+### Kırıcı / deprecated
+- Kaynak kırıcı değişiklik yok (yalnız isteğe bağlı alan/parametre eklendi).
+- `StoreProductRef`'i `implements` eden fake yoksa etki yok; const kurucu genişledi (isteğe bağlı alan).
+- **Canlı kırıcı:** Edge posta ayarları HTTP'den SMTP'ye geçti — eski `MOTION_MAIL_API_*` secret'larıyla posta gitmez (canlıda hiç deploy edilmemişti).
+
+### App başına değişecek satırlar
+- Yalnız pin: R1 tablosundaki pin satırlarında SHA → `2451428dea30fb9e29db819441bfd5a4fe35adaf` + ağlı `flutter pub get` (`pubspec.lock`'ta Core ref/resolved-ref satırları değişir; `in_app_purchase_storekit` zaten geçişli olarak çözülüyordu, sürüm aynı kalmalı — farklıysa bildirin).
+- R1 kaynak satırları henüz yapılmadıysa onlar da (R1 bölümü).
+
+### Fikstür etkisi
+- Sahte `PurchaseAdapter`/`StoreProductRef` kullanan testler değişmez (alan isteğe bağlı). Deneme metnini test etmek için `freeTrialPeriod: 'P14D'` geçin.
+- `FlutterPurchaseAdapter` + sahte `InAppPurchasePlatform` (iOS) testleri: `AppStoreProduct2Details` kullanılıyorsa `introductoryOfferEligible` enjekte edin (yoksa gerçek native çağrı denenir → hata → deneme gösterilmez).
+- Hesap sayfası testlerinde `ageBlocked: true` ile kayıt formunda 13+ metni artık **bir kez** görünür; metni sayan testler güncellenir.
+- Deno: `deno test` artık `--allow-net=127.0.0.1` ister (Core CI'da; app'leri etkilemez).
+
+### Canlı önkoşul (CORE-07)
+- R1 önkoşullarına ek: posta secret adları `MOTION_SMTP_HOST=smtp.gmail.com`, `MOTION_SMTP_PORT=465`, `MOTION_SMTP_TLS=implicit`, `MOTION_SMTP_USER`, `MOTION_SMTP_PASSWORD`, `MOTION_MAIL_FROM`, `MOTION_CONSENT_PAGE_URL`; gönderen hesapta 2SV + uygulama şifresi + "send as". Paket: `scratch/2026-10-25-motion-core-packages/CORE-07-CANLI-DEPLOY.tr.md` (deploy bu SHA'dan).
+- Mağaza: deneme ancak konsolda kurulursa uygulanır (CORE-09 kataloğu: Apple "Free, 2 weeks", Play `free-trial` teklifi P14D).
+- Gerçek Edge'de `Deno.connectTls` 465'in çalıştığının ilk kanıtı canlı smoke 3.4'tür; yerel kanıt SMTP protokolü + loopback TLS'tir.
+
+### Hedefli regresyon
+- R1 listesi + üyelik sayfası: deneme satırı (sahte `freeTrialPeriod: 'P14D'`) ve denemesiz satır; satın alma akışı değişmeden çalışır.
+- Kalıcı yaş bloğu: öldür-aç sonrası kayıt formunda 13+ açıklaması (Lissom B07).
+- Android sandbox (Yönetim): deneme teklifiyle satın alma `offerToken` = deneme teklifi (Play Console'da yeni müşteri koşulu).
+
+---
+
 ## R1 — `cdcbf0484e82806094ecf010b294debc3c8c5c83` (2026-10-25)
 
 - **Tam SHA:** `cdcbf0484e82806094ecf010b294debc3c8c5c83` (`main`, origin'e fast-forward push)
