@@ -9,6 +9,68 @@ fikstür etkisi · canlı önkoşul · hedefli regresyon.
 
 ---
 
+## R3 — `f43d71a375431e96c689a7a4a04fb53ff01af693` (2026-10-25)
+
+- **Tam SHA:** `f43d71a375431e96c689a7a4a04fb53ff01af693` (`main`, FF `2451428..f43d71a`)
+- **CI:** run `40145997799` — 13/13 success (ara: `c190d03` 40144648401, `dbab1af` 40144654422, `3b3a840` 40145470685 — 12/12; `2bc72f0` 40145476157 — 13/13; `ce16d70`/`c4b8c21`/`d23297b` ayrı push edilmedi) — **artık 13 iş** (yeni `motion_platform_signals` paketi flutter matrisine girdi; "12/12" yerine 13/13 beklenir)
+- **Yerel kanıt:** exact `f43d71a` (ekip kilidi + makine mutex'i, RELEASED): tarama PASS, Deno **63/63**, `motion_entitlements` **80/80**, `motion_account` **281 PASS / 5 SKIP**, `motion_platform_signals` **4/4**; aynı tutuşta **native derleme**: imzasız probe app → `pod install` + iOS simülatör `Runner.app` + Android `app-debug.apk` (age-signals 0.0.4 çözüldü). Makbuz `scratch/2026-10-25-motion-core-r3/runs/k1-full-f43d71a-*` + `runs-multi/k1/` + `native-probe/`. Yerel Supabase (Docker) `2bc72f0`'da: replay + SQL **3/3** (deneme defteri dahil) + entegrasyon 5/5 + consent E2E 23/23 (`runs/k3-full-2bc72f0-*`, `local-acceptance-2bc72f0/`); `supabase/` ve `.github/` `2bc72f0..f43d71a` arasında değişmedi.
+- **Kurucu kararı (2026-10-25):** K1 mağaza yaş sinyali, K2 mağaza sunucu bildirimleri, K3 hesap başına tek Motion+ denemesi — üçü de ilk sürümden önce. Plan: `scratch/2026-10-25-motion-core-r3/PLAN.tr.md`.
+- **İçerik (ara SHA'lar pinlenmez):** K2 `c190d03` (paylaşılan mağaza yeniden doğrulaması) + `dbab1af` (`motion-store-notifications`) · K3 `3b3a840` (sunucu) + `ce16d70`/`c4b8c21`/`2bc72f0` (istemci, native paket) · K1 `d23297b` + `f43d71a`.
+
+### Paket sürümleri
+| Paket | R2 | R3 |
+|---|---|---|
+| `motion_account` | 0.5.0 | **0.7.0** |
+| `motion_entitlements` | 0.3.0 | **0.4.0** |
+| `motion_platform_signals` | — | **0.2.0 (yeni, native Flutter eklentisi: iOS Swift + Android Kotlin)** |
+
+### API farkı
+| Alan | R3 |
+|---|---|
+| **Yeni paket** `motion_platform_signals` | `MotionPlatformSignals.appTransactionId()` (StoreKit 2 `AppTransaction.appTransactionID`, iOS 16+, yalnız doğrulanmış; Android null) · `MotionPlatformSignals.requestAgeSignal()` → `MotionStoreAgeSignal{source, shared, lower, upper, declaration}` (iOS 26+ Declared Age Range, eşikler 13/16/18; Android Play Age Signals 0.0.4). Her hata/desteklenmeyen durum `null`. `motion_account` bunu bağımlılık olarak çeker ve `MotionStoreAgeSignal`'ı re-export eder. |
+| `MotionAccountPage(storeAgeSignal:)` | **Yeni** isteğe bağlı (varsayılan `MotionPlatformSignals.requestAgeSignal`). Kayıt ve tek seferlik yaş onayında **sayfa başına bir kez** okunur (en fazla 2 dk). |
+| `MotionAgePolicy.storeCheck(declaredAge, signal)` → `MotionStoreAgeCheck{proceed, under13, mismatch}` | Mağaza sinyali **yalnız sıkılaştırır**: mağaza <13 → kalıcı blok (`onAgeBlocked`, misafir kullanım açık); beyan mağaza üst sınırından büyük → reddedilir, düzeltme mesajı (14 dil, `ageStoreMismatch`); aksi hâlde ülke/veli onayı akışı aynen. Sinyal yoksa bugünkü akış. |
+| `MotionTrialGate` / `SupabaseMotionTrialGate` (`motion_entitlements`) | **Yeni.** Hesap başına tek Motion+ denemesi: kendi `motion_trial_ledger` satırı (RLS) + `motion-offer-eligibility`. |
+| `FlutterPurchaseAdapter(trialGate:)` | **Yeni** isteğe bağlı. Motion+ ürünlerinde kullanılmış/bilinmeyen deneme: Play deneme teklifi seçilmez (base plan), App Store satın almasına imzalı `introductoryOfferEligibility=false` eklenir (`Sk2PurchaseParam`), deneme iddiası gösterilmez. Bireysel planlar etkilenmez. Kapı verilmezse davranış R2 ile aynı. `MotionMembershipPage` varsayılan adaptörüne kapıyı kendisi bağlar. |
+| `motion-check-membership` yanıtı | Ek alan `motionPlusTrialAvailable: bool` (geriye uyumlu). |
+| Yeni Edge `motion-store-notifications` | `POST …/apple` (ASSN v2, Apple JWS zinciri) · `POST …/google` (Play RTDN Pub/Sub push, Google OIDC). İmzasız → 401; doğrulanmış bildirim yalnız mağazadan yeniden doğrulamayı tetikler. `verify_jwt=false`. |
+| Yeni Edge `motion-offer-eligibility` | Bearer; `{appId, productId(Motion+ App Store), appTransactionId}` → `{trialAvailable:true}` veya `{trialAvailable:false, introductoryOfferEligibilityJws}`. |
+| Migration `20261025120000_motion_trial_ledger` | Hesap başına tek satır (Motion+), sunucu yazar, istemci yalnız kendi `app_id/started_at`'ini okur, hesapla silinir. |
+
+### Kırıcı / dikkat
+1. **Yeni native bağımlılık:** pin sonrası iOS `pod install` (yeni pod `motion_platform_signals`, min iOS 15) ve Android'de yeni Maven bağımlılığı `com.google.android.play:age-signals:0.0.4` (Gradle indirir). Derleme doğrulandı: imzasız probe app (iOS simülatör + Android debug) — makbuz aşağıda.
+2. **Widget testleri:** Kayıt/yaş onayı yapan `MotionAccountPage` testleri artık platform kanalını çağırır (eklenti yoksa `null`, ama asenkron) → testte `storeAgeSignal: () async => null` geçin; mağaza sinyali senaryoları için sahte `MotionStoreAgeSignal` verin.
+3. **Varsayılan `MotionMembershipPage`** (enjekte adaptör yoksa) Motion+ ürünlerinde `GET /rest/v1/motion_trial_ledger` okur → `extends` eden fake'ler bu isteğe `[]` dönmeli (yoksa deneme gösterilmez, satın alma çalışır).
+4. Kaynak kırıcı imza değişikliği yok (yalnız isteğe bağlı parametre/alan).
+
+### App başına değişecek satırlar
+- Pin satırlarında SHA → `f43d71a375431e96c689a7a4a04fb53ff01af693`; ağlı `flutter pub get` (`pubspec.lock`'a `motion_platform_signals` git girdisi eklenir) + iOS `pod install`.
+- **iOS (beş app):** `ios/Runner/Runner.entitlements`'a `com.apple.developer.declared-age-range` = `true` + Xcode Signing & Capabilities → Declared Age Range; Apple Developer'da App ID capability (Yönetim, CORE-07 2.5d). Entitlement yoksa sinyal `null` → mevcut akış (zararsız ama K1 devre dışı).
+- **Android:** ek satır yok (izin gerekmiyor; Play Age Signals yalnız desteklenen bölgelerde döner).
+- R1/R2 kaynak değişiklikleri yapılmadıysa onlar da.
+
+### Fikstür etkisi
+- Bkz. kırıcı/dikkat 2–3. Deno/SQL fikstürleri app'leri etkilemez.
+
+### Canlı önkoşul (CORE-07 2.5b–2.5d, 3.7–3.8)
+- Deploy: migration `20261025120000`; fonksiyonlar `motion-store-notifications` (verify_jwt=false), `motion-offer-eligibility` + güncel `motion-verify-purchase`/`motion-check-membership`.
+- Secret adları (sır değil): `MOTION_RTDN_AUDIENCE`, `MOTION_RTDN_PUSH_SERVICE_ACCOUNT`; mevcut `MOTION_APPLE_IAP_*` (bildirim doğrulama + eligibility imzası), `MOTION_APPLE_ROOT_CAS_BASE64`.
+- ASC: 5 app × ASSN v2 URL (prod + sandbox). GCP: Pub/Sub topic + push abonelik (OIDC). Play: RTDN topic; Motion+ deneme teklifi "Developer determined" + tag `motion-plus-trial`. Apple: Declared Age Range capability.
+
+### Bilinen sınırlar / UNKNOWN
+- **iOS 15** veya doğrulanmış app transaction yoksa ikinci Motion+ denemesi engellenemez (Apple grup bazlı uygunluk).
+- Play `offerPhase` alan yeri belge çelişkili → deneme tespiti tag **veya** faz; sandbox'ta doğrulanmalı.
+- Gerçek mağaza sinyali yalnız cihaz/mağaza hesabıyla ölçülür (iOS 26+, ilgili bölgeler) → UNKNOWN; mağaza ebeveyn onayı durumu ve "önemli değişiklik" bildirimi R3'te yok.
+- Hesap silinip yeniden açılırsa deneme defteri sıfırlanır (kısa saklama kuralı); mağazaların kendi uygunluk kuralları ayrıca geçerli.
+
+### Hedefli regresyon
+- R2 listesi + kayıt formu: mağaza sinyali yok/aralık içi/uyuşmazlık/13 altı (sahte sinyal).
+- Üyelik sayfası: Motion+ deneme gösterimi kapı açık/kapalı; bireysel plan değişmez.
+- Derleme: `pod install` + iOS sim build + Android debug build (yeni native paket).
+- Sandbox (Yönetim): app A'da Motion+ denemesi → app B'de deneme yok (iOS 16+ ve Play).
+
+---
+
 ## R2 — `2451428dea30fb9e29db819441bfd5a4fe35adaf` (2026-10-25)
 
 - **Tam SHA:** `2451428dea30fb9e29db819441bfd5a4fe35adaf` (`main`, fast-forward push `cdcbf04..2451428`)
