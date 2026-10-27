@@ -9,6 +9,52 @@ fikstür etkisi · canlı önkoşul · hedefli regresyon.
 
 ---
 
+## R4 — `0d29d1b019033f00828be741aa3e23e3923841be` (2026-10-27)
+
+- **Tam SHA:** `0d29d1b019033f00828be741aa3e23e3923841be` (`main`, FF `f43d71a..6b845d6..826cdfc..0d29d1b`)
+- **CI:** run `40434457573` — **13/13 success** (ara SHA'lar pinlenmez: `6b845d6` 40431425936 13/13 success; `826cdfc` 40432226713 **12/13 FAIL** — `motion_camera` analyze `prefer_initializing_formals`, kök: Dart 3.12 dil sürümü bump'ı, `0d29d1b` ile düzeltildi)
+- **Yerel kanıt (exact `0d29d1b`, kendi klonu + `pub get --offline`, makine mutex'i, CI'nın 13 işinin tamamı — `scratch/2026-10-27-motion-core-r4/ci_full.sh`):** tarama PASS, Deno **63/63**; dart `motion_core` **263**, `motion_content` **69**, `motion_media` **61**; flutter `motion_camera` **60**, `motion_feedback` **12**, `motion_audio` **20**, `motion_store` **58**, `motion_entitlements` **80**, `motion_account` **285 PASS / 5 SKIP**, `motion_platform_signals` **4**, `motion_telemetry` **79**; 11 paketin analyze'ı temiz; ağaç değişmedi (`runs/r4-gate-0d29d1b-20261027T012620Z/`). **Android release AAB:** Choreia `ceb612e` klonu + `pubspec_overrides.yaml` ile yerel R4 (`motion_*` 7 paket), `flutter build appbundle --release`, debug anahtarı (`allowDebugSigning`; gerçek anahtar/define yok, **upload yok**) → PASS, 98 MB, sha256 `80713125fc834c0d…`; **"plugins that apply Kotlin Gradle Plugin" uyarısı artık yok** (25 Ekim R3 AAB'sinde `motion_camera, motion_platform_signals` listeleniyordu); iki eklentinin `kotlin-classes/release` çıktısı ve dex'te kanal adı + Play Age Signals referansları var (`runs/r4-aab-826cdfc-20261027T011440Z/`; `0d29d1b`'de aynı tutuşta yeniden PASS, aynı sha256). Kalan uyarı yalnız app'in kendi `android/app/build.gradle.kts` KGP'si (app oturumlarının işi, aşağıda).
+- **İçerik:** CORE-12 `6b845d6` (ET3-4, OST-K1) app başına 13–17 satın alma politikası · CORE-13 `826cdfc` + `0d29d1b` (ET3-5) `motion_camera` + `motion_platform_signals` → Flutter Built-in Kotlin · CORE-14 (ET3-3) belge tutarlılığı (workspace; posta secret adları yalnız `MOTION_SMTP_*`).
+- **R3'ten geçiş:** **yalnız pin.** Kaynak kırıcı değişiklik yok; varsayılan davranış R3 ile aynı. `supabase/` ve `.github/` R3 → R4 değişmedi (canlı deploy içeriği aynı).
+
+### Paket sürümleri
+| Paket | R3 | R4 |
+|---|---|---|
+| `motion_account` | 0.7.0 | **0.8.0** |
+| `motion_platform_signals` | 0.2.0 | **0.3.0** (Built-in Kotlin; Flutter ≥3.44; Dart dil sürümü 3.11 kalır) |
+| `motion_camera` | 0.2.0 | **0.3.0** (Built-in Kotlin; Flutter ≥3.44; Dart dil sürümü 3.11 kalır) |
+
+### API farkı
+| Alan | R4 |
+|---|---|
+| `MotionTeenPurchasePolicy` (yeni enum, `motion_release_policy.dart`) | `parentalConsentRequired` (**varsayılan**, R3 davranışı: veli onayı bekleyen gence satın alma teklifi yok, geri yükleme açık) · `storeFamilyControls` (teklifler açık; ödeme kararı mağazanın aile/ebeveyn denetiminde — Ask to Buy / Google Play ebeveyn onayı; sayfada 14 dil 18 yaş altı notu `storeFamilyControlsNote`). İki politikada da hesap özellikleri veli onayına kadar kapalı (RLS aynen), **13 yaş altı bandı hiç satın alamaz**, sunucu doğrulaması değişmez. |
+| `teenPurchasePolicy:` (yeni isteğe bağlı parametre) | `MotionMembershipPage`, `MotionAccountPage` (açtığı üyelik sayfasına iletir), `requireMotionPaidAccess` ve `requireMotionCameraAccess` (varsayılan üyelik sayfasına iletir). **Kendi `membershipPageBuilder`'ını veren host, politikayı oradaki `MotionMembershipPage`'e de vermelidir.** |
+| `MotionAgeStatus.purchaseRestrictedOn(today, policy)` / `.storeDecidesPurchaseOn(today, policy)` | Yeni extension (`MotionTeenPurchaseStatus`); host kendi yüzeylerinde aynı kuralı okuyabilir. |
+| Android eklentileri | `kotlin-android` + `kotlinOptions` kaldırıldı → `kotlin.compilerOptions { jvmTarget = JVM_17 }` (Flutter plugin-author kılavuzu; `in_app_purchase_android` 0.5.3 deseni). Dart API'si ve native davranış aynı. |
+
+### Kırıcı / dikkat
+1. Kaynak kırıcı değişiklik yok (yalnız isteğe bağlı parametre/enum/extension).
+2. **Asgari araç zinciri:** `motion_camera` ve `motion_platform_signals` artık Flutter ≥3.44 ister (Dart alt sınırı `^3.11.0` aynı). Beş app'in CI'ı `stable` (JabLab/Gravita 3.47.5) ve yerel 3.47.5 → etkilenmez; daha eski bir Flutter ile `pub get` reddeder.
+3. Android: app'ler `android.builtInKotlin=false` + AGP 9.4 + KGP 2.4.10 ile derlemeye devam eder (Choreia AAB kanıtı). App'in **kendi** KGP uyarısı ayrı iştir (Flutter app-developer kılavuzu: `android.builtInKotlin=true` + app `build.gradle.kts`'ten `kotlin-android`'i kaldırma) — R4 bunu gerektirmez.
+4. **Hukuk/ürün (K-2 ile birlikte):** onaylanmayan genç hesabı 30 gün sonra silinir (`motion_purge_unconsented_accounts`, zamanlaması ayrı onay); `storeFamilyControls` ile satın alan gencin mağaza aboneliği bununla iptal olmaz, yeni/onaylı hesapta geri yüklenir. Yayın profili §9 ve `lib/docs/compliance/YAS-VELI-VE-SAKLAMA.md`.
+
+### App başına değişecek satırlar
+- **Beş app:** pin satırlarında SHA → `0d29d1b019033f00828be741aa3e23e3923841be`; ağlı `flutter pub get` (`pubspec.lock`'ta Core ref/resolved-ref satırları); iOS `pod install` (pod sürümü değişmez). Başka satır **gerekmez** (varsayılan politika).
+- **Ostinato (OST-K1, `storeFamilyControls`):** `lib/app/motion_account_bootstrap.dart:86` `MotionAccountPage(…, teenPurchasePolicy: MotionTeenPurchasePolicy.storeFamilyControls)`, `:120` `requireMotionPaidAccess(…, teenPurchasePolicy: …)`, `:126` `requireMotionCameraAccess(…, teenPurchasePolicy: …)` (kamera kapalıyken etkisiz ama tutarlılık için). Doğrudan `MotionMembershipPage` açılan yer varsa orada da. S12 senaryosu: `scratch/2026-10-25-motion-core-packages/CORE-R3-KABUL-KONTROLLERI.tr.md` "R4 eki" S-R4-1…5.
+- **K-2 = beş app** olursa diğer dört app aynı parametreyi şu yerlere verir: Lissom `lib/main.dart:518, 605, 612`; Choreia `lib/main.dart:290, 361, 396`; JabLab `lib/main.dart:125, 131` (kendi `MotionMembershipPage` builder'ı), `:166`, `lib/app/owner_bound_account_page.dart:104`; Gravita `lib/app/motion_account_bootstrap.dart:109` (kendi builder), `:111`, `lib/app/gravita_account_page.dart:181`. (Satırlar app main HEAD'lerine göre: Lissom `e455e27`, Ostinato `9a5e570`, Choreia `ceb612e`, JabLab `b4a3d0f`, Gravita `df9f14c`.)
+
+### Fikstür etkisi
+- Varsayılan politikada yok. `storeFamilyControls` testlerinde onay bekleyen genç (`MotionAgeStatus` band `parentalConsentRequired`, consent ≠ approved) için teklifler ve not metni beklenir; satın alma başlayınca sayfa mağaza yanıtına kadar meşgul kalır (`pumpAndSettle` yerine `pump`).
+
+### Canlı önkoşul
+- R3 ile aynı (CORE-07, `scratch/2026-10-25-motion-core-packages/CORE-07-CANLI-DEPLOY.tr.md`, kaynak R4 olarak tazelendi; ref `aljdbngmeqwmsqhvfeau` Y1 teyitli). R4 yeni migration/fonksiyon/secret getirmez.
+
+### Hedefli regresyon
+- Beş app: pin eşitlik testleri yeni tam SHA'da; hesap/üyelik sayfası açılışı; onay bekleyen genç → (varsayılan) teklif yok + geri yükleme açık; Android release/debug derleme (yeni Gradle eklenti yapılandırması).
+- Ostinato: S12 / S-R4-1…5 (onay bekleyen genç teklifleri ve notu görür; Ask to Buy / Play ebeveyn onayı bekleyen satın alma aktif sayılmaz; 13 altı satın alamaz).
+
+---
+
 ## R3 — `f43d71a375431e96c689a7a4a04fb53ff01af693` (2026-10-25)
 
 - **Tam SHA:** `f43d71a375431e96c689a7a4a04fb53ff01af693` (`main`, FF `2451428..f43d71a`)

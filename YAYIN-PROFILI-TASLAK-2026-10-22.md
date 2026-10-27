@@ -108,7 +108,7 @@ ve kalabilir; ama `description`/`account-data-safety-draft.md` yaş/ülke verisi
 3. Supabase Motion proje ref'i + CLI erişim onayı (kullanıcı `supabase login` yapar; Core oturumu token görmez/yazmaz).
 4. Onay: `supabase db push` (yalnız `20261021190000`) + `supabase functions deploy motion-parental-consent` + secret'lar.
 5. Kullanıcı girdisi: e-posta sağlayıcısı seçimi ve hesabı, `yulalab.com` DNS'e SPF/DKIM kayıtları (DNS değişikliği onayı),
-   `MOTION_MAIL_API_KEY`'i kullanıcının kendisi `supabase secrets set` ile girer; `MOTION_MAIL_FROM` ve `MOTION_CONSENT_PAGE_URL` metin.
+   ~~`MOTION_MAIL_API_KEY`~~ **(geçersiz — R2'de HTTP posta adaptörü kaldırıldı; bkz. §8 ve §9)**: posta secret'ları `MOTION_SMTP_HOST`/`PORT`/`USER`/`PASSWORD`/`TLS` + `MOTION_MAIL_FROM` + `MOTION_CONSENT_PAGE_URL`, değerleri kullanıcı `supabase secrets set` ile girer (`scratch/2026-10-25-motion-core-packages/CORE-07-CANLI-DEPLOY.tr.md`).
 
 **TLS 1.2 CBC (en erken 10 Kasım) cihaz kabulü:**
 6. Kullanıcı: iOS 15.x çalışan bir iPhone ve Android 7.0 (API 24) cihaz sağlar (veya en düşük desteklenen gerçek sürüm kararı).
@@ -153,3 +153,18 @@ Durum: **ekip taslağı son hâl**; hukuk incelemesi ve app başına ders eşlem
 **Uygulama içi (Core, kanıtlı)**: R1 `cdcbf04` + R2 (CORE-03) `MotionMembershipPage`: mağazanın yerel fiyatı ve dönemi; mağaza bu hesaba deneme sunuyorsa "N gün ücretsiz, ardından aylık/yıllık {fiyat}" + deneme yenileme/iptal metni (14 dil); otomatik yenileme metni; geri yükle; mağazada yönet; Koşullar/Gizlilik. Deneme iddiası yalnız mağaza deneme teklifini bu hesaba döndürdüğünde gösterilir (Play: uygun teklif; App Store: SK2 tanıtım teklifi + `isIntroductoryOfferEligible`).
 
 **Açık (kurucu/hukuk):** (1) app başına ücretsiz/ücretli eşleme onayı (Choreia "Salsa 6/18" dahil); (2) hukuk incelemesi P2–P9 + §5; (3) Motion+ denemesinin beş app'te ayrı ayrı alınabilmesi (CORE-11 maddesi 3); (4) Workspace DPA kaydı.
+
+## 9. 27 Ekim — R4 (CORE-12 genç satın alma politikası) ve belge tutarlılığı (CORE-14)
+
+Önceki bölümlerle çelişkide bu bölüm esastır.
+
+**Posta secret adları (ET3-3 teyidi):** canlıda yalnız `MOTION_SMTP_HOST` (`smtp.gmail.com`), `MOTION_SMTP_PORT` (465), `MOTION_SMTP_USER`, `MOTION_SMTP_PASSWORD` (Workspace uygulama şifresi), `MOTION_SMTP_TLS` (`implicit`), `MOTION_MAIL_FROM`, `MOTION_CONSENT_PAGE_URL` okunur. `MOTION_MAIL_API_URL` / `MOTION_MAIL_API_KEY` R2'den (`2451428`) beri **yok**; §6 madde 5'teki eski metin geçersizdir.
+
+**13–17 satın alma (kurucu OST-K1, 25 Ekim; kapsam K-2 açık):** Core R4 app başına `MotionTeenPurchasePolicy` sunar. Varsayılan `parentalConsentRequired` (bugünkü davranış: veli onayı bekleyen hesaba satın alma önerilmez). `storeFamilyControls` seçen app'te teklifler açık kalır, ödeme kararını mağazanın aile/ebeveyn denetimi (Ask to Buy, Google Play ebeveyn onayı) verir; satın alma sayfası 18 yaş altı notunu gösterir. Hesap özellikleri iki politikada da veli onayına kadar kapalıdır; 13 yaş altı satın alamaz. P5 gençler cümlesi K-2 sonucuna göre seçilir (site tek gizlilik sayfasında beş app'i anlatır):
+- **(A) beş app `parentalConsentRequired`** (bugün): §7 cümlesi aynen — TR "Veli onayı bekleyen hesaplara satın alma önerilmez; 18 yaş altındaki satın almalar mağazanın aile/ebeveyn denetimlerine tabidir." / EN "Accounts awaiting parental approval are not offered purchases; purchases by users under 18 are subject to the store's family and parental controls."
+- **(B) beş app `storeFamilyControls`** (K-2 önerisi): TR "18 yaş altındaki kullanıcıların satın almaları mağazanın aile/ebeveyn denetimlerine tabidir; mağaza bir ebeveynin onayını isteyebilir. Veli onayı gereken hesaplarda hesap özellikleri onaya kadar kapalı kalır." / EN "Purchases by users under 18 are subject to the store's family and parental controls, which may ask a parent to approve. Where parental approval is required, account features stay closed until it is given."
+- **(C) karışık** (yalnız Ostinato `storeFamilyControls`): TR "Veli onayı bekleyen hesaplara Choreia, Gravita, JabLab ve Lissom'da satın alma önerilmez; Ostinato'da satın alma kararı mağazanın aile/ebeveyn denetimine bırakılır. 18 yaş altındaki tüm satın almalar mağazanın aile/ebeveyn denetimlerine tabidir." / EN "Choreia, Gravita, JabLab and Lissom do not offer purchases to accounts awaiting parental approval; in Ostinato the store's family and parental controls decide. All purchases by users under 18 are subject to the store's family and parental controls."
+- App Review notu (B/C'deki app'ler için) EN ek: "Teens below their country's digital-consent age can purchase through the store's family controls (Ask to Buy / Google Play parental approval); Motion account features stay closed until a parent approves by email."
+- **Açık (hukuk/ürün):** onaylanmayan genç hesabı 30 gün sonra silinir (`motion_purge_unconsented_accounts`, zamanlama ayrı onay); mağaza aboneliği bununla iptal olmaz, yeni hesapta geri yüklenir. `storeFamilyControls` ile satın alıp veli onayı almayan genç için silme metni/iade beklentisi hukuk incelemesine eklenmeli.
+
+**Ders eşleme (25–26 Ekim kararı, §8 açık (1) güncellemesi):** Ostinato, JabLab, Gravita ve Choreia uygulamadaki mevcut sayıları `freeLessonLimit` override ile korur (Core formülü kullanılmaz); Choreia Salsa 18, Hip-Hop giriş kursu tamamen kilitsiz. Lissom için açık onay yok (K-7). İnceleme notundaki `<APP: …>` yer tutucusu app oturumlarının sayılarıyla dolar.
