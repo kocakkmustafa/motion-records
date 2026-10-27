@@ -9,6 +9,16 @@ fikstür etkisi · canlı önkoşul · hedefli regresyon.
 
 ---
 
+## R4.1 — `d9dfed0675a2282a7cf380de774b87e0489df277` (2026-10-27) — yalnız sunucu + belge
+
+- **Tam SHA:** `d9dfed0675a2282a7cf380de774b87e0489df277` (`main`, FF `0d29d1b..d9dfed0`)
+- **CI:** run `40484987831` — **13/13 success**
+- **Yerel kanıt:** `deno fmt --check` + `deno check` (CI komutu) temiz; Deno **64/64** (R4 63 + 1 yeni); kelime taraması PASS. Dart kodu değişmedi (yalnız `motion_account/README.md`).
+- **İçerik:** kurucu **K-3** — `motion-parental-consent` varsayılan CORS izin listesi = `https://yulalab.com` + `https://www.yulalab.com` (önizleme origin'i yok); canlıda `MOTION_CONSENT_ALLOWED_ORIGINS` secret'ı **girilmez**. Sözleşme testleri: iki origin preflight `204` + ACAO yansıtma + `view` yanıtında ACAO; `https://evil.example`, `http://yulalab.com`, `https://yulalab.com.evil.example`, `https://preview.yulalab.com`, `https://www.yulalab.com:8443`, `null` → `403`, ACAO yok. Kurucu **K-2** belgelere işlendi (beş app `storeFamilyControls`; paket varsayılanı aynı).
+- **R4'ten geçiş (app'ler):** **gerekmez** — R4 pini geçerli; R4.1'e pin isteğe bağlıdır (Dart farkı yok). K-2 için app'ler R4 API'siyle `teenPurchasePolicy: MotionTeenPurchasePolicy.storeFamilyControls` verir (satırlar R4 "App başına").
+- **Canlı:** CORE-07 paketi kaynak R4.1 olarak tazelendi (3.2 secret yok/varsa unset; 6.2 iki origin `204`; 6.3 dört yabancı origin `403`; 7.2 yalnız-CORS geri alma).
+- **Site (YULALAB):** CSP `connect-src https://aljdbngmeqwmsqhvfeau.supabase.co` aynı; `www` bugün 301 ile apex'e yönleniyor, yönlendirme kalkarsa da onay sayfası çalışır.
+
 ## R4 — `0d29d1b019033f00828be741aa3e23e3923841be` (2026-10-27)
 
 - **Tam SHA:** `0d29d1b019033f00828be741aa3e23e3923841be` (`main`, FF `f43d71a..6b845d6..826cdfc..0d29d1b`)
@@ -41,7 +51,7 @@ fikstür etkisi · canlı önkoşul · hedefli regresyon.
 ### App başına değişecek satırlar
 - **Beş app:** pin satırlarında SHA → `0d29d1b019033f00828be741aa3e23e3923841be`; ağlı `flutter pub get` (`pubspec.lock`'ta Core ref/resolved-ref satırları); iOS `pod install` (pod sürümü değişmez). Başka satır **gerekmez** (varsayılan politika).
 - **Ostinato (OST-K1, `storeFamilyControls`):** `lib/app/motion_account_bootstrap.dart:86` `MotionAccountPage(…, teenPurchasePolicy: MotionTeenPurchasePolicy.storeFamilyControls)`, `:120` `requireMotionPaidAccess(…, teenPurchasePolicy: …)`, `:126` `requireMotionCameraAccess(…, teenPurchasePolicy: …)` (kamera kapalıyken etkisiz ama tutarlılık için). Doğrudan `MotionMembershipPage` açılan yer varsa orada da. S12 senaryosu: `scratch/2026-10-25-motion-core-packages/CORE-R3-KABUL-KONTROLLERI.tr.md` "R4 eki" S-R4-1…5.
-- **K-2 = beş app** olursa diğer dört app aynı parametreyi şu yerlere verir: Lissom `lib/main.dart:518, 605, 612`; Choreia `lib/main.dart:290, 361, 396`; JabLab `lib/main.dart:125, 131` (kendi `MotionMembershipPage` builder'ı), `:166`, `lib/app/owner_bound_account_page.dart:104`; Gravita `lib/app/motion_account_bootstrap.dart:109` (kendi builder), `:111`, `lib/app/gravita_account_page.dart:181`. (Satırlar app main HEAD'lerine göre: Lissom `e455e27`, Ostinato `9a5e570`, Choreia `ceb612e`, JabLab `b4a3d0f`, Gravita `df9f14c`.)
+- **K-2 = beş app (kurucu 2026-10-27, karar verildi):** diğer dört app de aynı parametreyi şu yerlere verir: Lissom `lib/main.dart:518, 605, 612`; Choreia `lib/main.dart:290, 361, 396`; JabLab `lib/main.dart:125, 131` (kendi `MotionMembershipPage` builder'ı), `:166`, `lib/app/owner_bound_account_page.dart:104`; Gravita `lib/app/motion_account_bootstrap.dart:109` (kendi builder), `:111`, `lib/app/gravita_account_page.dart:181`. (Satırlar app main HEAD'lerine göre: Lissom `e455e27`, Ostinato `9a5e570`, Choreia `ceb612e`, JabLab `b4a3d0f`, Gravita `df9f14c`.)
 
 ### Fikstür etkisi
 - Varsayılan politikada yok. `storeFamilyControls` testlerinde onay bekleyen genç (`MotionAgeStatus` band `parentalConsentRequired`, consent ≠ approved) için teklifler ve not metni beklenir; satın alma başlayınca sayfa mağaza yanıtına kadar meşgul kalır (`pumpAndSettle` yerine `pump`).
