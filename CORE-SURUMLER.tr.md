@@ -12,7 +12,7 @@ fikstür etkisi · canlı önkoşul · hedefli regresyon.
 ## R4.3 — `5b15308ea2a89dd5adebe29635f8e7b18fff68e4` (2026-10-29) — Motion+ metni (yalnız Dart dizesi)
 
 - **Tam SHA:** `5b15308ea2a89dd5adebe29635f8e7b18fff68e4` (`main`, FF `8287c58..47eb35f..649a7ab..5b15308`; PR kocakkmustafa/motion-core#13).
-- **CI:** PR #13 13/13 + push 13/13 (Yönetim: 26/26). Sunucu deploy'u yok.
+- **CI:** PR #13: dal push + pull_request 26/26 (Yönetim). `main` push koşusu `40954551338` duyuru anında sürüyordu. Sunucu deploy'u yok.
 - **Yerel kanıt** (exact `5b15308`, makine mutex'i, ağaç değişmedi; `runs/r43-gate-20261029T200636Z/`):
   - tarama PASS, Deno **70/70**;
   - dart 263/69/61;
