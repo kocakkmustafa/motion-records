@@ -12,7 +12,7 @@ fikstür etkisi · canlı önkoşul · hedefli regresyon.
 ## R4.2 — `8287c5852b41b9c10994ffb22d9fab192e3c7cdd` (2026-10-29) — sunucu canlıda, Dart koruması pinle
 
 - **Tam SHA:** `8287c5852b41b9c10994ffb22d9fab192e3c7cdd` (`main`, FF `d9dfed0..acc108d..f6fe46b..b63e8ad..8287c58`; PR kocakkmustafa/motion-core#11).
-- **CI:** PR 13/13 + push 13/13 (Yönetim: 26/26). Push koşusu `40941209154`.
+- **CI:** PR 13/13 + push run `40941209154` **13/13 success** (Yönetim: 26/26).
 - **Canlı:** 2026-10-29 19:34Z, kurucu onayı, Yönetim, temiz klon @`8287c58`.
   - `db push` → `migration list --linked` 11/11.
   - `motion-parental-consent` v7 ACTIVE (`verify_jwt=false`).
