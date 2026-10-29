@@ -9,6 +9,38 @@ fikstür etkisi · canlı önkoşul · hedefli regresyon.
 
 ---
 
+## R4.3 — `5b15308ea2a89dd5adebe29635f8e7b18fff68e4` (2026-10-29) — Motion+ metni (yalnız Dart dizesi)
+
+- **Tam SHA:** `5b15308ea2a89dd5adebe29635f8e7b18fff68e4` (`main`, FF `8287c58..47eb35f..649a7ab..5b15308`; PR kocakkmustafa/motion-core#13).
+- **CI:** PR #13 13/13 + push 13/13 (Yönetim: 26/26). Sunucu deploy'u yok.
+- **Yerel kanıt** (exact `5b15308`, makine mutex'i, ağaç değişmedi; `runs/r43-gate-20261029T200636Z/`):
+  - tarama PASS, Deno **70/70**;
+  - dart 263/69/61;
+  - flutter `motion_account` **288 PASS / 5 SKIP**, diğer paketler R4.2 ile aynı;
+  - analyze temiz.
+- **İçerik:**
+  - `5b15308` — kurucu kararı 29 Eki ("Yeni derlemede düzelt"). `MotionAccountString.motionPlusBenefit` artık "canlı çalışma/live practice" demiyor:
+    - EN "Unlocks the paid lessons and practice available today in all five Motion apps. Camera coaching and lessons not yet released are not included."
+    - TR "Beş Motion uygulamasında bugün yayında olan ücretli dersleri ve alıştırmaları açar. Kamerayla koçluk ve henüz yayımlanmamış dersler dahil değildir."
+    - 12 dil her kataloğun hitabıyla çevrildi; ana dil gözden geçirmesi açık.
+    - Test, TR/EN'i birebir sabitliyor; hiçbir dilde "live/canlı/en vivo/ao vivo" yok.
+  - Aradaki iki commit (R4.2 → R4.3):
+    - `47eb35f`: yalnız belge (`YAS-VELI-VE-SAKLAMA.md` satış açık).
+    - `649a7ab` **Ek D EML**: veli onayı e-postasına 14 dilde "hesabın silinmesi mağaza aboneliğini iptal etmez" paragrafı eklendi. Yeri: ret paragrafından sonra. TR/EN avukat onaylı metin; PR #12, CI 26/26.
+      - **Canlı:** `motion-parental-consent` **v8**, 2026-10-29 ~20:10Z, Yönetim, kurucu onayı; smoke-6 PASS.
+      - Bu commit yalnız sunucuyu değiştirir; app pini gerekmez.
+- **Paket sürümleri:** değişmedi. **API farkı:** yok. **Davranış farkı:** yok; yalnız üyelik sayfasındaki fayda metni değişti.
+- **R4.2'den geçiş (app'ler): pin + yeni aday build.**
+  - Kurucu/Yönetim kararı 29 Eki: **mağaza adayları R4.3'e geçer.**
+  - Her app R4.3 tam SHA'sını pinler, build numarasını +1 yapar, IPA/AAB üretir. **Upload yok.**
+  - Kanal ve üyelik dışında davranış değişmez.
+- **Fikstür etkisi:** üyelik sayfasında eski EN/TR fayda metnini birebir bekleyen app testleri güncellenmeli. Core'da böyle test yoktu.
+- **Hedefli regresyon:**
+  - üyelik sayfası (satış açık) yeni metni gösteriyor;
+  - kamera girişi kapalı;
+  - R4.2 boş e-posta koruması;
+  - pin eşitlik testleri yeni tam SHA'da.
+
 ## R4.2 — `8287c5852b41b9c10994ffb22d9fab192e3c7cdd` (2026-10-29) — sunucu canlıda, Dart koruması pinle
 
 - **Tam SHA:** `8287c5852b41b9c10994ffb22d9fab192e3c7cdd` (`main`, FF `d9dfed0..acc108d..f6fe46b..b63e8ad..8287c58`; PR kocakkmustafa/motion-core#11).
