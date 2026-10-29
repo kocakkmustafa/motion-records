@@ -9,6 +9,40 @@ fikstür etkisi · canlı önkoşul · hedefli regresyon.
 
 ---
 
+## R4.2 — `8287c5852b41b9c10994ffb22d9fab192e3c7cdd` (2026-10-29) — sunucu canlıda, Dart koruması pinle
+
+- **Tam SHA:** `8287c5852b41b9c10994ffb22d9fab192e3c7cdd` (`main`, FF `d9dfed0..acc108d..f6fe46b..b63e8ad..8287c58`; PR kocakkmustafa/motion-core#11).
+- **CI:** PR 13/13 + push 13/13 (Yönetim: 26/26). Push koşusu `40941209154`.
+- **Canlı:** 2026-10-29 19:34Z, kurucu onayı, Yönetim, temiz klon @`8287c58`.
+  - `db push` → `migration list --linked` 11/11.
+  - `motion-parental-consent` v7 ACTIVE (`verify_jwt=false`).
+  - smoke-6 PASS; doğrulama SQL `true|true|true`.
+  - Log: `scratch/2026-10-29-motion-core-r42/DEPLOY-LOG.txt`. Diğer beş fonksiyon değişmedi.
+- **Yerel kanıt** (exact `8287c58`, makine mutex'i, ağaç değişmedi; `runs/r42-gate-20261029T192458Z/`):
+  - CI matrisi: tarama PASS, Deno **69/69**; dart 263/69/61; flutter `motion_account` **287 PASS / 5 SKIP**, diğerleri R4 ile aynı; 11 paketin analyze'ı temiz.
+  - Yerel Supabase: 11 migration temiz replay, SQL **3/3**, entegrasyon **5/5**, veli onayı E2E **23/23**.
+- **İçerik** (kaynak: CORE-07 §6.11 canlı testi, 29 Eki; log `scratch/2026-10-29-core-07-canli/6.11-LOG.txt`):
+  - `acc108d` SMTP:
+    - `MOTION_SMTP_PASSWORD`'ün baş/son boşluğu ve satır sonu her zaman silinir; iç boşluk yalnız 16 harflik Google uygulama şifresi kalırsa silinir.
+    - `submitSmtpMail` sırsız sonuç döndürür (sınıf/aşama/kod).
+    - `motion-parental-consent` başarısız postada tek satır loglar: `{"event":"motion_consent_mail_failed","failure":"config|network|auth|sender|recipient|message","stage":…,"code"?:…,"issue"?:"missing:<DEĞİŞKEN>"}`. Yanıt yine `503 mail_unavailable`; başarıda log yok.
+  - `f6fe46b` `motion_account`: "Şifremi unuttum" ve "Doğrulamayı yeniden gönder" yalnız teslim edilebilir görünen adresle açılır. `sendPasswordReset` / `resendConfirmation` boş veya biçimsiz adreste istek atmadan `AuthException` fırlatır. auth_logs'taki `/recover` ve `/resend` 400'lerini keser.
+  - `b63e8ad` migration `20261029120000_motion_restriction_own_account`: `motion_account_restricted(p)` oturumlu çağıran başka UUID sorarsa `42501` verir. `service_role` ve claim'siz oturum (SQL Editor, pg_cron) değişmez.
+  - `8287c58`: tarama izin listesinde `enum MotionApp` satırı 13→14 (metin aynı).
+- **Paket sürümleri:** değişmedi (`motion_account` 0.8.0). Pin tam SHA ile yapılır.
+- **API farkı:** yeni public API yok (`motion_email.dart` dışa aktarılmaz).
+  - Davranış farkı: iki mail metodu geçersiz adreste ağdan önce reddeder.
+  - Sayfada iki düğme e-posta alanı geçerli adres taşıyana kadar `onPressed: null`.
+- **R4/R4.1'den geçiş (app'ler):** **isteğe bağlı, yalnız pin.**
+  - Sunucu parçaları canlıda; eski pinli build'ler de yararlanır.
+  - Boş e-posta koruması yalnız R4.2 pinli **yeni build**le kullanıcıya ulaşır.
+  - Kurucu/Yönetim kararı (29 Eki): **mağaza adayları şimdilik eski pinde kalır**; R4.2 sonraki build'de.
+- **Fikstür etkisi (app testleri):** e-posta yazıp **aynı karede** "Forgot password"/"Resend verification email"e basan widget testi artık düşer. Düğme bir sonraki karede açılır: `enterText` sonrası `await tester.pump();` ekleyin (Core T08 aynı düzeltmeyi aldı). Boş alanla bu düğmelere basıp çağrı bekleyen testler de değişmeli.
+- **Hedefli regresyon (pinleyen app):** giriş ekranında boş/yarım adresle iki düğme kapalı, geçerli adresle açık; sıfırlama ve yeniden gönderme postası geliyor; mevcut hesap/üyelik akışları R4 listesiyle.
+- **Açık iş (Core dışı, Yönetim):** 30 gün temizlik cron'u kurucu onaylı. yulalab.com'da "abonelik iptal olmaz" metni yayınlanınca Yönetim kuru sayım + `cron.schedule` kuracak. Silme günlüğü önerisi: `scratch/2026-10-29-motion-core-r42/HUKUK-5-SAKLAMA-ONERI.tr.md`.
+
+---
+
 ## R4.1 — `d9dfed0675a2282a7cf380de774b87e0489df277` (2026-10-27) — yalnız sunucu + belge
 
 - **Tam SHA:** `d9dfed0675a2282a7cf380de774b87e0489df277` (`main`, FF `0d29d1b..d9dfed0`)
